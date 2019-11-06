@@ -7,18 +7,18 @@
   "targets": {
     ".NETCoreApp,Version=v3.0": {},
     ".NETCoreApp,Version=v3.0/osx-x64": {
-      "osu!/2019.1021.0": {
+      "osu!/2019.1029.0": {
         "dependencies": {
           "Microsoft.EntityFrameworkCore.Design": "2.2.6",
           "Microsoft.EntityFrameworkCore.Sqlite": "2.2.6",
           "Microsoft.Win32.Registry": "4.6.0",
           "System.IO.Packaging": "4.6.0",
-          "osu.Game.Rulesets.Catch": "2019.1021.0",
-          "osu.Game.Rulesets.Mania": "2019.1021.0",
-          "osu.Game.Rulesets.Osu": "2019.1021.0",
-          "osu.Game.Rulesets.Taiko": "2019.1021.0",
-          "osu.Game.Tournament": "2019.1021.0",
-          "ppy.osu.Game": "2019.1021.0",
+          "osu.Game.Rulesets.Catch": "2019.1029.0",
+          "osu.Game.Rulesets.Mania": "2019.1029.0",
+          "osu.Game.Rulesets.Osu": "2019.1029.0",
+          "osu.Game.Rulesets.Taiko": "2019.1029.0",
+          "osu.Game.Tournament": "2019.1029.0",
+          "ppy.osu.Game": "2019.1029.0",
           "ppy.squirrel.windows": "1.9.0.4",
           "runtimepack.Microsoft.NETCore.App.Runtime.osx-x64": "3.0.0"
         },
@@ -1272,11 +1272,11 @@
           }
         }
       },
-      "Markdig/0.17.1": {
+      "Markdig/0.18.0": {
         "runtime": {
           "lib/netcoreapp2.1/Markdig.dll": {
-            "assemblyVersion": "0.17.1.0",
-            "fileVersion": "0.17.1.0"
+            "assemblyVersion": "0.18.0.0",
+            "fileVersion": "0.18.0.0"
           }
         }
       },
@@ -1647,17 +1647,6 @@
           "System.Security.Principal.Windows": "4.6.0"
         }
       },
-      "Microsoft.Win32.SystemEvents/4.6.0": {
-        "dependencies": {
-          "Microsoft.NETCore.Platforms": "3.0.0"
-        },
-        "runtime": {
-          "lib/netstandard2.0/Microsoft.Win32.SystemEvents.dll": {
-            "assemblyVersion": "4.0.1.0",
-            "fileVersion": "4.700.19.46214"
-          }
-        }
-      },
       "Mono.Cecil/0.9.6.1": {
         "runtime": {
           "lib/net45/Mono.Cecil.Mdb.dll": {
@@ -1753,19 +1742,18 @@
           }
         }
       },
-      "ppy.osu.Framework/2019.1021.0": {
+      "ppy.osu.Framework/2019.1029.0": {
         "dependencies": {
           "FFmpeg.AutoGen": "4.2.0",
           "JetBrains.Annotations": "2019.1.3",
           "ManagedBass": "2.0.4",
           "ManagedBass.Fx": "2.0.1",
-          "Markdig": "0.17.1",
+          "Markdig": "0.18.0",
           "Microsoft.CodeAnalysis.CSharp": "3.3.1",
           "NUnit": "3.12.0",
           "Newtonsoft.Json": "12.0.2",
           "SharpFNT": "1.1.0",
           "SixLabors.ImageSharp": "1.0.0-beta0007",
-          "System.Drawing.Common": "4.6.0",
           "System.Net.Http": "4.3.4",
           "System.Reflection.Emit.ILGeneration": "4.6.0",
           "System.Reflection.Emit.Lightweight": "4.6.0",
@@ -1776,8 +1764,8 @@
         },
         "runtime": {
           "lib/netstandard2.0/osu.Framework.dll": {
-            "assemblyVersion": "2019.1021.0.0",
-            "fileVersion": "2019.1021.0.0"
+            "assemblyVersion": "2019.1029.0.0",
+            "fileVersion": "2019.1029.0.0"
           }
         }
       },
@@ -2212,18 +2200,6 @@
           "Microsoft.NETCore.Targets": "1.1.0",
           "System.Runtime": "4.3.0",
           "runtime.any.System.Diagnostics.Tracing": "4.3.0"
-        }
-      },
-      "System.Drawing.Common/4.6.0": {
-        "dependencies": {
-          "Microsoft.NETCore.Platforms": "3.0.0",
-          "Microsoft.Win32.SystemEvents": "4.6.0"
-        },
-        "runtime": {
-          "runtimes/unix/lib/netcoreapp3.0/System.Drawing.Common.dll": {
-            "assemblyVersion": "4.0.1.0",
-            "fileVersion": "4.700.19.46214"
-          }
         }
       },
       "System.Dynamic.Runtime/4.0.11": {
@@ -2818,48 +2794,48 @@
           "System.Xml.ReaderWriter": "4.0.11"
         }
       },
-      "osu.Game.Rulesets.Catch/2019.1021.0": {
+      "osu.Game.Rulesets.Catch/2019.1029.0": {
         "dependencies": {
-          "ppy.osu.Game": "2019.1021.0"
+          "ppy.osu.Game": "2019.1029.0"
         },
         "runtime": {
           "osu.Game.Rulesets.Catch.dll": {}
         }
       },
-      "osu.Game.Rulesets.Mania/2019.1021.0": {
+      "osu.Game.Rulesets.Mania/2019.1029.0": {
         "dependencies": {
-          "ppy.osu.Game": "2019.1021.0"
+          "ppy.osu.Game": "2019.1029.0"
         },
         "runtime": {
           "osu.Game.Rulesets.Mania.dll": {}
         }
       },
-      "osu.Game.Rulesets.Osu/2019.1021.0": {
+      "osu.Game.Rulesets.Osu/2019.1029.0": {
         "dependencies": {
-          "ppy.osu.Game": "2019.1021.0"
+          "ppy.osu.Game": "2019.1029.0"
         },
         "runtime": {
           "osu.Game.Rulesets.Osu.dll": {}
         }
       },
-      "osu.Game.Rulesets.Taiko/2019.1021.0": {
+      "osu.Game.Rulesets.Taiko/2019.1029.0": {
         "dependencies": {
-          "ppy.osu.Game": "2019.1021.0"
+          "ppy.osu.Game": "2019.1029.0"
         },
         "runtime": {
           "osu.Game.Rulesets.Taiko.dll": {}
         }
       },
-      "osu.Game.Tournament/2019.1021.0": {
+      "osu.Game.Tournament/2019.1029.0": {
         "dependencies": {
           "Microsoft.Win32.Registry": "4.6.0",
-          "ppy.osu.Game": "2019.1021.0"
+          "ppy.osu.Game": "2019.1029.0"
         },
         "runtime": {
           "osu.Game.Tournament.dll": {}
         }
       },
-      "ppy.osu.Game/2019.1021.0": {
+      "ppy.osu.Game/2019.1029.0": {
         "dependencies": {
           "Humanizer": "2.7.9",
           "Microsoft.EntityFrameworkCore.Sqlite": "2.2.6",
@@ -2869,7 +2845,7 @@
           "SharpCompress": "0.24.0",
           "SharpRaven": "2.4.0",
           "System.ComponentModel.Annotations": "4.6.0",
-          "ppy.osu.Framework": "2019.1021.0",
+          "ppy.osu.Framework": "2019.1029.0",
           "ppy.osu.Game.Resources": "2019.1010.0"
         },
         "runtime": {
@@ -2879,7 +2855,7 @@
     }
   },
   "libraries": {
-    "osu!/2019.1021.0": {
+    "osu!/2019.1029.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
@@ -3232,12 +3208,12 @@
       "path": "managedbass.fx/2.0.1",
       "hashPath": "managedbass.fx.2.0.1.nupkg.sha512"
     },
-    "Markdig/0.17.1": {
+    "Markdig/0.18.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-ETg//uVzicvsf1J0k52rGyJdV02pYI9uDqnFLNEpGwLsE/KUvTgkuTpJlS2VtTJ42YVFckrmjeleZIrK8Kn0eA==",
-      "path": "markdig/0.17.1",
-      "hashPath": "markdig.0.17.1.nupkg.sha512"
+      "sha512": "sha512-xfz7jqFuld0+dEIIHVd7hfCbsIwERGval5lhQkHRI4o8yOHmTNjLzqRhNOC2cRnEgn5/0mU1jF+ntXDOxlXrRQ==",
+      "path": "markdig/0.18.0",
+      "hashPath": "markdig.0.18.0.nupkg.sha512"
     },
     "Microsoft.CodeAnalysis.Analyzers/2.9.4": {
       "type": "package",
@@ -3449,13 +3425,6 @@
       "path": "microsoft.win32.registry/4.6.0",
       "hashPath": "microsoft.win32.registry.4.6.0.nupkg.sha512"
     },
-    "Microsoft.Win32.SystemEvents/4.6.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-Edg+pFW5C8WJb680Za2kTV8TqUi6Ahl/WldRVoOVJ23UQLpDHFspa+umgFjkWZw24ETsU99Cg+ErZz683M4chg==",
-      "path": "microsoft.win32.systemevents/4.6.0",
-      "hashPath": "microsoft.win32.systemevents.4.6.0.nupkg.sha512"
-    },
     "Mono.Cecil/0.9.6.1": {
       "type": "package",
       "serviceable": true,
@@ -3491,12 +3460,12 @@
       "path": "ppy.microsoft.diagnostics.runtime/0.9.180305.1",
       "hashPath": "ppy.microsoft.diagnostics.runtime.0.9.180305.1.nupkg.sha512"
     },
-    "ppy.osu.Framework/2019.1021.0": {
+    "ppy.osu.Framework/2019.1029.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-xW8X7eKmO/UaLLstsKHfk2IupnBO8b+xE0cI88VNdnb07MwWYrHy221/OwCZNNSrNuORBx5kycO71zYYQD1+lg==",
-      "path": "ppy.osu.framework/2019.1021.0",
-      "hashPath": "ppy.osu.framework.2019.1021.0.nupkg.sha512"
+      "sha512": "sha512-rT75MiovbJ901flIb6R19dWH53oZ3T0Wwb3SKKsM8UsCCUhN5nvC1//v/EM96S7nfXkNpr7vKmCzqGScPJQPQg==",
+      "path": "ppy.osu.framework/2019.1029.0",
+      "hashPath": "ppy.osu.framework.2019.1029.0.nupkg.sha512"
     },
     "ppy.osu.Framework.NativeLibs/2019.1010.0": {
       "type": "package",
@@ -3988,13 +3957,6 @@
       "path": "system.diagnostics.tracing/4.3.0",
       "hashPath": "system.diagnostics.tracing.4.3.0.nupkg.sha512"
     },
-    "System.Drawing.Common/4.6.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-2A3spjjoPZnvpVh/sDTzd+0H8ZqTdr+hH/6obB8MMfG81EJ85PmxCKDBxhBVQiA25PliKAZ1sKogDcq9mSnFEA==",
-      "path": "system.drawing.common/4.6.0",
-      "hashPath": "system.drawing.common.4.6.0.nupkg.sha512"
-    },
     "System.Dynamic.Runtime/4.0.11": {
       "type": "package",
       "serviceable": true,
@@ -4401,32 +4363,32 @@
       "path": "system.xml.xdocument/4.0.11",
       "hashPath": "system.xml.xdocument.4.0.11.nupkg.sha512"
     },
-    "osu.Game.Rulesets.Catch/2019.1021.0": {
+    "osu.Game.Rulesets.Catch/2019.1029.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "osu.Game.Rulesets.Mania/2019.1021.0": {
+    "osu.Game.Rulesets.Mania/2019.1029.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "osu.Game.Rulesets.Osu/2019.1021.0": {
+    "osu.Game.Rulesets.Osu/2019.1029.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "osu.Game.Rulesets.Taiko/2019.1021.0": {
+    "osu.Game.Rulesets.Taiko/2019.1029.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "osu.Game.Tournament/2019.1021.0": {
+    "osu.Game.Tournament/2019.1029.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "ppy.osu.Game/2019.1021.0": {
+    "ppy.osu.Game/2019.1029.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
