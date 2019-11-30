@@ -1896,6 +1896,11 @@
             Does not draw anything.
             </summary>
         </member>
+        <member name="P:osu.Game.Graphics.UserInterface.HoverSounds.HoverDebounceTime">
+            <summary>
+            Length of debounce for hover sound playback, in milliseconds. Default is 50ms.
+            </summary>
+        </member>
         <member name="P:osu.Game.Graphics.UserInterface.IconButton.IconColour">
             <summary>
             The icon colour. This does not affect <see cref="P:osu.Framework.Graphics.Drawable.Colour">Colour</see>.
@@ -4255,6 +4260,16 @@
             This will only be invoked if <see cref="P:osu.Game.Rulesets.Objects.HitObject.HitWindows"/> hasn't been set externally (e.g. from a <see cref="T:osu.Game.Beatmaps.BeatmapConverter`1"/>.
             </para>
             </summary>
+        </member>
+        <member name="M:osu.Game.Rulesets.Objects.HitObjectExtensions.GetEndTime(osu.Game.Rulesets.Objects.HitObject)">
+            <summary>
+            Returns the end time of this object.
+            </summary>
+            <remarks>
+            This returns the <see cref="P:osu.Game.Rulesets.Objects.Types.IHasEndTime.EndTime"/> where available, falling back to <see cref="P:osu.Game.Rulesets.Objects.HitObject.StartTime"/> otherwise.
+            </remarks>
+            <param name="hitObject">The object.</param>
+            <returns>The end time of this object.</returns>
         </member>
         <member name="T:osu.Game.Rulesets.Objects.IBarLine">
             <summary>
@@ -6919,6 +6934,11 @@
         <member name="T:osu.Game.Skinning.ISkinSource">
             <summary>
             Provides access to skinnable elements.
+            </summary>
+        </member>
+        <member name="P:osu.Game.Skinning.LegacySkinConfiguration.LegacyVersion">
+            <summary>
+            Legacy version of this skin.
             </summary>
         </member>
         <member name="T:osu.Game.Skinning.SkinConfiguration">
