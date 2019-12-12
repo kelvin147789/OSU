@@ -2617,6 +2617,24 @@
             </summary>
             <param name="request">The request to perform.</param>
         </member>
+        <member name="M:osu.Game.Online.API.IAPIProvider.Perform(osu.Game.Online.API.APIRequest)">
+            <summary>
+            Perform a request immediately, bypassing any API state checks.
+            </summary>
+            <remarks>
+            Can be used to run requests as a guest user.
+            </remarks>
+            <param name="request">The request to perform.</param>
+        </member>
+        <member name="M:osu.Game.Online.API.IAPIProvider.PerformAsync(osu.Game.Online.API.APIRequest)">
+            <summary>
+            Perform a request immediately, bypassing any API state checks.
+            </summary>
+            <remarks>
+            Can be used to run requests as a guest user.
+            </remarks>
+            <param name="request">The request to perform.</param>
+        </member>
         <member name="M:osu.Game.Online.API.IAPIProvider.Register(osu.Game.Online.API.IOnlineComponent)">
             <summary>
             Register a component to receive state changes.
@@ -5446,9 +5464,12 @@
         </member>
         <member name="M:osu.Game.Rulesets.UI.Playfield.CreateCursor">
             <summary>
-            Provide an optional cursor which is to be used for gameplay.
+            Provide a cursor which is to be used for gameplay.
             </summary>
-            <returns>The cursor, or null if a cursor is not rqeuired.</returns>
+            <remarks>
+            The default provided cursor is invisible when inside the bounds of the <see cref="T:osu.Game.Rulesets.UI.Playfield"/>.
+            </remarks>
+            <returns>The cursor, or null to show the menu cursor.</returns>
         </member>
         <member name="M:osu.Game.Rulesets.UI.Playfield.AddNested(osu.Game.Rulesets.UI.Playfield)">
             <summary>
