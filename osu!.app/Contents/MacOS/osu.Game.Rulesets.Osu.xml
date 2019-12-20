@@ -47,14 +47,24 @@
             </summary>
             <param name="hitObject">The <see cref="T:osu.Game.Rulesets.Osu.Objects.OsuHitObject"/> to reference properties from.</param>
         </member>
+        <member name="T:osu.Game.Rulesets.Osu.Edit.Blueprints.Sliders.Components.PathControlPointConnectionPiece">
+            <summary>
+            A visualisation of the line between two <see cref="T:osu.Game.Rulesets.Osu.Edit.Blueprints.Sliders.Components.PathControlPointPiece"/>s.
+            </summary>
+        </member>
+        <member name="M:osu.Game.Rulesets.Osu.Edit.Blueprints.Sliders.Components.PathControlPointConnectionPiece.updateConnectingPath">
+            <summary>
+            Updates the path connecting this control point to the next one.
+            </summary>
+        </member>
+        <member name="T:osu.Game.Rulesets.Osu.Edit.Blueprints.Sliders.Components.PathControlPointPiece">
+            <summary>
+            A visualisation of a single <see cref="T:osu.Game.Rulesets.Objects.PathControlPoint"/> in a <see cref="T:osu.Game.Rulesets.Osu.Objects.Slider"/>.
+            </summary>
+        </member>
         <member name="M:osu.Game.Rulesets.Osu.Edit.Blueprints.Sliders.Components.PathControlPointPiece.updateMarkerDisplay">
             <summary>
             Updates the state of the circular control point marker.
-            </summary>
-        </member>
-        <member name="M:osu.Game.Rulesets.Osu.Edit.Blueprints.Sliders.Components.PathControlPointPiece.updateConnectingPath">
-            <summary>
-            Updates the path connecting this control point to the previous one.
             </summary>
         </member>
         <member name="F:osu.Game.Rulesets.Osu.Edit.DrawableOsuEditRuleset.editor_hit_object_fade_out_extension">
@@ -254,7 +264,7 @@
         </member>
         <member name="M:osu.Game.Rulesets.Osu.Objects.Drawables.Pieces.SliderBody.RecyclePath">
             <summary>
-            Initialises a new <see cref="T:osu.Game.Rulesets.Osu.Objects.Drawables.Pieces.SliderBody.SliderPath"/>, releasing all resources retained by the old one.
+            Initialises a new <see cref="T:osu.Game.Rulesets.Osu.Objects.Drawables.Pieces.DrawableSliderPath"/>, releasing all resources retained by the old one.
             </summary>
         </member>
         <member name="M:osu.Game.Rulesets.Osu.Objects.Drawables.Pieces.SliderBody.SetVertices(System.Collections.Generic.IReadOnlyList{osuTK.Vector2})">
@@ -377,13 +387,18 @@
             The time in ms between each ReplayFrame.
             </summary>
         </member>
+        <member name="M:osu.Game.Rulesets.Osu.Skinning.LegacySliderBody.LegacyDrawableSliderPath.lighten(osuTK.Graphics.Color4,System.Single)">
+            <summary>
+            Lightens a colour in a way more friendly to dark or strong colours.
+            </summary>
+        </member>
         <member name="T:osu.Game.Rulesets.Osu.Skinning.NonPlayfieldSprite">
             <summary>
             A sprite which is displayed within the playfield, but historically was not considered part of the playfield.
             Performs scale adjustment to undo the scale applied by <see cref="T:osu.Game.Rulesets.UI.PlayfieldAdjustmentContainer"/> (osu! ruleset specifically).
             </summary>
         </member>
-        <member name="F:osu.Game.Rulesets.Osu.Skinning.OsuLegacySkinTransformer.legacy_circle_radius">
+        <member name="F:osu.Game.Rulesets.Osu.Skinning.OsuLegacySkinTransformer.LEGACY_CIRCLE_RADIUS">
             <summary>
             On osu-stable, hitcircles have 5 pixels of transparent padding on each side to allow for shadows etc.
             Their hittable area is 128px, but the actual circle portion is 118px.
@@ -398,6 +413,12 @@
         <member name="P:osu.Game.Rulesets.Osu.UI.Cursor.CursorTrail.InterpolateMovements">
             <summary>
             Whether to interpolate mouse movements and add trail pieces at intermediate points.
+            </summary>
+        </member>
+        <member name="P:osu.Game.Rulesets.Osu.UI.Cursor.OsuCursorSprite.ExpandTarget">
+            <summary>
+            The an optional piece of the cursor to expand when in a clicked state.
+            If null, the whole cursor will be affected by expansion.
             </summary>
         </member>
         <member name="T:osu.Game.Rulesets.Osu.UI.OsuPlayfieldAdjustmentContainer.ScalingContainer">
