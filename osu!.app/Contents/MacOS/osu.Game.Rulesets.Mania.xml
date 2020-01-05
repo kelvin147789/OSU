@@ -608,27 +608,27 @@
             Visualises a <see cref="T:osu.Game.Rulesets.Mania.Objects.HoldNote"/> hit object.
             </summary>
         </member>
-        <member name="F:osu.Game.Rulesets.Mania.Objects.Drawables.DrawableHoldNote.holdStartTime">
+        <member name="P:osu.Game.Rulesets.Mania.Objects.Drawables.DrawableHoldNote.HoldStartTime">
             <summary>
             Time at which the user started holding this hold note. Null if the user is not holding this hold note.
             </summary>
         </member>
-        <member name="F:osu.Game.Rulesets.Mania.Objects.Drawables.DrawableHoldNote.hasBroken">
+        <member name="P:osu.Game.Rulesets.Mania.Objects.Drawables.DrawableHoldNote.HasBroken">
             <summary>
             Whether the hold note has been released too early and shouldn't give full score for the release.
             </summary>
         </member>
-        <member name="T:osu.Game.Rulesets.Mania.Objects.Drawables.DrawableHoldNote.DrawableHeadNote">
+        <member name="T:osu.Game.Rulesets.Mania.Objects.Drawables.DrawableHoldNoteHead">
             <summary>
-            The head note of a hold.
+            The head of a <see cref="T:osu.Game.Rulesets.Mania.Objects.Drawables.DrawableHoldNote"/>.
             </summary>
         </member>
-        <member name="T:osu.Game.Rulesets.Mania.Objects.Drawables.DrawableHoldNote.DrawableTailNote">
+        <member name="T:osu.Game.Rulesets.Mania.Objects.Drawables.DrawableHoldNoteTail">
             <summary>
-            The tail note of a hold.
+            The tail of a <see cref="T:osu.Game.Rulesets.Mania.Objects.Drawables.DrawableHoldNote"/>.
             </summary>
         </member>
-        <member name="F:osu.Game.Rulesets.Mania.Objects.Drawables.DrawableHoldNote.DrawableTailNote.release_window_lenience">
+        <member name="F:osu.Game.Rulesets.Mania.Objects.Drawables.DrawableHoldNoteTail.release_window_lenience">
             <summary>
             Lenience of release hit windows. This is to make cases where the hold note release
             is timed alongside presses of other hit objects less awkward.
@@ -708,46 +708,6 @@
         <member name="P:osu.Game.Rulesets.Mania.Objects.Types.IHasColumn.Column">
             <summary>
             The column which the hit object lies in.
-            </summary>
-        </member>
-        <member name="F:osu.Game.Rulesets.Mania.Scoring.ManiaScoreProcessor.hp_multiplier_min">
-            <summary>
-            The hit HP multiplier at OD = 0.
-            </summary>
-        </member>
-        <member name="F:osu.Game.Rulesets.Mania.Scoring.ManiaScoreProcessor.hp_multiplier_mid">
-            <summary>
-            The hit HP multiplier at OD = 0.
-            </summary>
-        </member>
-        <member name="F:osu.Game.Rulesets.Mania.Scoring.ManiaScoreProcessor.hp_multiplier_max">
-            <summary>
-            The hit HP multiplier at OD = 0.
-            </summary>
-        </member>
-        <member name="F:osu.Game.Rulesets.Mania.Scoring.ManiaScoreProcessor.hp_multiplier_miss_min">
-            <summary>
-            The MISS HP multiplier at OD = 0.
-            </summary>
-        </member>
-        <member name="F:osu.Game.Rulesets.Mania.Scoring.ManiaScoreProcessor.hp_multiplier_miss_mid">
-            <summary>
-            The MISS HP multiplier at OD = 5.
-            </summary>
-        </member>
-        <member name="F:osu.Game.Rulesets.Mania.Scoring.ManiaScoreProcessor.hp_multiplier_miss_max">
-            <summary>
-            The MISS HP multiplier at OD = 10.
-            </summary>
-        </member>
-        <member name="F:osu.Game.Rulesets.Mania.Scoring.ManiaScoreProcessor.hpMissMultiplier">
-            <summary>
-            The MISS HP multiplier. This is multiplied to the miss hp increase.
-            </summary>
-        </member>
-        <member name="F:osu.Game.Rulesets.Mania.Scoring.ManiaScoreProcessor.hpMultiplier">
-            <summary>
-            The HIT HP multiplier. This is multiplied to hit hp increases.
             </summary>
         </member>
         <member name="F:osu.Game.Rulesets.Mania.UI.Column.Index">

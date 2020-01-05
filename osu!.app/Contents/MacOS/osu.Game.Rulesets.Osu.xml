@@ -121,7 +121,7 @@
             0 is open, 1 is closed.
             </summary>
         </member>
-        <member name="T:osu.Game.Rulesets.Osu.Mods.OsuModeObjectScaleTween">
+        <member name="T:osu.Game.Rulesets.Osu.Mods.OsuModObjectScaleTween">
             <summary>
             Adjusts the size of hit objects during their fade in animation.
             </summary>
