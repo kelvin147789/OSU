@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>osu!</name>
+    </assembly>
+    <members>
+        <member name="T:osu.Desktop.OsuGameDesktop.StableStorage">
+            <summary>
+            A method of accessing an osu-stable install in a controlled fashion.
+            </summary>
+        </member>
+        <member name="M:osu.Desktop.Program.handleException(System.Exception)">
+            <summary>
+            Allow a maximum of one unhandled exception, per second of execution.
+            </summary>
+            <param name="arg"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

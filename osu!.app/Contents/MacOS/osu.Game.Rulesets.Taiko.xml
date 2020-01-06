@@ -1,0 +1,341 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>osu.Game.Rulesets.Taiko</name>
+    </assembly>
+    <members>
+        <member name="F:osu.Game.Rulesets.Taiko.Beatmaps.TaikoBeatmapConverter.legacy_velocity_multiplier">
+            <summary>
+            osu! is generally slower than taiko, so a factor is added to increase
+            speed. This must be used everywhere slider length or beat length is used.
+            </summary>
+        </member>
+        <member name="F:osu.Game.Rulesets.Taiko.Beatmaps.TaikoBeatmapConverter.swell_hit_multiplier">
+            <summary>
+            Because swells are easier in taiko than spinners are in osu!,
+            legacy taiko multiplies a factor when converting the number of required hits.
+            </summary>
+        </member>
+        <member name="F:osu.Game.Rulesets.Taiko.Beatmaps.TaikoBeatmapConverter.osu_base_scoring_distance">
+            <summary>
+            Base osu! slider scoring distance.
+            </summary>
+        </member>
+        <member name="F:osu.Game.Rulesets.Taiko.Beatmaps.TaikoBeatmapConverter.taiko_base_distance">
+            <summary>
+            Drum roll distance that results in a duration of 1 speed-adjusted beat length.
+            </summary>
+        </member>
+        <member name="T:osu.Game.Rulesets.Taiko.Objects.Drawables.DrawableBarLine">
+            <summary>
+            A line that scrolls alongside hit objects in the playfield and visualises control points.
+            </summary>
+        </member>
+        <member name="F:osu.Game.Rulesets.Taiko.Objects.Drawables.DrawableBarLine.tracker_width">
+            <summary>
+            The width of the line tracker.
+            </summary>
+        </member>
+        <member name="F:osu.Game.Rulesets.Taiko.Objects.Drawables.DrawableBarLine.base_fadeout_time">
+            <summary>
+            Fade out time calibrated to a pre-empt of 1000ms.
+            </summary>
+        </member>
+        <member name="F:osu.Game.Rulesets.Taiko.Objects.Drawables.DrawableBarLine.Tracker">
+            <summary>
+            The visual line tracker.
+            </summary>
+        </member>
+        <member name="F:osu.Game.Rulesets.Taiko.Objects.Drawables.DrawableBarLine.BarLine">
+            <summary>
+            The bar line.
+            </summary>
+        </member>
+        <member name="F:osu.Game.Rulesets.Taiko.Objects.Drawables.DrawableBarLineMajor.triangle_offfset">
+            <summary>
+            The vertical offset of the triangles from the line tracker.
+            </summary>
+        </member>
+        <member name="F:osu.Game.Rulesets.Taiko.Objects.Drawables.DrawableBarLineMajor.triangle_size">
+            <summary>
+            The size of the triangles.
+            </summary>
+        </member>
+        <member name="F:osu.Game.Rulesets.Taiko.Objects.Drawables.DrawableDrumRoll.rolling_hits_for_engaged_colour">
+            <summary>
+            Number of rolling hits required to reach the dark/final colour.
+            </summary>
+        </member>
+        <member name="F:osu.Game.Rulesets.Taiko.Objects.Drawables.DrawableDrumRoll.rollingHits">
+            <summary>
+            Rolling number of tick hits. This increases for hits and decreases for misses.
+            </summary>
+        </member>
+        <member name="P:osu.Game.Rulesets.Taiko.Objects.Drawables.DrawableHit.HitActions">
+            <summary>
+            A list of keys which can result in hits for this HitObject.
+            </summary>
+        </member>
+        <member name="P:osu.Game.Rulesets.Taiko.Objects.Drawables.DrawableHit.HitAction">
+            <summary>
+            The action that caused this <see cref="T:osu.Game.Rulesets.Taiko.Objects.Drawables.DrawableHit"/> to be hit.
+            </summary>
+        </member>
+        <member name="F:osu.Game.Rulesets.Taiko.Objects.Drawables.DrawableHit.StrongNestedHit.second_hit_window">
+            <summary>
+            The lenience for the second key press.
+            This does not adjust by map difficulty in ScoreV2 yet.
+            </summary>
+        </member>
+        <member name="T:osu.Game.Rulesets.Taiko.Objects.Drawables.DrawableStrongNestedHit">
+            <summary>
+            Used as a nested hitobject to provide <see cref="T:osu.Game.Rulesets.Taiko.Judgements.TaikoStrongJudgement"/>s for <see cref="T:osu.Game.Rulesets.Taiko.Objects.Drawables.DrawableTaikoHitObject"/>s.
+            </summary>
+        </member>
+        <member name="F:osu.Game.Rulesets.Taiko.Objects.Drawables.DrawableSwell.ring_appear_offset">
+            <summary>
+            Offset away from the start time of the swell at which the ring starts appearing.
+            </summary>
+        </member>
+        <member name="M:osu.Game.Rulesets.Taiko.Objects.Drawables.DrawableTaikoHitObject.ComputeIsMaskedAway(osu.Framework.Graphics.Primitives.RectangleF)">
+            <summary>
+            <see cref="F:osu.Game.Rulesets.Taiko.Objects.Drawables.DrawableTaikoHitObject.proxiedContent"/> is proxied into an upper layer. We don't want to get masked away otherwise <see cref="F:osu.Game.Rulesets.Taiko.Objects.Drawables.DrawableTaikoHitObject.proxiedContent"/> would too.
+            </summary>
+        </member>
+        <member name="M:osu.Game.Rulesets.Taiko.Objects.Drawables.DrawableTaikoHitObject.ProxyContent">
+            <summary>
+            Moves <see cref="F:osu.Game.Rulesets.Taiko.Objects.Drawables.DrawableTaikoHitObject.Content"/> to a layer proxied above the playfield.
+            Does nothing is content is already proxied.
+            </summary>
+        </member>
+        <member name="M:osu.Game.Rulesets.Taiko.Objects.Drawables.DrawableTaikoHitObject.UnproxyContent">
+            <summary>
+            Moves <see cref="F:osu.Game.Rulesets.Taiko.Objects.Drawables.DrawableTaikoHitObject.Content"/> to the normal hitobject layer.
+            Does nothing is content is not currently proxied.
+            </summary>
+        </member>
+        <member name="M:osu.Game.Rulesets.Taiko.Objects.Drawables.DrawableTaikoHitObject.CreateProxiedContent">
+            <summary>
+            Creates a proxy for the content of this <see cref="T:osu.Game.Rulesets.Taiko.Objects.Drawables.DrawableTaikoHitObject"/>.
+            </summary>
+        </member>
+        <member name="M:osu.Game.Rulesets.Taiko.Objects.Drawables.DrawableTaikoHitObject`1.CreateStrongHit(osu.Game.Rulesets.Taiko.Objects.StrongHitObject)">
+            <summary>
+            Creates the handler for this <see cref="T:osu.Game.Rulesets.Objects.Drawables.DrawableHitObject"/>'s <see cref="T:osu.Game.Rulesets.Taiko.Objects.StrongHitObject"/>.
+            This is only invoked if <see cref="P:osu.Game.Rulesets.Taiko.Objects.TaikoHitObject.IsStrong"/> is true for <see cref="F:osu.Game.Rulesets.Taiko.Objects.Drawables.DrawableTaikoHitObject`1.HitObject"/>.
+            </summary>
+            <param name="hitObject">The strong hitobject.</param>
+            <returns>The strong hitobject handler.</returns>
+        </member>
+        <member name="T:osu.Game.Rulesets.Taiko.Objects.Drawables.Pieces.CentreHitSymbolPiece">
+            <summary>
+            The symbol used for centre hit pieces.
+            </summary>
+        </member>
+        <member name="T:osu.Game.Rulesets.Taiko.Objects.Drawables.Pieces.CirclePiece">
+            <summary>
+            A circle piece which is used uniformly through osu!taiko to visualise hitobjects.
+            <para>
+            Note that this can actually be non-circle if the width is changed. See <see cref="T:osu.Game.Rulesets.Taiko.Objects.Drawables.Pieces.ElongatedCirclePiece"/>
+            for a usage example.
+            </para>
+            </summary>
+        </member>
+        <member name="P:osu.Game.Rulesets.Taiko.Objects.Drawables.Pieces.CirclePiece.AccentColour">
+            <summary>
+            The colour of the inner circle and outer glows.
+            </summary>
+        </member>
+        <member name="P:osu.Game.Rulesets.Taiko.Objects.Drawables.Pieces.CirclePiece.KiaiMode">
+            <summary>
+            Whether Kiai mode effects are enabled for this circle piece.
+            </summary>
+        </member>
+        <member name="T:osu.Game.Rulesets.Taiko.Objects.Drawables.Pieces.RimHitSymbolPiece">
+            <summary>
+            The symbol used for rim hit pieces.
+            </summary>
+        </member>
+        <member name="T:osu.Game.Rulesets.Taiko.Objects.Drawables.Pieces.SwellSymbolPiece">
+            <summary>
+            The symbol used for swell pieces.
+            </summary>
+        </member>
+        <member name="P:osu.Game.Rulesets.Taiko.Objects.Drawables.Pieces.TaikoPiece.AccentColour">
+            <summary>
+            The colour of the inner circle and outer glows.
+            </summary>
+        </member>
+        <member name="P:osu.Game.Rulesets.Taiko.Objects.Drawables.Pieces.TaikoPiece.KiaiMode">
+            <summary>
+            Whether Kiai mode effects are enabled for this circle piece.
+            </summary>
+        </member>
+        <member name="F:osu.Game.Rulesets.Taiko.Objects.Drawables.Pieces.TickPiece.tick_border_width">
+            <summary>
+            Any tick that is not the first for a drumroll is not filled, but is instead displayed
+            as a hollow circle. This is what controls the border width of that circle.
+            </summary>
+        </member>
+        <member name="F:osu.Game.Rulesets.Taiko.Objects.Drawables.Pieces.TickPiece.tick_size">
+            <summary>
+            The size of a tick.
+            </summary>
+        </member>
+        <member name="F:osu.Game.Rulesets.Taiko.Objects.DrumRoll.base_distance">
+            <summary>
+            Drum roll distance that results in a duration of 1 speed-adjusted beat length.
+            </summary>
+        </member>
+        <member name="F:osu.Game.Rulesets.Taiko.Objects.DrumRoll.TickRate">
+            <summary>
+            Numer of ticks per beat length.
+            </summary>
+        </member>
+        <member name="P:osu.Game.Rulesets.Taiko.Objects.DrumRoll.RequiredGoodHits">
+            <summary>
+            Number of drum roll ticks required for a "Good" hit.
+            </summary>
+        </member>
+        <member name="P:osu.Game.Rulesets.Taiko.Objects.DrumRoll.RequiredGreatHits">
+            <summary>
+            Number of drum roll ticks required for a "Great" hit.
+            </summary>
+        </member>
+        <member name="F:osu.Game.Rulesets.Taiko.Objects.DrumRoll.tickSpacing">
+            <summary>
+            The length (in milliseconds) between ticks of this drumroll.
+            <para>Half of this value is the hit window of the ticks.</para>
+            </summary>
+        </member>
+        <member name="F:osu.Game.Rulesets.Taiko.Objects.DrumRollTick.FirstTick">
+            <summary>
+            Whether this is the first (initial) tick of the slider.
+            </summary>
+        </member>
+        <member name="F:osu.Game.Rulesets.Taiko.Objects.DrumRollTick.TickSpacing">
+            <summary>
+            The length (in milliseconds) between this tick and the next.
+            <para>Half of this value is the hit window of the tick.</para>
+            </summary>
+        </member>
+        <member name="P:osu.Game.Rulesets.Taiko.Objects.DrumRollTick.HitWindow">
+            <summary>
+            The time allowed to hit this tick.
+            </summary>
+        </member>
+        <member name="F:osu.Game.Rulesets.Taiko.Objects.Swell.RequiredHits">
+            <summary>
+            The number of hits required to complete the swell successfully.
+            </summary>
+        </member>
+        <member name="F:osu.Game.Rulesets.Taiko.Objects.TaikoHitObject.DEFAULT_SIZE">
+            <summary>
+            Default size of a drawable taiko hit object.
+            </summary>
+        </member>
+        <member name="F:osu.Game.Rulesets.Taiko.Objects.TaikoHitObject.STRONG_SCALE">
+            <summary>
+            Scale multiplier for a strong drawable taiko hit object.
+            </summary>
+        </member>
+        <member name="F:osu.Game.Rulesets.Taiko.Objects.TaikoHitObject.DEFAULT_STRONG_SIZE">
+            <summary>
+            Default size of a strong drawable taiko hit object.
+            </summary>
+        </member>
+        <member name="P:osu.Game.Rulesets.Taiko.Objects.TaikoHitObject.IsStrong">
+            <summary>
+            Whether this HitObject is a "strong" type.
+            Strong hit objects give more points for hitting the hit object with both keys.
+            </summary>
+        </member>
+        <member name="F:osu.Game.Rulesets.Taiko.Scoring.TaikoScoreProcessor.object_count_factor">
+            <summary>
+            A value used for calculating <see cref="F:osu.Game.Rulesets.Taiko.Scoring.TaikoScoreProcessor.hpMultiplier"/>.
+            </summary>
+        </member>
+        <member name="P:osu.Game.Rulesets.Taiko.Scoring.TaikoScoreProcessor.DefaultFailCondition">
+            <summary>
+            Taiko fails at the end of the map if the player has not half-filled their HP bar.
+            </summary>
+        </member>
+        <member name="F:osu.Game.Rulesets.Taiko.Scoring.TaikoScoreProcessor.hpMultiplier">
+            <summary>
+            HP multiplier for a successful <see cref="T:osu.Game.Rulesets.Scoring.HitResult"/>.
+            </summary>
+        </member>
+        <member name="F:osu.Game.Rulesets.Taiko.Scoring.TaikoScoreProcessor.hpMissMultiplier">
+            <summary>
+            HP multiplier for a <see cref="F:osu.Game.Rulesets.Scoring.HitResult.Miss"/>.
+            </summary>
+        </member>
+        <member name="T:osu.Game.Rulesets.Taiko.UI.DrawableTaikoJudgement">
+            <summary>
+            Text that is shown as judgement when a hit object is hit or missed.
+            </summary>
+        </member>
+        <member name="M:osu.Game.Rulesets.Taiko.UI.DrawableTaikoJudgement.#ctor(osu.Game.Rulesets.Judgements.JudgementResult,osu.Game.Rulesets.Objects.Drawables.DrawableHitObject)">
+            <summary>
+            Creates a new judgement text.
+            </summary>
+            <param name="judgedObject">The object which is being judged.</param>
+            <param name="result">The judgement to visualise.</param>
+        </member>
+        <member name="T:osu.Game.Rulesets.Taiko.UI.HitExplosion">
+            <summary>
+            A circle explodes from the hit target to indicate a hitobject has been hit.
+            </summary>
+        </member>
+        <member name="M:osu.Game.Rulesets.Taiko.UI.HitExplosion.VisualiseSecondHit">
+            <summary>
+            Transforms this hit explosion to visualise a secondary hit.
+            </summary>
+        </member>
+        <member name="T:osu.Game.Rulesets.Taiko.UI.HitTarget">
+            <summary>
+            A component that is displayed at the hit position in the taiko playfield.
+            </summary>
+        </member>
+        <member name="F:osu.Game.Rulesets.Taiko.UI.HitTarget.border_thickness">
+            <summary>
+            Thickness of all drawn line pieces.
+            </summary>
+        </member>
+        <member name="T:osu.Game.Rulesets.Taiko.UI.InputDrum">
+            <summary>
+            A component of the playfield that captures input and displays input as a drum.
+            </summary>
+        </member>
+        <member name="T:osu.Game.Rulesets.Taiko.UI.InputDrum.TaikoHalfDrum">
+            <summary>
+            A half-drum. Contains one centre and one rim hit.
+            </summary>
+        </member>
+        <member name="F:osu.Game.Rulesets.Taiko.UI.InputDrum.TaikoHalfDrum.RimAction">
+            <summary>
+            The key to be used for the rim of the half-drum.
+            </summary>
+        </member>
+        <member name="F:osu.Game.Rulesets.Taiko.UI.InputDrum.TaikoHalfDrum.CentreAction">
+            <summary>
+            The key to be used for the centre of the half-drum.
+            </summary>
+        </member>
+        <member name="F:osu.Game.Rulesets.Taiko.UI.TaikoPlayfield.DEFAULT_HEIGHT">
+            <summary>
+            Default height of a <see cref="T:osu.Game.Rulesets.Taiko.UI.TaikoPlayfield"/> when inside a <see cref="T:osu.Game.Rulesets.Taiko.UI.DrawableTaikoRuleset"/>.
+            </summary>
+        </member>
+        <member name="F:osu.Game.Rulesets.Taiko.UI.TaikoPlayfield.HIT_TARGET_OFFSET">
+            <summary>
+            The offset from <see cref="F:osu.Game.Rulesets.Taiko.UI.TaikoPlayfield.left_area_size"/> which the center of the hit target lies at.
+            </summary>
+        </member>
+        <member name="F:osu.Game.Rulesets.Taiko.UI.TaikoPlayfield.left_area_size">
+            <summary>
+            The size of the left area of the playfield. This area contains the input drum.
+            </summary>
+        </member>
+    </members>
+</doc>
