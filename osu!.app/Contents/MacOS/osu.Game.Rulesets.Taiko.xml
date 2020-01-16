@@ -250,22 +250,23 @@
             Strong hit objects give more points for hitting the hit object with both keys.
             </summary>
         </member>
-        <member name="F:osu.Game.Rulesets.Taiko.Scoring.TaikoScoreProcessor.object_count_factor">
+        <member name="T:osu.Game.Rulesets.Taiko.Scoring.TaikoHealthProcessor">
             <summary>
-            A value used for calculating <see cref="F:osu.Game.Rulesets.Taiko.Scoring.TaikoScoreProcessor.hpMultiplier"/>.
+            A <see cref="T:osu.Game.Rulesets.Scoring.HealthProcessor"/> for the taiko ruleset.
+            Taiko fails if the player has not half-filled their health by the end of the map.
             </summary>
         </member>
-        <member name="P:osu.Game.Rulesets.Taiko.Scoring.TaikoScoreProcessor.DefaultFailCondition">
+        <member name="F:osu.Game.Rulesets.Taiko.Scoring.TaikoHealthProcessor.object_count_factor">
             <summary>
-            Taiko fails at the end of the map if the player has not half-filled their HP bar.
+            A value used for calculating <see cref="F:osu.Game.Rulesets.Taiko.Scoring.TaikoHealthProcessor.hpMultiplier"/>.
             </summary>
         </member>
-        <member name="F:osu.Game.Rulesets.Taiko.Scoring.TaikoScoreProcessor.hpMultiplier">
+        <member name="F:osu.Game.Rulesets.Taiko.Scoring.TaikoHealthProcessor.hpMultiplier">
             <summary>
             HP multiplier for a successful <see cref="T:osu.Game.Rulesets.Scoring.HitResult"/>.
             </summary>
         </member>
-        <member name="F:osu.Game.Rulesets.Taiko.Scoring.TaikoScoreProcessor.hpMissMultiplier">
+        <member name="F:osu.Game.Rulesets.Taiko.Scoring.TaikoHealthProcessor.hpMissMultiplier">
             <summary>
             HP multiplier for a <see cref="F:osu.Game.Rulesets.Scoring.HitResult.Miss"/>.
             </summary>

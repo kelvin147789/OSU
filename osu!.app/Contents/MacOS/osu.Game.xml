@@ -9,11 +9,6 @@
             Describes a gameplay hit sample.
             </summary>
         </member>
-        <member name="F:osu.Game.Audio.HitSampleInfo.Namespace">
-            <summary>
-            An optional ruleset namespace.
-            </summary>
-        </member>
         <member name="F:osu.Game.Audio.HitSampleInfo.Bank">
             <summary>
             The bank to load the sample from.
@@ -140,7 +135,7 @@
             </summary>
             <typeparam name="T">The type of HitObject stored in the Beatmap.</typeparam>
         </member>
-        <member name="P:osu.Game.Beatmaps.BeatmapConverter`1.CanConvert">
+        <member name="M:osu.Game.Beatmaps.BeatmapConverter`1.CanConvert">
             <summary>
             Whether <see cref="P:osu.Game.Beatmaps.BeatmapConverter`1.Beatmap"/> can be converted by this <see cref="T:osu.Game.Beatmaps.BeatmapConverter`1"/>.
             </summary>
@@ -157,11 +152,6 @@
             </summary>
             <param name="original">The un-converted Beatmap.</param>
             <returns>The converted Beatmap.</returns>
-        </member>
-        <member name="P:osu.Game.Beatmaps.BeatmapConverter`1.ValidConversionTypes">
-            <summary>
-            The types of HitObjects that can be converted to be used for this Beatmap.
-            </summary>
         </member>
         <member name="M:osu.Game.Beatmaps.BeatmapConverter`1.CreateBeatmap">
             <summary>
@@ -772,6 +762,16 @@
             <typeparam name="T">Type of object being decoded.</typeparam>
             <param name="constructor">A function that constructs the fallback<see cref="T:osu.Game.Beatmaps.Formats.Decoder"/>.</param>
         </member>
+        <member name="P:osu.Game.Beatmaps.Formats.IHasComboColours.ComboColours">
+            <summary>
+            Retrieves the list of combo colours for presentation only.
+            </summary>
+        </member>
+        <member name="M:osu.Game.Beatmaps.Formats.IHasComboColours.AddComboColours(osuTK.Graphics.Color4[])">
+            <summary>
+            Adds combo colours to the list.
+            </summary>
+        </member>
         <member name="F:osu.Game.Beatmaps.Formats.LegacyBeatmapDecoder.ApplyOffsets">
             <summary>
             Whether or not beatmap or runtime offsets should be applied. Defaults on; only disable for testing purposes.
@@ -856,7 +856,7 @@
             The second argument contains the <see cref="T:osu.Game.Rulesets.Objects.HitObject"/>s that were output from the conversion process.
             </summary>
         </member>
-        <member name="P:osu.Game.Beatmaps.IBeatmapConverter.CanConvert">
+        <member name="M:osu.Game.Beatmaps.IBeatmapConverter.CanConvert">
             <summary>
             Whether <see cref="P:osu.Game.Beatmaps.IBeatmapConverter.Beatmap"/> can be converted by this <see cref="T:osu.Game.Beatmaps.IBeatmapConverter"/>.
             </summary>
@@ -1102,6 +1102,9 @@
             <summary>
             Create a SHA-2 hash from the provided archive based on file content of all files matching <see cref="P:osu.Game.Database.ArchiveModelManager`2.HashableFileTypes"/>.
             </summary>
+            <remarks>
+             In the case of no matching files, a hash will be generated from the passed archive's <see cref="F:osu.Game.IO.Archives.ArchiveReader.Name"/>.
+            </remarks>
         </member>
         <member name="M:osu.Game.Database.ArchiveModelManager`2.Import(`0,osu.Game.IO.Archives.ArchiveReader,System.Threading.CancellationToken)">
             <summary>
@@ -1526,7 +1529,7 @@
             </summary>
             <returns>The triangle particle.</returns>
         </member>
-        <member name="M:osu.Game.Graphics.Backgrounds.Triangles.CreateTriangleShade">
+        <member name="M:osu.Game.Graphics.Backgrounds.Triangles.CreateTriangleShade(System.Single)">
             <summary>
             Creates a shade of colour for the triangles.
             </summary>
@@ -1535,6 +1538,12 @@
         <member name="F:osu.Game.Graphics.Backgrounds.Triangles.TriangleParticle.Position">
             <summary>
             The position of the top vertex of the triangle.
+            </summary>
+        </member>
+        <member name="F:osu.Game.Graphics.Backgrounds.Triangles.TriangleParticle.ColourShade">
+            <summary>
+            The colour shade of the triangle.
+            This is needed for colour recalculation of visible triangles when <see cref="P:osu.Game.Graphics.Backgrounds.Triangles.ColourDark"/> or <see cref="P:osu.Game.Graphics.Backgrounds.Triangles.ColourLight"/> is changed.
             </summary>
         </member>
         <member name="F:osu.Game.Graphics.Backgrounds.Triangles.TriangleParticle.Colour">
@@ -3183,6 +3192,11 @@
             Handles playback of the global music track.
             </summary>
         </member>
+        <member name="F:osu.Game.Overlays.MusicController.restart_cutoff_point">
+            <summary>
+            Point in time after which the current track will be restarted on triggering a "previous track" action.
+            </summary>
+        </member>
         <member name="E:osu.Game.Overlays.MusicController.TrackChanged">
             <summary>
             Fired when the global <see cref="T:osu.Game.Beatmaps.WorkingBeatmap"/> has changed.
@@ -3218,11 +3232,11 @@
             </summary>
             <returns>Whether the operation was successful.</returns>
         </member>
-        <member name="M:osu.Game.Overlays.MusicController.PrevTrack">
+        <member name="M:osu.Game.Overlays.MusicController.PreviousTrack">
             <summary>
-            Play the previous track.
+            Play the previous track or restart the current track if it's current time below <see cref="F:osu.Game.Overlays.MusicController.restart_cutoff_point"/>
             </summary>
-            <returns>Whether the operation was successful.</returns>
+            <returns>The <see cref="T:osu.Game.Overlays.PreviousTrackResult"/> that indicate the decided action</returns>
         </member>
         <member name="M:osu.Game.Overlays.MusicController.NextTrack">
             <summary>
@@ -3537,11 +3551,6 @@
             All the <see cref="T:osu.Game.Rulesets.Objects.Drawables.DrawableHitObject"/>s.
             </summary>
         </member>
-        <member name="P:osu.Game.Rulesets.Edit.HitObjectComposer.EditorBeatmap">
-            <summary>
-            An editor-specific beatmap, exposing mutation events.
-            </summary>
-        </member>
         <member name="P:osu.Game.Rulesets.Edit.HitObjectComposer.CursorInPlacementArea">
             <summary>
             Whether the user's cursor is currently in an area of the <see cref="T:osu.Game.Rulesets.Edit.HitObjectComposer"/> that is valid for placement.
@@ -3704,6 +3713,11 @@
             The screen-space quad that outlines this <see cref="T:osu.Game.Rulesets.Edit.SelectionBlueprint"/> for selections.
             </summary>
         </member>
+        <member name="P:osu.Game.Rulesets.ILegacyRuleset.LegacyID">
+            <summary>
+            Identifies the server-side ID of a legacy ruleset.
+            </summary>
+        </member>
         <member name="T:osu.Game.Rulesets.Judgements.DrawableJudgement">
             <summary>
             A drawable object which visualises the hit result of a <see cref="T:osu.Game.Rulesets.Judgements.Judgement"/>.
@@ -3729,6 +3743,12 @@
         <member name="T:osu.Game.Rulesets.Judgements.Judgement">
             <summary>
             The scoring information provided by a <see cref="T:osu.Game.Rulesets.Objects.HitObject"/>.
+            </summary>
+        </member>
+        <member name="F:osu.Game.Rulesets.Judgements.Judgement.DEFAULT_MAX_HEALTH_INCREASE">
+            <summary>
+            The default health increase for a maximum judgement, as a proportion of total health.
+            By default, each maximum judgement restores 5% of total health.
             </summary>
         </member>
         <member name="P:osu.Game.Rulesets.Judgements.Judgement.MaxResult">
@@ -3895,6 +3915,19 @@
             An interface for mods that make general adjustments to difficulty.
             </summary>
         </member>
+        <member name="M:osu.Game.Rulesets.Mods.IApplicableToDifficulty.ReadFromDifficulty(osu.Game.Beatmaps.BeatmapDifficulty)">
+            <summary>
+            Called when a beatmap is changed. Can be used to read default values.
+            Any changes made will not be preserved.
+            </summary>
+            <param name="difficulty">The difficulty to read from.</param>
+        </member>
+        <member name="M:osu.Game.Rulesets.Mods.IApplicableToDifficulty.ApplyToDifficulty(osu.Game.Beatmaps.BeatmapDifficulty)">
+            <summary>
+            Called post beatmap conversion. Can be used to apply changes to difficulty attributes.
+            </summary>
+            <param name="difficulty">The difficulty to mutate.</param>
+        </member>
         <member name="T:osu.Game.Rulesets.Mods.IApplicableToDrawableHitObjects">
             <summary>
             An interface for <see cref="T:osu.Game.Rulesets.Mods.Mod"/>s that can be applied to <see cref="T:osu.Game.Rulesets.Objects.Drawables.DrawableHitObject"/>s.
@@ -3917,6 +3950,11 @@
             Applies this <see cref="T:osu.Game.Rulesets.Mods.IApplicableToDrawableRuleset`1"/> to a <see cref="T:osu.Game.Rulesets.UI.DrawableRuleset`1"/>.
             </summary>
             <param name="drawableRuleset">The <see cref="T:osu.Game.Rulesets.UI.DrawableRuleset`1"/> to apply to.</param>
+        </member>
+        <member name="M:osu.Game.Rulesets.Mods.IApplicableToHealthProcessor.ApplyToHealthProcessor(osu.Game.Rulesets.Scoring.HealthProcessor)">
+            <summary>
+            Provide a <see cref="T:osu.Game.Rulesets.Scoring.HealthProcessor"/> to a mod. Called once on initialisation of a play instance.
+            </summary>
         </member>
         <member name="T:osu.Game.Rulesets.Mods.IApplicableToHitObject">
             <summary>
@@ -4033,6 +4071,24 @@
             <summary>
             We never fail, 'yo.
             </summary>
+        </member>
+        <member name="M:osu.Game.Rulesets.Mods.ModDifficultyAdjust.TransferSettings(osu.Game.Beatmaps.BeatmapDifficulty)">
+            <summary>
+            Transfer initial settings from the beatmap to settings.
+            </summary>
+            <param name="difficulty">The beatmap's initial values.</param>
+        </member>
+        <member name="M:osu.Game.Rulesets.Mods.ModDifficultyAdjust.TransferSetting``1(osu.Framework.Bindables.BindableNumber{``0},``0)">
+            <summary>
+            Transfer a setting from <see cref="T:osu.Game.Beatmaps.BeatmapDifficulty"/> to a configuration bindable.
+            Only performs the transfer if the user it not currently overriding..
+            </summary>
+        </member>
+        <member name="M:osu.Game.Rulesets.Mods.ModDifficultyAdjust.ApplySettings(osu.Game.Beatmaps.BeatmapDifficulty)">
+            <summary>
+            Apply all custom settings to the provided beatmap.
+            </summary>
+            <param name="difficulty">The beatmap to have settings applied.</param>
         </member>
         <member name="T:osu.Game.Rulesets.Mods.ModNoMod">
             <summary>
@@ -4849,11 +4905,17 @@
             <exception cref="T:osu.Game.Rulesets.UI.BeatmapInvalidForRulesetException">Unable to successfully load the beatmap to be usable with this ruleset.</exception>
             <returns></returns>
         </member>
-        <member name="M:osu.Game.Rulesets.Ruleset.CreateScoreProcessor(osu.Game.Beatmaps.IBeatmap)">
+        <member name="M:osu.Game.Rulesets.Ruleset.CreateScoreProcessor">
             <summary>
-            Creates a <see cref="T:osu.Game.Rulesets.Scoring.ScoreProcessor"/> for a beatmap converted to this ruleset.
+            Creates a <see cref="T:osu.Game.Rulesets.Scoring.ScoreProcessor"/> for this <see cref="T:osu.Game.Rulesets.Ruleset"/>.
             </summary>
             <returns>The score processor.</returns>
+        </member>
+        <member name="M:osu.Game.Rulesets.Ruleset.CreateHealthProcessor(System.Double)">
+            <summary>
+            Creates a <see cref="T:osu.Game.Rulesets.Scoring.HealthProcessor"/> for this <see cref="T:osu.Game.Rulesets.Ruleset"/>.
+            </summary>
+            <returns>The health processor.</returns>
         </member>
         <member name="M:osu.Game.Rulesets.Ruleset.CreateBeatmapConverter(osu.Game.Beatmaps.IBeatmap)">
             <summary>
@@ -4875,14 +4937,14 @@
             </summary>
             <param name="settings">The <see cref="T:osu.Game.Configuration.SettingsStore"/> to store the settings.</param>
         </member>
-        <member name="P:osu.Game.Rulesets.Ruleset.LegacyID">
-            <summary>
-            Do not override this unless you are a legacy mode.
-            </summary>
-        </member>
         <member name="P:osu.Game.Rulesets.Ruleset.ShortName">
             <summary>
             A unique short name to reference this ruleset in online requests.
+            </summary>
+        </member>
+        <member name="P:osu.Game.Rulesets.Ruleset.PlayingVerb">
+            <summary>
+            The playing verb to be shown in the <see cref="P:osu.Game.Users.UserActivity.SoloGame.Status"/>.
             </summary>
         </member>
         <member name="P:osu.Game.Rulesets.Ruleset.AvailableVariants">
@@ -4910,12 +4972,6 @@
             for conversion use.
             </summary>
             <returns>An empty frame for the current ruleset, or null if unsupported.</returns>
-        </member>
-        <member name="M:osu.Game.Rulesets.Ruleset.createRulesetInfo">
-            <summary>
-            Create a ruleset info based on this ruleset.
-            </summary>
-            <returns>A filled <see cref="F:osu.Game.Rulesets.Ruleset.RulesetInfo"/>.</returns>
         </member>
         <member name="T:osu.Game.Rulesets.RulesetConfigCache">
             <summary>
@@ -4948,6 +5004,90 @@
         <member name="P:osu.Game.Rulesets.RulesetStore.AvailableRulesets">
             <summary>
             All available rulesets.
+            </summary>
+        </member>
+        <member name="T:osu.Game.Rulesets.Scoring.AccumulatingHealthProcessor">
+            <summary>
+            A <see cref="T:osu.Game.Rulesets.Scoring.HealthProcessor"/> that accumulates health and causes a fail if the final health
+            is less than a value required to pass the beatmap.
+            </summary>
+        </member>
+        <member name="M:osu.Game.Rulesets.Scoring.AccumulatingHealthProcessor.#ctor(System.Double)">
+            <summary>
+            Creates a new <see cref="T:osu.Game.Rulesets.Scoring.AccumulatingHealthProcessor"/>.
+            </summary>
+            <param name="requiredHealth">The minimum amount of health required to beatmap.</param>
+        </member>
+        <member name="T:osu.Game.Rulesets.Scoring.DrainingHealthProcessor">
+            <summary>
+            A <see cref="T:osu.Game.Rulesets.Scoring.HealthProcessor"/> which continuously drains health.<br />
+            At HP=0, the minimum health reached for a perfect play is 95%.<br />
+            At HP=5, the minimum health reached for a perfect play is 70%.<br />
+            At HP=10, the minimum health reached for a perfect play is 30%.
+            </summary>
+        </member>
+        <member name="F:osu.Game.Rulesets.Scoring.DrainingHealthProcessor.minimum_health_error">
+            <summary>
+            A reasonable allowable error for the minimum health offset from <see cref="F:osu.Game.Rulesets.Scoring.DrainingHealthProcessor.targetMinimumHealth"/>. A 1% error is unnoticeable.
+            </summary>
+        </member>
+        <member name="F:osu.Game.Rulesets.Scoring.DrainingHealthProcessor.min_health_target">
+            <summary>
+            The minimum health target at an HP drain rate of 0.
+            </summary>
+        </member>
+        <member name="F:osu.Game.Rulesets.Scoring.DrainingHealthProcessor.mid_health_target">
+            <summary>
+            The minimum health target at an HP drain rate of 5.
+            </summary>
+        </member>
+        <member name="F:osu.Game.Rulesets.Scoring.DrainingHealthProcessor.max_health_target">
+            <summary>
+            The minimum health target at an HP drain rate of 10.
+            </summary>
+        </member>
+        <member name="M:osu.Game.Rulesets.Scoring.DrainingHealthProcessor.#ctor(System.Double)">
+            <summary>
+            Creates a new <see cref="T:osu.Game.Rulesets.Scoring.DrainingHealthProcessor"/>.
+            </summary>
+            <param name="drainStartTime">The time after which draining should begin.</param>
+        </member>
+        <member name="E:osu.Game.Rulesets.Scoring.HealthProcessor.Failed">
+            <summary>
+            Invoked when the <see cref="T:osu.Game.Rulesets.Scoring.ScoreProcessor"/> is in a failed state.
+            Return true if the fail was permitted.
+            </summary>
+        </member>
+        <member name="E:osu.Game.Rulesets.Scoring.HealthProcessor.FailConditions">
+            <summary>
+            Additional conditions on top of <see cref="P:osu.Game.Rulesets.Scoring.HealthProcessor.DefaultFailCondition"/> that cause a failing state.
+            </summary>
+        </member>
+        <member name="F:osu.Game.Rulesets.Scoring.HealthProcessor.Health">
+            <summary>
+            The current health.
+            </summary>
+        </member>
+        <member name="F:osu.Game.Rulesets.Scoring.HealthProcessor.IsBreakTime">
+            <summary>
+            Whether gameplay is currently in a break.
+            </summary>
+        </member>
+        <member name="P:osu.Game.Rulesets.Scoring.HealthProcessor.HasFailed">
+            <summary>
+            Whether this ScoreProcessor has already triggered the failed state.
+            </summary>
+        </member>
+        <member name="M:osu.Game.Rulesets.Scoring.HealthProcessor.GetHealthIncreaseFor(osu.Game.Rulesets.Judgements.JudgementResult)">
+            <summary>
+            Retrieves the health increase for a <see cref="T:osu.Game.Rulesets.Judgements.JudgementResult"/>.
+            </summary>
+            <param name="result">The <see cref="T:osu.Game.Rulesets.Judgements.JudgementResult"/>.</param>
+            <returns>The health increase.</returns>
+        </member>
+        <member name="P:osu.Game.Rulesets.Scoring.HealthProcessor.DefaultFailCondition">
+            <summary>
+            The default conditions for failing.
             </summary>
         </member>
         <member name="F:osu.Game.Rulesets.Scoring.HitResult.None">
@@ -5039,27 +5179,83 @@
             Defaults are provided but can be overridden to customise for a ruleset.
             </summary>
         </member>
-        <member name="E:osu.Game.Rulesets.Scoring.ScoreProcessor.Failed">
+        <member name="E:osu.Game.Rulesets.Scoring.JudgementProcessor.AllJudged">
             <summary>
-            Invoked when the <see cref="T:osu.Game.Rulesets.Scoring.ScoreProcessor"/> is in a failed state.
-            This may occur regardless of whether an <see cref="E:osu.Game.Rulesets.Scoring.ScoreProcessor.AllJudged"/> event is invoked.
-            Return true if the fail was permitted.
+            Invoked when all <see cref="T:osu.Game.Rulesets.Objects.HitObject"/>s have been judged by this <see cref="T:osu.Game.Rulesets.Scoring.JudgementProcessor"/>.
             </summary>
         </member>
-        <member name="E:osu.Game.Rulesets.Scoring.ScoreProcessor.AllJudged">
+        <member name="E:osu.Game.Rulesets.Scoring.JudgementProcessor.NewJudgement">
             <summary>
-            Invoked when all <see cref="T:osu.Game.Rulesets.Objects.HitObject"/>s have been judged.
+            Invoked when a new judgement has occurred. This occurs after the judgement has been processed by this <see cref="T:osu.Game.Rulesets.Scoring.JudgementProcessor"/>.
             </summary>
         </member>
-        <member name="E:osu.Game.Rulesets.Scoring.ScoreProcessor.NewJudgement">
+        <member name="P:osu.Game.Rulesets.Scoring.JudgementProcessor.MaxHits">
             <summary>
-            Invoked when a new judgement has occurred. This occurs after the judgement has been processed by the <see cref="T:osu.Game.Rulesets.Scoring.ScoreProcessor"/>.
+            The maximum number of hits that can be judged.
             </summary>
         </member>
-        <member name="E:osu.Game.Rulesets.Scoring.ScoreProcessor.FailConditions">
+        <member name="P:osu.Game.Rulesets.Scoring.JudgementProcessor.JudgedHits">
             <summary>
-            Additional conditions on top of <see cref="P:osu.Game.Rulesets.Scoring.ScoreProcessor.DefaultFailCondition"/> that cause a failing state.
+            The total number of judged <see cref="T:osu.Game.Rulesets.Objects.HitObject"/>s at the current point in time.
             </summary>
+        </member>
+        <member name="P:osu.Game.Rulesets.Scoring.JudgementProcessor.HasCompleted">
+            <summary>
+            Whether all <see cref="T:osu.Game.Rulesets.Judgements.Judgement"/>s have been processed.
+            </summary>
+        </member>
+        <member name="M:osu.Game.Rulesets.Scoring.JudgementProcessor.ApplyBeatmap(osu.Game.Beatmaps.IBeatmap)">
+            <summary>
+            Applies a <see cref="T:osu.Game.Beatmaps.IBeatmap"/> to this <see cref="T:osu.Game.Rulesets.Scoring.ScoreProcessor"/>.
+            </summary>
+            <param name="beatmap">The <see cref="T:osu.Game.Beatmaps.IBeatmap"/> to read properties from.</param>
+        </member>
+        <member name="M:osu.Game.Rulesets.Scoring.JudgementProcessor.ApplyResult(osu.Game.Rulesets.Judgements.JudgementResult)">
+            <summary>
+            Applies the score change of a <see cref="T:osu.Game.Rulesets.Judgements.JudgementResult"/> to this <see cref="T:osu.Game.Rulesets.Scoring.ScoreProcessor"/>.
+            </summary>
+            <param name="result">The <see cref="T:osu.Game.Rulesets.Judgements.JudgementResult"/> to apply.</param>
+        </member>
+        <member name="M:osu.Game.Rulesets.Scoring.JudgementProcessor.RevertResult(osu.Game.Rulesets.Judgements.JudgementResult)">
+            <summary>
+            Reverts the score change of a <see cref="T:osu.Game.Rulesets.Judgements.JudgementResult"/> that was applied to this <see cref="T:osu.Game.Rulesets.Scoring.ScoreProcessor"/>.
+            </summary>
+            <param name="result">The judgement scoring result.</param>
+        </member>
+        <member name="M:osu.Game.Rulesets.Scoring.JudgementProcessor.ApplyResultInternal(osu.Game.Rulesets.Judgements.JudgementResult)">
+            <summary>
+            Applies the score change of a <see cref="T:osu.Game.Rulesets.Judgements.JudgementResult"/> to this <see cref="T:osu.Game.Rulesets.Scoring.ScoreProcessor"/>.
+            </summary>
+            <remarks>
+            Any changes applied via this method can be reverted via <see cref="M:osu.Game.Rulesets.Scoring.JudgementProcessor.RevertResultInternal(osu.Game.Rulesets.Judgements.JudgementResult)"/>.
+            </remarks>
+            <param name="result">The <see cref="T:osu.Game.Rulesets.Judgements.JudgementResult"/> to apply.</param>
+        </member>
+        <member name="M:osu.Game.Rulesets.Scoring.JudgementProcessor.RevertResultInternal(osu.Game.Rulesets.Judgements.JudgementResult)">
+            <summary>
+            Reverts the score change of a <see cref="T:osu.Game.Rulesets.Judgements.JudgementResult"/> that was applied to this <see cref="T:osu.Game.Rulesets.Scoring.ScoreProcessor"/> via <see cref="M:osu.Game.Rulesets.Scoring.JudgementProcessor.ApplyResultInternal(osu.Game.Rulesets.Judgements.JudgementResult)"/>.
+            </summary>
+            <param name="result">The judgement scoring result.</param>
+        </member>
+        <member name="M:osu.Game.Rulesets.Scoring.JudgementProcessor.Reset(System.Boolean)">
+            <summary>
+            Resets this <see cref="T:osu.Game.Rulesets.Scoring.JudgementProcessor"/> to a default state.
+            </summary>
+            <param name="storeResults">Whether to store the current state of the <see cref="T:osu.Game.Rulesets.Scoring.JudgementProcessor"/> for future use.</param>
+        </member>
+        <member name="M:osu.Game.Rulesets.Scoring.JudgementProcessor.CreateResult(osu.Game.Rulesets.Objects.HitObject,osu.Game.Rulesets.Judgements.Judgement)">
+            <summary>
+            Creates the <see cref="T:osu.Game.Rulesets.Judgements.JudgementResult"/> that represents the scoring result for a <see cref="T:osu.Game.Rulesets.Objects.HitObject"/>.
+            </summary>
+            <param name="hitObject">The <see cref="T:osu.Game.Rulesets.Objects.HitObject"/> which was judged.</param>
+            <param name="judgement">The <see cref="T:osu.Game.Rulesets.Judgements.Judgement"/> that provides the scoring information.</param>
+        </member>
+        <member name="M:osu.Game.Rulesets.Scoring.JudgementProcessor.SimulateAutoplay(osu.Game.Beatmaps.IBeatmap)">
+            <summary>
+            Simulates an autoplay of the <see cref="T:osu.Game.Beatmaps.IBeatmap"/> to determine scoring values.
+            </summary>
+            <remarks>This provided temporarily. DO NOT USE.</remarks>
+            <param name="beatmap">The <see cref="T:osu.Game.Beatmaps.IBeatmap"/> to simulate.</param>
         </member>
         <member name="F:osu.Game.Rulesets.Scoring.ScoreProcessor.TotalScore">
             <summary>
@@ -5069,11 +5265,6 @@
         <member name="F:osu.Game.Rulesets.Scoring.ScoreProcessor.Accuracy">
             <summary>
             The current accuracy.
-            </summary>
-        </member>
-        <member name="F:osu.Game.Rulesets.Scoring.ScoreProcessor.Health">
-            <summary>
-            The current health.
             </summary>
         </member>
         <member name="F:osu.Game.Rulesets.Scoring.ScoreProcessor.Combo">
@@ -5101,81 +5292,6 @@
             The <see cref="T:osu.Game.Rulesets.Scoring.ScoringMode"/> used to calculate scores.
             </summary>
         </member>
-        <member name="P:osu.Game.Rulesets.Scoring.ScoreProcessor.HasCompleted">
-            <summary>
-            Whether all <see cref="T:osu.Game.Rulesets.Judgements.Judgement"/>s have been processed.
-            </summary>
-        </member>
-        <member name="P:osu.Game.Rulesets.Scoring.ScoreProcessor.HasFailed">
-            <summary>
-            Whether this ScoreProcessor has already triggered the failed state.
-            </summary>
-        </member>
-        <member name="P:osu.Game.Rulesets.Scoring.ScoreProcessor.MaxHits">
-            <summary>
-            The maximum number of hits that can be judged.
-            </summary>
-        </member>
-        <member name="P:osu.Game.Rulesets.Scoring.ScoreProcessor.JudgedHits">
-            <summary>
-            The total number of judged <see cref="T:osu.Game.Rulesets.Objects.HitObject"/>s at the current point in time.
-            </summary>
-        </member>
-        <member name="M:osu.Game.Rulesets.Scoring.ScoreProcessor.ApplyBeatmap(osu.Game.Beatmaps.IBeatmap)">
-            <summary>
-            Applies any properties of the <see cref="T:osu.Game.Beatmaps.IBeatmap"/> which affect scoring to this <see cref="T:osu.Game.Rulesets.Scoring.ScoreProcessor"/>.
-            </summary>
-            <param name="beatmap">The <see cref="T:osu.Game.Beatmaps.IBeatmap"/> to read properties from.</param>
-        </member>
-        <member name="M:osu.Game.Rulesets.Scoring.ScoreProcessor.SimulateAutoplay(osu.Game.Beatmaps.IBeatmap)">
-            <summary>
-            Simulates an autoplay of the <see cref="T:osu.Game.Beatmaps.IBeatmap"/> to determine scoring values.
-            </summary>
-            <remarks>This provided temporarily. DO NOT USE.</remarks>
-            <param name="beatmap">The <see cref="T:osu.Game.Beatmaps.IBeatmap"/> to simulate.</param>
-        </member>
-        <member name="M:osu.Game.Rulesets.Scoring.ScoreProcessor.ApplyResult(osu.Game.Rulesets.Judgements.JudgementResult)">
-            <summary>
-            Applies the score change of a <see cref="T:osu.Game.Rulesets.Judgements.JudgementResult"/> to this <see cref="T:osu.Game.Rulesets.Scoring.ScoreProcessor"/>.
-            </summary>
-            <param name="result">The <see cref="T:osu.Game.Rulesets.Judgements.JudgementResult"/> to apply.</param>
-        </member>
-        <member name="M:osu.Game.Rulesets.Scoring.ScoreProcessor.RevertResult(osu.Game.Rulesets.Judgements.JudgementResult)">
-            <summary>
-            Reverts the score change of a <see cref="T:osu.Game.Rulesets.Judgements.JudgementResult"/> that was applied to this <see cref="T:osu.Game.Rulesets.Scoring.ScoreProcessor"/>.
-            </summary>
-            <param name="result">The judgement scoring result.</param>
-        </member>
-        <member name="M:osu.Game.Rulesets.Scoring.ScoreProcessor.ApplyResultInternal(osu.Game.Rulesets.Judgements.JudgementResult)">
-            <summary>
-            Applies the score change of a <see cref="T:osu.Game.Rulesets.Judgements.JudgementResult"/> to this <see cref="T:osu.Game.Rulesets.Scoring.ScoreProcessor"/>.
-            </summary>
-            <remarks>
-            Any changes applied via this method can be reverted via <see cref="M:osu.Game.Rulesets.Scoring.ScoreProcessor.RevertResultInternal(osu.Game.Rulesets.Judgements.JudgementResult)"/>.
-            </remarks>
-            <param name="result">The <see cref="T:osu.Game.Rulesets.Judgements.JudgementResult"/> to apply.</param>
-        </member>
-        <member name="M:osu.Game.Rulesets.Scoring.ScoreProcessor.RevertResultInternal(osu.Game.Rulesets.Judgements.JudgementResult)">
-            <summary>
-            Reverts the score change of a <see cref="T:osu.Game.Rulesets.Judgements.JudgementResult"/> that was applied to this <see cref="T:osu.Game.Rulesets.Scoring.ScoreProcessor"/> via <see cref="M:osu.Game.Rulesets.Scoring.ScoreProcessor.ApplyResultInternal(osu.Game.Rulesets.Judgements.JudgementResult)"/>.
-            </summary>
-            <param name="result">The judgement scoring result.</param>
-        </member>
-        <member name="M:osu.Game.Rulesets.Scoring.ScoreProcessor.HealthAdjustmentFactorFor(osu.Game.Rulesets.Judgements.JudgementResult)">
-            <summary>
-            An adjustment factor which is multiplied into the health increase provided by a <see cref="T:osu.Game.Rulesets.Judgements.JudgementResult"/>.
-            </summary>
-            <param name="result">The <see cref="T:osu.Game.Rulesets.Judgements.JudgementResult"/> for which the adjustment should apply.</param>
-            <returns>The adjustment factor.</returns>
-        </member>
-        <member name="M:osu.Game.Rulesets.Scoring.ScoreProcessor.updateFailed(osu.Game.Rulesets.Judgements.JudgementResult)">
-            <summary>
-            Checks if the score is in a failed state and notifies subscribers.
-            <para>
-            This can only ever notify subscribers once.
-            </para>
-            </summary>
-        </member>
         <member name="M:osu.Game.Rulesets.Scoring.ScoreProcessor.Reset(System.Boolean)">
             <summary>
             Resets this ScoreProcessor to a default state.
@@ -5187,22 +5303,10 @@
             Retrieve a score populated with data for the current play this processor is responsible for.
             </summary>
         </member>
-        <member name="P:osu.Game.Rulesets.Scoring.ScoreProcessor.DefaultFailCondition">
-            <summary>
-            The default conditions for failing.
-            </summary>
-        </member>
         <member name="M:osu.Game.Rulesets.Scoring.ScoreProcessor.CreateHitWindows">
             <summary>
             Create a <see cref="T:osu.Game.Rulesets.Scoring.HitWindows"/> for this processor.
             </summary>
-        </member>
-        <member name="M:osu.Game.Rulesets.Scoring.ScoreProcessor.CreateResult(osu.Game.Rulesets.Objects.HitObject,osu.Game.Rulesets.Judgements.Judgement)">
-            <summary>
-            Creates the <see cref="T:osu.Game.Rulesets.Judgements.JudgementResult"/> that represents the scoring result for a <see cref="T:osu.Game.Rulesets.Objects.HitObject"/>.
-            </summary>
-            <param name="hitObject">The <see cref="T:osu.Game.Rulesets.Objects.HitObject"/> which was judged.</param>
-            <param name="judgement">The <see cref="T:osu.Game.Rulesets.Judgements.Judgement"/> that provides the scoring information.</param>
         </member>
         <member name="T:osu.Game.Rulesets.Timing.MultiplierControlPoint">
             <summary>
@@ -5270,11 +5374,6 @@
         <member name="P:osu.Game.Rulesets.UI.DrawableRuleset`1.Playfield">
             <summary>
             The playfield.
-            </summary>
-        </member>
-        <member name="P:osu.Game.Rulesets.UI.DrawableRuleset`1.Overlays">
-            <summary>
-            Place to put drawables above hit objects but below UI.
             </summary>
         </member>
         <member name="P:osu.Game.Rulesets.UI.DrawableRuleset`1.FrameStablePlayback">
@@ -5369,6 +5468,11 @@
         <member name="P:osu.Game.Rulesets.UI.DrawableRuleset.Playfield">
             <summary>
             The playfield.
+            </summary>
+        </member>
+        <member name="P:osu.Game.Rulesets.UI.DrawableRuleset.Overlays">
+            <summary>
+            Place to put drawables above hit objects but below UI.
             </summary>
         </member>
         <member name="P:osu.Game.Rulesets.UI.DrawableRuleset.FrameStableClock">
@@ -6168,42 +6272,30 @@
             </summary>
             <param name="hitObject">The <see cref="T:osu.Game.Rulesets.Objects.HitObject"/> to delete.</param>
         </member>
-        <member name="E:osu.Game.Screens.Edit.EditorBeatmap`1.HitObjectAdded">
+        <member name="E:osu.Game.Screens.Edit.EditorBeatmap.HitObjectAdded">
             <summary>
-            Invoked when a <see cref="T:osu.Game.Rulesets.Objects.HitObject"/> is added to this <see cref="T:osu.Game.Screens.Edit.EditorBeatmap`1"/>.
+            Invoked when a <see cref="T:osu.Game.Rulesets.Objects.HitObject"/> is added to this <see cref="T:osu.Game.Screens.Edit.EditorBeatmap"/>.
             </summary>
         </member>
-        <member name="E:osu.Game.Screens.Edit.EditorBeatmap`1.HitObjectRemoved">
+        <member name="E:osu.Game.Screens.Edit.EditorBeatmap.HitObjectRemoved">
             <summary>
-            Invoked when a <see cref="T:osu.Game.Rulesets.Objects.HitObject"/> is removed from this <see cref="T:osu.Game.Screens.Edit.EditorBeatmap`1"/>.
+            Invoked when a <see cref="T:osu.Game.Rulesets.Objects.HitObject"/> is removed from this <see cref="T:osu.Game.Screens.Edit.EditorBeatmap"/>.
             </summary>
         </member>
-        <member name="E:osu.Game.Screens.Edit.EditorBeatmap`1.StartTimeChanged">
+        <member name="E:osu.Game.Screens.Edit.EditorBeatmap.StartTimeChanged">
             <summary>
-            Invoked when the start time of a <see cref="T:osu.Game.Rulesets.Objects.HitObject"/> in this <see cref="T:osu.Game.Screens.Edit.EditorBeatmap`1"/> was changed.
+            Invoked when the start time of a <see cref="T:osu.Game.Rulesets.Objects.HitObject"/> in this <see cref="T:osu.Game.Screens.Edit.EditorBeatmap"/> was changed.
             </summary>
         </member>
-        <member name="M:osu.Game.Screens.Edit.EditorBeatmap`1.Add(`0)">
+        <member name="M:osu.Game.Screens.Edit.EditorBeatmap.Add(osu.Game.Rulesets.Objects.HitObject)">
             <summary>
-            Adds a <see cref="T:osu.Game.Rulesets.Objects.HitObject"/> to this <see cref="T:osu.Game.Screens.Edit.EditorBeatmap`1"/>.
-            </summary>
-            <param name="hitObject">The <see cref="T:osu.Game.Rulesets.Objects.HitObject"/> to add.</param>
-        </member>
-        <member name="M:osu.Game.Screens.Edit.EditorBeatmap`1.Remove(`0)">
-            <summary>
-            Removes a <see cref="T:osu.Game.Rulesets.Objects.HitObject"/> from this <see cref="T:osu.Game.Screens.Edit.EditorBeatmap`1"/>.
+            Adds a <see cref="T:osu.Game.Rulesets.Objects.HitObject"/> to this <see cref="T:osu.Game.Screens.Edit.EditorBeatmap"/>.
             </summary>
             <param name="hitObject">The <see cref="T:osu.Game.Rulesets.Objects.HitObject"/> to add.</param>
         </member>
-        <member name="M:osu.Game.Screens.Edit.EditorBeatmap`1.Add(osu.Game.Rulesets.Objects.HitObject)">
+        <member name="M:osu.Game.Screens.Edit.EditorBeatmap.Remove(osu.Game.Rulesets.Objects.HitObject)">
             <summary>
-            Adds a <see cref="T:osu.Game.Rulesets.Objects.HitObject"/> to this <see cref="T:osu.Game.Screens.Edit.EditorBeatmap`1"/>.
-            </summary>
-            <param name="hitObject">The <see cref="T:osu.Game.Rulesets.Objects.HitObject"/> to add.</param>
-        </member>
-        <member name="M:osu.Game.Screens.Edit.EditorBeatmap`1.Remove(osu.Game.Rulesets.Objects.HitObject)">
-            <summary>
-            Removes a <see cref="T:osu.Game.Rulesets.Objects.HitObject"/> from this <see cref="T:osu.Game.Screens.Edit.EditorBeatmap`1"/>.
+            Removes a <see cref="T:osu.Game.Rulesets.Objects.HitObject"/> from this <see cref="T:osu.Game.Screens.Edit.EditorBeatmap"/>.
             </summary>
             <param name="hitObject">The <see cref="T:osu.Game.Rulesets.Objects.HitObject"/> to add.</param>
         </member>
@@ -6236,33 +6328,6 @@
         <member name="T:osu.Game.Screens.Edit.EditorScreen">
             <summary>
             TODO: eventually make this inherit Screen and add a local screen stack inside the Editor.
-            </summary>
-        </member>
-        <member name="T:osu.Game.Screens.Edit.IEditorBeatmap">
-            <summary>
-            Interface for the <see cref="T:osu.Game.Beatmaps.IBeatmap"/> contained by the see <see cref="T:osu.Game.Rulesets.Edit.HitObjectComposer"/>.
-            Children of <see cref="T:osu.Game.Rulesets.Edit.HitObjectComposer"/> may resolve the beatmap via <see cref="T:osu.Game.Screens.Edit.IEditorBeatmap"/> or <see cref="T:osu.Game.Screens.Edit.IEditorBeatmap`1"/>.
-            </summary>
-        </member>
-        <member name="E:osu.Game.Screens.Edit.IEditorBeatmap.HitObjectAdded">
-            <summary>
-            Invoked when a <see cref="T:osu.Game.Rulesets.Objects.HitObject"/> is added to this <see cref="T:osu.Game.Screens.Edit.IEditorBeatmap"/>.
-            </summary>
-        </member>
-        <member name="E:osu.Game.Screens.Edit.IEditorBeatmap.HitObjectRemoved">
-            <summary>
-            Invoked when a <see cref="T:osu.Game.Rulesets.Objects.HitObject"/> is removed from this <see cref="T:osu.Game.Screens.Edit.IEditorBeatmap"/>.
-            </summary>
-        </member>
-        <member name="E:osu.Game.Screens.Edit.IEditorBeatmap.StartTimeChanged">
-            <summary>
-            Invoked when the start time of a <see cref="T:osu.Game.Rulesets.Objects.HitObject"/> in this <see cref="T:osu.Game.Screens.Edit.EditorBeatmap`1"/> was changed.
-            </summary>
-        </member>
-        <member name="T:osu.Game.Screens.Edit.IEditorBeatmap`1">
-            <summary>
-            Interface for the <see cref="T:osu.Game.Beatmaps.IBeatmap"/> contained by the see <see cref="T:osu.Game.Rulesets.Edit.HitObjectComposer"/>.
-            Children of <see cref="T:osu.Game.Rulesets.Edit.HitObjectComposer"/> may resolve the beatmap via <see cref="T:osu.Game.Screens.Edit.IEditorBeatmap"/> or <see cref="T:osu.Game.Screens.Edit.IEditorBeatmap`1"/>.
             </summary>
         </member>
         <member name="P:osu.Game.Screens.IOsuScreen.DisallowExternalBeatmapRulesetChanges">
@@ -7054,6 +7119,11 @@
             An empty skin configuration.
             </summary>
         </member>
+        <member name="F:osu.Game.Skinning.SkinConfiguration.AllowDefaultComboColoursFallback">
+            <summary>
+            Whether to allow <see cref="P:osu.Game.Skinning.SkinConfiguration.DefaultComboColours"/> as a fallback list for when no combo colours are provided.
+            </summary>
+        </member>
         <member name="M:osu.Game.Skinning.SkinManager.GetAllUsableSkins">
             <summary>
             Returns a list of all usable <see cref="T:osu.Game.Skinning.SkinInfo"/>s. Includes the special default skin plus all skins from <see cref="M:osu.Game.Skinning.SkinManager.GetAllUserSkins"/>.
@@ -7327,6 +7397,11 @@
             <summary>
             An update manager that shows notifications if a newer release is detected.
             Installation is left up to the user.
+            </summary>
+        </member>
+        <member name="T:osu.Game.Updater.UpdateManager">
+            <summary>
+            An update manager which only shows notifications after an update completes.
             </summary>
         </member>
         <member name="F:osu.Game.Users.Country.FullName">
