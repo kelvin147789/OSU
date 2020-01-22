@@ -285,7 +285,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			fiTTlIbWv2LTSoMf+Nrj9LLldB0=
+			su997XKYtr45zVzVU612SX80z3k=
 			</data>
 			<key>requirement</key>
 			<string>identifier "Microsoft.Extensions.ObjectPool" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -2751,7 +2751,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			V6ElxwItP4XHBAk+K0Ow2PEg+PY=
+			xsSnmzGC1knuaziirFLZZtmv2Wo=
 			</data>
 			<key>requirement</key>
 			<string>identifier "osu!.deps" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -2760,7 +2760,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			ujGgBpMvbkmv4OV1yBU6d2UymwE=
+			hJFnx3iKio9RcnYI+LdffINf/g4=
 			</data>
 			<key>requirement</key>
 			<string>identifier "osu!" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -2769,7 +2769,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			h0jPjDRtDu5VyMwEo8bWDmKfswY=
+			qx+TU9YZGw3DVr3LkLAaSanmA4c=
 			</data>
 			<key>requirement</key>
 			<string>identifier "osu!" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -2796,7 +2796,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			o9wqU6v7tBdtRRv3ypaNeWGWbX8=
+			QT0az+qxTutSmzmDKRL6GFx4qu8=
 			</data>
 			<key>requirement</key>
 			<string>identifier "osu.Framework" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -2814,7 +2814,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			t0EAMGNafTJ3lFuksAC8u6nqDbU=
+			6Sm2KBJzFqWoIZ/+rwZBw/zHoKE=
 			</data>
 			<key>requirement</key>
 			<string>identifier "osu.Game.Rulesets.Catch" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -2823,7 +2823,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			/IVsxhsaRVYGXvbu26+WD/9ao20=
+			NlKfOKnp3uq5cU0dfciH3Rriqn0=
 			</data>
 			<key>requirement</key>
 			<string>identifier "osu.Game.Rulesets.Catch" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -2841,7 +2841,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			GcxeiRVw+XbQTkJPXJpZY302nL4=
+			1ic7Mi+8didfT/wgmLZ+SRR30k0=
 			</data>
 			<key>requirement</key>
 			<string>identifier "osu.Game.Rulesets.Mania" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -2850,7 +2850,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			cfoIvYnOgzcHhgvnCHwDo7j7HD0=
+			X9kyvWKqCznSuhTXW6qD27tZP/U=
 			</data>
 			<key>requirement</key>
 			<string>identifier "osu.Game.Rulesets.Mania" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -2868,7 +2868,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			BcR4bgwD29QjdbZflFzfHwkGzC0=
+			SVxl63nauSN3BW+ihh3cQlZj7PU=
 			</data>
 			<key>requirement</key>
 			<string>identifier "osu.Game.Rulesets.Osu" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -2877,7 +2877,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			1BtyckMOiEFSgDe4ukCQo8atyL4=
+			OnGI2K+oJgysEFN/qsBPLUVpyss=
 			</data>
 			<key>requirement</key>
 			<string>identifier "osu.Game.Rulesets.Osu" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -2895,7 +2895,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			oks+l2iEgrE11QN5vot0ugV2V8Y=
+			g0ZQj6TUznWhjDWFzAv+XIw9RSM=
 			</data>
 			<key>requirement</key>
 			<string>identifier "osu.Game.Rulesets.Taiko" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -2904,7 +2904,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			TCsYpifB3moVVR3aw91Qjt0mDeg=
+			mQM96O3AFkVPyQ1bqUVxwRsmJBw=
 			</data>
 			<key>requirement</key>
 			<string>identifier "osu.Game.Rulesets.Taiko" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -2922,7 +2922,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			iT/CvNUeGzxbulAZpCS+1PmwAko=
+			UlE0ZH9Jgm4VibDLArx2AezngNE=
 			</data>
 			<key>requirement</key>
 			<string>identifier "osu.Game.Tournament" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -2931,7 +2931,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			V5siOLs2L5XXRbBSgFeAoxTvsKM=
+			/A2gkl/M4Qnt/PYJcqyojbMYLac=
 			</data>
 			<key>requirement</key>
 			<string>identifier "osu.Game.Tournament" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -2949,7 +2949,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			6LO/v4bD3GAHb9hJDjh4A6HPijE=
+			9obg55D68VpGpafU2D+fTdlQNms=
 			</data>
 			<key>requirement</key>
 			<string>identifier "osu.Game" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -2958,7 +2958,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			V4m69zm9NOcSUbYL12JvqUQ4HN4=
+			QuzUBlo+Bw3yXYR4lZSUJvFeJ5c=
 			</data>
 			<key>requirement</key>
 			<string>identifier "osu.Game" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -2967,7 +2967,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			8Ced/TCOOs/GEwcX7on7Owkpg7Q=
+			6ZsRBhgFOZY2rhMO77yz2qezOrU=
 			</data>
 			<key>requirement</key>
 			<string>identifier "osu.Game" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>

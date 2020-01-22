@@ -267,6 +267,19 @@
             </summary>
             <param name="beatmap">The beatmap difficulty to restore.</param>
         </member>
+        <member name="M:osu.Game.Beatmaps.BeatmapManager.Save(osu.Game.Beatmaps.BeatmapInfo,osu.Game.Beatmaps.IBeatmap)">
+            <summary>
+            Saves an <see cref="T:osu.Game.Beatmaps.IBeatmap"/> file against a given <see cref="T:osu.Game.Beatmaps.BeatmapInfo"/>.
+            </summary>
+            <param name="info">The <see cref="T:osu.Game.Beatmaps.BeatmapInfo"/> to save the content against. The file referenced by <see cref="P:osu.Game.Beatmaps.BeatmapInfo.Path"/> will be replaced.</param>
+            <param name="beatmapContent">The <see cref="T:osu.Game.Beatmaps.IBeatmap"/> content to write.</param>
+        </member>
+        <member name="M:osu.Game.Beatmaps.BeatmapManager.Export(osu.Game.Beatmaps.BeatmapSetInfo)">
+            <summary>
+            Exports a <see cref="T:osu.Game.Beatmaps.BeatmapSetInfo"/> to an .osz package.
+            </summary>
+            <param name="set">The <see cref="T:osu.Game.Beatmaps.BeatmapSetInfo"/> to export.</param>
+        </member>
         <member name="M:osu.Game.Beatmaps.BeatmapManager.GetWorkingBeatmap(osu.Game.Beatmaps.BeatmapInfo,osu.Game.Beatmaps.WorkingBeatmap)">
             <summary>
             Retrieve a <see cref="T:osu.Game.Beatmaps.WorkingBeatmap"/> instance for the provided <see cref="T:osu.Game.Beatmaps.BeatmapInfo"/>
@@ -980,12 +993,6 @@
             <param name="time">The time to check in milliseconds.</param>
             <returns>Whether the time falls within this <see cref="T:osu.Game.Beatmaps.Timing.BreakPeriod"/>.</returns>
         </member>
-        <member name="M:osu.Game.Beatmaps.WorkingBeatmap.Save">
-            <summary>
-            Saves the <see cref="T:osu.Game.Beatmaps.Beatmap"/>.
-            </summary>
-            <returns>The absolute path of the output file.</returns>
-        </member>
         <member name="M:osu.Game.Beatmaps.WorkingBeatmap.CreateBeatmapConverter(osu.Game.Beatmaps.IBeatmap,osu.Game.Rulesets.Ruleset)">
             <summary>
             Creates a <see cref="T:osu.Game.Beatmaps.IBeatmapConverter"/> to convert a <see cref="T:osu.Game.Beatmaps.IBeatmap"/> for a specified <see cref="T:osu.Game.Rulesets.Ruleset"/>.
@@ -1098,7 +1105,7 @@
             Large files should be avoided if possible.
             </summary>
         </member>
-        <member name="M:osu.Game.Database.ArchiveModelManager`2.computeHash(osu.Game.IO.Archives.ArchiveReader)">
+        <member name="M:osu.Game.Database.ArchiveModelManager`2.computeHash(`0,osu.Game.IO.Archives.ArchiveReader)">
             <summary>
             Create a SHA-2 hash from the provided archive based on file content of all files matching <see cref="P:osu.Game.Database.ArchiveModelManager`2.HashableFileTypes"/>.
             </summary>
@@ -1117,7 +1124,7 @@
         <member name="M:osu.Game.Database.ArchiveModelManager`2.Update(`0)">
             <summary>
             Perform an update of the specified item.
-            TODO: Support file changes.
+            TODO: Support file additions/removals.
             </summary>
             <param name="item">The item to update.</param>
         </member>
@@ -1584,6 +1591,11 @@
         <member name="P:osu.Game.Graphics.Containers.BeatSyncedContainer.Divisor">
             <summary>
             How many beats per beatlength to trigger. Defaults to 1.
+            </summary>
+        </member>
+        <member name="P:osu.Game.Graphics.Containers.BeatSyncedContainer.MinimumBeatLength">
+            <summary>
+            An optional minimum beat length. Any beat length below this will be multiplied by two until valid.
             </summary>
         </member>
         <member name="F:osu.Game.Graphics.Containers.BeatSyncedContainer.default_beat_length">
@@ -2734,6 +2746,11 @@
             Contains all the messages send in the channel.
             </summary>
         </member>
+        <member name="P:osu.Game.Online.Chat.Channel.UnreadMessages">
+            <summary>
+            Contains all the messages that weren't read by the user.
+            </summary>
+        </member>
         <member name="F:osu.Game.Online.Chat.Channel.pendingMessages">
             <summary>
             Contains all the messages that are still pending for submission to the server.
@@ -2868,6 +2885,12 @@
             <param name="channel">The channel to join.</param>
             <param name="alreadyJoined">Whether the channel has already been joined server-side. Will skip a join request.</param>
             <returns>The joined channel. Note that this may not match the parameter channel as it is a backed object.</returns>
+        </member>
+        <member name="M:osu.Game.Online.Chat.ChannelManager.MarkChannelAsRead(osu.Game.Online.Chat.Channel)">
+            <summary>
+            Marks the <paramref name="channel"/> as read
+            </summary>
+            <param name="channel">The channel that will be marked as read</param>
         </member>
         <member name="T:osu.Game.Online.Chat.ChannelNotFoundException">
             <summary>
