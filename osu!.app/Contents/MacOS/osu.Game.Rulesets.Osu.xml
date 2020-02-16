@@ -126,6 +126,11 @@
             Adjusts the size of hit objects during their fade in animation.
             </summary>
         </member>
+        <member name="F:osu.Game.Rulesets.Osu.Mods.OsuModRelax.relax_leniency">
+            <summary>
+            How early before a hitobject's start time to trigger a hit.
+            </summary>
+        </member>
         <member name="T:osu.Game.Rulesets.Osu.Objects.Drawables.Connections.FollowPoint">
             <summary>
             A single follow point positioned between two adjacent <see cref="T:osu.Game.Rulesets.Osu.Objects.Drawables.DrawableOsuHitObject"/>s.
@@ -413,6 +418,11 @@
         <member name="P:osu.Game.Rulesets.Osu.UI.Cursor.CursorTrail.InterpolateMovements">
             <summary>
             Whether to interpolate mouse movements and add trail pieces at intermediate points.
+            </summary>
+        </member>
+        <member name="M:osu.Game.Rulesets.Osu.UI.Cursor.OsuCursorContainer.GetScaleForCircleSize(System.Single)">
+            <summary>
+            Get the scale applicable to the ActiveCursor based on a beatmap's circle size.
             </summary>
         </member>
         <member name="P:osu.Game.Rulesets.Osu.UI.Cursor.OsuCursorSprite.ExpandTarget">

@@ -1001,6 +1001,16 @@
             <param name="ruleset">The <see cref="T:osu.Game.Rulesets.Ruleset"/> for which <paramref name="beatmap"/> should be converted.</param>
             <returns>The applicable <see cref="T:osu.Game.Beatmaps.IBeatmapConverter"/>.</returns>
         </member>
+        <member name="M:osu.Game.Beatmaps.WorkingBeatmap.BeginAsyncLoad">
+            <summary>
+            Beings loading the contents of this <see cref="T:osu.Game.Beatmaps.WorkingBeatmap"/> asynchronously.
+            </summary>
+        </member>
+        <member name="M:osu.Game.Beatmaps.WorkingBeatmap.CancelAsyncLoad">
+            <summary>
+            Cancels the asynchronous loading of the contents of this <see cref="T:osu.Game.Beatmaps.WorkingBeatmap"/>.
+            </summary>
+        </member>
         <member name="M:osu.Game.Beatmaps.WorkingBeatmap.TransferTo(osu.Game.Beatmaps.WorkingBeatmap)">
             <summary>
             Transfer pieces of a beatmap to a new one, where possible, to save on loading.
@@ -1028,6 +1038,10 @@
             An attribute to mark a bindable as being exposed to the user via settings controls.
             Can be used in conjunction with <see cref="M:osu.Game.Configuration.SettingSourceExtensions.CreateSettingsControls(System.Object)"/> to automatically create UI controls.
             </summary>
+            <remarks>
+            All controls with <see cref="P:osu.Game.Configuration.SettingSourceAttribute.OrderPosition"/> set will be placed first in ascending order.
+            All controls with no <see cref="P:osu.Game.Configuration.SettingSourceAttribute.OrderPosition"/> will come afterward in default order.
+            </remarks>
         </member>
         <member name="M:osu.Game.Configuration.SettingsStore.Query(System.Nullable{System.Int32},System.Nullable{System.Int32})">
             <summary>
@@ -1665,6 +1679,26 @@
             <summary>
             Whether mouse input should be blocked screen-wide while this overlay is visible.
             Performing mouse actions outside of the valid extents will hide the overlay.
+            </summary>
+        </member>
+        <member name="F:osu.Game.Graphics.Containers.OsuRearrangeableListContainer`1.playlistDragActive">
+            <summary>
+            Whether any item is currently being dragged. Used to hide other items' drag handles.
+            </summary>
+        </member>
+        <member name="F:osu.Game.Graphics.Containers.OsuRearrangeableListItem`1.PlaylistDragActive">
+            <summary>
+            Whether any item is currently being dragged. Used to hide other items' drag handles.
+            </summary>
+        </member>
+        <member name="P:osu.Game.Graphics.Containers.OsuRearrangeableListItem`1.HandleColour">
+            <summary>
+            The colour of the drag handle.
+            </summary>
+        </member>
+        <member name="P:osu.Game.Graphics.Containers.OsuRearrangeableListItem`1.ShowDragHandle">
+            <summary>
+            Whether the drag handle should be shown.
             </summary>
         </member>
         <member name="F:osu.Game.Graphics.Containers.OsuScrollContainer.RightMouseScrollbar">
@@ -2977,6 +3011,22 @@
             The position of this <see cref="T:osu.Game.Online.Multiplayer.Room"/> in the list. This is not read from or written to the API.
             </summary>
         </member>
+        <member name="T:osu.Game.Online.OnlineViewContainer">
+            <summary>
+            A <see cref="T:osu.Framework.Graphics.Containers.Container"/> for displaying online content which require a local user to be logged in.
+            Shows its children only when the local user is logged in and supports displaying a placeholder if not.
+            </summary>
+        </member>
+        <member name="M:osu.Game.Online.OnlineViewContainer.PopContentOut(osu.Framework.Graphics.Drawable)">
+            <summary>
+            Applies a transform to the online content to make it hidden.
+            </summary>
+        </member>
+        <member name="M:osu.Game.Online.OnlineViewContainer.PopContentIn(osu.Framework.Graphics.Drawable)">
+            <summary>
+            Applies a transform to the online content to make it visible.
+            </summary>
+        </member>
         <member name="T:osu.Game.Online.PollingComponent">
             <summary>
             A component which requires a constant polling process.
@@ -3211,11 +3261,6 @@
             </summary>
             <param name="modTypes">The types of <see cref="T:osu.Game.Rulesets.Mods.Mod"/>s which should be deselected.</param>
             <param name="immediate">Set to true to bypass animations and update selections immediately.</param>
-        </member>
-        <member name="F:osu.Game.Overlays.Music.Playlist.playlistDragActive">
-            <summary>
-            Whether any item is currently being dragged. Used to hide other items' drag handles.
-            </summary>
         </member>
         <member name="T:osu.Game.Overlays.MusicController">
             <summary>
@@ -3682,14 +3727,9 @@
             A blueprint which governs the creation of a new <see cref="F:osu.Game.Rulesets.Edit.PlacementBlueprint.HitObject"/> to actualisation.
             </summary>
         </member>
-        <member name="E:osu.Game.Rulesets.Edit.PlacementBlueprint.StateChanged">
+        <member name="P:osu.Game.Rulesets.Edit.PlacementBlueprint.PlacementActive">
             <summary>
-            Invoked when <see cref="P:osu.Game.Rulesets.Edit.PlacementBlueprint.State"/> has changed.
-            </summary>
-        </member>
-        <member name="P:osu.Game.Rulesets.Edit.PlacementBlueprint.PlacementBegun">
-            <summary>
-            Whether the <see cref="F:osu.Game.Rulesets.Edit.PlacementBlueprint.HitObject"/> is currently being placed, but has not necessarily finished being placed.
+            Whether the <see cref="F:osu.Game.Rulesets.Edit.PlacementBlueprint.HitObject"/> is currently mid-placement, but has not necessarily finished being placed.
             </summary>
         </member>
         <member name="F:osu.Game.Rulesets.Edit.PlacementBlueprint.HitObject">
@@ -3697,17 +3737,19 @@
             The <see cref="F:osu.Game.Rulesets.Edit.PlacementBlueprint.HitObject"/> that is being placed.
             </summary>
         </member>
-        <member name="M:osu.Game.Rulesets.Edit.PlacementBlueprint.BeginPlacement(System.Nullable{System.Double})">
+        <member name="M:osu.Game.Rulesets.Edit.PlacementBlueprint.BeginPlacement(System.Nullable{System.Double},System.Boolean)">
             <summary>
             Signals that the placement of <see cref="F:osu.Game.Rulesets.Edit.PlacementBlueprint.HitObject"/> has started.
             </summary>
             <param name="startTime">The start time of <see cref="F:osu.Game.Rulesets.Edit.PlacementBlueprint.HitObject"/> at the placement point. If null, the current clock time is used.</param>
+            <param name="commitStart">Whether this call is committing a value for HitObject.StartTime and continuing with further adjustments.</param>
         </member>
-        <member name="M:osu.Game.Rulesets.Edit.PlacementBlueprint.EndPlacement">
+        <member name="M:osu.Game.Rulesets.Edit.PlacementBlueprint.EndPlacement(System.Boolean)">
             <summary>
             Signals that the placement of <see cref="F:osu.Game.Rulesets.Edit.PlacementBlueprint.HitObject"/> has finished.
-            This will destroy this <see cref="T:osu.Game.Rulesets.Edit.PlacementBlueprint"/>, and add the <see cref="F:osu.Game.Rulesets.Edit.PlacementBlueprint.HitObject"/> to the <see cref="T:osu.Game.Beatmaps.Beatmap"/>.
+            This will destroy this <see cref="T:osu.Game.Rulesets.Edit.PlacementBlueprint"/>, and add the HitObject.StartTime to the <see cref="T:osu.Game.Beatmaps.Beatmap"/>.
             </summary>
+            <param name="commit">Whether the object should be committed.</param>
         </member>
         <member name="M:osu.Game.Rulesets.Edit.PlacementBlueprint.UpdatePosition(osuTK.Vector2)">
             <summary>
@@ -6304,6 +6346,16 @@
             Whether the track was playing before a user drag event.
             </summary>
         </member>
+        <member name="F:osu.Game.Screens.Edit.Compose.Components.Timeline.TimelineButton.TimelineIconButton.repeat_initial_delay">
+            <summary>
+            The initial delay before mouse down repeat begins.
+            </summary>
+        </member>
+        <member name="F:osu.Game.Screens.Edit.Compose.Components.Timeline.TimelineButton.TimelineIconButton.repeat_tick_rate">
+            <summary>
+            The delay between mouse down repeats after the initial repeat.
+            </summary>
+        </member>
         <member name="F:osu.Game.Screens.Edit.Compose.Components.Timeline.ZoomableScrollContainer.ZoomDuration">
             <summary>
             The time to zoom into/out of a point.
@@ -6359,11 +6411,12 @@
             </summary>
             <param name="hitObject">The <see cref="T:osu.Game.Rulesets.Objects.HitObject"/> being placed.</param>
         </member>
-        <member name="M:osu.Game.Screens.Edit.Compose.IPlacementHandler.EndPlacement(osu.Game.Rulesets.Objects.HitObject)">
+        <member name="M:osu.Game.Screens.Edit.Compose.IPlacementHandler.EndPlacement(osu.Game.Rulesets.Objects.HitObject,System.Boolean)">
             <summary>
             Notifies that a placement has finished.
             </summary>
             <param name="hitObject">The <see cref="T:osu.Game.Rulesets.Objects.HitObject"/> that has been placed.</param>
+            <param name="commit">Whether the object should be committed.</param>
         </member>
         <member name="M:osu.Game.Screens.Edit.Compose.IPlacementHandler.Delete(osu.Game.Rulesets.Objects.HitObject)">
             <summary>
@@ -6384,6 +6437,16 @@
         <member name="E:osu.Game.Screens.Edit.EditorBeatmap.StartTimeChanged">
             <summary>
             Invoked when the start time of a <see cref="T:osu.Game.Rulesets.Objects.HitObject"/> in this <see cref="T:osu.Game.Screens.Edit.EditorBeatmap"/> was changed.
+            </summary>
+        </member>
+        <member name="F:osu.Game.Screens.Edit.EditorBeatmap.SelectedHitObjects">
+            <summary>
+            All currently selected <see cref="T:osu.Game.Rulesets.Objects.HitObject"/>s.
+            </summary>
+        </member>
+        <member name="F:osu.Game.Screens.Edit.EditorBeatmap.PlacementObject">
+            <summary>
+            The current placement. Null if there's no active placement.
             </summary>
         </member>
         <member name="M:osu.Game.Screens.Edit.EditorBeatmap.UpdateHitObject(osu.Game.Rulesets.Objects.HitObject)">
@@ -6625,16 +6688,6 @@
             Push a room as a new subscreen.
             </summary>
         </member>
-        <member name="M:osu.Game.Screens.Multi.Match.MatchSubScreen.currentItemChanged(osu.Framework.Bindables.ValueChangedEvent{osu.Game.Online.Multiplayer.PlaylistItem})">
-            <summary>
-            Handles propagation of the current playlist item's content to game-wide mechanisms.
-            </summary>
-        </member>
-        <member name="M:osu.Game.Screens.Multi.Match.MatchSubScreen.beatmapAdded(osu.Game.Beatmaps.BeatmapSetInfo)">
-            <summary>
-            Handle the case where a beatmap is imported (and can be used by this match).
-            </summary>
-        </member>
         <member name="M:osu.Game.Screens.Multi.Multiplayer.Start(System.Func{osu.Game.Screens.Play.Player})">
             <summary>
             Push a <see cref="T:osu.Game.Screens.Play.Player"/> to the main screen stack to begin gameplay.
@@ -6718,6 +6771,11 @@
             <summary>
             Override to create a BackgroundMode for the current screen.
             Note that the instance created may not be the used instance if it matches the BackgroundMode equality clause.
+            </summary>
+        </member>
+        <member name="T:osu.Game.Screens.Play.BeatmapMetadataDisplay">
+            <summary>
+            Displays beatmap metadata inside <see cref="T:osu.Game.Screens.Play.PlayerLoader"/>
             </summary>
         </member>
         <member name="F:osu.Game.Screens.Play.BreakOverlay.BREAK_FADE_DURATION">
@@ -6845,6 +6903,21 @@
         <member name="T:osu.Game.Screens.Play.HUD.ComboResultCounter">
             <summary>
             Used to display combo with a roll-up animation in results screen.
+            </summary>
+        </member>
+        <member name="F:osu.Game.Screens.Play.HUD.ExpansionMode.ExpandOnHover">
+            <summary>
+            The <see cref="T:osu.Game.Screens.Play.HUD.ModDisplay"/> will expand only when hovered.
+            </summary>
+        </member>
+        <member name="F:osu.Game.Screens.Play.HUD.ExpansionMode.AlwaysExpanded">
+            <summary>
+            The <see cref="T:osu.Game.Screens.Play.HUD.ModDisplay"/> will always be expanded.
+            </summary>
+        </member>
+        <member name="F:osu.Game.Screens.Play.HUD.ExpansionMode.AlwaysContracted">
+            <summary>
+            The <see cref="T:osu.Game.Screens.Play.HUD.ModDisplay"/> will always be contracted.
             </summary>
         </member>
         <member name="T:osu.Game.Screens.Play.HUD.StandardComboCounter">
@@ -7052,6 +7125,34 @@
             </summary>
             <param name="p">The item to be updated.</param>
         </member>
+        <member name="M:osu.Game.Screens.Select.BeatmapDetailArea.Refresh">
+            <summary>
+            Refreshes the currently-displayed details.
+            </summary>
+        </member>
+        <member name="M:osu.Game.Screens.Select.BeatmapDetailArea.OnTabChanged(osu.Game.Screens.Select.BeatmapDetailAreaTabItem,System.Boolean)">
+            <summary>
+            Invoked when a new tab is selected.
+            </summary>
+            <param name="tab">The tab that was selected.</param>
+            <param name="selectedMods">Whether the currently-selected mods should be considered.</param>
+        </member>
+        <member name="M:osu.Game.Screens.Select.BeatmapDetailArea.CreateTabItems">
+            <summary>
+            Creates the tabs to be displayed.
+            </summary>
+            <returns>The tabs.</returns>
+        </member>
+        <member name="P:osu.Game.Screens.Select.BeatmapDetailAreaTabItem.Name">
+            <summary>
+            The name of this tab, to be displayed in the tab control.
+            </summary>
+        </member>
+        <member name="P:osu.Game.Screens.Select.BeatmapDetailAreaTabItem.FilterableByMods">
+            <summary>
+            Whether the contents of this tab can be filtered by the user's currently-selected mods.
+            </summary>
+        </member>
         <member name="P:osu.Game.Screens.Select.Carousel.CarouselBeatmapSet.ValidBeatmaps">
             <summary>
             All beatmaps which are not filtered and valid for display.
@@ -7144,6 +7245,11 @@
         <member name="P:osu.Game.Screens.Select.SongSelect.AllowEditing">
             <summary>
             Whether entering editor mode should be allowed.
+            </summary>
+        </member>
+        <member name="M:osu.Game.Screens.Select.SongSelect.CreateBeatmapDetailArea">
+            <summary>
+            Creates the beatmap details to be displayed underneath the wedge.
             </summary>
         </member>
         <member name="M:osu.Game.Screens.Select.SongSelect.FinaliseSelection(osu.Game.Beatmaps.BeatmapInfo,System.Boolean)">
