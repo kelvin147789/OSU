@@ -7,21 +7,21 @@
   "targets": {
     ".NETCoreApp,Version=v3.1": {},
     ".NETCoreApp,Version=v3.1/osx-x64": {
-      "osu!/2020.118.0": {
+      "osu!/2020.208.0": {
         "dependencies": {
-          "DiscordRichPresence": "1.0.121",
+          "DiscordRichPresence": "1.0.147",
           "Microsoft.CodeAnalysis.BannedApiAnalyzers": "2.9.8",
           "Microsoft.CodeAnalysis.FxCopAnalyzers": "2.9.8",
           "Microsoft.EntityFrameworkCore.Design": "2.2.6",
           "Microsoft.EntityFrameworkCore.Sqlite": "2.2.6",
           "Microsoft.Win32.Registry": "4.7.0",
           "System.IO.Packaging": "4.7.0",
-          "osu.Game.Rulesets.Catch": "2020.118.0",
-          "osu.Game.Rulesets.Mania": "2020.118.0",
-          "osu.Game.Rulesets.Osu": "2020.118.0",
-          "osu.Game.Rulesets.Taiko": "2020.118.0",
-          "osu.Game.Tournament": "2020.118.0",
-          "ppy.osu.Game": "2020.118.0",
+          "osu.Game.Rulesets.Catch": "2020.208.0",
+          "osu.Game.Rulesets.Mania": "2020.208.0",
+          "osu.Game.Rulesets.Osu": "2020.208.0",
+          "osu.Game.Rulesets.Taiko": "2020.208.0",
+          "osu.Game.Tournament": "2020.208.0",
+          "ppy.osu.Game": "2020.208.0",
           "ppy.squirrel.windows": "1.9.0.4",
           "runtimepack.Microsoft.NETCore.App.Runtime.osx-x64": "3.1.0"
         },
@@ -762,14 +762,15 @@
           }
         }
       },
-      "DiscordRichPresence/1.0.121": {
+      "DiscordRichPresence/1.0.147": {
         "dependencies": {
+          "Microsoft.Win32.Registry": "4.7.0",
           "Newtonsoft.Json": "12.0.3"
         },
         "runtime": {
-          "lib/net35/DiscordRPC.dll": {
-            "assemblyVersion": "1.0.121.0",
-            "fileVersion": "1.0.121.0"
+          "lib/netstandard2.0/DiscordRPC.dll": {
+            "assemblyVersion": "1.0.147.0",
+            "fileVersion": "1.0.147.0"
           }
         }
       },
@@ -1292,11 +1293,11 @@
           }
         }
       },
-      "Markdig/0.18.0": {
+      "Markdig/0.18.1": {
         "runtime": {
           "lib/netcoreapp2.1/Markdig.dll": {
-            "assemblyVersion": "0.18.0.0",
-            "fileVersion": "0.18.0.0"
+            "assemblyVersion": "0.18.1.0",
+            "fileVersion": "0.18.1.0"
           }
         }
       },
@@ -1855,13 +1856,13 @@
           }
         }
       },
-      "ppy.osu.Framework/2020.118.0": {
+      "ppy.osu.Framework/2020.207.0": {
         "dependencies": {
           "FFmpeg.AutoGen": "4.2.0",
           "JetBrains.Annotations": "2019.1.3",
           "ManagedBass": "2.0.4",
           "ManagedBass.Fx": "2.0.1",
-          "Markdig": "0.18.0",
+          "Markdig": "0.18.1",
           "Microsoft.CodeAnalysis.CSharp": "3.4.0",
           "Microsoft.Diagnostics.Runtime": "1.1.61812",
           "Microsoft.Extensions.ObjectPool": "3.0.2",
@@ -1877,8 +1878,8 @@
         },
         "runtime": {
           "lib/netcoreapp3.0/osu.Framework.dll": {
-            "assemblyVersion": "2020.118.0.0",
-            "fileVersion": "2020.118.0.0"
+            "assemblyVersion": "2020.207.0.0",
+            "fileVersion": "2020.207.0.0"
           }
         }
       },
@@ -2075,33 +2076,33 @@
           "runtime.native.System.Security.Cryptography": "4.0.1"
         }
       },
-      "Sentry/1.2.0": {
+      "Sentry/2.0.1": {
         "dependencies": {
           "Newtonsoft.Json": "12.0.3",
-          "Sentry.PlatformAbstractions": "1.0.0",
-          "Sentry.Protocol": "1.0.6",
+          "Sentry.PlatformAbstractions": "1.1.0",
+          "Sentry.Protocol": "2.0.0",
           "System.Collections.Immutable": "1.5.0"
         },
         "runtime": {
           "lib/netstandard2.0/Sentry.dll": {
-            "assemblyVersion": "1.2.0.0",
-            "fileVersion": "1.2.0.0"
+            "assemblyVersion": "2.0.1.0",
+            "fileVersion": "2.0.1.0"
           }
         }
       },
-      "Sentry.PlatformAbstractions/1.0.0": {
+      "Sentry.PlatformAbstractions/1.1.0": {
         "runtime": {
           "lib/netstandard2.0/Sentry.PlatformAbstractions.dll": {
-            "assemblyVersion": "1.0.0.0",
-            "fileVersion": "1.0.0.0"
+            "assemblyVersion": "1.1.0.0",
+            "fileVersion": "1.1.0.0"
           }
         }
       },
-      "Sentry.Protocol/1.0.6": {
+      "Sentry.Protocol/2.0.0": {
         "runtime": {
           "lib/netstandard2.0/Sentry.Protocol.dll": {
-            "assemblyVersion": "1.0.6.0",
-            "fileVersion": "1.0.6.0"
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.0.0.0"
           }
         }
       },
@@ -3124,58 +3125,58 @@
           }
         }
       },
-      "osu.Game.Rulesets.Catch/2020.118.0": {
+      "osu.Game.Rulesets.Catch/2020.208.0": {
         "dependencies": {
-          "ppy.osu.Game": "2020.118.0"
+          "ppy.osu.Game": "2020.208.0"
         },
         "runtime": {
           "osu.Game.Rulesets.Catch.dll": {}
         }
       },
-      "osu.Game.Rulesets.Mania/2020.118.0": {
+      "osu.Game.Rulesets.Mania/2020.208.0": {
         "dependencies": {
-          "ppy.osu.Game": "2020.118.0"
+          "ppy.osu.Game": "2020.208.0"
         },
         "runtime": {
           "osu.Game.Rulesets.Mania.dll": {}
         }
       },
-      "osu.Game.Rulesets.Osu/2020.118.0": {
+      "osu.Game.Rulesets.Osu/2020.208.0": {
         "dependencies": {
-          "ppy.osu.Game": "2020.118.0"
+          "ppy.osu.Game": "2020.208.0"
         },
         "runtime": {
           "osu.Game.Rulesets.Osu.dll": {}
         }
       },
-      "osu.Game.Rulesets.Taiko/2020.118.0": {
+      "osu.Game.Rulesets.Taiko/2020.208.0": {
         "dependencies": {
-          "ppy.osu.Game": "2020.118.0"
+          "ppy.osu.Game": "2020.208.0"
         },
         "runtime": {
           "osu.Game.Rulesets.Taiko.dll": {}
         }
       },
-      "osu.Game.Tournament/2020.118.0": {
+      "osu.Game.Tournament/2020.208.0": {
         "dependencies": {
           "Microsoft.Win32.Registry": "4.7.0",
-          "ppy.osu.Game": "2020.118.0"
+          "ppy.osu.Game": "2020.208.0"
         },
         "runtime": {
           "osu.Game.Tournament.dll": {}
         }
       },
-      "ppy.osu.Game/2020.118.0": {
+      "ppy.osu.Game/2020.208.0": {
         "dependencies": {
           "Humanizer": "2.7.9",
           "Microsoft.EntityFrameworkCore.Sqlite": "2.2.6",
           "Microsoft.EntityFrameworkCore.Sqlite.Core": "2.2.6",
           "NUnit": "3.12.0",
           "Newtonsoft.Json": "12.0.3",
-          "Sentry": "1.2.0",
+          "Sentry": "2.0.1",
           "SharpCompress": "0.24.0",
           "System.ComponentModel.Annotations": "4.7.0",
-          "ppy.osu.Framework": "2020.118.0",
+          "ppy.osu.Framework": "2020.207.0",
           "ppy.osu.Game.Resources": "2019.1230.0"
         },
         "runtime": {
@@ -3185,7 +3186,7 @@
     }
   },
   "libraries": {
-    "osu!/2020.118.0": {
+    "osu!/2020.208.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
@@ -3202,12 +3203,12 @@
       "path": "deltacompressiondotnet/2.0.0",
       "hashPath": "deltacompressiondotnet.2.0.0.nupkg.sha512"
     },
-    "DiscordRichPresence/1.0.121": {
+    "DiscordRichPresence/1.0.147": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-MZVbD8HULPXh9t2STUBeRWWoszZqK5PmFw5/khq1ZVGIg/IGaRbY+Otgrlaeo6gqmEk3YWkNLvit7zMmOWUfKQ==",
-      "path": "discordrichpresence/1.0.121",
-      "hashPath": "discordrichpresence.1.0.121.nupkg.sha512"
+      "sha512": "sha512-pXP7nze2br4g0Y6ut9koFPl3pzroPsT4K6HoKDujOJmr2U0Yl+5I7q5EIBL4vTGzUnB4H/8IFa+xPXJTtPdObA==",
+      "path": "discordrichpresence/1.0.147",
+      "hashPath": "discordrichpresence.1.0.147.nupkg.sha512"
     },
     "FFmpeg.AutoGen/4.2.0": {
       "type": "package",
@@ -3552,12 +3553,12 @@
       "path": "managedbass.fx/2.0.1",
       "hashPath": "managedbass.fx.2.0.1.nupkg.sha512"
     },
-    "Markdig/0.18.0": {
+    "Markdig/0.18.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-xfz7jqFuld0+dEIIHVd7hfCbsIwERGval5lhQkHRI4o8yOHmTNjLzqRhNOC2cRnEgn5/0mU1jF+ntXDOxlXrRQ==",
-      "path": "markdig/0.18.0",
-      "hashPath": "markdig.0.18.0.nupkg.sha512"
+      "sha512": "sha512-xCxTVEMi0WISjP1I7XCISCzCZ9eNzlUpK2OQdNTXx0ajstMbSPFX/KvXQVWN1irwFkm7VxsX7PekYJCbZwk8mw==",
+      "path": "markdig/0.18.1",
+      "hashPath": "markdig.0.18.1.nupkg.sha512"
     },
     "Microsoft.CodeAnalysis.Analyzers/2.9.6": {
       "type": "package",
@@ -3923,12 +3924,12 @@
       "path": "nunit/3.12.0",
       "hashPath": "nunit.3.12.0.nupkg.sha512"
     },
-    "ppy.osu.Framework/2020.118.0": {
+    "ppy.osu.Framework/2020.207.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-eioWJpwnusVhN020t3jUrACt8bqbaHzkPOB4tcCkZVlrdNQQwUWuH0Ou4EtiGHPh//uKATeIxF9omHekgwmEbw==",
-      "path": "ppy.osu.framework/2020.118.0",
-      "hashPath": "ppy.osu.framework.2020.118.0.nupkg.sha512"
+      "sha512": "sha512-RTkUsUzC7c3G3MPdUC581cg9ZW4Zr5Y5cbwy1UlQDPQu0PV6Or9VTKgq/Fk5D4vtHdcXjTSNFID8KCbcdfiHdQ==",
+      "path": "ppy.osu.framework/2020.207.0",
+      "hashPath": "ppy.osu.framework.2020.207.0.nupkg.sha512"
     },
     "ppy.osu.Framework.NativeLibs/2019.1104.0": {
       "type": "package",
@@ -4140,26 +4141,26 @@
       "path": "runtime.unix.system.runtime.extensions/4.1.0",
       "hashPath": "runtime.unix.system.runtime.extensions.4.1.0.nupkg.sha512"
     },
-    "Sentry/1.2.0": {
+    "Sentry/2.0.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-zVMPH0o1kvKU5GEJiWkaIiZaGdnc5roJuhQ5QbWJ6v3ijqEtnzBeL49sgHuQWDkU3KluxZymf6AOQpSNvFrKJQ==",
-      "path": "sentry/1.2.0",
-      "hashPath": "sentry.1.2.0.nupkg.sha512"
+      "sha512": "sha512-XjZE3yjkyiXpmXZ0Nm4w+KGLlotBmBcL801eEpeyvzuZeXhh3CklT7KU3A50TC1+s9dmfkG2k4OQgzrra0HJMA==",
+      "path": "sentry/2.0.1",
+      "hashPath": "sentry.2.0.1.nupkg.sha512"
     },
-    "Sentry.PlatformAbstractions/1.0.0": {
+    "Sentry.PlatformAbstractions/1.1.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-NgcYNgZfIQNcMSFZTmgOria9/cqgKrV3ICNoC7iS/mmBZojLbdQMnnD7Tg5lfCKH1myk3AjU91VGDct88uw1Ow==",
-      "path": "sentry.platformabstractions/1.0.0",
-      "hashPath": "sentry.platformabstractions.1.0.0.nupkg.sha512"
+      "sha512": "sha512-4fhSK6bImR2IDXGCUAupMeN5ILcOSVv9CygagU0vgwsByhcOEnAcB1K69gMXkvBgGkM8FczY+y5fdtCDKfLFMA==",
+      "path": "sentry.platformabstractions/1.1.0",
+      "hashPath": "sentry.platformabstractions.1.1.0.nupkg.sha512"
     },
-    "Sentry.Protocol/1.0.6": {
+    "Sentry.Protocol/2.0.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-IbaDxYb8ARVwlCgDYUVTxHmjdEPMX2GebJPtmf08ZOyrec632+6aWhYPAg5Yr3zoNkzDP1kV9rI4X9IDC07SBg==",
-      "path": "sentry.protocol/1.0.6",
-      "hashPath": "sentry.protocol.1.0.6.nupkg.sha512"
+      "sha512": "sha512-EkCItfyamh9OjyQyycn76sZmJJCKpHLKhbFEO6KBn2pjWt+YRatuGHDii/aimSEzLLEGJ8WjFT26hQCmyW3MRw==",
+      "path": "sentry.protocol/2.0.0",
+      "hashPath": "sentry.protocol.2.0.0.nupkg.sha512"
     },
     "SharpCompress/0.24.0": {
       "type": "package",
@@ -4854,32 +4855,32 @@
       "path": "vk/1.0.22",
       "hashPath": "vk.1.0.22.nupkg.sha512"
     },
-    "osu.Game.Rulesets.Catch/2020.118.0": {
+    "osu.Game.Rulesets.Catch/2020.208.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "osu.Game.Rulesets.Mania/2020.118.0": {
+    "osu.Game.Rulesets.Mania/2020.208.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "osu.Game.Rulesets.Osu/2020.118.0": {
+    "osu.Game.Rulesets.Osu/2020.208.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "osu.Game.Rulesets.Taiko/2020.118.0": {
+    "osu.Game.Rulesets.Taiko/2020.208.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "osu.Game.Tournament/2020.118.0": {
+    "osu.Game.Tournament/2020.208.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "ppy.osu.Game/2020.118.0": {
+    "ppy.osu.Game/2020.208.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

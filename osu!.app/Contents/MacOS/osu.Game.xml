@@ -2019,6 +2019,11 @@
             Maximum number of decimal digits to be displayed in the tooltip.
             </summary>
         </member>
+        <member name="P:osu.Game.Graphics.UserInterface.OsuSliderBar`1.DisplayAsPercentage">
+            <summary>
+            Whether to format the tooltip as a percentage or the actual value.
+            </summary>
+        </member>
         <member name="M:osu.Game.Graphics.UserInterface.OsuSliderBar`1.normalise(System.Decimal,System.Int32)">
             <summary>
             Removes all non-significant digits, keeping at most a requested number of decimal digits.
@@ -3067,15 +3072,13 @@
             The user should have already requested this interactively.
             </summary>
         </member>
-        <member name="M:osu.Game.OsuGame.performFromMainMenu(System.Action,System.String,System.Type,System.Boolean)">
+        <member name="M:osu.Game.OsuGame.PerformFromScreen(System.Action{osu.Framework.Screens.IScreen},System.Collections.Generic.IEnumerable{System.Type})">
             <summary>
-            Perform an action only after returning to the main menu.
+            Perform an action only after returning to a specific screen as indicated by <paramref name="validScreens"/>.
             Eagerly tries to exit the current screen until it succeeds.
             </summary>
             <param name="action">The action to perform once we are in the correct state.</param>
-            <param name="taskName">The task name to display in a notification (if we can't immediately reach the main menu state).</param>
-            <param name="targetScreen">An optional target screen type. If this screen is already current we can immediately perform the action without returning to the menu.</param>
-            <param name="bypassScreenAllowChecks">Whether checking <see cref="P:osu.Game.Screens.IOsuScreen.AllowExternalScreenChange"/> should be bypassed.</param>
+            <param name="validScreens">An optional collection of valid screen types. If any of these screens are already current we can perform the action immediately, else the first valid parent will be made current before performing the action. <see cref="T:osu.Game.Screens.Menu.MainMenu"/> is used if not specified.</param>
         </member>
         <member name="M:osu.Game.OsuGame.waitForReady``1(System.Func{``0},System.Action{``0})">
             <summary>
@@ -3141,6 +3144,10 @@
             </summary>
             <param name="channel">The channel that is going to be removed.</param>
         </member>
+        <member name="M:osu.Game.Overlays.Comments.CommentsContainer.ShowComments(osu.Game.Online.API.Requests.CommentableType,System.Int64)">
+            <param name="type">The type of resource to get comments for.</param>
+            <param name="id">The id of the resource to get comments for.</param>
+        </member>
         <member name="T:osu.Game.Overlays.HoldToConfirmOverlay">
             <summary>
             An overlay which will display a black screen that dims over a period before confirming an exit action.
@@ -3205,9 +3212,9 @@
             <param name="modTypes">The types of <see cref="T:osu.Game.Rulesets.Mods.Mod"/>s which should be deselected.</param>
             <param name="immediate">Set to true to bypass animations and update selections immediately.</param>
         </member>
-        <member name="P:osu.Game.Overlays.Music.IDraggable.IsDraggable">
+        <member name="F:osu.Game.Overlays.Music.Playlist.playlistDragActive">
             <summary>
-            Whether this <see cref="T:osu.Game.Overlays.Music.IDraggable"/> can be dragged in its current state.
+            Whether any item is currently being dragged. Used to hide other items' drag handles.
             </summary>
         </member>
         <member name="T:osu.Game.Overlays.MusicController">
@@ -3342,14 +3349,14 @@
             </summary>
             <param name="toast"></param>
         </member>
-        <member name="T:osu.Game.Overlays.Profile.Sections.BeatmapMetadataContainer">
+        <member name="M:osu.Game.Overlays.OverlayHeader.CreateTitleContent">
             <summary>
-            Display artist/title/mapper information, commonly used as the left portion of a profile or score display row (see <see cref="T:osu.Game.Overlays.Profile.Sections.DrawableProfileRow"/>).
+            Creates a <see cref="T:osu.Framework.Graphics.Drawable"/> on the opposite side of the <see cref="T:osu.Game.Graphics.UserInterface.ScreenTitle"/>. Used mostly to create <see cref="T:osu.Game.Overlays.OverlayRulesetSelector"/>.
             </summary>
         </member>
-        <member name="M:osu.Game.Overlays.Profile.Sections.DrawableProfileRow.CreateLeftVisual">
+        <member name="T:osu.Game.Overlays.Profile.Sections.BeatmapMetadataContainer">
             <summary>
-            A visual element displayed to the left of <see cref="P:osu.Game.Overlays.Profile.Sections.DrawableProfileRow.LeftFlowContainer"/> content.
+            Display artist/title/mapper information, commonly used as the left portion of a profile or score display row.
             </summary>
         </member>
         <member name="P:osu.Game.Overlays.SearchableList.SearchableListFilterControl`2.ContentHorizontalPadding">
@@ -3380,10 +3387,32 @@
             <param name="bindable">The config bindable.</param>
             <returns>A bindable which will propagate updates with a delay.</returns>
         </member>
+        <member name="P:osu.Game.Overlays.Settings.SettingsSlider`2.TransferValueOnCommit">
+            <summary>
+            When set, value changes based on user input are only transferred to any bound control's Current on commit.
+            This is useful if the UI interaction could be adversely affected by the value changing, such as the position of the <see cref="T:osu.Framework.Graphics.UserInterface.SliderBar`1"/> on the screen.
+            </summary>
+        </member>
+        <member name="P:osu.Game.Overlays.Settings.SettingsSlider`2.KeyboardStep">
+            <summary>
+            A custom step value for each key press which actuates a change on this control.
+            </summary>
+        </member>
+        <member name="P:osu.Game.Overlays.Settings.SettingsSlider`2.DisplayAsPercentage">
+            <summary>
+            Whether to format the tooltip as a percentage or the actual value.
+            </summary>
+        </member>
         <member name="F:osu.Game.Overlays.SettingsPanel.GetToolbarHeight">
             <summary>
             Provide a source for the toolbar height.
             </summary>
+        </member>
+        <member name="T:osu.Game.Overlays.TabControlOverlayHeader`1">
+            <summary>
+            An overlay header which contains a <see cref="T:osu.Game.Graphics.UserInterface.OsuTabControl`1"/>.
+            </summary>
+            <typeparam name="T">The type of item to be represented by tabs.</typeparam>
         </member>
         <member name="P:osu.Game.Rulesets.Difficulty.DifficultyCalculator.SectionLength">
             <summary>
@@ -3561,14 +3590,6 @@
             A wrapper for a <see cref="T:osu.Game.Rulesets.UI.DrawableRuleset`1"/>. Handles adding visual representations of <see cref="T:osu.Game.Rulesets.Objects.HitObject"/>s to the underlying <see cref="T:osu.Game.Rulesets.UI.DrawableRuleset`1"/>.
             </summary>
         </member>
-        <member name="M:osu.Game.Rulesets.Edit.HitObjectComposer`1.beatSnap(System.Double,System.Double)">
-            <summary>
-            Snaps a duration to the closest beat of a timing point applicable at the reference time.
-            </summary>
-            <param name="referenceTime">The time of the timing point which <paramref name="duration"/> resides in.</param>
-            <param name="duration">The duration to snap.</param>
-            <returns>A value that represents <paramref name="duration"/> snapped to the closest beat of the timing point.</returns>
-        </member>
         <member name="P:osu.Game.Rulesets.Edit.HitObjectComposer.HitObjects">
             <summary>
             All the <see cref="T:osu.Game.Rulesets.Objects.Drawables.DrawableHitObject"/>s.
@@ -3579,29 +3600,38 @@
             Whether the user's cursor is currently in an area of the <see cref="T:osu.Game.Rulesets.Edit.HitObjectComposer"/> that is valid for placement.
             </summary>
         </member>
-        <member name="M:osu.Game.Rulesets.Edit.HitObjectComposer.CreateBlueprintFor(osu.Game.Rulesets.Objects.Drawables.DrawableHitObject)">
-            <summary>
-            Creates a <see cref="T:osu.Game.Rulesets.Edit.SelectionBlueprint"/> for a specific <see cref="T:osu.Game.Rulesets.Objects.Drawables.DrawableHitObject"/>.
-            </summary>
-            <param name="hitObject">The <see cref="T:osu.Game.Rulesets.Objects.Drawables.DrawableHitObject"/> to create the overlay for.</param>
-        </member>
-        <member name="M:osu.Game.Rulesets.Edit.HitObjectComposer.CreateSelectionHandler">
-            <summary>
-            Creates a <see cref="T:osu.Game.Screens.Edit.Compose.Components.SelectionHandler"/> which outlines <see cref="T:osu.Game.Rulesets.Objects.Drawables.DrawableHitObject"/>s and handles movement of selections.
-            </summary>
-        </member>
         <member name="M:osu.Game.Rulesets.Edit.HitObjectComposer.CreateDistanceSnapGrid(System.Collections.Generic.IEnumerable{osu.Game.Rulesets.Objects.HitObject})">
             <summary>
             Creates the <see cref="T:osu.Game.Screens.Edit.Compose.Components.DistanceSnapGrid"/> applicable for a <see cref="T:osu.Game.Rulesets.Objects.HitObject"/> selection.
             </summary>
             <param name="selectedHitObjects">The <see cref="T:osu.Game.Rulesets.Objects.HitObject"/> selection.</param>
-            <returns>The <see cref="T:osu.Game.Screens.Edit.Compose.Components.DistanceSnapGrid"/> for <paramref name="selectedHitObjects"/>.</returns>
+            <returns>The <see cref="T:osu.Game.Screens.Edit.Compose.Components.DistanceSnapGrid"/> for <paramref name="selectedHitObjects"/>. If empty, a grid is returned for the current point in time.</returns>
         </member>
         <member name="M:osu.Game.Rulesets.Edit.HitObjectComposer.UpdateHitObject(osu.Game.Rulesets.Objects.HitObject)">
             <summary>
             Updates a <see cref="T:osu.Game.Rulesets.Objects.HitObject"/>, invoking <see cref="M:osu.Game.Rulesets.Objects.HitObject.ApplyDefaults(osu.Game.Beatmaps.ControlPoints.ControlPointInfo,osu.Game.Beatmaps.BeatmapDifficulty)"/> and re-processing the beatmap.
             </summary>
             <param name="hitObject">The <see cref="T:osu.Game.Rulesets.Objects.HitObject"/> to update.</param>
+        </member>
+        <member name="M:osu.Game.Rulesets.Edit.IBeatSnapProvider.SnapTime(System.Double,System.Nullable{System.Double})">
+            <summary>
+            Snaps a duration to the closest beat of a timing point applicable at the reference time.
+            </summary>
+            <param name="time">The time to snap.</param>
+            <param name="referenceTime">An optional reference point to use for timing point lookup.</param>
+            <returns>A value that represents <paramref name="time"/> snapped to the closest beat of the timing point.</returns>
+        </member>
+        <member name="M:osu.Game.Rulesets.Edit.IBeatSnapProvider.GetBeatLengthAtTime(System.Double)">
+            <summary>
+            Get the most appropriate beat length at a given time.
+            </summary>
+            <param name="referenceTime">A reference time used for lookup.</param>
+            <returns>The most appropriate beat length.</returns>
+        </member>
+        <member name="P:osu.Game.Rulesets.Edit.IBeatSnapProvider.BeatDivisor">
+            <summary>
+            Returns the current beat divisor.
+            </summary>
         </member>
         <member name="M:osu.Game.Rulesets.Edit.IDistanceSnapProvider.GetBeatSnapDistanceAt(System.Double)">
             <summary>
@@ -3641,6 +3671,11 @@
             <param name="referenceTime">The time of the timing point which <paramref name="distance"/> resides in.</param>
             <param name="distance">The distance to convert.</param>
             <returns>A value that represents <paramref name="distance"/> snapped to the closest beat of the timing point.</returns>
+        </member>
+        <member name="F:osu.Game.Rulesets.Edit.OverlaySelectionBlueprint.DrawableObject">
+            <summary>
+            The <see cref="T:osu.Game.Rulesets.Objects.Drawables.DrawableHitObject"/> which this <see cref="T:osu.Game.Rulesets.Edit.OverlaySelectionBlueprint"/> applies to.
+            </summary>
         </member>
         <member name="T:osu.Game.Rulesets.Edit.PlacementBlueprint">
             <summary>
@@ -3701,19 +3736,14 @@
             Invoked when this <see cref="T:osu.Game.Rulesets.Edit.SelectionBlueprint"/> has been deselected.
             </summary>
         </member>
-        <member name="F:osu.Game.Rulesets.Edit.SelectionBlueprint.DrawableObject">
-            <summary>
-            The <see cref="T:osu.Game.Rulesets.Objects.Drawables.DrawableHitObject"/> which this <see cref="T:osu.Game.Rulesets.Edit.SelectionBlueprint"/> applies to.
-            </summary>
-        </member>
         <member name="M:osu.Game.Rulesets.Edit.SelectionBlueprint.Select">
             <summary>
-            Selects this <see cref="T:osu.Game.Rulesets.Edit.SelectionBlueprint"/>, causing it to become visible.
+            Selects this <see cref="T:osu.Game.Rulesets.Edit.OverlaySelectionBlueprint"/>, causing it to become visible.
             </summary>
         </member>
         <member name="M:osu.Game.Rulesets.Edit.SelectionBlueprint.Deselect">
             <summary>
-            Deselects this <see cref="T:osu.Game.Rulesets.Edit.SelectionBlueprint"/>, causing it to become invisible.
+            Deselects this <see cref="T:osu.Game.Rulesets.Edit.OverlaySelectionBlueprint"/>, causing it to become invisible.
             </summary>
         </member>
         <member name="M:osu.Game.Rulesets.Edit.SelectionBlueprint.UpdateHitObject">
@@ -3723,17 +3753,17 @@
         </member>
         <member name="P:osu.Game.Rulesets.Edit.SelectionBlueprint.ContextMenuItems">
             <summary>
-            The <see cref="T:osu.Framework.Graphics.UserInterface.MenuItem"/>s to be displayed in the context menu for this <see cref="T:osu.Game.Rulesets.Edit.SelectionBlueprint"/>.
+            The <see cref="T:osu.Framework.Graphics.UserInterface.MenuItem"/>s to be displayed in the context menu for this <see cref="T:osu.Game.Rulesets.Edit.OverlaySelectionBlueprint"/>.
             </summary>
         </member>
         <member name="P:osu.Game.Rulesets.Edit.SelectionBlueprint.SelectionPoint">
             <summary>
-            The screen-space point that causes this <see cref="T:osu.Game.Rulesets.Edit.SelectionBlueprint"/> to be selected.
+            The screen-space point that causes this <see cref="T:osu.Game.Rulesets.Edit.OverlaySelectionBlueprint"/> to be selected.
             </summary>
         </member>
         <member name="P:osu.Game.Rulesets.Edit.SelectionBlueprint.SelectionQuad">
             <summary>
-            The screen-space quad that outlines this <see cref="T:osu.Game.Rulesets.Edit.SelectionBlueprint"/> for selections.
+            The screen-space quad that outlines this <see cref="T:osu.Game.Rulesets.Edit.OverlaySelectionBlueprint"/> for selections.
             </summary>
         </member>
         <member name="P:osu.Game.Rulesets.ILegacyRuleset.LegacyID">
@@ -4078,6 +4108,11 @@
         <member name="P:osu.Game.Rulesets.Mods.Mod.Ranked">
             <summary>
             Returns if this mod is ranked.
+            </summary>
+        </member>
+        <member name="P:osu.Game.Rulesets.Mods.Mod.RequiresConfiguration">
+            <summary>
+            Whether this mod requires configuration to apply changes to the game.
             </summary>
         </member>
         <member name="P:osu.Game.Rulesets.Mods.Mod.IncompatibleMods">
@@ -5307,7 +5342,7 @@
         </member>
         <member name="F:osu.Game.Rulesets.Scoring.ScoreProcessor.HighestCombo">
             <summary>
-            THe highest combo achieved by this score.
+            The highest combo achieved by this score.
             </summary>
         </member>
         <member name="F:osu.Game.Rulesets.Scoring.ScoreProcessor.Mode">
@@ -5701,16 +5736,34 @@
             Keys will be populated automatically and a receptor will be injected inside.
             </summary>
         </member>
-        <member name="M:osu.Game.Rulesets.UI.Scrolling.Algorithms.IScrollAlgorithm.GetDisplayStartTime(System.Double,System.Double)">
+        <member name="M:osu.Game.Rulesets.UI.Scrolling.Algorithms.IScrollAlgorithm.GetDisplayStartTime(System.Double,System.Single,System.Double,System.Single)">
             <summary>
-            Given a point in time, computes the time at which it enters the time range.
+            Given a point in time associated with an object's origin
+            and the spatial distance between the edge and the origin of the object along the scrolling axis,
+            computes the time at which the object initially enters the time range.
             </summary>
-            <remarks>
-            E.g. For a constant time range of 5000ms, the time at which t=7000ms enters the time range is 2000ms.
-            </remarks>
-            <param name="time">The point in time.</param>
+            <example>
+            Let's assume the following parameters:
+            <list type="bullet">
+                <item><paramref name="originTime"/> = 7000ms,</item>
+                <item><paramref name="offset"/> = 100px,</item>
+                <item><paramref name="timeRange"/> = 5000ms,</item>
+                <item><paramref name="scrollLength"/> = 1000px</item>
+            </list>
+            and a constant scrolling rate.
+            To arrive at the end of the scrolling container, the object's origin has to cover
+            <code>1000 + 100 = 1100px</code>
+            so that the edge starts at the end of the scrolling container.
+            One scroll length of 1000px covers 5000ms of time, so the time required to cover 1100px is equal to
+            <code>5000 * (1100 / 1000) = 5500ms,</code>
+            and therefore the object should start being visible at
+            <code>7000 - 5500 = 1500ms.</code>
+            </example>
+            <param name="originTime">The time point at which the object origin should enter the time range.</param>
+            <param name="offset">The spatial distance between the object's edge and its origin along the scrolling axis.</param>
             <param name="timeRange">The amount of visible time.</param>
-            <returns>The time at which <paramref name="time"/> enters <paramref name="timeRange"/>.</returns>
+            <param name="scrollLength">The absolute spatial length through <paramref name="timeRange"/>.</param>
+            <returns>The time at which the object should enter the time range.</returns>
         </member>
         <member name="M:osu.Game.Rulesets.UI.Scrolling.Algorithms.IScrollAlgorithm.GetLength(System.Double,System.Double,System.Double,System.Single)">
             <summary>
@@ -5909,6 +5962,14 @@
             <param name="colours">The set of colours.</param>
             <returns>The applicable colour from <paramref name="colours"/> for <paramref name="beatDivisor"/>.</returns>
         </member>
+        <member name="M:osu.Game.Screens.Edit.BindableBeatDivisor.GetDivisorForBeatIndex(System.Int32,System.Int32)">
+            <summary>
+            Retrieves the applicable divisor for a specific beat index.
+            </summary>
+            <param name="index">The 0-based beat index.</param>
+            <param name="beatDivisor">The beat divisor.</param>
+            <returns>The applicable divisor.</returns>
+        </member>
         <member name="M:osu.Game.Screens.Edit.Components.Menus.EditorMenuBar.DrawableEditorBarMenuItem.BackgroundBox.Expand">
             <summary>
             Expands the background such that it doesn't show the bottom corners.
@@ -5930,14 +5991,9 @@
             </summary>
             <returns></returns>
         </member>
-        <member name="F:osu.Game.Screens.Edit.Components.RadioButtons.RadioButton.Text">
+        <member name="F:osu.Game.Screens.Edit.Components.RadioButtons.RadioButton.Item">
             <summary>
-            The text that should be displayed in this button.
-            </summary>
-        </member>
-        <member name="F:osu.Game.Screens.Edit.Components.RadioButtons.RadioButton.Action">
-            <summary>
-            The <see cref="F:osu.Game.Screens.Edit.Components.RadioButtons.RadioButton.Action"/> that should be invoked when this button is selected.
+            The item related to this button.
             </summary>
         </member>
         <member name="M:osu.Game.Screens.Edit.Components.RadioButtons.RadioButton.Select">
@@ -5976,7 +6032,7 @@
             </summary>
             <param name="screenPosition">The position in screen coordinates.</param>
         </member>
-        <member name="T:osu.Game.Screens.Edit.Components.Timelines.Summary.Parts.TimelinePart">
+        <member name="T:osu.Game.Screens.Edit.Components.Timelines.Summary.Parts.TimelinePart`1">
             <summary>
             Represents a part of the summary timeline..
             </summary>
@@ -5996,15 +6052,22 @@
             Represents a singular point on a timeline part.
             </summary>
         </member>
-        <member name="P:osu.Game.Screens.Edit.Compose.Components.BlueprintContainer.CurrentTool">
+        <member name="T:osu.Game.Screens.Edit.Compose.Components.BlueprintContainer">
             <summary>
-            The current placement tool.
+            A container which provides a "blueprint" display of hitobjects.
+            Includes selection and manipulation support via a <see cref="T:osu.Game.Screens.Edit.Compose.Components.SelectionHandler"/>.
             </summary>
         </member>
-        <member name="M:osu.Game.Screens.Edit.Compose.Components.BlueprintContainer.refreshTool">
+        <member name="M:osu.Game.Screens.Edit.Compose.Components.BlueprintContainer.CreateSelectionHandler">
             <summary>
-            Refreshes the current placement tool.
+            Creates a <see cref="T:osu.Game.Screens.Edit.Compose.Components.SelectionHandler"/> which outlines <see cref="T:osu.Game.Rulesets.Objects.Drawables.DrawableHitObject"/>s and handles movement of selections.
             </summary>
+        </member>
+        <member name="M:osu.Game.Screens.Edit.Compose.Components.BlueprintContainer.CreateBlueprintFor(osu.Game.Rulesets.Objects.HitObject)">
+            <summary>
+            Creates a <see cref="T:osu.Game.Rulesets.Edit.SelectionBlueprint"/> for a specific <see cref="T:osu.Game.Rulesets.Objects.Drawables.DrawableHitObject"/>.
+            </summary>
+            <param name="hitObject">The <see cref="T:osu.Game.Rulesets.Objects.Drawables.DrawableHitObject"/> to create the overlay for.</param>
         </member>
         <member name="F:osu.Game.Screens.Edit.Compose.Components.BlueprintContainer.clickSelectionBegan">
             <summary>
@@ -6039,11 +6102,10 @@
             Deselects all selected <see cref="T:osu.Game.Rulesets.Edit.SelectionBlueprint"/>s.
             </summary>
         </member>
-        <member name="M:osu.Game.Screens.Edit.Compose.Components.BlueprintContainer.beginSelectionMovement">
+        <member name="M:osu.Game.Screens.Edit.Compose.Components.BlueprintContainer.prepareSelectionMovement">
             <summary>
             Attempts to begin the movement of any selected blueprints.
             </summary>
-            <returns>Whether movement began.</returns>
         </member>
         <member name="M:osu.Game.Screens.Edit.Compose.Components.BlueprintContainer.moveCurrentSelection(osu.Framework.Input.Events.DragEvent)">
             <summary>
@@ -6057,6 +6119,21 @@
             Finishes the current movement of selected blueprints.
             </summary>
             <returns>Whether a movement was active.</returns>
+        </member>
+        <member name="T:osu.Game.Screens.Edit.Compose.Components.ComposeBlueprintContainer">
+            <summary>
+            A blueprint container generally displayed as an overlay to a ruleset's playfield.
+            </summary>
+        </member>
+        <member name="M:osu.Game.Screens.Edit.Compose.Components.ComposeBlueprintContainer.refreshTool">
+            <summary>
+            Refreshes the current placement tool.
+            </summary>
+        </member>
+        <member name="P:osu.Game.Screens.Edit.Compose.Components.ComposeBlueprintContainer.CurrentTool">
+            <summary>
+            The current placement tool.
+            </summary>
         </member>
         <member name="T:osu.Game.Screens.Edit.Compose.Components.DistanceSnapGrid">
             <summary>
@@ -6092,7 +6169,7 @@
             <param name="startTime">The snapping time at <see cref="F:osu.Game.Screens.Edit.Compose.Components.DistanceSnapGrid.StartPosition"/>.</param>
             <param name="endTime">The time at which the snapping grid should end. If null, the grid will continue until the bounds of the screen are exceeded.</param>
         </member>
-        <member name="M:osu.Game.Screens.Edit.Compose.Components.DistanceSnapGrid.CreateContent(osuTK.Vector2)">
+        <member name="M:osu.Game.Screens.Edit.Compose.Components.DistanceSnapGrid.CreateContent">
             <summary>
             Creates the content which visualises the grid ticks.
             </summary>
@@ -6104,11 +6181,11 @@
             <param name="position">The original position in coordinate space local to this <see cref="T:osu.Game.Screens.Edit.Compose.Components.DistanceSnapGrid"/>.</param>
             <returns>A tuple containing the snapped position in coordinate space local to this <see cref="T:osu.Game.Screens.Edit.Compose.Components.DistanceSnapGrid"/> and the respective time value.</returns>
         </member>
-        <member name="M:osu.Game.Screens.Edit.Compose.Components.DistanceSnapGrid.GetColourForBeatIndex(System.Int32)">
+        <member name="M:osu.Game.Screens.Edit.Compose.Components.DistanceSnapGrid.GetColourForIndexFromPlacement(System.Int32)">
             <summary>
             Retrieves the applicable colour for a beat index.
             </summary>
-            <param name="index">The 0-based beat index.</param>
+            <param name="placementIndex">The 0-based beat index from the point of placement.</param>
             <returns>The applicable colour.</returns>
         </member>
         <member name="T:osu.Game.Screens.Edit.Compose.Components.DragBox">
@@ -6122,6 +6199,13 @@
             </summary>
             <param name="performSelection">A delegate that performs drag selection.</param>
         </member>
+        <member name="M:osu.Game.Screens.Edit.Compose.Components.DragBox.HandleDrag(osu.Framework.Input.Events.MouseButtonEvent)">
+            <summary>
+            Handle a forwarded mouse event.
+            </summary>
+            <param name="e">The mouse event.</param>
+            <returns>Whether the event should be handled and blocking.</returns>
+        </member>
         <member name="T:osu.Game.Screens.Edit.Compose.Components.EditorPlayfieldBorder">
             <summary>
             Provides a border around the playfield.
@@ -6129,17 +6213,12 @@
         </member>
         <member name="T:osu.Game.Screens.Edit.Compose.Components.MoveSelectionEvent">
             <summary>
-            An event which occurs when a <see cref="T:osu.Game.Rulesets.Edit.SelectionBlueprint"/> is moved.
+            An event which occurs when a <see cref="T:osu.Game.Rulesets.Edit.OverlaySelectionBlueprint"/> is moved.
             </summary>
         </member>
         <member name="F:osu.Game.Screens.Edit.Compose.Components.MoveSelectionEvent.Blueprint">
             <summary>
             The <see cref="T:osu.Game.Rulesets.Edit.SelectionBlueprint"/> that triggered this <see cref="T:osu.Game.Screens.Edit.Compose.Components.MoveSelectionEvent"/>.
-            </summary>
-        </member>
-        <member name="F:osu.Game.Screens.Edit.Compose.Components.MoveSelectionEvent.ScreenSpaceStartPosition">
-            <summary>
-            The starting screen-space position of the hitobject.
             </summary>
         </member>
         <member name="F:osu.Game.Screens.Edit.Compose.Components.MoveSelectionEvent.ScreenSpacePosition">
@@ -6151,9 +6230,6 @@
             <summary>
             The distance between <see cref="F:osu.Game.Screens.Edit.Compose.Components.MoveSelectionEvent.ScreenSpacePosition"/> and the hitobject's current position, in the coordinate-space of the hitobject's parent.
             </summary>
-            <remarks>
-            This does not use <see cref="F:osu.Game.Screens.Edit.Compose.Components.MoveSelectionEvent.ScreenSpaceStartPosition"/> and does not represent the cumulative movement distance.
-            </remarks>
         </member>
         <member name="T:osu.Game.Screens.Edit.Compose.Components.SelectionHandler">
             <summary>
@@ -6309,6 +6385,12 @@
             <summary>
             Invoked when the start time of a <see cref="T:osu.Game.Rulesets.Objects.HitObject"/> in this <see cref="T:osu.Game.Screens.Edit.EditorBeatmap"/> was changed.
             </summary>
+        </member>
+        <member name="M:osu.Game.Screens.Edit.EditorBeatmap.UpdateHitObject(osu.Game.Rulesets.Objects.HitObject)">
+            <summary>
+            Updates a <see cref="T:osu.Game.Rulesets.Objects.HitObject"/>, invoking <see cref="M:osu.Game.Rulesets.Objects.HitObject.ApplyDefaults(osu.Game.Beatmaps.ControlPoints.ControlPointInfo,osu.Game.Beatmaps.BeatmapDifficulty)"/> and re-processing the beatmap.
+            </summary>
+            <param name="hitObject">The <see cref="T:osu.Game.Rulesets.Objects.HitObject"/> to update.</param>
         </member>
         <member name="M:osu.Game.Screens.Edit.EditorBeatmap.Add(osu.Game.Rulesets.Objects.HitObject)">
             <summary>
@@ -6798,6 +6880,12 @@
             Whether the elements that can optionally be hidden should be visible.
             </summary>
         </member>
+        <member name="F:osu.Game.Screens.Play.KeyCounterDisplay.AlwaysVisible">
+            <summary>
+            Whether the key counter should be visible regardless of the configuration value.
+            This is true by default, but can be changed.
+            </summary>
+        </member>
         <member name="P:osu.Game.Screens.Play.Player.PauseOnFocusLost">
             <summary>
             Whether gameplay should pause when the game window focus is lost.
@@ -6847,6 +6935,11 @@
             Displays a skip overlay, giving the user the ability to skip forward.
             </summary>
             <param name="startTime">The time at which gameplay begins to appear.</param>
+        </member>
+        <member name="F:osu.Game.Screens.Play.SongProgress.AllowSeeking">
+            <summary>
+            Whether seeking is allowed and the progress bar should be shown.
+            </summary>
         </member>
         <member name="M:osu.Game.Screens.Play.SquareGraph.RecreateGraph">
             <summary>
@@ -7048,6 +7141,11 @@
             Helps keep them located beneath the footer itself.
             </summary>
         </member>
+        <member name="P:osu.Game.Screens.Select.SongSelect.AllowEditing">
+            <summary>
+            Whether entering editor mode should be allowed.
+            </summary>
+        </member>
         <member name="M:osu.Game.Screens.Select.SongSelect.FinaliseSelection(osu.Game.Beatmaps.BeatmapInfo,System.Boolean)">
             <summary>
             Call to make a selection and perform the default action for this SongSelect.
@@ -7078,6 +7176,13 @@
             Ensures some music is playing for the current track.
             Will resume playback from a manual user pause if the track has changed.
             </summary>
+        </member>
+        <member name="M:osu.Game.Screens.Select.SongSelect.transferRulesetValue">
+            <summary>
+            Transfer the game-wide ruleset to the local decoupled ruleset.
+            Will immediately run filter operations if required.
+            </summary>
+            <returns>Whether a transfer occurred.</returns>
         </member>
         <member name="T:osu.Game.Screens.StartupScreen">
             <summary>
@@ -7333,12 +7438,6 @@
             A headless host which cleans up before running (removing any remnants from a previous execution).
             </summary>
         </member>
-        <member name="T:osu.Game.Tests.Visual.AllPlayersTestScene">
-            <summary>
-            A base class which runs <see cref="F:osu.Game.Tests.Visual.AllPlayersTestScene.Player"/> test for all available rulesets.
-            Steps to be run for each ruleset should be added via <see cref="M:osu.Game.Tests.Visual.AllPlayersTestScene.AddCheckSteps"/>.
-            </summary>
-        </member>
         <member name="T:osu.Game.Tests.Visual.EditorClockTestScene">
             <summary>
             Provides a clock, beat-divisor, and scrolling capability for test cases of editor components that
@@ -7472,6 +7571,20 @@
             <summary>
             A user instance for displaying locally created system messages.
             </summary>
+        </member>
+        <member name="M:osu.Game.Utils.FormatUtils.FormatAccuracy(System.Double)">
+            <summary>
+            Turns the provided accuracy into a percentage with 2 decimal places.
+            </summary>
+            <param name="accuracy">The accuracy to be formatted</param>
+            <returns>formatted accuracy in percentage</returns>
+        </member>
+        <member name="M:osu.Game.Utils.FormatUtils.FormatAccuracy(System.Decimal)">
+            <summary>
+            Turns the provided accuracy into a percentage with 2 decimal places.
+            </summary>
+            <param name="accuracy">The accuracy to be formatted</param>
+            <returns>formatted accuracy in percentage</returns>
         </member>
         <member name="M:osu.Game.Utils.HumanizerUtils.Humanize(System.DateTimeOffset)">
             <summary>
