@@ -7,21 +7,21 @@
   "targets": {
     ".NETCoreApp,Version=v3.1": {},
     ".NETCoreApp,Version=v3.1/osx-x64": {
-      "osu!/2020.215.0": {
+      "osu!/2020.221.0": {
         "dependencies": {
-          "DiscordRichPresence": "1.0.147",
+          "DiscordRichPresence": "1.0.150",
           "Microsoft.CodeAnalysis.BannedApiAnalyzers": "2.9.8",
           "Microsoft.CodeAnalysis.FxCopAnalyzers": "2.9.8",
           "Microsoft.EntityFrameworkCore.Design": "2.2.6",
           "Microsoft.EntityFrameworkCore.Sqlite": "2.2.6",
           "Microsoft.Win32.Registry": "4.7.0",
           "System.IO.Packaging": "4.7.0",
-          "osu.Game.Rulesets.Catch": "2020.215.0",
-          "osu.Game.Rulesets.Mania": "2020.215.0",
-          "osu.Game.Rulesets.Osu": "2020.215.0",
-          "osu.Game.Rulesets.Taiko": "2020.215.0",
-          "osu.Game.Tournament": "2020.215.0",
-          "ppy.osu.Game": "2020.215.0",
+          "osu.Game.Rulesets.Catch": "2020.221.0",
+          "osu.Game.Rulesets.Mania": "2020.221.0",
+          "osu.Game.Rulesets.Osu": "2020.221.0",
+          "osu.Game.Rulesets.Taiko": "2020.221.0",
+          "osu.Game.Tournament": "2020.221.0",
+          "ppy.osu.Game": "2020.221.0",
           "ppy.squirrel.windows": "1.9.0.4",
           "runtimepack.Microsoft.NETCore.App.Runtime.osx-x64": "3.1.0"
         },
@@ -762,15 +762,15 @@
           }
         }
       },
-      "DiscordRichPresence/1.0.147": {
+      "DiscordRichPresence/1.0.150": {
         "dependencies": {
           "Microsoft.Win32.Registry": "4.7.0",
           "Newtonsoft.Json": "12.0.3"
         },
         "runtime": {
           "lib/netstandard2.0/DiscordRPC.dll": {
-            "assemblyVersion": "1.0.147.0",
-            "fileVersion": "1.0.147.0"
+            "assemblyVersion": "1.0.150.0",
+            "fileVersion": "1.0.150.0"
           }
         }
       },
@@ -1656,11 +1656,11 @@
           }
         }
       },
-      "Microsoft.Extensions.ObjectPool/3.0.2": {
+      "Microsoft.Extensions.ObjectPool/3.0.3": {
         "runtime": {
           "lib/netstandard2.0/Microsoft.Extensions.ObjectPool.dll": {
-            "assemblyVersion": "3.0.2.0",
-            "fileVersion": "3.0.219.61401"
+            "assemblyVersion": "3.0.3.0",
+            "fileVersion": "3.0.320.7202"
           }
         }
       },
@@ -1856,7 +1856,7 @@
           }
         }
       },
-      "ppy.osu.Framework/2020.213.0": {
+      "ppy.osu.Framework/2020.221.0": {
         "dependencies": {
           "FFmpeg.AutoGen": "4.2.0",
           "JetBrains.Annotations": "2019.1.3",
@@ -1865,7 +1865,7 @@
           "Markdig": "0.18.1",
           "Microsoft.CodeAnalysis.CSharp": "3.4.0",
           "Microsoft.Diagnostics.Runtime": "1.1.61812",
-          "Microsoft.Extensions.ObjectPool": "3.0.2",
+          "Microsoft.Extensions.ObjectPool": "3.0.3",
           "NUnit": "3.12.0",
           "Newtonsoft.Json": "12.0.3",
           "SharpFNT": "1.1.0",
@@ -1873,17 +1873,17 @@
           "StbiSharp": "1.0.11",
           "Veldrid": "4.7.0",
           "Veldrid.SDL2": "4.7.0",
-          "ppy.osu.Framework.NativeLibs": "2019.1104.0",
+          "ppy.osu.Framework.NativeLibs": "2020.213.0",
           "ppy.osuTK.NS20": "1.0.140"
         },
         "runtime": {
           "lib/netcoreapp3.0/osu.Framework.dll": {
-            "assemblyVersion": "2020.213.0.0",
-            "fileVersion": "2020.213.0.0"
+            "assemblyVersion": "2020.221.0.0",
+            "fileVersion": "2020.221.0.0"
           }
         }
       },
-      "ppy.osu.Framework.NativeLibs/2019.1104.0": {
+      "ppy.osu.Framework.NativeLibs/2020.213.0": {
         "native": {
           "runtimes/osx-x64/native/libavcodec.58.dylib": {
             "fileVersion": "0.0.0.0"
@@ -1917,11 +1917,11 @@
           }
         }
       },
-      "ppy.osu.Game.Resources/2019.1230.0": {
+      "ppy.osu.Game.Resources/2020.221.0": {
         "runtime": {
           "lib/netstandard2.0/osu.Game.Resources.dll": {
-            "assemblyVersion": "2019.1230.0.0",
-            "fileVersion": "2019.1230.0.0"
+            "assemblyVersion": "2020.221.0.0",
+            "fileVersion": "2020.221.0.0"
           }
         }
       },
@@ -2076,7 +2076,7 @@
           "runtime.native.System.Security.Cryptography": "4.0.1"
         }
       },
-      "Sentry/2.0.2": {
+      "Sentry/2.0.3": {
         "dependencies": {
           "Newtonsoft.Json": "12.0.3",
           "Sentry.PlatformAbstractions": "1.1.0",
@@ -2085,8 +2085,8 @@
         },
         "runtime": {
           "lib/netstandard2.0/Sentry.dll": {
-            "assemblyVersion": "2.0.2.0",
-            "fileVersion": "2.0.2.0"
+            "assemblyVersion": "2.0.3.0",
+            "fileVersion": "2.0.3.0"
           }
         }
       },
@@ -3125,59 +3125,59 @@
           }
         }
       },
-      "osu.Game.Rulesets.Catch/2020.215.0": {
+      "osu.Game.Rulesets.Catch/2020.221.0": {
         "dependencies": {
-          "ppy.osu.Game": "2020.215.0"
+          "ppy.osu.Game": "2020.221.0"
         },
         "runtime": {
           "osu.Game.Rulesets.Catch.dll": {}
         }
       },
-      "osu.Game.Rulesets.Mania/2020.215.0": {
+      "osu.Game.Rulesets.Mania/2020.221.0": {
         "dependencies": {
-          "ppy.osu.Game": "2020.215.0"
+          "ppy.osu.Game": "2020.221.0"
         },
         "runtime": {
           "osu.Game.Rulesets.Mania.dll": {}
         }
       },
-      "osu.Game.Rulesets.Osu/2020.215.0": {
+      "osu.Game.Rulesets.Osu/2020.221.0": {
         "dependencies": {
-          "ppy.osu.Game": "2020.215.0"
+          "ppy.osu.Game": "2020.221.0"
         },
         "runtime": {
           "osu.Game.Rulesets.Osu.dll": {}
         }
       },
-      "osu.Game.Rulesets.Taiko/2020.215.0": {
+      "osu.Game.Rulesets.Taiko/2020.221.0": {
         "dependencies": {
-          "ppy.osu.Game": "2020.215.0"
+          "ppy.osu.Game": "2020.221.0"
         },
         "runtime": {
           "osu.Game.Rulesets.Taiko.dll": {}
         }
       },
-      "osu.Game.Tournament/2020.215.0": {
+      "osu.Game.Tournament/2020.221.0": {
         "dependencies": {
           "Microsoft.Win32.Registry": "4.7.0",
-          "ppy.osu.Game": "2020.215.0"
+          "ppy.osu.Game": "2020.221.0"
         },
         "runtime": {
           "osu.Game.Tournament.dll": {}
         }
       },
-      "ppy.osu.Game/2020.215.0": {
+      "ppy.osu.Game/2020.221.0": {
         "dependencies": {
           "Humanizer": "2.7.9",
           "Microsoft.EntityFrameworkCore.Sqlite": "2.2.6",
           "Microsoft.EntityFrameworkCore.Sqlite.Core": "2.2.6",
           "NUnit": "3.12.0",
           "Newtonsoft.Json": "12.0.3",
-          "Sentry": "2.0.2",
+          "Sentry": "2.0.3",
           "SharpCompress": "0.24.0",
           "System.ComponentModel.Annotations": "4.7.0",
-          "ppy.osu.Framework": "2020.213.0",
-          "ppy.osu.Game.Resources": "2019.1230.0"
+          "ppy.osu.Framework": "2020.221.0",
+          "ppy.osu.Game.Resources": "2020.221.0"
         },
         "runtime": {
           "osu.Game.dll": {}
@@ -3186,7 +3186,7 @@
     }
   },
   "libraries": {
-    "osu!/2020.215.0": {
+    "osu!/2020.221.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
@@ -3203,12 +3203,12 @@
       "path": "deltacompressiondotnet/2.0.0",
       "hashPath": "deltacompressiondotnet.2.0.0.nupkg.sha512"
     },
-    "DiscordRichPresence/1.0.147": {
+    "DiscordRichPresence/1.0.150": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-pXP7nze2br4g0Y6ut9koFPl3pzroPsT4K6HoKDujOJmr2U0Yl+5I7q5EIBL4vTGzUnB4H/8IFa+xPXJTtPdObA==",
-      "path": "discordrichpresence/1.0.147",
-      "hashPath": "discordrichpresence.1.0.147.nupkg.sha512"
+      "sha512": "sha512-VXQT/7WAiHF51e/X20fyiCTXlm1dHOLh13nbPVUZikIWHs1LGPweP1GKAMM9PJWgsoejCeAHsRVSU1pWb4AKXQ==",
+      "path": "discordrichpresence/1.0.150",
+      "hashPath": "discordrichpresence.1.0.150.nupkg.sha512"
     },
     "FFmpeg.AutoGen/4.2.0": {
       "type": "package",
@@ -3763,12 +3763,12 @@
       "path": "microsoft.extensions.logging.abstractions/2.2.0",
       "hashPath": "microsoft.extensions.logging.abstractions.2.2.0.nupkg.sha512"
     },
-    "Microsoft.Extensions.ObjectPool/3.0.2": {
+    "Microsoft.Extensions.ObjectPool/3.0.3": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-03nqGHmoAuD2o8vVqVKaOpeONtNMQn610IuODre1iql5GBlAyFDDw/You+F/p/Pg0iIH4kO1Bd3gsFT+/pF5MQ==",
-      "path": "microsoft.extensions.objectpool/3.0.2",
-      "hashPath": "microsoft.extensions.objectpool.3.0.2.nupkg.sha512"
+      "sha512": "sha512-l377vEQnUf8cIEfckHhy6BqlRRpXFW6Ls5zkzvmHNPR+s/+snD99r+nL/QcI+w7My8eKa5XEaZJYb/p7NX6TNg==",
+      "path": "microsoft.extensions.objectpool/3.0.3",
+      "hashPath": "microsoft.extensions.objectpool.3.0.3.nupkg.sha512"
     },
     "Microsoft.Extensions.Options/2.2.0": {
       "type": "package",
@@ -3924,26 +3924,26 @@
       "path": "nunit/3.12.0",
       "hashPath": "nunit.3.12.0.nupkg.sha512"
     },
-    "ppy.osu.Framework/2020.213.0": {
+    "ppy.osu.Framework/2020.221.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-Drz0XgxjwfM1V9OhkISIhI4O6upXOAvkbIcgC9PB5sPBoMaknkYiwIG0jPqmrOYf2ZYAqbmS4URifMXmf0GpRg==",
-      "path": "ppy.osu.framework/2020.213.0",
-      "hashPath": "ppy.osu.framework.2020.213.0.nupkg.sha512"
+      "sha512": "sha512-daJJfKCBbX4/lgB+DJDItbUB3gXWCePVMe8efqL5i64zJj34nRKvkd/J9fuJTzT5Ga6UoCkauUVIL7/IsPlsrw==",
+      "path": "ppy.osu.framework/2020.221.0",
+      "hashPath": "ppy.osu.framework.2020.221.0.nupkg.sha512"
     },
-    "ppy.osu.Framework.NativeLibs/2019.1104.0": {
+    "ppy.osu.Framework.NativeLibs/2020.213.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-AYwhu4CMzAocZbMtxQIgsR5ez/v2qzrekmUNJaGelXEIiaN1nwzC0cocFj9f/8BdDUAIDjVeUGxALbLaB2Mmsg==",
-      "path": "ppy.osu.framework.nativelibs/2019.1104.0",
-      "hashPath": "ppy.osu.framework.nativelibs.2019.1104.0.nupkg.sha512"
+      "sha512": "sha512-Oq7GfvQjhCU/ClFh/c9p2LttdVA1HzpoUcGMO8ATL/uS3DKdDJOkk9DQdX60KvKslgZ2DVGNE4tlZZobbaKOIQ==",
+      "path": "ppy.osu.framework.nativelibs/2020.213.0",
+      "hashPath": "ppy.osu.framework.nativelibs.2020.213.0.nupkg.sha512"
     },
-    "ppy.osu.Game.Resources/2019.1230.0": {
+    "ppy.osu.Game.Resources/2020.221.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-ZKRyeAOSAP/wDYaTwtErHxBRpR+qruXQeYE9EPIJmhTeDaQrQ42IaaK0scechAKHe0NGHrSR5e1P8QZ1JqMXKA==",
-      "path": "ppy.osu.game.resources/2019.1230.0",
-      "hashPath": "ppy.osu.game.resources.2019.1230.0.nupkg.sha512"
+      "sha512": "sha512-SPdXrGOcTgElajfk/oAf7lERGTZ4TZdeENDMzWV1WhvHNArc2h5rCBOjNx/SrYnG4Yaa2e7wFLGUSyZoiwKJVQ==",
+      "path": "ppy.osu.game.resources/2020.221.0",
+      "hashPath": "ppy.osu.game.resources.2020.221.0.nupkg.sha512"
     },
     "ppy.osuTK.NS20/1.0.140": {
       "type": "package",
@@ -4141,12 +4141,12 @@
       "path": "runtime.unix.system.runtime.extensions/4.1.0",
       "hashPath": "runtime.unix.system.runtime.extensions.4.1.0.nupkg.sha512"
     },
-    "Sentry/2.0.2": {
+    "Sentry/2.0.3": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-gYscE8hiwVvGpkVbCgJHPvKmTYDUiPzl8tuZTXEQu7uBJ4dzCUc2GTI4VdpZThaS0dYBSXZZIZmWZp6oAngChA==",
-      "path": "sentry/2.0.2",
-      "hashPath": "sentry.2.0.2.nupkg.sha512"
+      "sha512": "sha512-cio0uHhgWwDgOuJDKKqIh50/yYERfYLGq6W9+XgMr2RAGCVVzjvy7cXQE3Sf8ExtOi65wo0DkQPXR1EbgPiaKg==",
+      "path": "sentry/2.0.3",
+      "hashPath": "sentry.2.0.3.nupkg.sha512"
     },
     "Sentry.PlatformAbstractions/1.1.0": {
       "type": "package",
@@ -4855,32 +4855,32 @@
       "path": "vk/1.0.22",
       "hashPath": "vk.1.0.22.nupkg.sha512"
     },
-    "osu.Game.Rulesets.Catch/2020.215.0": {
+    "osu.Game.Rulesets.Catch/2020.221.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "osu.Game.Rulesets.Mania/2020.215.0": {
+    "osu.Game.Rulesets.Mania/2020.221.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "osu.Game.Rulesets.Osu/2020.215.0": {
+    "osu.Game.Rulesets.Osu/2020.221.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "osu.Game.Rulesets.Taiko/2020.215.0": {
+    "osu.Game.Rulesets.Taiko/2020.221.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "osu.Game.Tournament/2020.215.0": {
+    "osu.Game.Tournament/2020.221.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "ppy.osu.Game/2020.215.0": {
+    "ppy.osu.Game/2020.221.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

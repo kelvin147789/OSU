@@ -109,7 +109,7 @@
             The target fruit if we are to initiate a hyperdash.
             </summary>
         </member>
-        <member name="F:osu.Game.Rulesets.Catch.Objects.Drawable.DrawableFruit.radius_adjust">
+        <member name="F:osu.Game.Rulesets.Catch.Objects.Drawables.FruitPiece.RADIUS_ADJUST">
             <summary>
             Because we're adding a border around the fruit, we need to scale down some.
             </summary>
@@ -134,7 +134,7 @@
             Activate or deactive the trail. Will be automatically deactivated when conditions to keep the trail displayed are no longer met.
             </summary>
         </member>
-        <member name="M:osu.Game.Rulesets.Catch.UI.CatcherArea.Catcher.Add(osu.Game.Rulesets.Objects.Drawables.DrawableHitObject)">
+        <member name="M:osu.Game.Rulesets.Catch.UI.CatcherArea.Catcher.PlaceOnPlate(osu.Game.Rulesets.Catch.Objects.Drawables.DrawableCatchHitObject)">
             <summary>
             Add a caught fruit to the catcher's stack.
             </summary>

@@ -2023,10 +2023,30 @@
             A list of floats decides position of each line node.
             </summary>
         </member>
-        <member name="T:osu.Game.Graphics.UserInterface.LoadingAnimation">
+        <member name="T:osu.Game.Graphics.UserInterface.LoadingLayer">
+            <summary>
+            A layer that will show a loading spinner and completely block input to an area.
+            Also optionally dims target elements.
+            Useful for disabling all elements in a form and showing we are waiting on a response, for instance.
+            </summary>
+        </member>
+        <member name="M:osu.Game.Graphics.UserInterface.LoadingLayer.#ctor(osu.Framework.Graphics.Drawable,System.Boolean)">
+            <summary>
+            Constuct a new loading spinner.
+            </summary>
+            <param name="dimTarget">An optional target to dim when displayed.</param>
+            <param name="withBox">Whether the spinner should have a surrounding black box for visibility.</param>
+        </member>
+        <member name="T:osu.Game.Graphics.UserInterface.LoadingSpinner">
             <summary>
             A loading spinner.
             </summary>
+        </member>
+        <member name="M:osu.Game.Graphics.UserInterface.LoadingSpinner.#ctor(System.Boolean)">
+            <summary>
+            Constuct a new loading spinner.
+            </summary>
+            <param name="withBox">Whether the spinner should have a surrounding black box for visibility.</param>
         </member>
         <member name="T:osu.Game.Graphics.UserInterface.OsuAnimatedButton">
             <summary>
@@ -2086,12 +2106,6 @@
         <member name="T:osu.Game.Graphics.UserInterface.PercentageCounter">
             <summary>
             Used as an accuracy counter. Represented visually as a percentage.
-            </summary>
-        </member>
-        <member name="T:osu.Game.Graphics.UserInterface.ProcessingOverlay">
-            <summary>
-            An overlay that will consume all available space and block input when required.
-            Useful for disabling all elements in a form and showing we are waiting on a response, for instance.
             </summary>
         </member>
         <member name="F:osu.Game.Graphics.UserInterface.RollingCounter`1.Current">
@@ -3197,6 +3211,12 @@
         <member name="M:osu.Game.Overlays.Comments.CommentsContainer.ShowComments(osu.Game.Online.API.Requests.CommentableType,System.Int64)">
             <param name="type">The type of resource to get comments for.</param>
             <param name="id">The id of the resource to get comments for.</param>
+        </member>
+        <member name="M:osu.Game.Overlays.Comments.CommentsPage.appendComments(osu.Game.Online.API.Requests.Responses.CommentBundle)">
+            <summary>
+            Appends retrieved comments to the subtree rooted of comments in this page.
+            </summary>
+            <param name="bundle">The bundle of comments to add.</param>
         </member>
         <member name="T:osu.Game.Overlays.HoldToConfirmOverlay">
             <summary>
@@ -4322,6 +4342,16 @@
             Should generally not be used when <see cref="P:osu.Game.Rulesets.Objects.Drawables.DrawableHitObject.UseTransformStateManagement"/> is true; use <see cref="M:osu.Game.Rulesets.Objects.Drawables.DrawableHitObject.UpdateStateTransforms(osu.Game.Rulesets.Objects.Drawables.ArmedState)"/> instead.
             </summary>
             <param name="state">The new armed state.</param>
+        </member>
+        <member name="M:osu.Game.Rulesets.Objects.Drawables.DrawableHitObject.GetComboColour(System.Collections.Generic.IReadOnlyList{osuTK.Graphics.Color4})">
+            <summary>
+            Called to retrieve the combo colour. Automatically assigned to <see cref="F:osu.Game.Rulesets.Objects.Drawables.DrawableHitObject.AccentColour"/>.
+            Defaults to using <see cref="P:osu.Game.Rulesets.Objects.Types.IHasComboInformation.ComboIndex"/> to decide on a colour.
+            </summary>
+            <remarks>
+            This will only be called if the <see cref="F:osu.Game.Rulesets.Objects.Drawables.DrawableHitObject.HitObject"/> implements <see cref="T:osu.Game.Rulesets.Objects.Types.IHasComboInformation"/>.
+            </remarks>
+            <param name="comboColours">A list of combo colours provided by the beatmap or skin. Can be null if not available.</param>
         </member>
         <member name="M:osu.Game.Rulesets.Objects.Drawables.DrawableHitObject.ApplySkin(osu.Game.Skinning.ISkinSource,System.Boolean)">
             <summary>
