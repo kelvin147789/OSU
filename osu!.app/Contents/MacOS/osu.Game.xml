@@ -3212,7 +3212,7 @@
             <param name="type">The type of resource to get comments for.</param>
             <param name="id">The id of the resource to get comments for.</param>
         </member>
-        <member name="M:osu.Game.Overlays.Comments.CommentsPage.appendComments(osu.Game.Online.API.Requests.Responses.CommentBundle)">
+        <member name="M:osu.Game.Overlays.Comments.CommentsPage.AppendComments(osu.Game.Online.API.Requests.Responses.CommentBundle)">
             <summary>
             Appends retrieved comments to the subtree rooted of comments in this page.
             </summary>
@@ -4308,15 +4308,6 @@
             Bind to apply a custom state which can override the default implementation.
             </summary>
         </member>
-        <member name="P:osu.Game.Rulesets.Objects.Drawables.DrawableHitObject.UseTransformStateManagement">
-            <summary>
-            Enables automatic transform management of this hitobject. Implementation of transforms should be done in <see cref="M:osu.Game.Rulesets.Objects.Drawables.DrawableHitObject.UpdateInitialTransforms"/> and <see cref="M:osu.Game.Rulesets.Objects.Drawables.DrawableHitObject.UpdateStateTransforms(osu.Game.Rulesets.Objects.Drawables.ArmedState)"/> only. Rewinding and removing previous states is done automatically.
-            </summary>
-            <remarks>
-            Going forward, this is the preferred way of implementing <see cref="T:osu.Game.Rulesets.Objects.Drawables.DrawableHitObject"/>s. Previous functionality
-            is offered as a compatibility layer until all rulesets have been migrated across.
-            </remarks>
-        </member>
         <member name="M:osu.Game.Rulesets.Objects.Drawables.DrawableHitObject.UpdateInitialTransforms">
              <summary>
              Apply (generally fade-in) transforms leading into the <see cref="F:osu.Game.Rulesets.Objects.Drawables.DrawableHitObject.HitObject"/> start time.
@@ -4333,13 +4324,6 @@
             <summary>
             Apply transforms based on the current <see cref="T:osu.Game.Rulesets.Objects.Drawables.ArmedState"/>. Previous states are automatically cleared.
             In the case of a non-idle <see cref="T:osu.Game.Rulesets.Objects.Drawables.ArmedState"/>, and if <see cref="P:osu.Framework.Graphics.Drawable.LifetimeEnd"/> was not set during this call, <see cref="M:osu.Framework.Graphics.Drawable.Expire(System.Boolean)"/> will be invoked.
-            </summary>
-            <param name="state">The new armed state.</param>
-        </member>
-        <member name="M:osu.Game.Rulesets.Objects.Drawables.DrawableHitObject.UpdateState(osu.Game.Rulesets.Objects.Drawables.ArmedState)">
-            <summary>
-            Legacy method to handle state changes.
-            Should generally not be used when <see cref="P:osu.Game.Rulesets.Objects.Drawables.DrawableHitObject.UseTransformStateManagement"/> is true; use <see cref="M:osu.Game.Rulesets.Objects.Drawables.DrawableHitObject.UpdateStateTransforms(osu.Game.Rulesets.Objects.Drawables.ArmedState)"/> instead.
             </summary>
             <param name="state">The new armed state.</param>
         </member>
@@ -4495,7 +4479,6 @@
         <member name="M:osu.Game.Rulesets.Objects.HitObject.CreateJudgement">
             <summary>
             Creates the <see cref="T:osu.Game.Rulesets.Judgements.Judgement"/> that represents the scoring information for this <see cref="T:osu.Game.Rulesets.Objects.HitObject"/>.
-            May be null.
             </summary>
         </member>
         <member name="M:osu.Game.Rulesets.Objects.HitObject.CreateHitWindows">
@@ -4551,6 +4534,11 @@
         <member name="T:osu.Game.Rulesets.Objects.Legacy.Catch.ConvertSpinner">
             <summary>
             Legacy osu!catch Spinner-type, used for parsing Beatmaps.
+            </summary>
+        </member>
+        <member name="T:osu.Game.Rulesets.Objects.Legacy.ConvertHitObject">
+            <summary>
+            A hit object only used for conversion, not actual gameplay.
             </summary>
         </member>
         <member name="T:osu.Game.Rulesets.Objects.Legacy.ConvertHitObjectParser">
@@ -6723,6 +6711,18 @@
             Push a <see cref="T:osu.Game.Screens.Play.Player"/> to the main screen stack to begin gameplay.
             Generally called from a <see cref="T:osu.Game.Screens.Multi.Match.MatchSubScreen"/> via DI resolution.
             </summary>
+        </member>
+        <member name="M:osu.Game.Screens.Multi.RoomManager.onListingReceived(System.Collections.Generic.List{osu.Game.Online.Multiplayer.Room})">
+            <summary>
+            Invoked when the listing of all <see cref="T:osu.Game.Online.Multiplayer.Room"/>s is received from the server.
+            </summary>
+            <param name="listing">The listing.</param>
+        </member>
+        <member name="M:osu.Game.Screens.Multi.RoomManager.onSelectedRoomReceived(osu.Game.Online.Multiplayer.Room)">
+            <summary>
+            Invoked when a <see cref="T:osu.Game.Online.Multiplayer.Room"/> is received from the server.
+            </summary>
+            <param name="toUpdate">The received <see cref="T:osu.Game.Online.Multiplayer.Room"/>.</param>
         </member>
         <member name="M:osu.Game.Screens.Multi.RoomManager.update(osu.Game.Online.Multiplayer.Room,osu.Game.Online.Multiplayer.Room)">
             <summary>
