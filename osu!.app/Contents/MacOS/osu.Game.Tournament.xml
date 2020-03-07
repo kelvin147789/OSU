@@ -112,45 +112,6 @@
             Fired when somethign changed that requires a ladder redraw.
             </summary>
         </member>
-        <member name="F:osu.Game.Tournament.TournamentFont.DEFAULT_FONT_SIZE">
-            <summary>
-            The default font size.
-            </summary>
-        </member>
-        <member name="M:osu.Game.Tournament.TournamentFont.GetFont(osu.Game.Tournament.TournamentTypeface,System.Single,osu.Game.Graphics.FontWeight,System.Boolean,System.Boolean)">
-            <summary>
-            Retrieves a <see cref="T:osu.Framework.Graphics.Sprites.FontUsage"/>.
-            </summary>
-            <param name="typeface">The font typeface.</param>
-            <param name="size">The size of the text in local space. For a value of 16, a single line will have a height of 16px.</param>
-            <param name="weight">The font weight.</param>
-            <param name="italics">Whether the font is italic.</param>
-            <param name="fixedWidth">Whether all characters should be spaced the same distance apart.</param>
-            <returns>The <see cref="T:osu.Framework.Graphics.Sprites.FontUsage"/>.</returns>
-        </member>
-        <member name="M:osu.Game.Tournament.TournamentFont.GetFamilyString(osu.Game.Tournament.TournamentTypeface)">
-            <summary>
-            Retrieves the string representation of a <see cref="T:osu.Game.Tournament.TournamentTypeface"/>.
-            </summary>
-            <param name="typeface">The <see cref="T:osu.Game.Tournament.TournamentTypeface"/>.</param>
-            <returns>The string representation.</returns>
-        </member>
-        <member name="M:osu.Game.Tournament.TournamentFont.GetWeightString(osu.Game.Tournament.TournamentTypeface,osu.Game.Graphics.FontWeight)">
-            <summary>
-            Retrieves the string representation of a <see cref="T:osu.Game.Graphics.FontWeight"/>.
-            </summary>
-            <param name="typeface">The <see cref="T:osu.Game.Tournament.TournamentTypeface"/>.</param>
-            <param name="weight">The <see cref="T:osu.Game.Graphics.FontWeight"/>.</param>
-            <returns>The string representation of <paramref name="weight"/> in the specified <paramref name="typeface"/>.</returns>
-        </member>
-        <member name="M:osu.Game.Tournament.TournamentFont.GetWeightString(System.String,osu.Game.Graphics.FontWeight)">
-            <summary>
-            Retrieves the string representation of a <see cref="T:osu.Game.Graphics.FontWeight"/>.
-            </summary>
-            <param name="family">The family string.</param>
-            <param name="weight">The <see cref="T:osu.Game.Graphics.FontWeight"/>.</param>
-            <returns>The string representation of <paramref name="weight"/> in the specified <paramref name="family"/>.</returns>
-        </member>
         <member name="M:osu.Game.Tournament.TournamentGameBase.addPlayers">
             <summary>
             Add missing player info based on user IDs.

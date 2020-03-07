@@ -1912,6 +1912,36 @@
             <param name="fixedWidth">Whether all characters should be spaced apart the same distance. If null, the value is copied from this <see cref="T:osu.Framework.Graphics.Sprites.FontUsage"/>.</param>
             <returns>The resulting <see cref="T:osu.Framework.Graphics.Sprites.FontUsage"/>.</returns>
         </member>
+        <member name="F:osu.Game.Graphics.FontWeight.Light">
+            <summary>
+            Equivalent to weight 300.
+            </summary>
+        </member>
+        <member name="F:osu.Game.Graphics.FontWeight.Regular">
+            <summary>
+            Equivalent to weight 400.
+            </summary>
+        </member>
+        <member name="F:osu.Game.Graphics.FontWeight.Medium">
+            <summary>
+            Equivalent to weight 500.
+            </summary>
+        </member>
+        <member name="F:osu.Game.Graphics.FontWeight.SemiBold">
+            <summary>
+            Equivalent to weight 600.
+            </summary>
+        </member>
+        <member name="F:osu.Game.Graphics.FontWeight.Bold">
+            <summary>
+            Equivalent to weight 700.
+            </summary>
+        </member>
+        <member name="F:osu.Game.Graphics.FontWeight.Black">
+            <summary>
+            Equivalent to weight 900.
+            </summary>
+        </member>
         <member name="P:osu.Game.Graphics.ScreenshotManager.CursorVisibility">
             <summary>
             Changed when screenshots are being or have finished being taken, to control whether cursors should be visible.
@@ -2394,13 +2424,14 @@
             </summary>
             <typeparam name="T">The type of the custom action.</typeparam>
         </member>
-        <member name="M:osu.Game.Input.Bindings.DatabasedKeyBindingContainer`1.#ctor(osu.Game.Rulesets.RulesetInfo,System.Nullable{System.Int32},osu.Framework.Input.Bindings.SimultaneousBindingMode)">
+        <member name="M:osu.Game.Input.Bindings.DatabasedKeyBindingContainer`1.#ctor(osu.Game.Rulesets.RulesetInfo,System.Nullable{System.Int32},osu.Framework.Input.Bindings.SimultaneousBindingMode,osu.Framework.Input.Bindings.KeyCombinationMatchingMode)">
             <summary>
             Create a new instance.
             </summary>
             <param name="ruleset">A reference to identify the current <see cref="T:osu.Game.Rulesets.Ruleset"/>. Used to lookup mappings. Null for global mappings.</param>
             <param name="variant">An optional variant for the specified <see cref="T:osu.Game.Rulesets.Ruleset"/>. Used when a ruleset has more than one possible keyboard layouts.</param>
             <param name="simultaneousMode">Specify how to deal with multiple matches of <see cref="T:osu.Framework.Input.Bindings.KeyCombination"/>s and <typeparamref name="T"/>s.</param>
+            <param name="matchingMode">Specify how to deal with exact <see cref="T:osu.Framework.Input.Bindings.KeyCombination"/> matches.</param>
         </member>
         <member name="P:osu.Game.Input.Handlers.ReplayInputHandler.GamefieldToScreenSpace">
             <summary>
@@ -7580,6 +7611,26 @@
             are preferrably tested within the presence of a clock and seek controls.
             </summary>
         </member>
+        <member name="F:osu.Game.Tests.Visual.ModTestScene.ModTestData.Autoplay">
+            <summary>
+            Whether to use a replay to simulate an auto-play. True by default.
+            </summary>
+        </member>
+        <member name="F:osu.Game.Tests.Visual.ModTestScene.ModTestData.Beatmap">
+            <summary>
+            The beatmap for this test case.
+            </summary>
+        </member>
+        <member name="F:osu.Game.Tests.Visual.ModTestScene.ModTestData.PassCondition">
+            <summary>
+            The conditions that cause this test case to pass.
+            </summary>
+        </member>
+        <member name="F:osu.Game.Tests.Visual.ModTestScene.ModTestData.Mod">
+            <summary>
+            The <see cref="F:osu.Game.Tests.Visual.ModTestScene.ModTestData.Mod"/> this test case tests.
+            </summary>
+        </member>
         <member name="T:osu.Game.Tests.Visual.OsuGridTestScene">
             <summary>
             An abstract test case which exposes small cells arranged in a grid.
@@ -7635,6 +7686,11 @@
             Local offset added to the reference clock to resolve correct time.
             </summary>
         </member>
+        <member name="P:osu.Game.Tests.Visual.PlayerTestScene.HasCustomSteps">
+            <summary>
+            Whether custom test steps are provided. Custom tests should invoke <see cref="M:osu.Game.Tests.Visual.PlayerTestScene.CreateTest(System.Action)"/> to create the test steps.
+            </summary>
+        </member>
         <member name="T:osu.Game.Tests.Visual.RateAdjustedBeatmapTestScene">
             <summary>
             Test case which adjusts the beatmap's rate to match any speed adjustments in visual tests.
@@ -7649,6 +7705,16 @@
             <summary>
             A container which provides a <see cref="T:osu.Game.Rulesets.UI.Scrolling.IScrollingInfo"/> to children.
             This should only be used when testing
+            </summary>
+        </member>
+        <member name="T:osu.Game.Tests.Visual.TestPlayer">
+            <summary>
+            A player that exposes many components that would otherwise not be available, for testing purposes.
+            </summary>
+        </member>
+        <member name="P:osu.Game.Tests.Visual.TestPlayer.Mods">
+            <summary>
+            Mods from *player* (not OsuScreen).
             </summary>
         </member>
         <member name="T:osu.Game.Updater.SimpleUpdateManager">
