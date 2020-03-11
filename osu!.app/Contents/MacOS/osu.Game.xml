@@ -1376,11 +1376,13 @@
         <member name="E:osu.Game.Database.IModelDownloader`1.DownloadBegan">
             <summary>
             Fired when a <typeparamref name="TModel"/> download begins.
+            This is NOT run on the update thread and should be scheduled.
             </summary>
         </member>
         <member name="E:osu.Game.Database.IModelDownloader`1.DownloadFailed">
             <summary>
             Fired when a <typeparamref name="TModel"/> download is interrupted, either due to user cancellation or failure.
+            This is NOT run on the update thread and should be scheduled.
             </summary>
         </member>
         <member name="M:osu.Game.Database.IModelDownloader`1.IsAvailableLocally(`0)">
@@ -2252,7 +2254,12 @@
             This does not limit the counter value, but the amount of stars displayed.
             </remarks>
         </member>
-        <member name="P:osu.Game.Graphics.UserInterface.StarCounter.CountStars">
+        <member name="P:osu.Game.Graphics.UserInterface.StarCounter.AnimationDelay">
+            <summary>
+            The added delay for each subsequent star to be animated.
+            </summary>
+        </member>
+        <member name="P:osu.Game.Graphics.UserInterface.StarCounter.Current">
             <summary>
             Amount of stars represented.
             </summary>
@@ -7679,11 +7686,6 @@
         <member name="T:osu.Game.Tests.Visual.OsuTestScene.ClockBackedTestWorkingBeatmap.TrackVirtualManual">
             <summary>
             A virtual track which tracks a reference clock.
-            </summary>
-        </member>
-        <member name="F:osu.Game.Tests.Visual.OsuTestScene.ClockBackedTestWorkingBeatmap.TrackVirtualManual.offset">
-            <summary>
-            Local offset added to the reference clock to resolve correct time.
             </summary>
         </member>
         <member name="P:osu.Game.Tests.Visual.PlayerTestScene.HasCustomSteps">
