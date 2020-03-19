@@ -124,52 +124,52 @@
             The length of one span of this <see cref="T:osu.Game.Rulesets.Catch.Objects.JuiceStream"/>.
             </summary>
         </member>
-        <member name="P:osu.Game.Rulesets.Catch.UI.CatcherArea.Catcher.CatchWidth">
+        <member name="P:osu.Game.Rulesets.Catch.UI.Catcher.HyperDashing">
+            <summary>
+            Whether we are hyper-dashing or not.
+            </summary>
+        </member>
+        <member name="F:osu.Game.Rulesets.Catch.UI.Catcher.BASE_SPEED">
+            <summary>
+            The relative space to cover in 1 millisecond. based on 1 game pixel per millisecond as in osu-stable.
+            </summary>
+        </member>
+        <member name="P:osu.Game.Rulesets.Catch.UI.Catcher.CatchWidth">
             <summary>
             Width of the area that can be used to attempt catches during gameplay.
             </summary>
         </member>
-        <member name="P:osu.Game.Rulesets.Catch.UI.CatcherArea.Catcher.Trail">
+        <member name="P:osu.Game.Rulesets.Catch.UI.Catcher.Trail">
             <summary>
-            Activate or deactive the trail. Will be automatically deactivated when conditions to keep the trail displayed are no longer met.
+            Activate or deactivate the trail. Will be automatically deactivated when conditions to keep the trail displayed are no longer met.
             </summary>
         </member>
-        <member name="M:osu.Game.Rulesets.Catch.UI.CatcherArea.Catcher.PlaceOnPlate(osu.Game.Rulesets.Catch.Objects.Drawables.DrawableCatchHitObject)">
+        <member name="M:osu.Game.Rulesets.Catch.UI.Catcher.PlaceOnPlate(osu.Game.Rulesets.Catch.Objects.Drawables.DrawableCatchHitObject)">
             <summary>
             Add a caught fruit to the catcher's stack.
             </summary>
             <param name="fruit">The fruit that was caught.</param>
         </member>
-        <member name="M:osu.Game.Rulesets.Catch.UI.CatcherArea.Catcher.AttemptCatch(osu.Game.Rulesets.Catch.Objects.CatchHitObject)">
+        <member name="M:osu.Game.Rulesets.Catch.UI.Catcher.AttemptCatch(osu.Game.Rulesets.Catch.Objects.CatchHitObject)">
             <summary>
             Let the catcher attempt to catch a fruit.
             </summary>
             <param name="fruit">The fruit to catch.</param>
             <returns>Whether the catch is possible.</returns>
         </member>
-        <member name="P:osu.Game.Rulesets.Catch.UI.CatcherArea.Catcher.HyperDashing">
-            <summary>
-            Whether we are hyper-dashing or not.
-            </summary>
-        </member>
-        <member name="M:osu.Game.Rulesets.Catch.UI.CatcherArea.Catcher.SetHyperDashState(System.Double,System.Single)">
+        <member name="M:osu.Game.Rulesets.Catch.UI.Catcher.SetHyperDashState(System.Double,System.Single)">
             <summary>
             Set hyper-dash state.
             </summary>
             <param name="modifier">The speed multiplier. If this is less or equals to 1, this catcher will be non-hyper-dashing state.</param>
             <param name="targetPosition">When this catcher crosses this position, this catcher ends hyper-dashing.</param>
         </member>
-        <member name="F:osu.Game.Rulesets.Catch.UI.CatcherArea.Catcher.BASE_SPEED">
-            <summary>
-            The relative space to cover in 1 millisecond. based on 1 game pixel per millisecond as in osu-stable.
-            </summary>
-        </member>
-        <member name="M:osu.Game.Rulesets.Catch.UI.CatcherArea.Catcher.Drop">
+        <member name="M:osu.Game.Rulesets.Catch.UI.Catcher.Drop">
             <summary>
             Drop any fruit off the plate.
             </summary>
         </member>
-        <member name="M:osu.Game.Rulesets.Catch.UI.CatcherArea.Catcher.Explode">
+        <member name="M:osu.Game.Rulesets.Catch.UI.Catcher.Explode">
             <summary>
             Explode any fruit off the plate.
             </summary>

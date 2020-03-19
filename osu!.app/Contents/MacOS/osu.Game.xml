@@ -948,7 +948,7 @@
             Retrieves the <see cref="P:osu.Game.Beatmaps.IWorkingBeatmap.Skin"/> which this <see cref="T:osu.Game.Beatmaps.WorkingBeatmap"/> provides.
             </summary>
         </member>
-        <member name="M:osu.Game.Beatmaps.IWorkingBeatmap.GetPlayableBeatmap(osu.Game.Rulesets.RulesetInfo,System.Collections.Generic.IReadOnlyList{osu.Game.Rulesets.Mods.Mod})">
+        <member name="M:osu.Game.Beatmaps.IWorkingBeatmap.GetPlayableBeatmap(osu.Game.Rulesets.RulesetInfo,System.Collections.Generic.IReadOnlyList{osu.Game.Rulesets.Mods.Mod},System.Nullable{System.TimeSpan})">
             <summary>
             Constructs a playable <see cref="T:osu.Game.Beatmaps.IBeatmap"/> from <see cref="P:osu.Game.Beatmaps.IWorkingBeatmap.Beatmap"/> using the applicable converters for a specific <see cref="T:osu.Game.Rulesets.RulesetInfo"/>.
             <para>
@@ -958,6 +958,7 @@
             </summary>
             <param name="ruleset">The <see cref="T:osu.Game.Rulesets.RulesetInfo"/> to create a playable <see cref="T:osu.Game.Beatmaps.IBeatmap"/> for.</param>
             <param name="mods">The <see cref="T:osu.Game.Rulesets.Mods.Mod"/>s to apply to the <see cref="T:osu.Game.Beatmaps.IBeatmap"/>.</param>
+            <param name="timeout">The maximum length in milliseconds to wait for load to complete. Defaults to 10,000ms.</param>
             <returns>The converted <see cref="T:osu.Game.Beatmaps.IBeatmap"/>.</returns>
             <exception cref="T:osu.Game.Rulesets.UI.BeatmapInvalidForRulesetException">If <see cref="P:osu.Game.Beatmaps.IWorkingBeatmap.Beatmap"/> could not be converted to <paramref name="ruleset"/>.</exception>
         </member>
@@ -1857,6 +1858,11 @@
             Smoothly adjusts <see cref="P:osu.Game.Graphics.IHasAccentColour.AccentColour"/> over time.
             </summary>
             <returns>A <see cref="T:osu.Framework.Graphics.Transforms.TransformSequence`1"/> to which further transforms can be added.</returns>
+        </member>
+        <member name="M:osu.Game.Graphics.OsuColour.ForRank(osu.Game.Scoring.ScoreRank)">
+            <summary>
+            Retrieves the colour for a <see cref="T:osu.Game.Scoring.ScoreRank"/>.
+            </summary>
         </member>
         <member name="F:osu.Game.Graphics.OsuFont.DEFAULT_FONT_SIZE">
             <summary>
@@ -3035,11 +3041,6 @@
             Holds the current download state of the <typeparamref name="TModel"/>, whether is has already been downloaded, is in progress, or is not downloaded.
             </summary>
         </member>
-        <member name="M:osu.Game.Online.Leaderboards.DrawableRank.getRankColour">
-            <summary>
-             Retrieves the grade background colour.
-            </summary>
-        </member>
         <member name="M:osu.Game.Online.Leaderboards.DrawableRank.getRankNameColour">
             <summary>
              Retrieves the grade text colour.
@@ -3242,7 +3243,7 @@
         <member name="M:osu.Game.Overlays.Chat.Tabs.ChannelTabControl.RemoveChannel(osu.Game.Online.Chat.Channel)">
             <summary>
             Removes a channel from the ChannelTabControl.
-            If the selected channel is the one that is beeing removed, the next available channel will be selected.
+            If the selected channel is the one that is being removed, the next available channel will be selected.
             </summary>
             <param name="channel">The channel that is going to be removed.</param>
         </member>
@@ -7102,6 +7103,242 @@
             Takes <see cref="P:osu.Game.Screens.Play.SquareGraph.Values"/> and adjusts it to fit the amount of columns.
             </summary>
         </member>
+        <member name="T:osu.Game.Screens.Ranking.Expanded.Accuracy.AccuracyCircle">
+            <summary>
+            The component that displays the player's accuracy on the results screen.
+            </summary>
+        </member>
+        <member name="F:osu.Game.Screens.Ranking.Expanded.Accuracy.AccuracyCircle.APPEAR_DURATION">
+            <summary>
+            Duration for the transforms causing this component to appear.
+            </summary>
+        </member>
+        <member name="F:osu.Game.Screens.Ranking.Expanded.Accuracy.AccuracyCircle.ACCURACY_TRANSFORM_DELAY">
+            <summary>
+            Delay before the accuracy circle starts filling.
+            </summary>
+        </member>
+        <member name="F:osu.Game.Screens.Ranking.Expanded.Accuracy.AccuracyCircle.ACCURACY_TRANSFORM_DURATION">
+            <summary>
+            Duration for the accuracy circle fill.
+            </summary>
+        </member>
+        <member name="F:osu.Game.Screens.Ranking.Expanded.Accuracy.AccuracyCircle.TEXT_APPEAR_DELAY">
+            <summary>
+            Delay after <see cref="F:osu.Game.Screens.Ranking.Expanded.Accuracy.AccuracyCircle.ACCURACY_TRANSFORM_DURATION"/> for the rank text (A/B/C/D/S/SS) to appear.
+            </summary>
+        </member>
+        <member name="F:osu.Game.Screens.Ranking.Expanded.Accuracy.AccuracyCircle.RANK_CIRCLE_TRANSFORM_DELAY">
+            <summary>
+            Delay before the rank circles start filling.
+            </summary>
+        </member>
+        <member name="F:osu.Game.Screens.Ranking.Expanded.Accuracy.AccuracyCircle.RANK_CIRCLE_TRANSFORM_DURATION">
+            <summary>
+            Duration for the rank circle fills.
+            </summary>
+        </member>
+        <member name="F:osu.Game.Screens.Ranking.Expanded.Accuracy.AccuracyCircle.RANK_CIRCLE_RADIUS">
+            <summary>
+            Relative width of the rank circles.
+            </summary>
+        </member>
+        <member name="F:osu.Game.Screens.Ranking.Expanded.Accuracy.AccuracyCircle.accuracy_circle_radius">
+            <summary>
+            Relative width of the circle showing the accuracy.
+            </summary>
+        </member>
+        <member name="F:osu.Game.Screens.Ranking.Expanded.Accuracy.AccuracyCircle.virtual_ss_percentage">
+            <summary>
+            SS is displayed as a 1% region, otherwise it would be invisible.
+            </summary>
+        </member>
+        <member name="F:osu.Game.Screens.Ranking.Expanded.Accuracy.AccuracyCircle.ACCURACY_TRANSFORM_EASING">
+            <summary>
+            The easing for the circle filling transforms.
+            </summary>
+        </member>
+        <member name="T:osu.Game.Screens.Ranking.Expanded.Accuracy.RankBadge">
+            <summary>
+            Contains a <see cref="T:osu.Game.Online.Leaderboards.DrawableRank"/> that is positioned around the <see cref="T:osu.Game.Screens.Ranking.Expanded.Accuracy.AccuracyCircle"/>.
+            </summary>
+        </member>
+        <member name="F:osu.Game.Screens.Ranking.Expanded.Accuracy.RankBadge.Accuracy">
+            <summary>
+            The accuracy value corresponding to the <see cref="T:osu.Game.Scoring.ScoreRank"/> displayed by this badge.
+            </summary>
+        </member>
+        <member name="M:osu.Game.Screens.Ranking.Expanded.Accuracy.RankBadge.#ctor(System.Single,osu.Game.Scoring.ScoreRank)">
+            <summary>
+            Creates a new <see cref="T:osu.Game.Screens.Ranking.Expanded.Accuracy.RankBadge"/>.
+            </summary>
+            <param name="accuracy">The accuracy value corresponding to <paramref name="rank"/>.</param>
+            <param name="rank">The <see cref="T:osu.Game.Scoring.ScoreRank"/> to be displayed in this <see cref="T:osu.Game.Screens.Ranking.Expanded.Accuracy.RankBadge"/>.</param>
+        </member>
+        <member name="M:osu.Game.Screens.Ranking.Expanded.Accuracy.RankBadge.Appear">
+            <summary>
+            Shows this <see cref="T:osu.Game.Screens.Ranking.Expanded.Accuracy.RankBadge"/>.
+            </summary>
+        </member>
+        <member name="T:osu.Game.Screens.Ranking.Expanded.Accuracy.RankNotch">
+            <summary>
+            A solid "notch" of the <see cref="T:osu.Game.Screens.Ranking.Expanded.Accuracy.AccuracyCircle"/> that appears at the ends of the rank circles to add separation.
+            </summary>
+        </member>
+        <member name="T:osu.Game.Screens.Ranking.Expanded.Accuracy.RankText">
+            <summary>
+            The text that appears in the middle of the <see cref="T:osu.Game.Screens.Ranking.Expanded.Accuracy.AccuracyCircle"/> displaying the user's rank.
+            </summary>
+        </member>
+        <member name="T:osu.Game.Screens.Ranking.Expanded.Accuracy.SmoothCircularProgress">
+            <summary>
+            Contains a <see cref="T:osu.Framework.Graphics.UserInterface.CircularProgress"/> with smoothened edges.
+            </summary>
+        </member>
+        <member name="T:osu.Game.Screens.Ranking.Expanded.ExpandedPanelMiddleContent">
+            <summary>
+            The content that appears in the middle section of the <see cref="T:osu.Game.Screens.Ranking.ScorePanel"/>.
+            </summary>
+        </member>
+        <member name="M:osu.Game.Screens.Ranking.Expanded.ExpandedPanelMiddleContent.#ctor(osu.Game.Scoring.ScoreInfo)">
+            <summary>
+            Creates a new <see cref="T:osu.Game.Screens.Ranking.Expanded.ExpandedPanelMiddleContent"/>.
+            </summary>
+            <param name="score">The score to display.</param>
+        </member>
+        <member name="T:osu.Game.Screens.Ranking.Expanded.ExpandedPanelTopContent">
+            <summary>
+            The content that appears in the middle section of the <see cref="T:osu.Game.Screens.Ranking.ScorePanel"/>.
+            </summary>
+        </member>
+        <member name="M:osu.Game.Screens.Ranking.Expanded.ExpandedPanelTopContent.#ctor(osu.Game.Users.User)">
+            <summary>
+            Creates a new <see cref="T:osu.Game.Screens.Ranking.Expanded.ExpandedPanelTopContent"/>.
+            </summary>
+            <param name="user">The <see cref="T:osu.Game.Users.User"/> to display.</param>
+        </member>
+        <member name="T:osu.Game.Screens.Ranking.Expanded.StarRatingDisplay">
+            <summary>
+            A pill that displays the star rating of a <see cref="T:osu.Game.Beatmaps.BeatmapInfo"/>.
+            </summary>
+        </member>
+        <member name="M:osu.Game.Screens.Ranking.Expanded.StarRatingDisplay.#ctor(osu.Game.Beatmaps.BeatmapInfo)">
+            <summary>
+            Creates a new <see cref="T:osu.Game.Screens.Ranking.Expanded.StarRatingDisplay"/>.
+            </summary>
+            <param name="beatmap">The <see cref="T:osu.Game.Beatmaps.BeatmapInfo"/> to display the star difficulty of.</param>
+        </member>
+        <member name="T:osu.Game.Screens.Ranking.Expanded.Statistics.AccuracyStatistic">
+            <summary>
+            A <see cref="T:osu.Game.Screens.Ranking.Expanded.Statistics.StatisticDisplay"/> to display the player's accuracy.
+            </summary>
+        </member>
+        <member name="M:osu.Game.Screens.Ranking.Expanded.Statistics.AccuracyStatistic.#ctor(System.Double)">
+            <summary>
+            Creates a new <see cref="T:osu.Game.Screens.Ranking.Expanded.Statistics.AccuracyStatistic"/>.
+            </summary>
+            <param name="accuracy">The accuracy to display.</param>
+        </member>
+        <member name="T:osu.Game.Screens.Ranking.Expanded.Statistics.ComboStatistic">
+            <summary>
+            A <see cref="T:osu.Game.Screens.Ranking.Expanded.Statistics.StatisticDisplay"/> to display the player's combo.
+            </summary>
+        </member>
+        <member name="M:osu.Game.Screens.Ranking.Expanded.Statistics.ComboStatistic.#ctor(System.Int32,System.Boolean)">
+            <summary>
+            Creates a new <see cref="T:osu.Game.Screens.Ranking.Expanded.Statistics.ComboStatistic"/>.
+            </summary>
+            <param name="combo">The combo to be displayed.</param>
+            <param name="isPerfect">Whether this is a perfect combo.</param>
+        </member>
+        <member name="T:osu.Game.Screens.Ranking.Expanded.Statistics.CounterStatistic">
+            <summary>
+            A <see cref="T:osu.Game.Screens.Ranking.Expanded.Statistics.StatisticDisplay"/> to display general numeric values.
+            </summary>
+        </member>
+        <member name="M:osu.Game.Screens.Ranking.Expanded.Statistics.CounterStatistic.#ctor(System.String,System.Int32)">
+            <summary>
+            Creates a new <see cref="T:osu.Game.Screens.Ranking.Expanded.Statistics.CounterStatistic"/>.
+            </summary>
+            <param name="header">The name of the statistic.</param>
+            <param name="count">The value to display.</param>
+        </member>
+        <member name="T:osu.Game.Screens.Ranking.Expanded.Statistics.StatisticDisplay">
+            <summary>
+            A statistic from the score to be displayed in the <see cref="T:osu.Game.Screens.Ranking.Expanded.ExpandedPanelMiddleContent"/>.
+            </summary>
+        </member>
+        <member name="M:osu.Game.Screens.Ranking.Expanded.Statistics.StatisticDisplay.#ctor(System.String)">
+            <summary>
+            Creates a new <see cref="T:osu.Game.Screens.Ranking.Expanded.Statistics.StatisticDisplay"/>.
+            </summary>
+            <param name="header">The name of the statistic.</param>
+        </member>
+        <member name="M:osu.Game.Screens.Ranking.Expanded.Statistics.StatisticDisplay.Appear">
+            <summary>
+            Shows the statistic value.
+            </summary>
+        </member>
+        <member name="M:osu.Game.Screens.Ranking.Expanded.Statistics.StatisticDisplay.CreateContent">
+            <summary>
+            Creates the content for this <see cref="T:osu.Game.Screens.Ranking.Expanded.Statistics.StatisticDisplay"/>.
+            </summary>
+        </member>
+        <member name="T:osu.Game.Screens.Ranking.Expanded.TotalScoreCounter">
+            <summary>
+            A counter for the player's total score to be displayed in the <see cref="T:osu.Game.Screens.Ranking.Expanded.ExpandedPanelMiddleContent"/>.
+            </summary>
+        </member>
+        <member name="F:osu.Game.Screens.Ranking.ScorePanel.contracted_width">
+            <summary>
+            Width of the panel when contracted.
+            </summary>
+        </member>
+        <member name="F:osu.Game.Screens.Ranking.ScorePanel.contracted_height">
+            <summary>
+            Height of the panel when contracted.
+            </summary>
+        </member>
+        <member name="F:osu.Game.Screens.Ranking.ScorePanel.expanded_width">
+            <summary>
+            Width of the panel when expanded.
+            </summary>
+        </member>
+        <member name="F:osu.Game.Screens.Ranking.ScorePanel.expanded_height">
+            <summary>
+            Height of the panel when expanded.
+            </summary>
+        </member>
+        <member name="F:osu.Game.Screens.Ranking.ScorePanel.expanded_top_layer_height">
+            <summary>
+            Height of the top layer when the panel is expanded.
+            </summary>
+        </member>
+        <member name="F:osu.Game.Screens.Ranking.ScorePanel.contracted_top_layer_height">
+            <summary>
+            Height of the top layer when the panel is contracted.
+            </summary>
+        </member>
+        <member name="F:osu.Game.Screens.Ranking.ScorePanel.resize_duration">
+            <summary>
+            Duration for the panel to resize into its expanded/contracted size.
+            </summary>
+        </member>
+        <member name="F:osu.Game.Screens.Ranking.ScorePanel.top_layer_expand_delay">
+            <summary>
+            Delay after <see cref="F:osu.Game.Screens.Ranking.ScorePanel.resize_duration"/> before the top layer is expanded.
+            </summary>
+        </member>
+        <member name="F:osu.Game.Screens.Ranking.ScorePanel.top_layer_expand_duration">
+            <summary>
+            Duration for the top layer expansion.
+            </summary>
+        </member>
+        <member name="F:osu.Game.Screens.Ranking.ScorePanel.content_fade_duration">
+            <summary>
+            Duration for the panel contents to fade in.
+            </summary>
+        </member>
         <member name="F:osu.Game.Screens.Select.BeatmapCarousel.BeatmapSetsChanged">
             <summary>
             Triggered when the <see cref="P:osu.Game.Screens.Select.BeatmapCarousel.BeatmapSets"/> loaded change and are completely loaded.
@@ -7128,15 +7365,12 @@
             </summary>
         </member>
         <member name="M:osu.Game.Screens.Select.BeatmapCarousel.SelectBeatmap(osu.Game.Beatmaps.BeatmapInfo,System.Boolean)">
-             <summary>
-             Selects a given beatmap on the carousel.
-            
-             If bypassFilters is false, we will try to select another unfiltered beatmap in the same set. If the
-             entire set is filtered, no selection is made.
-             </summary>
-             <param name="beatmap">The beatmap to select.</param>
-             <param name="bypassFilters">Whether to select the beatmap even if it is filtered (i.e., not visible on carousel).</param>
-             <returns>True if a selection was made, False if it wasn't.</returns>
+            <summary>
+            Selects a given beatmap on the carousel.
+            </summary>
+            <param name="beatmap">The beatmap to select.</param>
+            <param name="bypassFilters">Whether to select the beatmap even if it is filtered (i.e., not visible on carousel).</param>
+            <returns>True if a selection was made, False if it wasn't.</returns>
         </member>
         <member name="M:osu.Game.Screens.Select.BeatmapCarousel.SelectNext(System.Int32,System.Boolean)">
             <summary>
@@ -7170,6 +7404,11 @@
             The position of the upper visible bound with respect to the current scroll position.
             </summary>
         </member>
+        <member name="M:osu.Game.Screens.Select.BeatmapCarousel.ScrollToSelected">
+            <summary>
+            Scroll to the current <see cref="P:osu.Game.Screens.Select.BeatmapCarousel.SelectedBeatmap"/>.
+            </summary>
+        </member>
         <member name="M:osu.Game.Screens.Select.BeatmapCarousel.updateItems">
             <summary>
             Computes the target Y positions for every item in the carousel.
@@ -7192,6 +7431,11 @@
             the current scroll position.
             </summary>
             <param name="p">The item to be updated.</param>
+        </member>
+        <member name="P:osu.Game.Screens.Select.BeatmapCarousel.CarouselScrollContainer.UserScrolling">
+            <summary>
+            Whether the last scroll event was user triggered, directly on the scroll container.
+            </summary>
         </member>
         <member name="M:osu.Game.Screens.Select.BeatmapDetailArea.Refresh">
             <summary>
@@ -7338,7 +7582,7 @@
             selection has been changed as the result of a user interaction.
             </summary>
         </member>
-        <member name="M:osu.Game.Screens.Select.SongSelect.UpdateBeatmap(osu.Game.Beatmaps.WorkingBeatmap)">
+        <member name="M:osu.Game.Screens.Select.SongSelect.updateComponentFromBeatmap(osu.Game.Beatmaps.WorkingBeatmap)">
             <summary>
             Allow components in SongSelect to update their loaded beatmap details.
             This is a debounced call (unlike directly binding to WorkingBeatmap.ValueChanged).

@@ -7,7 +7,7 @@
   "targets": {
     ".NETCoreApp,Version=v3.1": {},
     ".NETCoreApp,Version=v3.1/osx-x64": {
-      "osu!/2020.312.0": {
+      "osu!/2020.317.0": {
         "dependencies": {
           "DiscordRichPresence": "1.0.150",
           "Microsoft.CodeAnalysis.BannedApiAnalyzers": "2.9.8",
@@ -16,12 +16,12 @@
           "Microsoft.EntityFrameworkCore.Sqlite": "2.2.6",
           "Microsoft.Win32.Registry": "4.7.0",
           "System.IO.Packaging": "4.7.0",
-          "osu.Game.Rulesets.Catch": "2020.312.0",
-          "osu.Game.Rulesets.Mania": "2020.312.0",
-          "osu.Game.Rulesets.Osu": "2020.312.0",
-          "osu.Game.Rulesets.Taiko": "2020.312.0",
-          "osu.Game.Tournament": "2020.312.0",
-          "ppy.osu.Game": "2020.312.0",
+          "osu.Game.Rulesets.Catch": "2020.317.0",
+          "osu.Game.Rulesets.Mania": "2020.317.0",
+          "osu.Game.Rulesets.Osu": "2020.317.0",
+          "osu.Game.Rulesets.Taiko": "2020.317.0",
+          "osu.Game.Tournament": "2020.317.0",
+          "ppy.osu.Game": "2020.317.0",
           "ppy.squirrel.windows": "1.9.0.4",
           "runtimepack.Microsoft.NETCore.App.Runtime.osx-x64": "3.1.2"
         },
@@ -1301,22 +1301,22 @@
           }
         }
       },
-      "Microsoft.CodeAnalysis.Analyzers/2.9.6": {},
+      "Microsoft.CodeAnalysis.Analyzers/3.0.0-beta2.20059.3": {},
       "Microsoft.CodeAnalysis.BannedApiAnalyzers/2.9.8": {},
-      "Microsoft.CodeAnalysis.Common/3.4.0": {
+      "Microsoft.CodeAnalysis.Common/3.5.0": {
         "dependencies": {
-          "Microsoft.CodeAnalysis.Analyzers": "2.9.6",
+          "Microsoft.CodeAnalysis.Analyzers": "3.0.0-beta2.20059.3",
           "System.Collections.Immutable": "1.5.0",
           "System.Memory": "4.5.3",
           "System.Reflection.Metadata": "1.6.0",
-          "System.Runtime.CompilerServices.Unsafe": "4.5.2",
+          "System.Runtime.CompilerServices.Unsafe": "4.6.0",
           "System.Text.Encoding.CodePages": "4.5.1",
           "System.Threading.Tasks.Extensions": "4.5.3"
         },
         "runtime": {
           "lib/netstandard2.0/Microsoft.CodeAnalysis.dll": {
-            "assemblyVersion": "3.4.0.0",
-            "fileVersion": "3.400.19.56804"
+            "assemblyVersion": "3.5.0.0",
+            "fileVersion": "3.500.20.15305"
           }
         },
         "resources": {
@@ -1361,14 +1361,14 @@
           }
         }
       },
-      "Microsoft.CodeAnalysis.CSharp/3.4.0": {
+      "Microsoft.CodeAnalysis.CSharp/3.5.0": {
         "dependencies": {
-          "Microsoft.CodeAnalysis.Common": "3.4.0"
+          "Microsoft.CodeAnalysis.Common": "3.5.0"
         },
         "runtime": {
           "lib/netstandard2.0/Microsoft.CodeAnalysis.CSharp.dll": {
-            "assemblyVersion": "3.4.0.0",
-            "fileVersion": "3.400.19.56804"
+            "assemblyVersion": "3.5.0.0",
+            "fileVersion": "3.500.20.15305"
           }
         },
         "resources": {
@@ -1424,7 +1424,7 @@
       "Microsoft.CodeAnalysis.VersionCheckAnalyzer/2.9.8": {},
       "Microsoft.CodeAnalysis.VisualBasic/1.3.0": {
         "dependencies": {
-          "Microsoft.CodeAnalysis.Common": "3.4.0"
+          "Microsoft.CodeAnalysis.Common": "3.5.0"
         },
         "runtime": {
           "lib/netstandard1.3/Microsoft.CodeAnalysis.VisualBasic.dll": {
@@ -1446,11 +1446,11 @@
           }
         }
       },
-      "Microsoft.Diagnostics.Runtime/1.1.61812": {
+      "Microsoft.Diagnostics.Runtime/1.1.116301": {
         "runtime": {
           "lib/netstandard2.0/Microsoft.Diagnostics.Runtime.dll": {
-            "assemblyVersion": "1.1.1.11812",
-            "fileVersion": "1.1.1.11812"
+            "assemblyVersion": "1.1.2.16301",
+            "fileVersion": "1.1.2.16301"
           }
         }
       },
@@ -1680,7 +1680,7 @@
       "Microsoft.Extensions.Primitives/2.2.0": {
         "dependencies": {
           "System.Memory": "4.5.3",
-          "System.Runtime.CompilerServices.Unsafe": "4.5.2"
+          "System.Runtime.CompilerServices.Unsafe": "4.6.0"
         },
         "runtime": {
           "lib/netstandard2.0/Microsoft.Extensions.Primitives.dll": {
@@ -1695,7 +1695,7 @@
         "dependencies": {
           "Libuv": "1.9.1",
           "Microsoft.CSharp": "4.5.0",
-          "Microsoft.CodeAnalysis.CSharp": "3.4.0",
+          "Microsoft.CodeAnalysis.CSharp": "3.5.0",
           "Microsoft.CodeAnalysis.VisualBasic": "1.3.0",
           "Microsoft.NETCore.DotNetHostPolicy": "1.0.5",
           "Microsoft.NETCore.Platforms": "3.1.0",
@@ -1856,15 +1856,15 @@
           }
         }
       },
-      "ppy.osu.Framework/2020.312.0": {
+      "ppy.osu.Framework/2020.317.0": {
         "dependencies": {
           "FFmpeg.AutoGen": "4.2.2.1",
           "JetBrains.Annotations": "2019.1.3",
           "ManagedBass": "2.0.4",
           "ManagedBass.Fx": "2.0.1",
           "Markdig": "0.18.3",
-          "Microsoft.CodeAnalysis.CSharp": "3.4.0",
-          "Microsoft.Diagnostics.Runtime": "1.1.61812",
+          "Microsoft.CodeAnalysis.CSharp": "3.5.0",
+          "Microsoft.Diagnostics.Runtime": "1.1.116301",
           "Microsoft.Extensions.ObjectPool": "3.0.3",
           "NUnit": "3.12.0",
           "Newtonsoft.Json": "12.0.3",
@@ -1878,8 +1878,8 @@
         },
         "runtime": {
           "lib/netcoreapp3.0/osu.Framework.dll": {
-            "assemblyVersion": "2020.312.0.0",
-            "fileVersion": "2020.312.0.0"
+            "assemblyVersion": "2020.317.0.0",
+            "fileVersion": "2020.317.0.0"
           }
         }
       },
@@ -1917,11 +1917,11 @@
           }
         }
       },
-      "ppy.osu.Game.Resources/2020.304.0": {
+      "ppy.osu.Game.Resources/2020.315.0": {
         "runtime": {
           "lib/netstandard2.0/osu.Game.Resources.dll": {
-            "assemblyVersion": "2020.304.0.0",
-            "fileVersion": "2020.304.0.0"
+            "assemblyVersion": "2020.315.0.0",
+            "fileVersion": "2020.315.0.0"
           }
         }
       },
@@ -2178,7 +2178,7 @@
       },
       "SixLabors.Core/1.0.0-beta0008": {
         "dependencies": {
-          "System.Runtime.CompilerServices.Unsafe": "4.5.2"
+          "System.Runtime.CompilerServices.Unsafe": "4.6.0"
         },
         "runtime": {
           "lib/netcoreapp2.1/SixLabors.Core.dll": {
@@ -2191,7 +2191,7 @@
         "dependencies": {
           "Microsoft.Net.Compilers.Toolset": "3.1.0",
           "SixLabors.Core": "1.0.0-beta0008",
-          "System.Runtime.CompilerServices.Unsafe": "4.5.2"
+          "System.Runtime.CompilerServices.Unsafe": "4.6.0"
         },
         "runtime": {
           "lib/netcoreapp2.1/SixLabors.ImageSharp.dll": {
@@ -2773,7 +2773,7 @@
           "runtime.any.System.Runtime": "4.1.0"
         }
       },
-      "System.Runtime.CompilerServices.Unsafe/4.5.2": {},
+      "System.Runtime.CompilerServices.Unsafe/4.6.0": {},
       "System.Runtime.Extensions/4.1.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "3.1.0",
@@ -2983,7 +2983,7 @@
       "System.Text.Encoding.CodePages/4.5.1": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "3.1.0",
-          "System.Runtime.CompilerServices.Unsafe": "4.5.2"
+          "System.Runtime.CompilerServices.Unsafe": "4.6.0"
         }
       },
       "System.Text.Encoding.Extensions/4.0.11": {
@@ -3065,7 +3065,7 @@
           "SharpDX.Direct3D11": "4.0.1",
           "System.Buffers": "4.4.0",
           "System.Numerics.Vectors": "4.4.0",
-          "System.Runtime.CompilerServices.Unsafe": "4.5.2",
+          "System.Runtime.CompilerServices.Unsafe": "4.6.0",
           "Veldrid.MetalBindings": "4.7.0",
           "Veldrid.OpenGLBindings": "4.7.0",
           "Vk": "1.0.22"
@@ -3079,7 +3079,7 @@
       },
       "Veldrid.MetalBindings/4.7.0": {
         "dependencies": {
-          "System.Runtime.CompilerServices.Unsafe": "4.5.2"
+          "System.Runtime.CompilerServices.Unsafe": "4.6.0"
         },
         "runtime": {
           "lib/netstandard2.0/Veldrid.MetalBindings.dll": {
@@ -3100,7 +3100,7 @@
         "dependencies": {
           "NativeLibraryLoader": "1.0.10",
           "System.Numerics.Vectors": "4.4.0",
-          "System.Runtime.CompilerServices.Unsafe": "4.5.2"
+          "System.Runtime.CompilerServices.Unsafe": "4.6.0"
         },
         "runtime": {
           "lib/netstandard2.0/Veldrid.SDL2.dll": {
@@ -3125,48 +3125,48 @@
           }
         }
       },
-      "osu.Game.Rulesets.Catch/2020.312.0": {
+      "osu.Game.Rulesets.Catch/2020.317.0": {
         "dependencies": {
-          "ppy.osu.Game": "2020.312.0"
+          "ppy.osu.Game": "2020.317.0"
         },
         "runtime": {
           "osu.Game.Rulesets.Catch.dll": {}
         }
       },
-      "osu.Game.Rulesets.Mania/2020.312.0": {
+      "osu.Game.Rulesets.Mania/2020.317.0": {
         "dependencies": {
-          "ppy.osu.Game": "2020.312.0"
+          "ppy.osu.Game": "2020.317.0"
         },
         "runtime": {
           "osu.Game.Rulesets.Mania.dll": {}
         }
       },
-      "osu.Game.Rulesets.Osu/2020.312.0": {
+      "osu.Game.Rulesets.Osu/2020.317.0": {
         "dependencies": {
-          "ppy.osu.Game": "2020.312.0"
+          "ppy.osu.Game": "2020.317.0"
         },
         "runtime": {
           "osu.Game.Rulesets.Osu.dll": {}
         }
       },
-      "osu.Game.Rulesets.Taiko/2020.312.0": {
+      "osu.Game.Rulesets.Taiko/2020.317.0": {
         "dependencies": {
-          "ppy.osu.Game": "2020.312.0"
+          "ppy.osu.Game": "2020.317.0"
         },
         "runtime": {
           "osu.Game.Rulesets.Taiko.dll": {}
         }
       },
-      "osu.Game.Tournament/2020.312.0": {
+      "osu.Game.Tournament/2020.317.0": {
         "dependencies": {
           "Microsoft.Win32.Registry": "4.7.0",
-          "ppy.osu.Game": "2020.312.0"
+          "ppy.osu.Game": "2020.317.0"
         },
         "runtime": {
           "osu.Game.Tournament.dll": {}
         }
       },
-      "ppy.osu.Game/2020.312.0": {
+      "ppy.osu.Game/2020.317.0": {
         "dependencies": {
           "Humanizer": "2.7.9",
           "Microsoft.EntityFrameworkCore.Sqlite": "2.2.6",
@@ -3176,8 +3176,8 @@
           "Sentry": "2.1.0",
           "SharpCompress": "0.24.0",
           "System.ComponentModel.Annotations": "4.7.0",
-          "ppy.osu.Framework": "2020.312.0",
-          "ppy.osu.Game.Resources": "2020.304.0"
+          "ppy.osu.Framework": "2020.317.0",
+          "ppy.osu.Game.Resources": "2020.315.0"
         },
         "runtime": {
           "osu.Game.dll": {}
@@ -3186,7 +3186,7 @@
     }
   },
   "libraries": {
-    "osu!/2020.312.0": {
+    "osu!/2020.317.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
@@ -3560,12 +3560,12 @@
       "path": "markdig/0.18.3",
       "hashPath": "markdig.0.18.3.nupkg.sha512"
     },
-    "Microsoft.CodeAnalysis.Analyzers/2.9.6": {
+    "Microsoft.CodeAnalysis.Analyzers/3.0.0-beta2.20059.3": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-Kmms3TxGQMNb95Cu/3K+0bIcMnV4qf/phZBLAB0HUi65rBPxP4JO3aM2LoAcb+DFS600RQJMZ7ZLyYDTbLwJOQ==",
-      "path": "microsoft.codeanalysis.analyzers/2.9.6",
-      "hashPath": "microsoft.codeanalysis.analyzers.2.9.6.nupkg.sha512"
+      "sha512": "sha512-Ve2kXanMNVZp1cIoKbflh3RcQgOYLC4UZ23YIMkOnkA6hQjpXsg9NnXbziR2m4i6+WGSz9Wbxp+Tj7XdNRiITw==",
+      "path": "microsoft.codeanalysis.analyzers/3.0.0-beta2.20059.3",
+      "hashPath": "microsoft.codeanalysis.analyzers.3.0.0-beta2.20059.3.nupkg.sha512"
     },
     "Microsoft.CodeAnalysis.BannedApiAnalyzers/2.9.8": {
       "type": "package",
@@ -3574,19 +3574,19 @@
       "path": "microsoft.codeanalysis.bannedapianalyzers/2.9.8",
       "hashPath": "microsoft.codeanalysis.bannedapianalyzers.2.9.8.nupkg.sha512"
     },
-    "Microsoft.CodeAnalysis.Common/3.4.0": {
+    "Microsoft.CodeAnalysis.Common/3.5.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-3ncA7cV+iXGA1VYwe2UEZXcvWyZSlbexWjM9AvocP7sik5UD93qt9Hq0fMRGk0jFRmvmE4T2g+bGfXiBVZEhLw==",
-      "path": "microsoft.codeanalysis.common/3.4.0",
-      "hashPath": "microsoft.codeanalysis.common.3.4.0.nupkg.sha512"
+      "sha512": "sha512-1CjUHyDxhlwDfUSTOwqbNMZ4rk/Pqs33BupWmun8S/DUOou9mDe+MjapK06WjvuhIEyEr3fzyk0bOIwu0n1RYg==",
+      "path": "microsoft.codeanalysis.common/3.5.0",
+      "hashPath": "microsoft.codeanalysis.common.3.5.0.nupkg.sha512"
     },
-    "Microsoft.CodeAnalysis.CSharp/3.4.0": {
+    "Microsoft.CodeAnalysis.CSharp/3.5.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-/LsTtgcMN6Tu1oo7/WYbRAHL4/ubXC/miEakwTpcZKJKtFo7D0AK95Hw0dbGxul6C8WJu60v6NP2435TDYZM+Q==",
-      "path": "microsoft.codeanalysis.csharp/3.4.0",
-      "hashPath": "microsoft.codeanalysis.csharp.3.4.0.nupkg.sha512"
+      "sha512": "sha512-WSMCz5tAtnmEzgmE20J1tjX7chU9HYDfz8AHmWn4Ek+6PPvPZSoo0GDo4Pbnu1FAf4MnNDN6lMd4nqNPuI9V2A==",
+      "path": "microsoft.codeanalysis.csharp/3.5.0",
+      "hashPath": "microsoft.codeanalysis.csharp.3.5.0.nupkg.sha512"
     },
     "Microsoft.CodeAnalysis.FxCopAnalyzers/2.9.8": {
       "type": "package",
@@ -3630,12 +3630,12 @@
       "path": "microsoft.data.sqlite.core/2.2.6",
       "hashPath": "microsoft.data.sqlite.core.2.2.6.nupkg.sha512"
     },
-    "Microsoft.Diagnostics.Runtime/1.1.61812": {
+    "Microsoft.Diagnostics.Runtime/1.1.116301": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-1tbjDlLm/1DRLqBB9T3UZTE+4UT+s93eRlXfY8feMPbA+9boZ5rWMAhJZzcsspfewiTCVp7n1PP06Jd5oYV2Cg==",
-      "path": "microsoft.diagnostics.runtime/1.1.61812",
-      "hashPath": "microsoft.diagnostics.runtime.1.1.61812.nupkg.sha512"
+      "sha512": "sha512-TvCyytE+XdV0inx6VJmEzsRqU3R58kbOV89FSINQgJ7WqWd7AwBCKYiDjknTrC3FxAHg5Broq72lOied4c4wew==",
+      "path": "microsoft.diagnostics.runtime/1.1.116301",
+      "hashPath": "microsoft.diagnostics.runtime.1.1.116301.nupkg.sha512"
     },
     "Microsoft.DotNet.PlatformAbstractions/2.1.0": {
       "type": "package",
@@ -3924,12 +3924,12 @@
       "path": "nunit/3.12.0",
       "hashPath": "nunit.3.12.0.nupkg.sha512"
     },
-    "ppy.osu.Framework/2020.312.0": {
+    "ppy.osu.Framework/2020.317.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-TvwQPGsp7GHGEm8x2UvGPXB6sV6SMtpMC9ZGVsjF3dxuGcHSy6ld7EpfPVjY+uyuABxKwxm3Qtn577tjs1+2yw==",
-      "path": "ppy.osu.framework/2020.312.0",
-      "hashPath": "ppy.osu.framework.2020.312.0.nupkg.sha512"
+      "sha512": "sha512-aJRi9eq9dTZlyvnM8PWGEMztX1djlMreSnScCJDT6Pjk/fnBH0uWjhl+R33yHsDk0bGs3yKka1inMlSZmj2e7A==",
+      "path": "ppy.osu.framework/2020.317.0",
+      "hashPath": "ppy.osu.framework.2020.317.0.nupkg.sha512"
     },
     "ppy.osu.Framework.NativeLibs/2020.213.0": {
       "type": "package",
@@ -3938,12 +3938,12 @@
       "path": "ppy.osu.framework.nativelibs/2020.213.0",
       "hashPath": "ppy.osu.framework.nativelibs.2020.213.0.nupkg.sha512"
     },
-    "ppy.osu.Game.Resources/2020.304.0": {
+    "ppy.osu.Game.Resources/2020.315.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-HZcTgiAdpmplaQH1gm831qgUh7hQ6gPnV6m4libD+ui/jgw+dgJa9z5LaGyJmwEDLw4vj0vKDiCzmvpWzskQEg==",
-      "path": "ppy.osu.game.resources/2020.304.0",
-      "hashPath": "ppy.osu.game.resources.2020.304.0.nupkg.sha512"
+      "sha512": "sha512-FwiXI3cTNyASuoji2S4IdwwvcEpS7ftpDZ2hJQVBqPqXHiz9/1azPLSlC2sRr2isLpeU5KidrCEq/cQ6GOKSfQ==",
+      "path": "ppy.osu.game.resources/2020.315.0",
+      "hashPath": "ppy.osu.game.resources.2020.315.0.nupkg.sha512"
     },
     "ppy.osuTK.NS20/1.0.149": {
       "type": "package",
@@ -4617,12 +4617,12 @@
       "path": "system.runtime/4.1.0",
       "hashPath": "system.runtime.4.1.0.nupkg.sha512"
     },
-    "System.Runtime.CompilerServices.Unsafe/4.5.2": {
+    "System.Runtime.CompilerServices.Unsafe/4.6.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-hMkdWxksypQlFXB7JamQegDscxEAQO4FHd/lw/zlSZU9dZgAij65xjCrXer183wvoNAzJic5zzjj2oc9/dloWg==",
-      "path": "system.runtime.compilerservices.unsafe/4.5.2",
-      "hashPath": "system.runtime.compilerservices.unsafe.4.5.2.nupkg.sha512"
+      "sha512": "sha512-HxozeSlipUK7dAroTYwIcGwKDeOVpQnJlpVaOkBz7CM4TsE5b/tKlQBZecTjh6FzcSbxndYaxxpsBMz+wMJeyw==",
+      "path": "system.runtime.compilerservices.unsafe/4.6.0",
+      "hashPath": "system.runtime.compilerservices.unsafe.4.6.0.nupkg.sha512"
     },
     "System.Runtime.Extensions/4.1.0": {
       "type": "package",
@@ -4855,32 +4855,32 @@
       "path": "vk/1.0.22",
       "hashPath": "vk.1.0.22.nupkg.sha512"
     },
-    "osu.Game.Rulesets.Catch/2020.312.0": {
+    "osu.Game.Rulesets.Catch/2020.317.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "osu.Game.Rulesets.Mania/2020.312.0": {
+    "osu.Game.Rulesets.Mania/2020.317.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "osu.Game.Rulesets.Osu/2020.312.0": {
+    "osu.Game.Rulesets.Osu/2020.317.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "osu.Game.Rulesets.Taiko/2020.312.0": {
+    "osu.Game.Rulesets.Taiko/2020.317.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "osu.Game.Tournament/2020.312.0": {
+    "osu.Game.Tournament/2020.317.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "ppy.osu.Game/2020.312.0": {
+    "ppy.osu.Game/2020.317.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
