@@ -224,6 +224,26 @@
             The time allowed to hit this tick.
             </summary>
         </member>
+        <member name="P:osu.Game.Rulesets.Taiko.Objects.Hit.Type">
+            <summary>
+            The <see cref="T:osu.Game.Rulesets.Taiko.Objects.HitType"/> that actuates this <see cref="T:osu.Game.Rulesets.Taiko.Objects.Hit"/>.
+            </summary>
+        </member>
+        <member name="T:osu.Game.Rulesets.Taiko.Objects.HitType">
+            <summary>
+            The type of a <see cref="T:osu.Game.Rulesets.Taiko.Objects.Hit"/>.
+            </summary>
+        </member>
+        <member name="F:osu.Game.Rulesets.Taiko.Objects.HitType.Centre">
+            <summary>
+            A <see cref="T:osu.Game.Rulesets.Taiko.Objects.Hit"/> that can be hit by the centre portion of the drum.
+            </summary>
+        </member>
+        <member name="F:osu.Game.Rulesets.Taiko.Objects.HitType.Rim">
+            <summary>
+            A <see cref="T:osu.Game.Rulesets.Taiko.Objects.Hit"/> that can be hit by the rim portion of the drum.
+            </summary>
+        </member>
         <member name="F:osu.Game.Rulesets.Taiko.Objects.Swell.RequiredHits">
             <summary>
             The number of hits required to complete the swell successfully.

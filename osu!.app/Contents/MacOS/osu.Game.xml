@@ -923,11 +923,6 @@
             Retrieves the background for this <see cref="T:osu.Game.Beatmaps.WorkingBeatmap"/>.
             </summary>
         </member>
-        <member name="P:osu.Game.Beatmaps.IWorkingBeatmap.Video">
-            <summary>
-            Retrieves the video background file for this <see cref="T:osu.Game.Beatmaps.WorkingBeatmap"/>.
-            </summary>
-        </member>
         <member name="P:osu.Game.Beatmaps.IWorkingBeatmap.Track">
             <summary>
             Retrieves the audio track for this <see cref="T:osu.Game.Beatmaps.WorkingBeatmap"/>.
@@ -1864,6 +1859,11 @@
             Retrieves the colour for a <see cref="T:osu.Game.Scoring.ScoreRank"/>.
             </summary>
         </member>
+        <member name="M:osu.Game.Graphics.OsuColour.ForHitResult(osu.Game.Rulesets.Scoring.HitResult)">
+            <summary>
+            Retrieves the colour for a <see cref="T:osu.Game.Rulesets.Scoring.HitResult"/>.
+            </summary>
+        </member>
         <member name="F:osu.Game.Graphics.OsuFont.DEFAULT_FONT_SIZE">
             <summary>
             The default font size.
@@ -1955,18 +1955,6 @@
             Changed when screenshots are being or have finished being taken, to control whether cursors should be visible.
             If cursors should not be visible, cursors have 3 frames to hide themselves.
             </summary>
-        </member>
-        <member name="M:osu.Game.Graphics.Sprites.OsuSpriteTextTransformExtensions.TransformTextTo``1(``0,System.String,System.Double,osu.Framework.Graphics.Easing)">
-            <summary>
-            Sets <see cref="P:osu.Framework.Graphics.Sprites.SpriteText.Text">Text</see> to a new value after a duration.
-            </summary>
-            <returns>A <see cref="T:osu.Framework.Graphics.Transforms.TransformSequence`1"/> to which further transforms can be added.</returns>
-        </member>
-        <member name="M:osu.Game.Graphics.Sprites.OsuSpriteTextTransformExtensions.TransformTextTo``1(osu.Framework.Graphics.Transforms.TransformSequence{``0},System.String,System.Double,osu.Framework.Graphics.Easing)">
-            <summary>
-            Sets <see cref="P:osu.Framework.Graphics.Sprites.SpriteText.Text">Text</see> to a new value after a duration.
-            </summary>
-            <returns>A <see cref="T:osu.Framework.Graphics.Transforms.TransformSequence`1"/> to which further transforms can be added.</returns>
         </member>
         <member name="P:osu.Game.Graphics.UserInterface.Bar.Length">
             <summary>
@@ -2080,11 +2068,12 @@
             A loading spinner.
             </summary>
         </member>
-        <member name="M:osu.Game.Graphics.UserInterface.LoadingSpinner.#ctor(System.Boolean)">
+        <member name="M:osu.Game.Graphics.UserInterface.LoadingSpinner.#ctor(System.Boolean,System.Boolean)">
             <summary>
             Constuct a new loading spinner.
             </summary>
             <param name="withBox">Whether the spinner should have a surrounding black box for visibility.</param>
+            <param name="inverted">Whether colours should be inverted (black spinner instead of white).</param>
         </member>
         <member name="T:osu.Game.Graphics.UserInterface.OsuAnimatedButton">
             <summary>
@@ -2497,6 +2486,11 @@
         <member name="F:osu.Game.IO.Archives.ArchiveReader.Name">
             <summary>
             The name of this archive (usually the containing filename).
+            </summary>
+        </member>
+        <member name="T:osu.Game.IO.Archives.LegacyByteArrayReader">
+            <summary>
+            Allows reading a single file from the provided stream.
             </summary>
         </member>
         <member name="T:osu.Game.IO.Archives.LegacyDirectoryArchiveReader">
@@ -5038,7 +5032,7 @@
             A type of <see cref="T:osu.Game.Rulesets.Replays.ReplayFrame"/> which can be converted from a <see cref="T:osu.Game.Replays.Legacy.LegacyReplayFrame"/>.
             </summary>
         </member>
-        <member name="M:osu.Game.Rulesets.Replays.Types.IConvertibleReplayFrame.ConvertFrom(osu.Game.Replays.Legacy.LegacyReplayFrame,osu.Game.Beatmaps.IBeatmap,osu.Game.Rulesets.Replays.ReplayFrame)">
+        <member name="M:osu.Game.Rulesets.Replays.Types.IConvertibleReplayFrame.FromLegacy(osu.Game.Replays.Legacy.LegacyReplayFrame,osu.Game.Beatmaps.IBeatmap,osu.Game.Rulesets.Replays.ReplayFrame)">
             <summary>
             Populates this <see cref="T:osu.Game.Rulesets.Replays.ReplayFrame"/> using values from a <see cref="T:osu.Game.Replays.Legacy.LegacyReplayFrame"/>.
             </summary>
@@ -5046,12 +5040,25 @@
             <param name="beatmap">The beatmap.</param>
             <param name="lastFrame">The last post-conversion <see cref="T:osu.Game.Rulesets.Replays.ReplayFrame"/>, used to fill in missing delta information. May be null.</param>
         </member>
-        <member name="M:osu.Game.Rulesets.Ruleset.ConvertLegacyMods(osu.Game.Beatmaps.Legacy.LegacyMods)">
+        <member name="M:osu.Game.Rulesets.Replays.Types.IConvertibleReplayFrame.ToLegacy(osu.Game.Beatmaps.IBeatmap)">
+            <summary>
+            Populates this <see cref="T:osu.Game.Rulesets.Replays.ReplayFrame"/> using values from a <see cref="T:osu.Game.Replays.Legacy.LegacyReplayFrame"/>.
+            </summary>
+            <param name="beatmap">The beatmap.</param>
+        </member>
+        <member name="M:osu.Game.Rulesets.Ruleset.ConvertFromLegacyMods(osu.Game.Beatmaps.Legacy.LegacyMods)">
             <summary>
             Converts mods from legacy enum values. Do not override if you're not a legacy ruleset.
             </summary>
-            <param name="mods">The legacy enum which will be converted</param>
-            <returns>An enumerable of constructed <see cref="T:osu.Game.Rulesets.Mods.Mod"/>s</returns>
+            <param name="mods">The legacy enum which will be converted.</param>
+            <returns>An enumerable of constructed <see cref="T:osu.Game.Rulesets.Mods.Mod"/>s.</returns>
+        </member>
+        <member name="M:osu.Game.Rulesets.Ruleset.ConvertToLegacyMods(osu.Game.Rulesets.Mods.Mod[])">
+            <summary>
+            Converts mods to legacy enum values. Do not override if you're not a legacy ruleset.
+            </summary>
+            <param name="mods">The mods which will be converted.</param>
+            <returns>A single bitwise enumerable value representing (to the best of our ability) the mods.</returns>
         </member>
         <member name="M:osu.Game.Rulesets.Ruleset.CreateDrawableRulesetWith(osu.Game.Beatmaps.IBeatmap,System.Collections.Generic.IReadOnlyList{osu.Game.Rulesets.Mods.Mod})">
             <summary>
@@ -5685,6 +5692,12 @@
             </summary>
             <param name="replayScore">The replay, null for local input.</param>
         </member>
+        <member name="M:osu.Game.Rulesets.UI.DrawableRuleset.SetRecordTarget(osu.Game.Replays.Replay)">
+            <summary>
+            Sets a replay to be used to record gameplay.
+            </summary>
+            <param name="recordingReplay">The target to be recorded to.</param>
+        </member>
         <member name="M:osu.Game.Rulesets.UI.DrawableRuleset.RequestResume(System.Action)">
             <summary>
             Invoked when the interactive user requests resuming from a paused state.
@@ -5754,6 +5767,11 @@
         <member name="P:osu.Game.Rulesets.UI.Playfield.GamefieldToScreenSpace">
             <summary>
             A function that converts gamefield coordinates to screen space.
+            </summary>
+        </member>
+        <member name="P:osu.Game.Rulesets.UI.Playfield.ScreenSpaceToGamefield">
+            <summary>
+            A function that converts screen space coordinates to gamefield.
             </summary>
         </member>
         <member name="P:osu.Game.Rulesets.UI.Playfield.AllHitObjects">
@@ -6005,20 +6023,20 @@
             A type of <see cref="T:osu.Game.Rulesets.UI.Playfield"/> specialized towards scrolling <see cref="T:osu.Game.Rulesets.Objects.Drawables.DrawableHitObject"/>s.
             </summary>
         </member>
-        <member name="T:osu.Game.Scoring.Legacy.DatabasedLegacyScoreParser">
+        <member name="T:osu.Game.Scoring.Legacy.DatabasedLegacyScoreDecoder">
             <summary>
-            A <see cref="T:osu.Game.Scoring.Legacy.LegacyScoreParser"/> which retrieves the applicable <see cref="T:osu.Game.Beatmaps.Beatmap"/> and <see cref="T:osu.Game.Rulesets.Ruleset"/>
+            A <see cref="T:osu.Game.Scoring.Legacy.LegacyScoreDecoder"/> which retrieves the applicable <see cref="T:osu.Game.Beatmaps.Beatmap"/> and <see cref="T:osu.Game.Rulesets.Ruleset"/>
             for the score from the database.
             </summary>
         </member>
-        <member name="M:osu.Game.Scoring.Legacy.LegacyScoreParser.GetRuleset(System.Int32)">
+        <member name="M:osu.Game.Scoring.Legacy.LegacyScoreDecoder.GetRuleset(System.Int32)">
             <summary>
             Retrieves the <see cref="T:osu.Game.Rulesets.Ruleset"/> for a specific id.
             </summary>
             <param name="rulesetId">The id.</param>
             <returns>The <see cref="T:osu.Game.Rulesets.Ruleset"/>.</returns>
         </member>
-        <member name="M:osu.Game.Scoring.Legacy.LegacyScoreParser.GetBeatmap(System.String)">
+        <member name="M:osu.Game.Scoring.Legacy.LegacyScoreDecoder.GetBeatmap(System.String)">
             <summary>
             Retrieves the <see cref="T:osu.Game.Beatmaps.WorkingBeatmap"/> corresponding to an MD5 hash.
             </summary>
@@ -7045,6 +7063,11 @@
             </summary>
             <param name="allowPause">Whether pausing should be allowed. If not allowed, attempting to pause will quit.</param>
             <param name="showResults">Whether results screen should be pushed on completion.</param>
+        </member>
+        <member name="M:osu.Game.Screens.Play.Player.PrepareReplay">
+            <summary>
+            Run any recording / playback setup for replays.
+            </summary>
         </member>
         <member name="M:osu.Game.Screens.Play.Player.Restart">
             <summary>
