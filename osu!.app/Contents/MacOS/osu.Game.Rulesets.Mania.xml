@@ -438,6 +438,13 @@
             <param name="column">The 0-based column index.</param>
             <returns>Whether the column is a special column.</returns>
         </member>
+        <member name="M:osu.Game.Rulesets.Mania.Beatmaps.StageDefinition.GetTypeOfColumn(System.Int32)">
+            <summary>
+            Get the type of column given a column index.
+            </summary>
+            <param name="column">The 0-based column index.</param>
+            <returns>The type of the column.</returns>
+        </member>
         <member name="P:osu.Game.Rulesets.Mania.Edit.Blueprints.ManiaPlacementBlueprint`1.SnappedMousePosition">
             <summary>
             The current mouse position, snapped to the closest column.
@@ -537,6 +544,19 @@
             Overall number of columns lies at (item - Dual), further computation is required for
             number of columns in each individual stage.
             </summary>
+        </member>
+        <member name="F:osu.Game.Rulesets.Mania.ManiaSkinComponent.TargetColumn">
+            <summary>
+            The intended <see cref="T:osu.Game.Rulesets.Mania.UI.Column"/> index for this component.
+            May be null if the component does not exist in a <see cref="T:osu.Game.Rulesets.Mania.UI.Column"/>.
+            </summary>
+        </member>
+        <member name="M:osu.Game.Rulesets.Mania.ManiaSkinComponent.#ctor(osu.Game.Rulesets.Mania.ManiaSkinComponents,System.Nullable{System.Int32})">
+            <summary>
+            Creates a new <see cref="T:osu.Game.Rulesets.Mania.ManiaSkinComponent"/>.
+            </summary>
+            <param name="component">The component.</param>
+            <param name="targetColumn">The intended <see cref="T:osu.Game.Rulesets.Mania.UI.Column"/> index for this component. May be null if the component does not exist in a <see cref="T:osu.Game.Rulesets.Mania.UI.Column"/>.</param>
         </member>
         <member name="T:osu.Game.Rulesets.Mania.MathUtils.FastRandom">
             <summary>
@@ -660,12 +680,12 @@
             Visualises a <see cref="T:osu.Game.Rulesets.Mania.Objects.Note"/> hit object.
             </summary>
         </member>
-        <member name="T:osu.Game.Rulesets.Mania.Objects.Drawables.Pieces.BodyPiece">
+        <member name="T:osu.Game.Rulesets.Mania.Objects.Drawables.Pieces.DefaultBodyPiece">
             <summary>
             Represents length-wise portion of a hold note.
             </summary>
         </member>
-        <member name="T:osu.Game.Rulesets.Mania.Objects.Drawables.Pieces.NotePiece">
+        <member name="T:osu.Game.Rulesets.Mania.Objects.Drawables.Pieces.DefaultNotePiece">
             <summary>
             Represents the static hit markers of notes.
             </summary>
@@ -710,6 +730,53 @@
             The column which the hit object lies in.
             </summary>
         </member>
+        <member name="T:osu.Game.Rulesets.Mania.Skinning.LegacyManiaColumnElement">
+            <summary>
+            A <see cref="T:osu.Framework.Graphics.Containers.CompositeDrawable"/> which is placed somewhere within a <see cref="P:osu.Game.Rulesets.Mania.Skinning.LegacyManiaColumnElement.Column"/>.
+            </summary>
+        </member>
+        <member name="P:osu.Game.Rulesets.Mania.Skinning.LegacyManiaColumnElement.FallbackColumnIndex">
+            <summary>
+            The column type identifier to use for texture lookups, in the case of no user-provided configuration.
+            </summary>
+        </member>
+        <member name="T:osu.Game.Rulesets.Mania.Skinning.LegacyManiaElement">
+            <summary>
+            A mania legacy skin element.
+            </summary>
+        </member>
+        <member name="M:osu.Game.Rulesets.Mania.Skinning.LegacyManiaElement.GetManiaSkinConfig``1(osu.Game.Skinning.ISkin,osu.Game.Skinning.LegacyManiaSkinConfigurationLookups,System.Nullable{System.Int32})">
+            <summary>
+            Retrieve a per-column-count skin configuration.
+            </summary>
+            <param name="skin">The skin from which configuration is retrieved.</param>
+            <param name="lookup">The value to retrieve.</param>
+            <param name="index">If not null, denotes the index of the column to which the entry applies.</param>
+        </member>
+        <member name="F:osu.Game.Rulesets.Mania.Skinning.ManiaLegacySkinTransformer.hasKeyTexture">
+            <summary>
+            Whether texture for the keys exists.
+            Used to determine if the mania ruleset is skinned.
+            </summary>
+        </member>
+        <member name="F:osu.Game.Rulesets.Mania.Skinning.ManiaSkinConfigurationLookup.Lookup">
+            <summary>
+            The configuration lookup value.
+            </summary>
+        </member>
+        <member name="F:osu.Game.Rulesets.Mania.Skinning.ManiaSkinConfigurationLookup.TargetColumn">
+            <summary>
+            The intended <see cref="T:osu.Game.Rulesets.Mania.UI.Column"/> index for the configuration.
+            May be null if the configuration does not apply to a <see cref="T:osu.Game.Rulesets.Mania.UI.Column"/>.
+            </summary>
+        </member>
+        <member name="M:osu.Game.Rulesets.Mania.Skinning.ManiaSkinConfigurationLookup.#ctor(osu.Game.Skinning.LegacyManiaSkinConfigurationLookups,System.Nullable{System.Int32})">
+            <summary>
+            Creates a new <see cref="T:osu.Game.Rulesets.Mania.Skinning.ManiaSkinConfigurationLookup"/>.
+            </summary>
+            <param name="lookup">The lookup value.</param>
+            <param name="targetColumn">The intended <see cref="T:osu.Game.Rulesets.Mania.UI.Column"/> index for the configuration. May be null if the configuration does not apply to a <see cref="T:osu.Game.Rulesets.Mania.UI.Column"/>.</param>
+        </member>
         <member name="F:osu.Game.Rulesets.Mania.UI.Column.Index">
             <summary>
             The index of this column as part of the whole playfield.
@@ -720,6 +787,16 @@
             Adds a DrawableHitObject to this Playfield.
             </summary>
             <param name="hitObject">The DrawableHitObject to add.</param>
+        </member>
+        <member name="F:osu.Game.Rulesets.Mania.UI.DrawableManiaRuleset.MIN_TIME_RANGE">
+            <summary>
+            The minimum time range. This occurs at a <see cref="P:osu.Game.Rulesets.Mania.UI.DrawableManiaRuleset.relativeTimeRange"/> of 40.
+            </summary>
+        </member>
+        <member name="F:osu.Game.Rulesets.Mania.UI.DrawableManiaRuleset.MAX_TIME_RANGE">
+            <summary>
+            The maximum time range. This occurs at a <see cref="P:osu.Game.Rulesets.Mania.UI.DrawableManiaRuleset.relativeTimeRange"/> of 1.
+            </summary>
         </member>
         <member name="M:osu.Game.Rulesets.Mania.UI.DrawableManiaRuleset.GetColumnByPosition(osuTK.Vector2)">
             <summary>

@@ -134,6 +134,11 @@
             The relative space to cover in 1 millisecond. based on 1 game pixel per millisecond as in osu-stable.
             </summary>
         </member>
+        <member name="F:osu.Game.Rulesets.Catch.UI.Catcher.allowed_catch_range">
+            <summary>
+            The width of the catcher which can receive fruit. Equivalent to "catchMargin" in osu-stable.
+            </summary>
+        </member>
         <member name="P:osu.Game.Rulesets.Catch.UI.Catcher.CatchWidth">
             <summary>
             Width of the area that can be used to attempt catches during gameplay.

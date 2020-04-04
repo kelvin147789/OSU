@@ -293,6 +293,20 @@
             The offset of the path from <see cref="F:osu.Game.Rulesets.Osu.Objects.Drawables.Pieces.SnakingSliderBody.snakedPosition"/> when fully snaked.
             </summary>
         </member>
+        <member name="P:osu.Game.Rulesets.Osu.Objects.Drawables.Pieces.SpinnerDisc.isSpinnableTime">
+            <summary>
+            Whether currently in the correct time range to allow spinning.
+            </summary>
+        </member>
+        <member name="M:osu.Game.Rulesets.Osu.Objects.Drawables.Pieces.SpinnerDisc.Rotate(System.Single)">
+            <summary>
+            Rotate the disc by the provided angle (in addition to any existing rotation).
+            </summary>
+            <remarks>
+            Will be a no-op if not a valid time to spin.
+            </remarks>
+            <param name="angle">The delta angle.</param>
+        </member>
         <member name="M:osu.Game.Rulesets.Osu.Objects.ISliderProgress.UpdateProgress(System.Double)">
             <summary>
             Updates the progress of this <see cref="T:osu.Game.Rulesets.Osu.Objects.ISliderProgress"/> element along the slider.

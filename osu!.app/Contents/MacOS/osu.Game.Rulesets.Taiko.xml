@@ -291,6 +291,26 @@
             HP multiplier for a <see cref="F:osu.Game.Rulesets.Scoring.HitResult.Miss"/>.
             </summary>
         </member>
+        <member name="T:osu.Game.Rulesets.Taiko.Skinning.LegacyInputDrum">
+            <summary>
+            A component of the playfield that captures input and displays input as a drum.
+            </summary>
+        </member>
+        <member name="T:osu.Game.Rulesets.Taiko.Skinning.LegacyInputDrum.LegacyHalfDrum">
+            <summary>
+            A half-drum. Contains one centre and one rim hit.
+            </summary>
+        </member>
+        <member name="F:osu.Game.Rulesets.Taiko.Skinning.LegacyInputDrum.LegacyHalfDrum.RimAction">
+            <summary>
+            The key to be used for the rim of the half-drum.
+            </summary>
+        </member>
+        <member name="F:osu.Game.Rulesets.Taiko.Skinning.LegacyInputDrum.LegacyHalfDrum.CentreAction">
+            <summary>
+            The key to be used for the centre of the half-drum.
+            </summary>
+        </member>
         <member name="T:osu.Game.Rulesets.Taiko.UI.DrawableTaikoJudgement">
             <summary>
             Text that is shown as judgement when a hit object is hit or missed.

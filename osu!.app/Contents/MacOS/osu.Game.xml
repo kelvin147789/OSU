@@ -790,6 +790,12 @@
             Whether or not beatmap or runtime offsets should be applied. Defaults on; only disable for testing purposes.
             </summary>
         </member>
+        <member name="M:osu.Game.Beatmaps.Formats.LegacyDecoder`1.OnBeginNewSection(osu.Game.Beatmaps.Formats.LegacyDecoder{`0}.Section)">
+            <summary>
+            Invoked when a new <see cref="T:osu.Game.Beatmaps.Formats.LegacyDecoder`1.Section"/> has been entered.
+            </summary>
+            <param name="section">The entered <see cref="T:osu.Game.Beatmaps.Formats.LegacyDecoder`1.Section"/>.</param>
+        </member>
         <member name="T:osu.Game.Beatmaps.Formats.LegacyDifficultyCalculatorBeatmapDecoder">
             <summary>
             A <see cref="T:osu.Game.Beatmaps.Formats.LegacyBeatmapDecoder"/> built for difficulty calculation of legacy <see cref="T:osu.Game.Beatmaps.Beatmap"/>s
@@ -1498,6 +1504,19 @@
             </summary>
             <param name="connectionString">A valid SQLite connection string.</param>
         </member>
+        <member name="M:osu.Game.Extensions.DrawableExtensions.BeginKeyRepeat(osu.Framework.Input.Bindings.IKeyBindingHandler,osu.Framework.Threading.Scheduler,System.Action)">
+            <summary>
+            Helper method that is used while <see cref="T:osu.Framework.Input.Bindings.IKeyBindingHandler"/> doesn't support repetitions of <see cref="M:osu.Framework.Input.Bindings.IKeyBindingHandler`1.OnPressed(`0)"/>.
+            Simulates repetitions by continually invoking a delegate according to the default key repeat rate.
+            </summary>
+            <remarks>
+            The returned delegate can be cancelled to stop repeat events from firing (usually in <see cref="M:osu.Framework.Input.Bindings.IKeyBindingHandler`1.OnReleased(`0)"/>).
+            </remarks>
+            <param name="handler">The <see cref="T:osu.Framework.Input.Bindings.IKeyBindingHandler`1"/> which is handling the repeat.</param>
+            <param name="scheduler">The <see cref="T:osu.Framework.Threading.Scheduler"/> to schedule repetitions on.</param>
+            <param name="action">The <see cref="T:System.Action"/> to be invoked once immediately and with every repetition.</param>
+            <returns>A <see cref="T:osu.Framework.Threading.ScheduledDelegate"/> which can be cancelled to stop the repeat events from firing.</returns>
+        </member>
         <member name="T:osu.Game.Graphics.Backgrounds.Background">
             <summary>
             A background which offers blurring via a <see cref="T:osu.Framework.Graphics.Containers.BufferedContainer"/> on demand.
@@ -1785,7 +1804,7 @@
         <member name="F:osu.Game.Graphics.Containers.UserDimContainer.IsBreakTime">
             <summary>
             Whether player is in break time.
-            Must be bound to <see cref="P:osu.Game.Screens.Play.BreakOverlay.IsBreakTime"/> to allow for dim adjustments in gameplay.
+            Must be bound to <see cref="P:osu.Game.Screens.Play.BreakTracker.IsBreakTime"/> to allow for dim adjustments in gameplay.
             </summary>
         </member>
         <member name="P:osu.Game.Graphics.Containers.UserDimContainer.ContentDisplayed">
@@ -4190,6 +4209,24 @@
             The user readable description of this mod.
             </summary>
         </member>
+        <member name="P:osu.Game.Rulesets.Mods.Mod.IconTooltip">
+            <summary>
+            The tooltip to display for this mod when used in a <see cref="T:osu.Game.Rulesets.UI.ModIcon"/>.
+            </summary>
+            <remarks>
+            Differs from <see cref="P:osu.Game.Rulesets.Mods.Mod.Name"/>, as the value of attributes (AR, CS, etc) changeable via the mod
+            are displayed in the tooltip.
+            </remarks>
+        </member>
+        <member name="P:osu.Game.Rulesets.Mods.Mod.SettingDescription">
+            <summary>
+            The description of editable settings of a mod to use in the <see cref="P:osu.Game.Rulesets.Mods.Mod.IconTooltip"/>.
+            </summary>
+            <remarks>
+            Parentheses are added to the tooltip, surrounding the value of this property. If this property is <c>string.Empty</c>,
+            the tooltip will not have parentheses.
+            </remarks>
+        </member>
         <member name="P:osu.Game.Rulesets.Mods.Mod.ScoreMultiplier">
             <summary>
             The score multiplier of this mod.
@@ -4234,7 +4271,7 @@
         <member name="M:osu.Game.Rulesets.Mods.ModDifficultyAdjust.TransferSetting``1(osu.Framework.Bindables.BindableNumber{``0},``0)">
             <summary>
             Transfer a setting from <see cref="T:osu.Game.Beatmaps.BeatmapDifficulty"/> to a configuration bindable.
-            Only performs the transfer if the user it not currently overriding..
+            Only performs the transfer if the user is not currently overriding.
             </summary>
         </member>
         <member name="M:osu.Game.Rulesets.Mods.ModDifficultyAdjust.ApplySettings(osu.Game.Beatmaps.BeatmapDifficulty)">
@@ -4273,6 +4310,11 @@
         <member name="F:osu.Game.Rulesets.Objects.Drawables.DrawableHitObject.AccentColour">
             <summary>
             The colour used for various elements of this DrawableHitObject.
+            </summary>
+        </member>
+        <member name="P:osu.Game.Rulesets.Objects.Drawables.DrawableHitObject.HandleUserInput">
+            <summary>
+            Whether this object should handle any user input events.
             </summary>
         </member>
         <member name="E:osu.Game.Rulesets.Objects.Drawables.DrawableHitObject.OnNewResult">
@@ -5636,7 +5678,12 @@
         </member>
         <member name="P:osu.Game.Rulesets.UI.DrawableRuleset.Overlays">
             <summary>
-            Place to put drawables above hit objects but below UI.
+            Content to be placed above hitobjects. Will be affected by frame stability.
+            </summary>
+        </member>
+        <member name="P:osu.Game.Rulesets.UI.DrawableRuleset.FrameStableComponents">
+            <summary>
+            Components to be run potentially multiple times in line with frame-stable gameplay.
             </summary>
         </member>
         <member name="P:osu.Game.Rulesets.UI.DrawableRuleset.FrameStableClock">
@@ -5721,7 +5768,7 @@
         <member name="T:osu.Game.Rulesets.UI.FrameStabilityContainer">
             <summary>
             A container which consumes a parent gameplay clock and standardises frame counts for children.
-            Will ensure a minimum of 40 frames per clock second is maintained, regardless of any system lag or seeks.
+            Will ensure a minimum of 50 frames per clock second is maintained, regardless of any system lag or seeks.
             </summary>
         </member>
         <member name="P:osu.Game.Rulesets.UI.FrameStabilityContainer.MaxCatchUpFrames">
@@ -5976,12 +6023,16 @@
             Whether <see cref="T:osu.Game.Beatmaps.ControlPoints.TimingControlPoint"/> beat lengths should scale relative to the most common beat length in the <see cref="T:osu.Game.Beatmaps.Beatmap"/>.
             </summary>
         </member>
-        <member name="F:osu.Game.Rulesets.UI.Scrolling.DrawableScrollingRuleset`1.controlPoints">
+        <member name="F:osu.Game.Rulesets.UI.Scrolling.DrawableScrollingRuleset`1.ControlPoints">
             <summary>
-            Provides the default <see cref="T:osu.Game.Rulesets.Timing.MultiplierControlPoint"/>s that adjust the scrolling rate of <see cref="T:osu.Game.Rulesets.Objects.HitObject"/>s
-            inside this <see cref="T:osu.Game.Rulesets.UI.DrawableRuleset`1"/>.
+            The <see cref="T:osu.Game.Rulesets.Timing.MultiplierControlPoint"/>s that adjust the scrolling rate of <see cref="T:osu.Game.Rulesets.Objects.HitObject"/>s inside this <see cref="T:osu.Game.Rulesets.UI.DrawableRuleset`1"/>.
             </summary>
-            <returns></returns>
+        </member>
+        <member name="M:osu.Game.Rulesets.UI.Scrolling.DrawableScrollingRuleset`1.AdjustScrollSpeed(System.Int32)">
+            <summary>
+            Adjusts the scroll speed of <see cref="T:osu.Game.Rulesets.Objects.HitObject"/>s.
+            </summary>
+            <param name="amount">The amount to adjust by. Greater than 0 if the scroll speed should be increased, less than 0 if it should be decreased.</param>
         </member>
         <member name="P:osu.Game.Rulesets.UI.Scrolling.IScrollingInfo.Direction">
             <summary>
@@ -6870,7 +6921,7 @@
             The duration of the break overlay fading.
             </summary>
         </member>
-        <member name="P:osu.Game.Screens.Play.BreakOverlay.IsBreakTime">
+        <member name="P:osu.Game.Screens.Play.BreakTracker.IsBreakTime">
             <summary>
             Whether the gameplay is currently in a break.
             </summary>
@@ -7640,6 +7691,25 @@
             A skin configuration pre-populated with sane defaults.
             </summary>
         </member>
+        <member name="T:osu.Game.Skinning.IAnimationTimeReference">
+            <summary>
+            Denotes an object which provides a reference time to start animations from.
+            </summary>
+            <remarks>
+            This should not be used to start an animation immediately at the current time.
+            To do so, use <see cref="M:osu.Game.Skinning.LegacySkinExtensions.GetAnimation(osu.Game.Skinning.ISkin,System.String,System.Boolean,System.Boolean,System.Boolean,System.String,System.Boolean,System.Nullable{System.Double})"/> with <code>startAtCurrentTime = true</code> instead.
+            </remarks>
+        </member>
+        <member name="P:osu.Game.Skinning.IAnimationTimeReference.Clock">
+            <summary>
+            The reference clock.
+            </summary>
+        </member>
+        <member name="P:osu.Game.Skinning.IAnimationTimeReference.AnimationStartTime">
+            <summary>
+            The time which animations should be started from, relative to <see cref="P:osu.Game.Skinning.IAnimationTimeReference.Clock"/>.
+            </summary>
+        </member>
         <member name="T:osu.Game.Skinning.ISkin">
             <summary>
             Provides access to skinnable elements.
@@ -7676,6 +7746,22 @@
         <member name="T:osu.Game.Skinning.ISkinSource">
             <summary>
             Provides access to skinnable elements.
+            </summary>
+        </member>
+        <member name="F:osu.Game.Skinning.LegacyManiaSkinConfiguration.POSITION_SCALE_FACTOR">
+            <summary>
+            Conversion factor from converting legacy positioning values (based in x480 dimensions) to x768.
+            </summary>
+        </member>
+        <member name="F:osu.Game.Skinning.LegacyManiaSkinConfiguration.DEFAULT_COLUMN_SIZE">
+            <summary>
+            Size of a legacy column in the default skin, used for determining relative scale factors.
+            </summary>
+        </member>
+        <member name="F:osu.Game.Skinning.LegacySkin.hasKeyTexture">
+            <summary>
+            Whether texture for the keys exists.
+            Used to determine if the mania ruleset is skinned.
             </summary>
         </member>
         <member name="P:osu.Game.Skinning.LegacySkinConfiguration.LegacyVersion">
