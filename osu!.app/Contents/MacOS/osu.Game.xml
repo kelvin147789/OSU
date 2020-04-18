@@ -517,12 +517,12 @@
             The time at which the control point takes effect.
             </summary>
         </member>
-        <member name="M:osu.Game.Beatmaps.ControlPoints.ControlPoint.EquivalentTo(osu.Game.Beatmaps.ControlPoints.ControlPoint)">
+        <member name="M:osu.Game.Beatmaps.ControlPoints.ControlPoint.IsRedundant(osu.Game.Beatmaps.ControlPoints.ControlPoint)">
             <summary>
-            Whether this control point is equivalent to another, ignoring time.
+            Determines whether this <see cref="T:osu.Game.Beatmaps.ControlPoints.ControlPoint"/> results in a meaningful change when placed alongside another.
             </summary>
-            <param name="other">Another control point to compare with.</param>
-            <returns>Whether equivalent.</returns>
+            <param name="existing">An existing control point to compare with.</param>
+            <returns>Whether this <see cref="T:osu.Game.Beatmaps.ControlPoints.ControlPoint"/> is redundant when placed alongside <paramref name="existing"/>.</returns>
         </member>
         <member name="P:osu.Game.Beatmaps.ControlPoints.ControlPointGroup.Time">
             <summary>
@@ -987,6 +987,13 @@
             <summary>
             Whether the break has any effect. Breaks that are too short are culled before they are added to the beatmap.
             </summary>
+        </member>
+        <member name="M:osu.Game.Beatmaps.Timing.BreakPeriod.#ctor(System.Double,System.Double)">
+            <summary>
+            Constructs a new break period.
+            </summary>
+            <param name="startTime">The start time of the break period.</param>
+            <param name="endTime">The end time of the break period.</param>
         </member>
         <member name="M:osu.Game.Beatmaps.Timing.BreakPeriod.Contains(System.Double)">
             <summary>
@@ -2245,11 +2252,6 @@
             A <see cref="T:osu.Game.Graphics.UserInterface.BreadcrumbControl`1"/> which follows the active screen (and allows navigation) in a <see cref="T:osu.Framework.Screens.Screen"/> stack.
             </summary>
         </member>
-        <member name="T:osu.Game.Graphics.UserInterface.ScreenTitleTextureIcon">
-            <summary>
-            A custom icon class for use with <see cref="M:osu.Game.Graphics.UserInterface.ScreenTitle.CreateIcon"/> based off a texture resource.
-            </summary>
-        </member>
         <member name="T:osu.Game.Graphics.UserInterface.SeekLimitedSearchTextBox">
             <summary>
             A <see cref="T:osu.Game.Graphics.UserInterface.SearchTextBox"/> which does not handle left/right arrow keys for seeking.
@@ -2743,6 +2745,11 @@
             </summary>
             <returns>Whether we are in a failed or cancelled state.</returns>
         </member>
+        <member name="F:osu.Game.Online.API.DummyAPIAccess.HandleRequest">
+            <summary>
+            Provide handling logic for an arbitrary API request.
+            </summary>
+        </member>
         <member name="P:osu.Game.Online.API.IAPIProvider.LocalUser">
             <summary>
             The local user.
@@ -3175,12 +3182,17 @@
             </summary>
             <param name="beatmapId">The beatmap to show.</param>
         </member>
-        <member name="M:osu.Game.OsuGame.PresentBeatmap(osu.Game.Beatmaps.BeatmapSetInfo)">
+        <member name="M:osu.Game.OsuGame.PresentBeatmap(osu.Game.Beatmaps.BeatmapSetInfo,System.Predicate{osu.Game.Beatmaps.BeatmapInfo})">
             <summary>
             Present a beatmap at song select immediately.
             The user should have already requested this interactively.
             </summary>
             <param name="beatmap">The beatmap to select.</param>
+            <param name="difficultyCriteria">
+            Optional predicate used to try and find a difficulty to select.
+            If omitted, this will try to present the first beatmap from the current ruleset.
+            In case of failure the first difficulty of the set will be presented, ignoring the predicate.
+            </param>
         </member>
         <member name="M:osu.Game.OsuGame.PresentScore(osu.Game.Scoring.ScoreInfo)">
             <summary>
@@ -3269,6 +3281,11 @@
             Appends retrieved comments to the subtree rooted of comments in this page.
             </summary>
             <param name="bundle">The bundle of comments to add.</param>
+        </member>
+        <member name="F:osu.Game.Overlays.Direct.PanelDownloadButton.SelectedBeatmap">
+            <summary>
+            Currently selected beatmap. Used to present the correct difficulty after completing a download.
+            </summary>
         </member>
         <member name="T:osu.Game.Overlays.HoldToConfirmOverlay">
             <summary>
@@ -3468,7 +3485,17 @@
         </member>
         <member name="M:osu.Game.Overlays.OverlayHeader.CreateTitleContent">
             <summary>
-            Creates a <see cref="T:osu.Framework.Graphics.Drawable"/> on the opposite side of the <see cref="T:osu.Game.Graphics.UserInterface.ScreenTitle"/>. Used mostly to create <see cref="T:osu.Game.Overlays.OverlayRulesetSelector"/>.
+            Creates a <see cref="T:osu.Framework.Graphics.Drawable"/> on the opposite side of the <see cref="T:osu.Game.Overlays.OverlayTitle"/>. Used mostly to create <see cref="T:osu.Game.Overlays.OverlayRulesetSelector"/>.
+            </summary>
+        </member>
+        <member name="T:osu.Game.Overlays.OverlayScrollContainer">
+            <summary>
+            <see cref="T:osu.Game.Graphics.Containers.OsuScrollContainer"/> which provides <see cref="T:osu.Game.Overlays.OverlayScrollContainer.ScrollToTopButton"/>. Mostly used in <see cref="T:osu.Game.Overlays.FullscreenOverlay"/>.
+            </summary>
+        </member>
+        <member name="F:osu.Game.Overlays.OverlayScrollContainer.button_scroll_position">
+            <summary>
+            Scroll position at which the <see cref="T:osu.Game.Overlays.OverlayScrollContainer.ScrollToTopButton"/> will be shown.
             </summary>
         </member>
         <member name="T:osu.Game.Overlays.Profile.Sections.BeatmapMetadataContainer">
@@ -3724,12 +3751,6 @@
             <param name="selectedHitObjects">The <see cref="T:osu.Game.Rulesets.Objects.HitObject"/> selection.</param>
             <returns>The <see cref="T:osu.Game.Screens.Edit.Compose.Components.DistanceSnapGrid"/> for <paramref name="selectedHitObjects"/>. If empty, a grid is returned for the current point in time.</returns>
         </member>
-        <member name="M:osu.Game.Rulesets.Edit.HitObjectComposer.UpdateHitObject(osu.Game.Rulesets.Objects.HitObject)">
-            <summary>
-            Updates a <see cref="T:osu.Game.Rulesets.Objects.HitObject"/>, invoking <see cref="M:osu.Game.Rulesets.Objects.HitObject.ApplyDefaults(osu.Game.Beatmaps.ControlPoints.ControlPointInfo,osu.Game.Beatmaps.BeatmapDifficulty)"/> and re-processing the beatmap.
-            </summary>
-            <param name="hitObject">The <see cref="T:osu.Game.Rulesets.Objects.HitObject"/> to update.</param>
-        </member>
         <member name="M:osu.Game.Rulesets.Edit.IBeatSnapProvider.SnapTime(System.Double,System.Nullable{System.Double})">
             <summary>
             Snaps a duration to the closest beat of a timing point applicable at the reference time.
@@ -3858,11 +3879,6 @@
         <member name="M:osu.Game.Rulesets.Edit.SelectionBlueprint.Deselect">
             <summary>
             Deselects this <see cref="T:osu.Game.Rulesets.Edit.OverlaySelectionBlueprint"/>, causing it to become invisible.
-            </summary>
-        </member>
-        <member name="M:osu.Game.Rulesets.Edit.SelectionBlueprint.UpdateHitObject">
-            <summary>
-            Updates the <see cref="T:osu.Game.Rulesets.Objects.HitObject"/>, invoking <see cref="M:osu.Game.Rulesets.Objects.HitObject.ApplyDefaults(osu.Game.Beatmaps.ControlPoints.ControlPointInfo,osu.Game.Beatmaps.BeatmapDifficulty)"/> and re-processing the beatmap.
             </summary>
         </member>
         <member name="P:osu.Game.Rulesets.Edit.SelectionBlueprint.ContextMenuItems">
@@ -4353,6 +4369,15 @@
             <summary>
             The scoring result of this <see cref="T:osu.Game.Rulesets.Objects.Drawables.DrawableHitObject"/>.
             </summary>
+        </member>
+        <member name="P:osu.Game.Rulesets.Objects.Drawables.DrawableHitObject.SamplePlaybackPosition">
+            <summary>
+            The relative X position of this hit object for sample playback balance adjustment.
+            </summary>
+            <remarks>
+            This is a range of 0..1 (0 for far-left, 0.5 for centre, 1 for far-right).
+            Dampening is post-applied to ensure the effect is not too intense.
+            </remarks>
         </member>
         <member name="M:osu.Game.Rulesets.Objects.Drawables.DrawableHitObject.AddNestedHitObject(osu.Game.Rulesets.Objects.Drawables.DrawableHitObject)">
             <summary>
@@ -6560,9 +6585,9 @@
             Invoked when a <see cref="T:osu.Game.Rulesets.Objects.HitObject"/> is removed from this <see cref="T:osu.Game.Screens.Edit.EditorBeatmap"/>.
             </summary>
         </member>
-        <member name="E:osu.Game.Screens.Edit.EditorBeatmap.StartTimeChanged">
+        <member name="E:osu.Game.Screens.Edit.EditorBeatmap.HitObjectUpdated">
             <summary>
-            Invoked when the start time of a <see cref="T:osu.Game.Rulesets.Objects.HitObject"/> in this <see cref="T:osu.Game.Screens.Edit.EditorBeatmap"/> was changed.
+            Invoked when a <see cref="T:osu.Game.Rulesets.Objects.HitObject"/> is updated.
             </summary>
         </member>
         <member name="F:osu.Game.Screens.Edit.EditorBeatmap.SelectedHitObjects">
@@ -6581,6 +6606,12 @@
             </summary>
             <param name="hitObject">The <see cref="T:osu.Game.Rulesets.Objects.HitObject"/> to update.</param>
         </member>
+        <member name="M:osu.Game.Screens.Edit.EditorBeatmap.AddRange(System.Collections.Generic.IEnumerable{osu.Game.Rulesets.Objects.HitObject})">
+            <summary>
+            Adds a collection of <see cref="T:osu.Game.Rulesets.Objects.HitObject"/>s to this <see cref="T:osu.Game.Screens.Edit.EditorBeatmap"/>.
+            </summary>
+            <param name="hitObjects">The <see cref="T:osu.Game.Rulesets.Objects.HitObject"/>s to add.</param>
+        </member>
         <member name="M:osu.Game.Screens.Edit.EditorBeatmap.Add(osu.Game.Rulesets.Objects.HitObject)">
             <summary>
             Adds a <see cref="T:osu.Game.Rulesets.Objects.HitObject"/> to this <see cref="T:osu.Game.Screens.Edit.EditorBeatmap"/>.
@@ -6592,6 +6623,42 @@
             Removes a <see cref="T:osu.Game.Rulesets.Objects.HitObject"/> from this <see cref="T:osu.Game.Screens.Edit.EditorBeatmap"/>.
             </summary>
             <param name="hitObject">The <see cref="T:osu.Game.Rulesets.Objects.HitObject"/> to add.</param>
+            <returns>True if the <see cref="T:osu.Game.Rulesets.Objects.HitObject"/> has been removed, false otherwise.</returns>
+        </member>
+        <member name="M:osu.Game.Screens.Edit.EditorBeatmap.FindIndex(osu.Game.Rulesets.Objects.HitObject)">
+            <summary>
+            Finds the index of a <see cref="T:osu.Game.Rulesets.Objects.HitObject"/> in this <see cref="T:osu.Game.Screens.Edit.EditorBeatmap"/>.
+            </summary>
+            <param name="hitObject">The <see cref="T:osu.Game.Rulesets.Objects.HitObject"/> to search for.</param>
+            <returns>The index of <paramref name="hitObject"/>.</returns>
+        </member>
+        <member name="M:osu.Game.Screens.Edit.EditorBeatmap.RemoveAt(System.Int32)">
+            <summary>
+            Removes a <see cref="T:osu.Game.Rulesets.Objects.HitObject"/> at an index in this <see cref="T:osu.Game.Screens.Edit.EditorBeatmap"/>.
+            </summary>
+            <param name="index">The index of the <see cref="T:osu.Game.Rulesets.Objects.HitObject"/> to remove.</param>
+        </member>
+        <member name="T:osu.Game.Screens.Edit.EditorChangeHandler">
+            <summary>
+            Tracks changes to the <see cref="T:osu.Game.Screens.Edit.Editor"/>.
+            </summary>
+        </member>
+        <member name="M:osu.Game.Screens.Edit.EditorChangeHandler.#ctor(osu.Game.Screens.Edit.EditorBeatmap)">
+            <summary>
+            Creates a new <see cref="T:osu.Game.Screens.Edit.EditorChangeHandler"/>.
+            </summary>
+            <param name="editorBeatmap">The <see cref="T:osu.Game.Screens.Edit.EditorBeatmap"/> to track the <see cref="T:osu.Game.Rulesets.Objects.HitObject"/>s of.</param>
+        </member>
+        <member name="M:osu.Game.Screens.Edit.EditorChangeHandler.SaveState">
+            <summary>
+            Saves the current <see cref="T:osu.Game.Screens.Edit.Editor"/> state.
+            </summary>
+        </member>
+        <member name="M:osu.Game.Screens.Edit.EditorChangeHandler.RestoreState(System.Int32)">
+            <summary>
+            Restores an older or newer state.
+            </summary>
+            <param name="direction">The direction to restore in. If less than 0, an older state will be used. If greater than 0, a newer state will be used.</param>
         </member>
         <member name="T:osu.Game.Screens.Edit.EditorClock">
             <summary>
@@ -6622,6 +6689,36 @@
         <member name="T:osu.Game.Screens.Edit.EditorScreen">
             <summary>
             TODO: eventually make this inherit Screen and add a local screen stack inside the Editor.
+            </summary>
+        </member>
+        <member name="T:osu.Game.Screens.Edit.IEditorChangeHandler">
+            <summary>
+            Interface for a component that manages changes in the <see cref="T:osu.Game.Screens.Edit.Editor"/>.
+            </summary>
+        </member>
+        <member name="M:osu.Game.Screens.Edit.IEditorChangeHandler.BeginChange">
+            <summary>
+            Begins a bulk state change event. <see cref="M:osu.Game.Screens.Edit.IEditorChangeHandler.EndChange"/> should be invoked soon after.
+            </summary>
+            <remarks>
+            This should be invoked when multiple changes to the <see cref="T:osu.Game.Screens.Edit.Editor"/> should be bundled together into one state change event.
+            When nested invocations are involved, a state change will not occur until an equal number of invocations of <see cref="M:osu.Game.Screens.Edit.IEditorChangeHandler.EndChange"/> are received.
+            </remarks>
+            <example>
+            When a group of <see cref="T:osu.Game.Rulesets.Objects.HitObject"/>s are deleted, a single undo and redo state change should update the state of all <see cref="T:osu.Game.Rulesets.Objects.HitObject"/>.
+            </example>
+        </member>
+        <member name="M:osu.Game.Screens.Edit.IEditorChangeHandler.EndChange">
+            <summary>
+            Ends a bulk state change event.
+            </summary>
+            <remarks>
+            This should be invoked as soon as possible after <see cref="M:osu.Game.Screens.Edit.IEditorChangeHandler.BeginChange"/> to cause a state change.
+            </remarks>
+        </member>
+        <member name="T:osu.Game.Screens.Edit.LegacyEditorBeatmapPatcher">
+            <summary>
+            Patches an <see cref="T:osu.Game.Screens.Edit.EditorBeatmap"/> based on the difference between two legacy (.osu) states.
             </summary>
         </member>
         <member name="P:osu.Game.Screens.IOsuScreen.DisallowExternalBeatmapRulesetChanges">
@@ -7043,6 +7140,27 @@
             Used to display combo with a roll-up animation in results screen.
             </summary>
         </member>
+        <member name="T:osu.Game.Screens.Play.HUD.FailingLayer">
+            <summary>
+            An overlay layer on top of the playfield which fades to red when the current player health falls below a certain threshold defined by <see cref="F:osu.Game.Screens.Play.HUD.FailingLayer.LowHealthThreshold"/>.
+            </summary>
+        </member>
+        <member name="F:osu.Game.Screens.Play.HUD.FailingLayer.LowHealthThreshold">
+            <summary>
+            The threshold under which the current player life should be considered low and the layer should start fading in.
+            </summary>
+        </member>
+        <member name="T:osu.Game.Screens.Play.HUD.HealthDisplay">
+            <summary>
+            A container for components displaying the current player health.
+            Gets bound automatically to the <see cref="T:osu.Game.Rulesets.Scoring.HealthProcessor"/> when inserted to <see cref="P:osu.Game.Rulesets.UI.DrawableRuleset.Overlays"/> hierarchy.
+            </summary>
+        </member>
+        <member name="M:osu.Game.Screens.Play.HUD.HealthDisplay.BindHealthProcessor(osu.Game.Rulesets.Scoring.HealthProcessor)">
+            <summary>
+            Bind the tracked fields of <see cref="T:osu.Game.Rulesets.Scoring.HealthProcessor"/> to this health display.
+            </summary>
+        </member>
         <member name="F:osu.Game.Screens.Play.HUD.ExpansionMode.ExpandOnHover">
             <summary>
             The <see cref="T:osu.Game.Screens.Play.HUD.ModDisplay"/> will expand only when hovered.
@@ -7428,6 +7546,11 @@
             The currently selected beatmap set.
             </summary>
         </member>
+        <member name="F:osu.Game.Screens.Select.BeatmapCarousel.GetRecommendedBeatmap">
+            <summary>
+            A function to optionally decide on a recommended difficulty from a beatmap set.
+            </summary>
+        </member>
         <member name="F:osu.Game.Screens.Select.BeatmapCarousel.SelectionChanged">
             <summary>
             Raised when the <see cref="P:osu.Game.Screens.Select.BeatmapCarousel.SelectedBeatmap"/> is changed.
@@ -7591,6 +7714,16 @@
             <summary>
             Create a fresh drawable version of this item. If you wish to consume the current representation, use <see cref="F:osu.Game.Screens.Select.Carousel.CarouselItem.DrawableRepresentation"/> instead.
             </summary>
+        </member>
+        <member name="M:osu.Game.Screens.Select.DifficultyRecommender.GetRecommendedBeatmap(System.Collections.Generic.IEnumerable{osu.Game.Beatmaps.BeatmapInfo})">
+            <summary>
+            Find the recommended difficulty from a selection of available difficulties for the current local user.
+            </summary>
+            <remarks>
+            This requires the user to be online for now.
+            </remarks>
+            <param name="beatmaps">A collection of beatmaps to select a difficulty from.</param>
+            <returns>The recommended difficulty, or null if a recommendation could not be provided.</returns>
         </member>
         <member name="M:osu.Game.Screens.Select.Footer.AddButton(osu.Game.Screens.Select.FooterButton,osu.Framework.Graphics.Containers.OverlayContainer)">
             <param name="button">THe button to be added.</param>
@@ -7953,12 +8086,13 @@
             </summary>
             <returns></returns>
         </member>
-        <member name="M:osu.Game.Tests.Beatmaps.TestWorkingBeatmap.#ctor(osu.Game.Beatmaps.IBeatmap,osu.Game.Storyboards.Storyboard)">
+        <member name="M:osu.Game.Tests.Beatmaps.TestWorkingBeatmap.#ctor(osu.Game.Beatmaps.IBeatmap,osu.Game.Storyboards.Storyboard,osu.Framework.Audio.AudioManager)">
             <summary>
             Create an instance which provides the <see cref="T:osu.Game.Beatmaps.IBeatmap"/> when requested.
             </summary>
             <param name="beatmap">The beatmap.</param>
             <param name="storyboard">An optional storyboard.</param>
+            <param name="audioManager">The <see cref="T:osu.Framework.Audio.AudioManager"/>.</param>
         </member>
         <member name="T:osu.Game.Tests.CleanRunHeadlessGameHost">
             <summary>

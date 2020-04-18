@@ -105,7 +105,7 @@
         <member name="M:osu.Game.Rulesets.Taiko.Objects.Drawables.DrawableTaikoHitObject.ProxyContent">
             <summary>
             Moves <see cref="F:osu.Game.Rulesets.Taiko.Objects.Drawables.DrawableTaikoHitObject.Content"/> to a layer proxied above the playfield.
-            Does nothing is content is already proxied.
+            Does nothing if content is already proxied.
             </summary>
         </member>
         <member name="M:osu.Game.Rulesets.Taiko.Objects.Drawables.DrawableTaikoHitObject.UnproxyContent">
@@ -127,7 +127,7 @@
             <param name="hitObject">The strong hitobject.</param>
             <returns>The strong hitobject handler.</returns>
         </member>
-        <member name="T:osu.Game.Rulesets.Taiko.Objects.Drawables.Pieces.CentreHitSymbolPiece">
+        <member name="T:osu.Game.Rulesets.Taiko.Objects.Drawables.Pieces.CentreHitCirclePiece.CentreHitSymbolPiece">
             <summary>
             The symbol used for centre hit pieces.
             </summary>
@@ -151,24 +151,14 @@
             Whether Kiai mode effects are enabled for this circle piece.
             </summary>
         </member>
-        <member name="T:osu.Game.Rulesets.Taiko.Objects.Drawables.Pieces.RimHitSymbolPiece">
+        <member name="T:osu.Game.Rulesets.Taiko.Objects.Drawables.Pieces.RimHitCirclePiece.RimHitSymbolPiece">
             <summary>
             The symbol used for rim hit pieces.
             </summary>
         </member>
-        <member name="T:osu.Game.Rulesets.Taiko.Objects.Drawables.Pieces.SwellSymbolPiece">
+        <member name="T:osu.Game.Rulesets.Taiko.Objects.Drawables.Pieces.SwellCirclePiece.SwellSymbolPiece">
             <summary>
             The symbol used for swell pieces.
-            </summary>
-        </member>
-        <member name="P:osu.Game.Rulesets.Taiko.Objects.Drawables.Pieces.TaikoPiece.AccentColour">
-            <summary>
-            The colour of the inner circle and outer glows.
-            </summary>
-        </member>
-        <member name="P:osu.Game.Rulesets.Taiko.Objects.Drawables.Pieces.TaikoPiece.KiaiMode">
-            <summary>
-            Whether Kiai mode effects are enabled for this circle piece.
             </summary>
         </member>
         <member name="F:osu.Game.Rulesets.Taiko.Objects.Drawables.Pieces.TickPiece.tick_border_width">

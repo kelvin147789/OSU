@@ -730,6 +730,21 @@
             The column which the hit object lies in.
             </summary>
         </member>
+        <member name="M:osu.Game.Rulesets.Mania.Replays.ManiaReplayFrame.getSpecialColumnIndex(osu.Game.Rulesets.Mania.Beatmaps.ManiaBeatmap,System.Int32)">
+            <summary>
+            Find the overall index (across all stages) for a specified special key.
+            </summary>
+            <param name="maniaBeatmap">The beatmap.</param>
+            <param name="specialOffset">The special key offset (0 is S1).</param>
+            <returns>The overall index for the special column.</returns>
+        </member>
+        <member name="M:osu.Game.Rulesets.Mania.Replays.ManiaReplayFrame.isColumnAtIndexSpecial(osu.Game.Rulesets.Mania.Beatmaps.ManiaBeatmap,System.Int32)">
+            <summary>
+            Check whether the column at an overall index (across all stages) is a special column.
+            </summary>
+            <param name="beatmap">The beatmap.</param>
+            <param name="index">The overall index to check.</param>
+        </member>
         <member name="T:osu.Game.Rulesets.Mania.Skinning.LegacyManiaColumnElement">
             <summary>
             A <see cref="T:osu.Framework.Graphics.Containers.CompositeDrawable"/> which is placed somewhere within a <see cref="P:osu.Game.Rulesets.Mania.Skinning.LegacyManiaColumnElement.Column"/>.
@@ -817,7 +832,7 @@
             Retrieves the total amount of columns across all stages in this playfield.
             </summary>
         </member>
-        <member name="T:osu.Game.Rulesets.Mania.UI.ManiaStage">
+        <member name="T:osu.Game.Rulesets.Mania.UI.Stage">
             <summary>
             A collection of <see cref="T:osu.Game.Rulesets.Mania.UI.Column"/>s.
             </summary>
