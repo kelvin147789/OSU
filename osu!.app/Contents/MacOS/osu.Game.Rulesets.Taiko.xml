@@ -4,7 +4,7 @@
         <name>osu.Game.Rulesets.Taiko</name>
     </assembly>
     <members>
-        <member name="F:osu.Game.Rulesets.Taiko.Beatmaps.TaikoBeatmapConverter.legacy_velocity_multiplier">
+        <member name="F:osu.Game.Rulesets.Taiko.Beatmaps.TaikoBeatmapConverter.LEGACY_VELOCITY_MULTIPLIER">
             <summary>
             osu! is generally slower than taiko, so a factor is added to increase
             speed. This must be used everywhere slider length or beat length is used.
@@ -41,7 +41,7 @@
             Fade out time calibrated to a pre-empt of 1000ms.
             </summary>
         </member>
-        <member name="F:osu.Game.Rulesets.Taiko.Objects.Drawables.DrawableBarLine.Tracker">
+        <member name="F:osu.Game.Rulesets.Taiko.Objects.Drawables.DrawableBarLine.Line">
             <summary>
             The visual line tracker.
             </summary>
@@ -69,6 +69,16 @@
         <member name="F:osu.Game.Rulesets.Taiko.Objects.Drawables.DrawableDrumRoll.rollingHits">
             <summary>
             Rolling number of tick hits. This increases for hits and decreases for misses.
+            </summary>
+        </member>
+        <member name="F:osu.Game.Rulesets.Taiko.Objects.Drawables.DrawableDrumRollTick.JudgementType">
+            <summary>
+            The hit type corresponding to the <see cref="T:osu.Game.Rulesets.Taiko.TaikoAction"/> that the user pressed to hit this <see cref="T:osu.Game.Rulesets.Taiko.Objects.Drawables.DrawableDrumRollTick"/>.
+            </summary>
+        </member>
+        <member name="T:osu.Game.Rulesets.Taiko.Objects.Drawables.DrawableFlyingHit">
+            <summary>
+            A hit used specifically for drum rolls, where spawning flying hits is required.
             </summary>
         </member>
         <member name="P:osu.Game.Rulesets.Taiko.Objects.Drawables.DrawableHit.HitActions">
@@ -175,6 +185,11 @@
         <member name="F:osu.Game.Rulesets.Taiko.Objects.DrumRoll.base_distance">
             <summary>
             Drum roll distance that results in a duration of 1 speed-adjusted beat length.
+            </summary>
+        </member>
+        <member name="P:osu.Game.Rulesets.Taiko.Objects.DrumRoll.Velocity">
+            <summary>
+            Velocity of this <see cref="T:osu.Game.Rulesets.Taiko.Objects.DrumRoll"/>.
             </summary>
         </member>
         <member name="F:osu.Game.Rulesets.Taiko.Objects.DrumRoll.TickRate">
@@ -323,16 +338,6 @@
             Transforms this hit explosion to visualise a secondary hit.
             </summary>
         </member>
-        <member name="T:osu.Game.Rulesets.Taiko.UI.HitTarget">
-            <summary>
-            A component that is displayed at the hit position in the taiko playfield.
-            </summary>
-        </member>
-        <member name="F:osu.Game.Rulesets.Taiko.UI.HitTarget.border_thickness">
-            <summary>
-            Thickness of all drawn line pieces.
-            </summary>
-        </member>
         <member name="T:osu.Game.Rulesets.Taiko.UI.InputDrum">
             <summary>
             A component of the playfield that captures input and displays input as a drum.
@@ -353,19 +358,19 @@
             The key to be used for the centre of the half-drum.
             </summary>
         </member>
+        <member name="T:osu.Game.Rulesets.Taiko.UI.TaikoHitTarget">
+            <summary>
+            A component that is displayed at the hit position in the taiko playfield.
+            </summary>
+        </member>
+        <member name="F:osu.Game.Rulesets.Taiko.UI.TaikoHitTarget.border_thickness">
+            <summary>
+            Thickness of all drawn line pieces.
+            </summary>
+        </member>
         <member name="F:osu.Game.Rulesets.Taiko.UI.TaikoPlayfield.DEFAULT_HEIGHT">
             <summary>
             Default height of a <see cref="T:osu.Game.Rulesets.Taiko.UI.TaikoPlayfield"/> when inside a <see cref="T:osu.Game.Rulesets.Taiko.UI.DrawableTaikoRuleset"/>.
-            </summary>
-        </member>
-        <member name="F:osu.Game.Rulesets.Taiko.UI.TaikoPlayfield.HIT_TARGET_OFFSET">
-            <summary>
-            The offset from <see cref="F:osu.Game.Rulesets.Taiko.UI.TaikoPlayfield.left_area_size"/> which the center of the hit target lies at.
-            </summary>
-        </member>
-        <member name="F:osu.Game.Rulesets.Taiko.UI.TaikoPlayfield.left_area_size">
-            <summary>
-            The size of the left area of the playfield. This area contains the input drum.
             </summary>
         </member>
     </members>

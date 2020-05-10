@@ -21,7 +21,7 @@
         </member>
         <member name="F:osu.Game.Rulesets.Catch.Difficulty.Preprocessing.CatchDifficultyHitObject.StrainTime">
             <summary>
-            Milliseconds elapsed since the start time of the previous <see cref="T:osu.Game.Rulesets.Catch.Difficulty.Preprocessing.CatchDifficultyHitObject"/>, with a minimum of 25ms.
+            Milliseconds elapsed since the start time of the previous <see cref="T:osu.Game.Rulesets.Catch.Difficulty.Preprocessing.CatchDifficultyHitObject"/>, with a minimum of 40ms.
             </summary>
         </member>
         <member name="M:osu.Game.Rulesets.Catch.Judgements.CatchJudgement.ShouldExplodeFor(osu.Game.Rulesets.Judgements.JudgementResult)">
@@ -124,6 +124,21 @@
             The length of one span of this <see cref="T:osu.Game.Rulesets.Catch.Objects.JuiceStream"/>.
             </summary>
         </member>
+        <member name="F:osu.Game.Rulesets.Catch.Skinning.CatchSkinColour.HyperDash">
+            <summary>
+            The colour to be used for the catcher while in hyper-dashing state.
+            </summary>
+        </member>
+        <member name="F:osu.Game.Rulesets.Catch.Skinning.CatchSkinColour.HyperDashFruit">
+            <summary>
+            The colour to be used for fruits that grant the catcher the ability to hyper-dash.
+            </summary>
+        </member>
+        <member name="F:osu.Game.Rulesets.Catch.Skinning.CatchSkinColour.HyperDashAfterImage">
+            <summary>
+            The colour to be used for the "exploding" catcher sprite on beginning of hyper-dashing.
+            </summary>
+        </member>
         <member name="P:osu.Game.Rulesets.Catch.UI.Catcher.HyperDashing">
             <summary>
             Whether we are hyper-dashing or not.
@@ -139,15 +154,32 @@
             The width of the catcher which can receive fruit. Equivalent to "catchMargin" in osu-stable.
             </summary>
         </member>
-        <member name="P:osu.Game.Rulesets.Catch.UI.Catcher.CatchWidth">
-            <summary>
-            Width of the area that can be used to attempt catches during gameplay.
-            </summary>
-        </member>
         <member name="P:osu.Game.Rulesets.Catch.UI.Catcher.Trail">
             <summary>
             Activate or deactivate the trail. Will be automatically deactivated when conditions to keep the trail displayed are no longer met.
             </summary>
+        </member>
+        <member name="F:osu.Game.Rulesets.Catch.UI.Catcher.catchWidth">
+            <summary>
+            Width of the area that can be used to attempt catches during gameplay.
+            </summary>
+        </member>
+        <member name="M:osu.Game.Rulesets.Catch.UI.Catcher.calculateScale(osu.Game.Beatmaps.BeatmapDifficulty)">
+            <summary>
+            Calculates the scale of the catcher based off the provided beatmap difficulty.
+            </summary>
+        </member>
+        <member name="M:osu.Game.Rulesets.Catch.UI.Catcher.CalculateCatchWidth(osuTK.Vector2)">
+            <summary>
+            Calculates the width of the area used for attempting catches in gameplay.
+            </summary>
+            <param name="scale">The scale of the catcher.</param>
+        </member>
+        <member name="M:osu.Game.Rulesets.Catch.UI.Catcher.CalculateCatchWidth(osu.Game.Beatmaps.BeatmapDifficulty)">
+            <summary>
+            Calculates the width of the area used for attempting catches in gameplay.
+            </summary>
+            <param name="difficulty">The beatmap difficulty.</param>
         </member>
         <member name="M:osu.Game.Rulesets.Catch.UI.Catcher.PlaceOnPlate(osu.Game.Rulesets.Catch.Objects.Drawables.DrawableCatchHitObject)">
             <summary>

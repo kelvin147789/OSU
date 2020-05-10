@@ -295,16 +295,17 @@
             <param name="query">The query.</param>
             <returns>The first result for the provided query, or null if no results were found.</returns>
         </member>
-        <member name="M:osu.Game.Beatmaps.BeatmapManager.GetAllUsableBeatmapSets">
+        <member name="M:osu.Game.Beatmaps.BeatmapManager.GetAllUsableBeatmapSets(osu.Game.Beatmaps.IncludedDetails)">
             <summary>
             Returns a list of all usable <see cref="T:osu.Game.Beatmaps.BeatmapSetInfo"/>s.
             </summary>
             <returns>A list of available <see cref="T:osu.Game.Beatmaps.BeatmapSetInfo"/>.</returns>
         </member>
-        <member name="M:osu.Game.Beatmaps.BeatmapManager.GetAllUsableBeatmapSetsEnumerable">
+        <member name="M:osu.Game.Beatmaps.BeatmapManager.GetAllUsableBeatmapSetsEnumerable(osu.Game.Beatmaps.IncludedDetails)">
             <summary>
-            Returns a list of all usable <see cref="T:osu.Game.Beatmaps.BeatmapSetInfo"/>s.
+            Returns a list of all usable <see cref="T:osu.Game.Beatmaps.BeatmapSetInfo"/>s. Note that files are not populated.
             </summary>
+            <param name="includes">The level of detail to include in the returned objects.</param>
             <returns>A list of available <see cref="T:osu.Game.Beatmaps.BeatmapSetInfo"/>.</returns>
         </member>
         <member name="M:osu.Game.Beatmaps.BeatmapManager.QueryBeatmapSets(System.Linq.Expressions.Expression{System.Func{osu.Game.Beatmaps.BeatmapSetInfo,System.Boolean}})">
@@ -336,6 +337,26 @@
         <member name="T:osu.Game.Beatmaps.BeatmapManager.DummyConversionBeatmap">
             <summary>
             A dummy WorkingBeatmap for the purpose of retrieving a beatmap for star difficulty calculation.
+            </summary>
+        </member>
+        <member name="T:osu.Game.Beatmaps.IncludedDetails">
+            <summary>
+            The level of detail to include in database results.
+            </summary>
+        </member>
+        <member name="F:osu.Game.Beatmaps.IncludedDetails.Minimal">
+            <summary>
+            Only include beatmap difficulties and set level metadata.
+            </summary>
+        </member>
+        <member name="F:osu.Game.Beatmaps.IncludedDetails.AllButFiles">
+            <summary>
+            Include all difficulties, rulesets, difficulty metadata but no files.
+            </summary>
+        </member>
+        <member name="F:osu.Game.Beatmaps.IncludedDetails.All">
+            <summary>
+            Include everything.
             </summary>
         </member>
         <member name="P:osu.Game.Beatmaps.BeatmapMetadata.AuthorString">
@@ -2739,6 +2760,11 @@
             This will be scheduled to the API's internal scheduler (run on update thread automatically).
             </summary>
         </member>
+        <member name="M:osu.Game.Online.API.APIRequest.PostProcess">
+            <summary>
+            Perform any post-processing actions after a successful request.
+            </summary>
+        </member>
         <member name="M:osu.Game.Online.API.APIRequest.checkAndScheduleFailure">
             <summary>
             Checked for cancellation or error. Also queues up the Failed event if we can.
@@ -3024,6 +3050,14 @@
             Each word part of a chat link (split for word-wrap support).
             </summary>
         </member>
+        <member name="M:osu.Game.Online.Chat.IChannelPostTarget.PostMessage(System.String,System.Boolean,osu.Game.Online.Chat.Channel)">
+            <summary>
+            Posts a message to the currently opened channel.
+            </summary>
+            <param name="text">The message text that is going to be posted</param>
+            <param name="isAction">Is true if the message is an action, e.g.: user is currently eating </param>
+            <param name="target">An optional target channel. If null, <see cref="P:osu.Game.Online.Chat.ChannelManager.CurrentChannel"/> will be used.</param>
+        </member>
         <member name="T:osu.Game.Online.Chat.LocalMessage">
             <summary>
             A message which is generated and displayed locally.
@@ -3234,6 +3268,11 @@
             Mods available for the current <see cref="F:osu.Game.OsuGameBase.Ruleset"/>.
             </summary>
         </member>
+        <member name="F:osu.Game.Overlays.BeatmapListing.Panels.BeatmapPanelDownloadButton.SelectedBeatmap">
+            <summary>
+            Currently selected beatmap. Used to present the correct difficulty after completing a download.
+            </summary>
+        </member>
         <member name="P:osu.Game.Overlays.BeatmapSet.Scores.TopScoreStatisticsSection.Score">
             <summary>
             Sets the score to be displayed.
@@ -3281,11 +3320,6 @@
             Appends retrieved comments to the subtree rooted of comments in this page.
             </summary>
             <param name="bundle">The bundle of comments to add.</param>
-        </member>
-        <member name="F:osu.Game.Overlays.Direct.PanelDownloadButton.SelectedBeatmap">
-            <summary>
-            Currently selected beatmap. Used to present the correct difficulty after completing a download.
-            </summary>
         </member>
         <member name="T:osu.Game.Overlays.HoldToConfirmOverlay">
             <summary>
@@ -3398,15 +3432,19 @@
         </member>
         <member name="M:osu.Game.Overlays.MusicController.PreviousTrack">
             <summary>
-            Play the previous track or restart the current track if it's current time below <see cref="F:osu.Game.Overlays.MusicController.restart_cutoff_point"/>
+            Play the previous track or restart the current track if it's current time below <see cref="F:osu.Game.Overlays.MusicController.restart_cutoff_point"/>.
             </summary>
-            <returns>The <see cref="T:osu.Game.Overlays.PreviousTrackResult"/> that indicate the decided action</returns>
+        </member>
+        <member name="M:osu.Game.Overlays.MusicController.prev">
+            <summary>
+            Play the previous track or restart the current track if it's current time below <see cref="F:osu.Game.Overlays.MusicController.restart_cutoff_point"/>.
+            </summary>
+            <returns>The <see cref="T:osu.Game.Overlays.PreviousTrackResult"/> that indicate the decided action.</returns>
         </member>
         <member name="M:osu.Game.Overlays.MusicController.NextTrack">
             <summary>
             Play the next random or playlist track.
             </summary>
-            <returns>Whether the operation was successful.</returns>
         </member>
         <member name="P:osu.Game.Overlays.MusicController.AllowRateAdjustments">
             <summary>
@@ -3496,6 +3534,31 @@
         <member name="F:osu.Game.Overlays.OverlayScrollContainer.button_scroll_position">
             <summary>
             Scroll position at which the <see cref="T:osu.Game.Overlays.OverlayScrollContainer.ScrollToTopButton"/> will be shown.
+            </summary>
+        </member>
+        <member name="T:osu.Game.Overlays.OverlayView`1">
+            <summary>
+            A subview containing online content, to be displayed inside a <see cref="T:osu.Game.Overlays.FullscreenOverlay"/>.
+            </summary>
+            <remarks>
+            Automatically performs a data fetch on load.
+            </remarks>
+            <typeparam name="T">The type of the API response.</typeparam>
+        </member>
+        <member name="M:osu.Game.Overlays.OverlayView`1.CreateRequest">
+            <summary>
+            Create the API request for fetching data.
+            </summary>
+        </member>
+        <member name="M:osu.Game.Overlays.OverlayView`1.OnSuccess(`0)">
+            <summary>
+            Fired when results arrive from the main API request.
+            </summary>
+            <param name="response"></param>
+        </member>
+        <member name="M:osu.Game.Overlays.OverlayView`1.PerformFetch">
+            <summary>
+            Force a re-request for data from the API.
             </summary>
         </member>
         <member name="T:osu.Game.Overlays.Profile.Sections.BeatmapMetadataContainer">
@@ -4296,6 +4359,13 @@
             </summary>
             <param name="difficulty">The beatmap to have settings applied.</param>
         </member>
+        <member name="M:osu.Game.Rulesets.Mods.ModHidden.IsFirstHideableObject(osu.Game.Rulesets.Objects.Drawables.DrawableHitObject)">
+            <summary>
+            Check whether the provided hitobject should be considered the "first" hideable object.
+            Can be used to skip spinners, for instance.
+            </summary>
+            <param name="hitObject">The hitobject to check.</param>
+        </member>
         <member name="T:osu.Game.Rulesets.Mods.ModNoMod">
             <summary>
             Indicates a type of mod that doesn't do anything.
@@ -4384,12 +4454,6 @@
             Invoked by the base <see cref="T:osu.Game.Rulesets.Objects.Drawables.DrawableHitObject"/> to add nested <see cref="T:osu.Game.Rulesets.Objects.Drawables.DrawableHitObject"/>s to the hierarchy.
             </summary>
             <param name="hitObject">The <see cref="T:osu.Game.Rulesets.Objects.Drawables.DrawableHitObject"/> to be added.</param>
-        </member>
-        <member name="M:osu.Game.Rulesets.Objects.Drawables.DrawableHitObject.AddNested(osu.Game.Rulesets.Objects.Drawables.DrawableHitObject)">
-            <summary>
-            Adds a nested <see cref="T:osu.Game.Rulesets.Objects.Drawables.DrawableHitObject"/>. This should not be used except for legacy nested <see cref="T:osu.Game.Rulesets.Objects.Drawables.DrawableHitObject"/> usages.
-            </summary>
-            <param name="h"></param>
         </member>
         <member name="M:osu.Game.Rulesets.Objects.Drawables.DrawableHitObject.ClearNestedHitObjects">
             <summary>
@@ -5345,6 +5409,26 @@
             Optional judgement.
             </summary>
         </member>
+        <member name="F:osu.Game.Rulesets.Scoring.HitResult.SmallTickMiss">
+            <summary>
+            Indicates small tick miss.
+            </summary>
+        </member>
+        <member name="F:osu.Game.Rulesets.Scoring.HitResult.SmallTickHit">
+            <summary>
+            Indicates a small tick hit.
+            </summary>
+        </member>
+        <member name="F:osu.Game.Rulesets.Scoring.HitResult.LargeTickMiss">
+            <summary>
+            Indicates a large tick miss.
+            </summary>
+        </member>
+        <member name="F:osu.Game.Rulesets.Scoring.HitResult.LargeTickHit">
+            <summary>
+            Indicates a large tick hit.
+            </summary>
+        </member>
         <member name="T:osu.Game.Rulesets.Scoring.HitWindows">
             <summary>
             A structure containing timing data for hit window based gameplay.
@@ -5408,11 +5492,6 @@
             <summary>
             Retrieve a valid list of <see cref="T:osu.Game.Rulesets.Scoring.DifficultyRange"/>s representing hit windows.
             Defaults are provided but can be overridden to customise for a ruleset.
-            </summary>
-        </member>
-        <member name="E:osu.Game.Rulesets.Scoring.JudgementProcessor.AllJudged">
-            <summary>
-            Invoked when all <see cref="T:osu.Game.Rulesets.Objects.HitObject"/>s have been judged by this <see cref="T:osu.Game.Rulesets.Scoring.JudgementProcessor"/>.
             </summary>
         </member>
         <member name="E:osu.Game.Rulesets.Scoring.JudgementProcessor.NewJudgement">
@@ -5617,7 +5696,7 @@
             The beatmap.
             </summary>
         </member>
-        <member name="F:osu.Game.Rulesets.UI.DrawableRuleset`1.mods">
+        <member name="F:osu.Game.Rulesets.UI.DrawableRuleset`1.Mods">
             <summary>
             The mods which are to be applied.
             </summary>
@@ -6618,6 +6697,16 @@
             </summary>
             <param name="hitObject">The <see cref="T:osu.Game.Rulesets.Objects.HitObject"/> to add.</param>
         </member>
+        <member name="M:osu.Game.Screens.Edit.EditorBeatmap.Insert(System.Int32,osu.Game.Rulesets.Objects.HitObject)">
+            <summary>
+            Inserts a <see cref="T:osu.Game.Rulesets.Objects.HitObject"/> into this <see cref="T:osu.Game.Screens.Edit.EditorBeatmap"/>.
+            </summary>
+            <remarks>
+            It is the invoker's responsibility to make sure that <see cref="T:osu.Game.Rulesets.Objects.HitObject"/> sorting order is maintained.
+            </remarks>
+            <param name="index">The index to insert the <see cref="T:osu.Game.Rulesets.Objects.HitObject"/> at.</param>
+            <param name="hitObject">The <see cref="T:osu.Game.Rulesets.Objects.HitObject"/> to insert.</param>
+        </member>
         <member name="M:osu.Game.Screens.Edit.EditorBeatmap.Remove(osu.Game.Rulesets.Objects.HitObject)">
             <summary>
             Removes a <see cref="T:osu.Game.Rulesets.Objects.HitObject"/> from this <see cref="T:osu.Game.Screens.Edit.EditorBeatmap"/>.
@@ -6945,7 +7034,7 @@
         <member name="F:osu.Game.Screens.OsuScreen.HORIZONTAL_OVERFLOW_PADDING">
             <summary>
             The amount of negative padding that should be applied to game background content which touches both the left and right sides of the screen.
-            This allows for the game content to be pushed byt he options/notification overlays without causing black areas to appear.
+            This allows for the game content to be pushed by the options/notification overlays without causing black areas to appear.
             </summary>
         </member>
         <member name="P:osu.Game.Screens.OsuScreen.Title">
@@ -7213,6 +7302,11 @@
             <summary>
             Whether the key counter should be visible regardless of the configuration value.
             This is true by default, but can be changed.
+            </summary>
+        </member>
+        <member name="F:osu.Game.Screens.Play.Player.RESULTS_DISPLAY_DELAY">
+            <summary>
+            The delay upon completion of the beatmap before displaying the results screen.
             </summary>
         </member>
         <member name="P:osu.Game.Screens.Play.Player.PauseOnFocusLost">
@@ -7491,7 +7585,7 @@
             Height of the panel when contracted.
             </summary>
         </member>
-        <member name="F:osu.Game.Screens.Ranking.ScorePanel.expanded_width">
+        <member name="F:osu.Game.Screens.Ranking.ScorePanel.EXPANDED_WIDTH">
             <summary>
             Width of the panel when expanded.
             </summary>
@@ -7529,6 +7623,16 @@
         <member name="F:osu.Game.Screens.Ranking.ScorePanel.content_fade_duration">
             <summary>
             Duration for the panel contents to fade in.
+            </summary>
+        </member>
+        <member name="P:osu.Game.Screens.Select.BeatmapCarousel.BleedTop">
+            <summary>
+            Height of the area above the carousel that should be treated as visible due to transparency of elements in front of it.
+            </summary>
+        </member>
+        <member name="P:osu.Game.Screens.Select.BeatmapCarousel.BleedBottom">
+            <summary>
+            Height of the area below the carousel that should be treated as visible due to transparency of elements in front of it.
             </summary>
         </member>
         <member name="F:osu.Game.Screens.Select.BeatmapCarousel.BeatmapSetsChanged">
@@ -7771,12 +7875,13 @@
             Creates the beatmap details to be displayed underneath the wedge.
             </summary>
         </member>
-        <member name="M:osu.Game.Screens.Select.SongSelect.FinaliseSelection(osu.Game.Beatmaps.BeatmapInfo,System.Boolean)">
+        <member name="M:osu.Game.Screens.Select.SongSelect.FinaliseSelection(osu.Game.Beatmaps.BeatmapInfo,osu.Game.Rulesets.RulesetInfo,System.Action)">
             <summary>
             Call to make a selection and perform the default action for this SongSelect.
             </summary>
             <param name="beatmap">An optional beatmap to override the current carousel selection.</param>
-            <param name="performStartAction">Whether to trigger <see cref="M:osu.Game.Screens.Select.SongSelect.OnStart"/>.</param>
+            <param name="ruleset">An optional ruleset to override the current carousel selection.</param>
+            <param name="customStartAction">An optional custom action to perform instead of <see cref="M:osu.Game.Screens.Select.SongSelect.OnStart"/>.</param>
         </member>
         <member name="M:osu.Game.Screens.Select.SongSelect.OnStart">
             <summary>
@@ -7786,7 +7891,7 @@
         </member>
         <member name="M:osu.Game.Screens.Select.SongSelect.performUpdateSelected">
             <summary>
-            selection has been changed as the result of a user interaction.
+            Selection has been changed as the result of a user interaction.
             </summary>
         </member>
         <member name="M:osu.Game.Screens.Select.SongSelect.updateComponentFromBeatmap(osu.Game.Beatmaps.WorkingBeatmap)">
@@ -8283,6 +8388,32 @@
             </summary>
             <param name="input">The date to be humanized</param>
             <returns>distance of time in words</returns>
+        </member>
+        <member name="M:osu.Game.Utils.OrderAttributeUtils.GetValuesInOrder``1">
+            <summary>
+            Get values of an enum in order. Supports custom ordering via <see cref="T:osu.Game.Utils.OrderAttribute"/>.
+            </summary>
+        </member>
+        <member name="T:osu.Game.Utils.PeriodTracker">
+            <summary>
+            Represents a tracking component used for whether a specific time instant falls into any of the provided periods.
+            </summary>
+        </member>
+        <member name="M:osu.Game.Utils.PeriodTracker.IsInAny(System.Double)">
+            <summary>
+            Whether the provided time is in any of the added periods.
+            </summary>
+            <param name="time">The time value to check.</param>
+        </member>
+        <member name="F:osu.Game.Utils.Period.Start">
+            <summary>
+            The start time of this period.
+            </summary>
+        </member>
+        <member name="F:osu.Game.Utils.Period.End">
+            <summary>
+            The end time of this period.
+            </summary>
         </member>
         <member name="T:osu.Game.Utils.SentryLogger">
             <summary>

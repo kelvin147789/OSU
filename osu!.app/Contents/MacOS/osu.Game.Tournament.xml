@@ -10,11 +10,6 @@
             Should be off-screen.
             </summary>
         </member>
-        <member name="T:osu.Game.Tournament.IPC.FileBasedIPC.StableStorage">
-            <summary>
-            A method of accessing an osu-stable install in a controlled fashion.
-            </summary>
-        </member>
         <member name="T:osu.Game.Tournament.Models.BeatmapChoice">
             <summary>
             A beatmap choice by a team from a tournament's map pool.

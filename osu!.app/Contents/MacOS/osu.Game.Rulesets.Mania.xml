@@ -46,13 +46,6 @@
             A pattern generator for osu!mania-specific beatmaps.
             </summary>
         </member>
-        <member name="M:osu.Game.Rulesets.Mania.Beatmaps.ManiaBeatmapConverter.SpecificBeatmapPatternGenerator.sampleInfoListAt(System.Double)">
-            <summary>
-            Retrieves the sample info list at a point in time.
-            </summary>
-            <param name="time">The time to retrieve the sample info list from.</param>
-            <returns></returns>
-        </member>
         <member name="T:osu.Game.Rulesets.Mania.Beatmaps.Patterns.Legacy.DistanceObjectPatternGenerator">
             <summary>
             A pattern generator for IHasDistance hit objects.
@@ -479,12 +472,10 @@
             <param name="screenSpacePosition">The screen-space position.</param>
             <returns>The column which intersects with <paramref name="screenSpacePosition"/>.</returns>
         </member>
-        <member name="M:osu.Game.Rulesets.Mania.Edit.ManiaSelectionHandler.adjustOrigins(osu.Game.Rulesets.Mania.Edit.Blueprints.ManiaSelectionBlueprint)">
+        <member name="F:osu.Game.Rulesets.Mania.ManiaRuleset.MAX_STAGE_KEYS">
             <summary>
-            Ensures that the position of hitobjects remains centred to the mouse position.
-            E.g. The hitobject position will change if the editor scrolls while a hitobject is dragged.
+            The maximum number of supported keys in a single stage.
             </summary>
-            <param name="reference">The <see cref="T:osu.Game.Rulesets.Mania.Edit.Blueprints.ManiaSelectionBlueprint"/> that received the drag event.</param>
         </member>
         <member name="M:osu.Game.Rulesets.Mania.ManiaRuleset.getDualStageKeyCount(System.Int32)">
             <summary>
@@ -498,39 +489,6 @@
             </summary>
             <param name="variant">The variant value.</param>
             <returns>The <see cref="T:osu.Game.Rulesets.Mania.PlayfieldType"/> that corresponds to <paramref name="variant"/>.</returns>
-        </member>
-        <member name="F:osu.Game.Rulesets.Mania.ManiaRuleset.VariantMappingGenerator.LeftKeys">
-            <summary>
-            All the <see cref="T:osu.Framework.Input.Bindings.InputKey"/>s available to the left hand.
-            </summary>
-        </member>
-        <member name="F:osu.Game.Rulesets.Mania.ManiaRuleset.VariantMappingGenerator.RightKeys">
-            <summary>
-            All the <see cref="T:osu.Framework.Input.Bindings.InputKey"/>s available to the right hand.
-            </summary>
-        </member>
-        <member name="F:osu.Game.Rulesets.Mania.ManiaRuleset.VariantMappingGenerator.SpecialKey">
-            <summary>
-            The <see cref="T:osu.Framework.Input.Bindings.InputKey"/> for the special key.
-            </summary>
-        </member>
-        <member name="F:osu.Game.Rulesets.Mania.ManiaRuleset.VariantMappingGenerator.NormalActionStart">
-            <summary>
-            The <see cref="T:osu.Game.Rulesets.Mania.ManiaAction"/> at which the normal columns should begin.
-            </summary>
-        </member>
-        <member name="F:osu.Game.Rulesets.Mania.ManiaRuleset.VariantMappingGenerator.SpecialAction">
-            <summary>
-            The <see cref="T:osu.Game.Rulesets.Mania.ManiaAction"/> for the special column.
-            </summary>
-        </member>
-        <member name="M:osu.Game.Rulesets.Mania.ManiaRuleset.VariantMappingGenerator.GenerateKeyBindingsFor(System.Int32,osu.Game.Rulesets.Mania.ManiaAction@)">
-            <summary>
-            Generates a list of <see cref="T:osu.Framework.Input.Bindings.KeyBinding"/>s for a specific number of columns.
-            </summary>
-            <param name="columns">The number of columns that need to be bound.</param>
-            <param name="nextNormalAction">The next <see cref="T:osu.Game.Rulesets.Mania.ManiaAction"/> to use for normal columns.</param>
-            <returns>The keybindings.</returns>
         </member>
         <member name="F:osu.Game.Rulesets.Mania.PlayfieldType.Single">
             <summary>
@@ -665,14 +623,14 @@
             References the time at which the user started holding the hold note.
             </summary>
         </member>
-        <member name="F:osu.Game.Rulesets.Mania.Objects.Drawables.DrawableManiaHitObject.AlwaysAlive">
-            <summary>
-            Whether this <see cref="T:osu.Game.Rulesets.Mania.Objects.Drawables.DrawableManiaHitObject"/> should always remain alive.
-            </summary>
-        </member>
         <member name="F:osu.Game.Rulesets.Mania.Objects.Drawables.DrawableManiaHitObject.Action">
             <summary>
             The <see cref="T:osu.Game.Rulesets.Mania.ManiaAction"/> which causes this <see cref="T:osu.Game.Rulesets.Mania.Objects.Drawables.DrawableManiaHitObject`1"/> to be hit.
+            </summary>
+        </member>
+        <member name="P:osu.Game.Rulesets.Mania.Objects.Drawables.DrawableManiaHitObject.AlwaysAlive">
+            <summary>
+            Whether this <see cref="T:osu.Game.Rulesets.Mania.Objects.Drawables.DrawableManiaHitObject"/> should always remain alive.
             </summary>
         </member>
         <member name="T:osu.Game.Rulesets.Mania.Objects.Drawables.DrawableNote">
@@ -695,12 +653,12 @@
             Represents a hit object which requires pressing, holding, and releasing a key.
             </summary>
         </member>
-        <member name="F:osu.Game.Rulesets.Mania.Objects.HoldNote.Head">
+        <member name="P:osu.Game.Rulesets.Mania.Objects.HoldNote.Head">
             <summary>
             The head note of the hold.
             </summary>
         </member>
-        <member name="F:osu.Game.Rulesets.Mania.Objects.HoldNote.Tail">
+        <member name="P:osu.Game.Rulesets.Mania.Objects.HoldNote.Tail">
             <summary>
             The tail note of the hold.
             </summary>
@@ -827,6 +785,14 @@
             <param name="screenSpacePosition">The screen-space position.</param>
             <returns>The column which the <paramref name="screenSpacePosition"/> lies in.</returns>
         </member>
+        <member name="M:osu.Game.Rulesets.Mania.UI.ManiaPlayfield.GetColumn(System.Int32)">
+            <summary>
+            Retrieves a <see cref="T:osu.Game.Rulesets.Mania.UI.Column"/> by index.
+            </summary>
+            <param name="index">The index of the column.</param>
+            <returns>The <see cref="T:osu.Game.Rulesets.Mania.UI.Column"/> corresponding to the given index.</returns>
+            <exception cref="T:System.ArgumentOutOfRangeException">If <paramref name="index"/> is less than 0 or greater than <see cref="P:osu.Game.Rulesets.Mania.UI.ManiaPlayfield.TotalColumns"/>.</exception>
+        </member>
         <member name="P:osu.Game.Rulesets.Mania.UI.ManiaPlayfield.TotalColumns">
             <summary>
             Retrieves the total amount of columns across all stages in this playfield.
@@ -836,6 +802,39 @@
             <summary>
             A collection of <see cref="T:osu.Game.Rulesets.Mania.UI.Column"/>s.
             </summary>
+        </member>
+        <member name="F:osu.Game.Rulesets.Mania.VariantMappingGenerator.LeftKeys">
+            <summary>
+            All the <see cref="T:osu.Framework.Input.Bindings.InputKey"/>s available to the left hand.
+            </summary>
+        </member>
+        <member name="F:osu.Game.Rulesets.Mania.VariantMappingGenerator.RightKeys">
+            <summary>
+            All the <see cref="T:osu.Framework.Input.Bindings.InputKey"/>s available to the right hand.
+            </summary>
+        </member>
+        <member name="F:osu.Game.Rulesets.Mania.VariantMappingGenerator.SpecialKey">
+            <summary>
+            The <see cref="T:osu.Framework.Input.Bindings.InputKey"/> for the special key.
+            </summary>
+        </member>
+        <member name="F:osu.Game.Rulesets.Mania.VariantMappingGenerator.NormalActionStart">
+            <summary>
+            The <see cref="T:osu.Game.Rulesets.Mania.ManiaAction"/> at which the normal columns should begin.
+            </summary>
+        </member>
+        <member name="F:osu.Game.Rulesets.Mania.VariantMappingGenerator.SpecialAction">
+            <summary>
+            The <see cref="T:osu.Game.Rulesets.Mania.ManiaAction"/> for the special column.
+            </summary>
+        </member>
+        <member name="M:osu.Game.Rulesets.Mania.VariantMappingGenerator.GenerateKeyBindingsFor(System.Int32,osu.Game.Rulesets.Mania.ManiaAction@)">
+            <summary>
+            Generates a list of <see cref="T:osu.Framework.Input.Bindings.KeyBinding"/>s for a specific number of columns.
+            </summary>
+            <param name="columns">The number of columns that need to be bound.</param>
+            <param name="nextNormalAction">The next <see cref="T:osu.Game.Rulesets.Mania.ManiaAction"/> to use for normal columns.</param>
+            <returns>The keybindings.</returns>
         </member>
     </members>
 </doc>

@@ -465,7 +465,7 @@
         </member>
         <member name="T:osu.Game.Rulesets.Osu.UI.OrderedHitPolicy">
             <summary>
-            Ensures that <see cref="T:osu.Game.Rulesets.Objects.HitObject"/>s are hit in-order.
+            Ensures that <see cref="T:osu.Game.Rulesets.Objects.HitObject"/>s are hit in-order. Affectionately known as "note lock".
             If a <see cref="T:osu.Game.Rulesets.Objects.HitObject"/> is hit out of order:
             <list type="number">
             <item><description>The hit is blocked if it occurred earlier than the previous <see cref="T:osu.Game.Rulesets.Objects.HitObject"/>'s start time.</description></item>
@@ -481,28 +481,16 @@
             <param name="time">The time to check.</param>
             <returns>Whether <paramref name="hitObject"/> can be hit at the given <paramref name="time"/>.</returns>
         </member>
-        <member name="M:osu.Game.Rulesets.Osu.UI.OrderedHitPolicy.HandleHit(osu.Game.Rulesets.Objects.HitObject)">
+        <member name="M:osu.Game.Rulesets.Osu.UI.OrderedHitPolicy.HandleHit(osu.Game.Rulesets.Objects.Drawables.DrawableHitObject)">
             <summary>
             Handles a <see cref="T:osu.Game.Rulesets.Objects.HitObject"/> being hit to potentially miss all earlier <see cref="T:osu.Game.Rulesets.Objects.HitObject"/>s.
             </summary>
             <param name="hitObject">The <see cref="T:osu.Game.Rulesets.Objects.HitObject"/> that was hit.</param>
         </member>
-        <member name="M:osu.Game.Rulesets.Osu.UI.OrderedHitPolicy.drawableCanBlockFutureHits(osu.Game.Rulesets.Objects.Drawables.DrawableHitObject)">
-            <summary>
-            Whether a <see cref="T:osu.Game.Rulesets.Objects.Drawables.DrawableHitObject"/> blocks hits on future <see cref="T:osu.Game.Rulesets.Objects.Drawables.DrawableHitObject"/>s until its start time is reached.
-            </summary>
-            <remarks>
-            This will ONLY match on top-most <see cref="T:osu.Game.Rulesets.Objects.Drawables.DrawableHitObject"/>s.
-            </remarks>
-            <param name="hitObject">The <see cref="T:osu.Game.Rulesets.Objects.Drawables.DrawableHitObject"/> to test.</param>
-        </member>
-        <member name="M:osu.Game.Rulesets.Osu.UI.OrderedHitPolicy.hitObjectCanBlockFutureHits(osu.Game.Rulesets.Objects.HitObject)">
+        <member name="M:osu.Game.Rulesets.Osu.UI.OrderedHitPolicy.hitObjectCanBlockFutureHits(osu.Game.Rulesets.Objects.Drawables.DrawableHitObject)">
             <summary>
             Whether a <see cref="T:osu.Game.Rulesets.Objects.HitObject"/> blocks hits on future <see cref="T:osu.Game.Rulesets.Objects.HitObject"/>s until its start time is reached.
             </summary>
-            <remarks>
-            This is more rigorous and may not match on top-most <see cref="T:osu.Game.Rulesets.Objects.HitObject"/>s as <see cref="M:osu.Game.Rulesets.Osu.UI.OrderedHitPolicy.drawableCanBlockFutureHits(osu.Game.Rulesets.Objects.Drawables.DrawableHitObject)"/> does.
-            </remarks>
             <param name="hitObject">The <see cref="T:osu.Game.Rulesets.Objects.HitObject"/> to test.</param>
         </member>
         <member name="T:osu.Game.Rulesets.Osu.UI.OsuPlayfieldAdjustmentContainer.ScalingContainer">
