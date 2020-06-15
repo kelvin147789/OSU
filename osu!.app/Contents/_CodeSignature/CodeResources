@@ -42,7 +42,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			QXOpTDEfcfiSO2BHtRJh3bcuR88=
+			RkBykC8pQtLCikiNuXYL4/ACIyE=
 			</data>
 			<key>requirement</key>
 			<string>identifier DiffPlex and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -69,7 +69,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			LI3MujQDCut4BC0BZ0cWF7No+mE=
+			S3upqTiVw8RvaHURzji3L8fXrjw=
 			</data>
 			<key>requirement</key>
 			<string>identifier Humanizer and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -110,6 +110,15 @@
 			<key>requirement</key>
 			<string>identifier Markdig and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
 		</dict>
+		<key>MacOS/Microsoft.Bcl.AsyncInterfaces.dll</key>
+		<dict>
+			<key>cdhash</key>
+			<data>
+			TnI05z0QX7qplRfNkR5Y4FzNG2g=
+			</data>
+			<key>requirement</key>
+			<string>identifier "Microsoft.Bcl.AsyncInterfaces" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
+		</dict>
 		<key>MacOS/Microsoft.Build.Locator.dll</key>
 		<dict>
 			<key>cdhash</key>
@@ -132,7 +141,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			4RPMyyEhn+XbPtHS/a29fWLWxtU=
+			cJxauOgtMtqsbbfWmuezoIJUPyk=
 			</data>
 			<key>requirement</key>
 			<string>identifier "Microsoft.CodeAnalysis.CSharp.Workspaces" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -141,7 +150,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			U3KecTxO60YOeTc5Uim/K7IO8dA=
+			LAOpgAX0VQbffPPBYvPo2l+kdzg=
 			</data>
 			<key>requirement</key>
 			<string>identifier "Microsoft.CodeAnalysis.CSharp" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -150,7 +159,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			AfUzm0Q9TZtGjC73bIGL0/j9s4Q=
+			3rVpceOd26iDLPLot6+iy+WwmLU=
 			</data>
 			<key>requirement</key>
 			<string>identifier "Microsoft.CodeAnalysis.Workspaces.MSBuild" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -159,7 +168,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			RmmfUSuq6RkaEbN8Svv1Dul95pQ=
+			Ts6c3LSRNW7mRWOZlQ/ApKWSebI=
 			</data>
 			<key>requirement</key>
 			<string>identifier "Microsoft.CodeAnalysis.Workspaces" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -168,7 +177,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			Vbnm/T8Da0LFbmgzJItzrvSeNEE=
+			jfEeTONh4ueUzfbBgz46RiXzCLM=
 			</data>
 			<key>requirement</key>
 			<string>identifier "Microsoft.CodeAnalysis" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -186,7 +195,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			nURLy/BNsLQtXp5Xdw40KGwr7ak=
+			lOyHI2JQYyU9MiLql7EM0b/5UH0=
 			</data>
 			<key>requirement</key>
 			<string>identifier "Microsoft.Diagnostics.Runtime" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -434,15 +443,6 @@
 			<key>requirement</key>
 			<string>identifier "Mono.Cecil" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
 		</dict>
-		<key>MacOS/NativeLibraryLoader.dll</key>
-		<dict>
-			<key>cdhash</key>
-			<data>
-			Mp7tOc7vRBVhaJelKxaoPHAo2tU=
-			</data>
-			<key>requirement</key>
-			<string>identifier NativeLibraryLoader and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
-		</dict>
 		<key>MacOS/Newtonsoft.Json.dll</key>
 		<dict>
 			<key>cdhash</key>
@@ -469,6 +469,15 @@
 			</data>
 			<key>requirement</key>
 			<string>identifier "Remotion.Linq" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
+		</dict>
+		<key>MacOS/SDL2-CS.dll</key>
+		<dict>
+			<key>cdhash</key>
+			<data>
+			qk0dhWqY40EQHSKE8Pv3CnLXKhA=
+			</data>
+			<key>requirement</key>
+			<string>identifier "SDL2-CS" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
 		</dict>
 		<key>MacOS/SOS_README.md</key>
 		<dict>
@@ -528,7 +537,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			OiKQZsS0C5dQgL0HlBUiffyKFHc=
+			pB0QVmbypofJ9Ey7c2kYVACIfX4=
 			</data>
 			<key>requirement</key>
 			<string>identifier "Sentry.Protocol" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -537,7 +546,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			mj73+hF0NPuE2hxN7wh7pV2Bm8I=
+			qMbyK+ACZELoU8dg6D/SnGH3I+4=
 			</data>
 			<key>requirement</key>
 			<string>identifier Sentry and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -546,7 +555,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			mXj8Jffx9chnRcSUsqnxze4qmlo=
+			Gjtwit80NcGFxgwEOzllmPI+MI4=
 			</data>
 			<key>requirement</key>
 			<string>identifier SharpCompress and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -555,7 +564,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			6/DNve9ibtKtbeeYV6K1DRSvVo8=
+			OoTxnMFkFZl6IUsHwb0WXJz29j0=
 			</data>
 			<key>requirement</key>
 			<string>identifier SharpFNT and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -1914,7 +1923,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			qfqzHsNkOfCuyLsRL24uRRfLjV4=
+			qgQLUs9JeR7VLbRgH8tR/BTNF7k=
 			</data>
 			<key>requirement</key>
 			<string>identifier "System.Text.Encoding.CodePages" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -2198,15 +2207,6 @@
 			<key>requirement</key>
 			<string>identifier System and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
 		</dict>
-		<key>MacOS/Veldrid.SDL2.dll</key>
-		<dict>
-			<key>cdhash</key>
-			<data>
-			+sokNm1bbpZmoTt8ANQ3TnT5S+I=
-			</data>
-			<key>requirement</key>
-			<string>identifier "Veldrid.SDL2" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
-		</dict>
 		<key>MacOS/WindowsBase.dll</key>
 		<dict>
 			<key>cdhash</key>
@@ -2220,7 +2220,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			i3zj1B+TF+6IuN3vf5wYk73fUco=
+			dUjp0HoaUrf9i2kag+PorTw1cgs=
 			</data>
 			<key>requirement</key>
 			<string>identifier "Humanizer.resources" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -2238,7 +2238,16 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			eMMdFUUhzxCVsSe+s9asSIklRvU=
+			JSug31Z64KNUchgpruMdXSldaEA=
+			</data>
+			<key>requirement</key>
+			<string>identifier "Humanizer.resources" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
+		</dict>
+		<key>MacOS/az/Humanizer.resources.dll</key>
+		<dict>
+			<key>cdhash</key>
+			<data>
+			sz7mKCkJUMu2FevEEb+Q/+dlsHM=
 			</data>
 			<key>requirement</key>
 			<string>identifier "Humanizer.resources" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -2247,7 +2256,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			RWguUfUloGXSaXFXTfu6fFZZE6E=
+			ijkc5/hlxemQFbCHR9W2dMwV/7c=
 			</data>
 			<key>requirement</key>
 			<string>identifier "Humanizer.resources" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -2256,7 +2265,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			oZOs1a+HIMiBN+KpnDpstAYXpeM=
+			+EJXgaAyy8JBa0yk+DP9A9FZR8c=
 			</data>
 			<key>requirement</key>
 			<string>identifier "Humanizer.resources" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -2265,7 +2274,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			oQQAlZSm0H4pzZ56PeDC+nMvdLE=
+			7XTC8Ah+BNzQbMliESO/DY8m9Xw=
 			</data>
 			<key>requirement</key>
 			<string>identifier "Humanizer.resources" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -2274,7 +2283,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			jkkLcpDvYXFwFtOovNzchxlnc6c=
+			Bu1u8zWKyuVmIR7tw7eI2gnA9so=
 			</data>
 			<key>requirement</key>
 			<string>identifier "Microsoft.CodeAnalysis.CSharp.Workspaces.resources" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -2283,7 +2292,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			WoazhqD6wjSuWD0c1x1eXOp6q1g=
+			Wb7exqAOA9BV1rnQwf+I1w9soLU=
 			</data>
 			<key>requirement</key>
 			<string>identifier "Microsoft.CodeAnalysis.CSharp.resources" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -2292,7 +2301,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			wGos4sB2pLoCysqk0Xk8nwvez8I=
+			HjEu2wtwJt6imhcY3v8pb93zOJE=
 			</data>
 			<key>requirement</key>
 			<string>identifier "Microsoft.CodeAnalysis.Workspaces.MSBuild.resources" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -2301,7 +2310,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			xfluFRADvz+Kg3VAyM8vgEj7RW4=
+			zm+3AUKrbkle4ctykKiLLzI/648=
 			</data>
 			<key>requirement</key>
 			<string>identifier "Microsoft.CodeAnalysis.Workspaces.resources" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -2310,7 +2319,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			gJSVfqjl0C45xl15QaGYkK2r2LA=
+			MJ3gPepECflQ076mV+YALYitJWA=
 			</data>
 			<key>requirement</key>
 			<string>identifier "Microsoft.CodeAnalysis.resources" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -2319,7 +2328,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			t10w7vMim4wktJt4t0JpHsmGvFM=
+			IvwAUpcNecdcxqqNK+c4tgXzylo=
 			</data>
 			<key>requirement</key>
 			<string>identifier "Humanizer.resources" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -2328,7 +2337,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			MfuE3pheDbFKnFo+S3DdNTAs8Vk=
+			vuKhBZw886revxgyDj4xSCyvk3o=
 			</data>
 			<key>requirement</key>
 			<string>identifier "Humanizer.resources" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -2337,7 +2346,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			Su69x0iTyFXJh7p1yblmd9DpfAM=
+			4aMfZqycGbeQ7PK+K0x25ugDR2k=
 			</data>
 			<key>requirement</key>
 			<string>identifier "Microsoft.CodeAnalysis.CSharp.Workspaces.resources" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -2346,7 +2355,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			5BaCg8NwKDNJIMKO3cXrmGZ5yHQ=
+			JG5FpHDu495GgLOkUusRlkmK9fY=
 			</data>
 			<key>requirement</key>
 			<string>identifier "Microsoft.CodeAnalysis.CSharp.resources" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -2355,7 +2364,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			Y/BCsfB1eh83X1jhVRU9e/lsyGc=
+			bgjTCm98PJJrcrETEJRhMlkQ9ho=
 			</data>
 			<key>requirement</key>
 			<string>identifier "Microsoft.CodeAnalysis.Workspaces.MSBuild.resources" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -2364,7 +2373,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			YXkWRmiylINCIyjLves94PsLhqc=
+			R5QnIKq1mo9JlnvyL+3WzMZ+QUM=
 			</data>
 			<key>requirement</key>
 			<string>identifier "Microsoft.CodeAnalysis.Workspaces.resources" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -2373,7 +2382,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			n/DpkXlVtWFnG1iOFewKhgsot5Q=
+			Mcet+28PGQib97ShFnUtOscWics=
 			</data>
 			<key>requirement</key>
 			<string>identifier "Microsoft.CodeAnalysis.resources" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -2382,7 +2391,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			KEuHMgDf/KzZtTAePJe2Ss902S4=
+			Hj8zFAg36M1z8N2Eoz+hOwMgB1E=
 			</data>
 			<key>requirement</key>
 			<string>identifier "Humanizer.resources" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -2391,7 +2400,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			LE8EAKBiwoGEU4T3NX859F23ugc=
+			lurgMuoI6Sven4H+oAehchCTczE=
 			</data>
 			<key>requirement</key>
 			<string>identifier "Humanizer.resources" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -2400,7 +2409,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			h+5xt4u490C9pBaNFxaYypaHQxc=
+			NVbCNF5DEOeRSK6uO6CMq+CpzDY=
 			</data>
 			<key>requirement</key>
 			<string>identifier "Microsoft.CodeAnalysis.CSharp.Workspaces.resources" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -2409,7 +2418,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			J5MNFf+Xlvbhp5kCp5JBahIfAwU=
+			4YKAE69qUNJ4kV5rHVFZFoqorFs=
 			</data>
 			<key>requirement</key>
 			<string>identifier "Microsoft.CodeAnalysis.CSharp.resources" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -2418,7 +2427,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			ElmPOU1gAwHH+C+HGQYcfALLM4o=
+			ajik555RZ0BDUtp2JU/Ooxu9V1g=
 			</data>
 			<key>requirement</key>
 			<string>identifier "Microsoft.CodeAnalysis.Workspaces.MSBuild.resources" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -2427,7 +2436,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			Uc3n+awSWohOG0NkOlUZkZab8f8=
+			kgo99eFoIR/SbvjsG+I6nujxVP0=
 			</data>
 			<key>requirement</key>
 			<string>identifier "Microsoft.CodeAnalysis.Workspaces.resources" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -2436,7 +2445,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			nGAcr4QWRDBE0upXbg/JFVCLwiw=
+			/5Jrp/ddnc09ZkWbEBkAi8v992Y=
 			</data>
 			<key>requirement</key>
 			<string>identifier "Microsoft.CodeAnalysis.resources" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -2445,7 +2454,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			Bc4O1Zz9v+99SFnnRmiYqEi7Adc=
+			mpIwPBXF2KyMeel2XDgq3qAW9Go=
 			</data>
 			<key>requirement</key>
 			<string>identifier "Humanizer.resources" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -2454,7 +2463,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			f81Hyazm3nWtwuwopEX5Fs4hPlI=
+			meaPqk1aO4UITo6XdZutgc1hmvY=
 			</data>
 			<key>requirement</key>
 			<string>identifier "Humanizer.resources" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -2463,7 +2472,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			+YszJn+KA26Mz1ELP9Hz0iK8wHc=
+			OPLjA4YnwvsuDYf/fAlShQqzbug=
 			</data>
 			<key>requirement</key>
 			<string>identifier "Humanizer.resources" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -2472,7 +2481,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			HOkRHEEsD4on9zgRZCbEOMLYmyI=
+			8o7jV5JqN4PQx/WZQo9EmGAduDI=
 			</data>
 			<key>requirement</key>
 			<string>identifier "Humanizer.resources" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -2481,7 +2490,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			UaEMpBB0CLjrPz0VEGHxo/5EWPc=
+			EGaB9KW/SmdyoMpQDp7WVFIu7oE=
 			</data>
 			<key>requirement</key>
 			<string>identifier "Microsoft.CodeAnalysis.CSharp.Workspaces.resources" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -2490,7 +2499,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			4GUtbObghOj4kF6RbOxjXCKQxkk=
+			mrlXamX6+nTud/4xXKrQu3Qw6eg=
 			</data>
 			<key>requirement</key>
 			<string>identifier "Microsoft.CodeAnalysis.CSharp.resources" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -2499,7 +2508,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			RxakG+M4Pr1FmBSnN3VbBgWGFsc=
+			SUjuGlARvKK2Lmhis9dIXbwY9nI=
 			</data>
 			<key>requirement</key>
 			<string>identifier "Microsoft.CodeAnalysis.Workspaces.MSBuild.resources" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -2508,7 +2517,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			PaVT7jq2h+JpRgp4xCd1jwxj3Lo=
+			t+RQi5rYkQBrlD1J7DiEbizmyLU=
 			</data>
 			<key>requirement</key>
 			<string>identifier "Microsoft.CodeAnalysis.Workspaces.resources" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -2517,7 +2526,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			iDpWafH4BOfaDsOTBG5V2LuiG2s=
+			5kABe7f7Ga9WDJndHl9zt5NCSPg=
 			</data>
 			<key>requirement</key>
 			<string>identifier "Microsoft.CodeAnalysis.resources" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -2526,7 +2535,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			KerMaVN5Pr04G2p3HNnlQobj34k=
+			UquqIqatpdgaPSyEPUzBboXR4KE=
 			</data>
 			<key>requirement</key>
 			<string>identifier "Humanizer.resources" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -2535,7 +2544,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			AWzGqyWbdZbbwh3WfX3loNlFzyg=
+			D9YubD8LTAzlQIu/1eawJbCr7i8=
 			</data>
 			<key>requirement</key>
 			<string>identifier "Humanizer.resources" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -2544,7 +2553,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			ReAeYZqk+fp5XKYLXbQEaQgZwv0=
+			URXl45bERLH49+8l4pmaHFRUIkg=
 			</data>
 			<key>requirement</key>
 			<string>identifier "Humanizer.resources" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -2553,7 +2562,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			zqNIEyD2SQGu2Q57ZpSslyue08k=
+			D0eHjPYcIDG6WiZaXaqFA4JB+fM=
 			</data>
 			<key>requirement</key>
 			<string>identifier "Humanizer.resources" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -2562,7 +2571,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			J3+uYnuwZIsx2/yllgUUqjB4aqE=
+			FwVDRUrO3WFc4/rLhrGcO86Jpjg=
 			</data>
 			<key>requirement</key>
 			<string>identifier "Humanizer.resources" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -2571,7 +2580,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			cdMISh+IU9nDDdZ5RSiJLqOW368=
+			/69NfmmI5aD/kPMVHWdii0hlqsQ=
 			</data>
 			<key>requirement</key>
 			<string>identifier "Humanizer.resources" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -2580,7 +2589,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			BzimFWq8M6+T8nhI98zlN6cIiCI=
+			Ht5AO/k0Xljv+MPh+V3rX/1w6sk=
 			</data>
 			<key>requirement</key>
 			<string>identifier "Microsoft.CodeAnalysis.CSharp.Workspaces.resources" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -2589,7 +2598,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			lBS6EEAP5EfhIU5NND50pHpSXXo=
+			FCQYWw/zQKLhDswT+H7GGQehC/s=
 			</data>
 			<key>requirement</key>
 			<string>identifier "Microsoft.CodeAnalysis.CSharp.resources" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -2598,7 +2607,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			bRFFw/PeNNe3M7qCTaZEVJv0ZjU=
+			cSmBFKkmQfpg98C2zgBNpR9gYLg=
 			</data>
 			<key>requirement</key>
 			<string>identifier "Microsoft.CodeAnalysis.Workspaces.MSBuild.resources" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -2607,7 +2616,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			DJaEHTXhMtjRNJFkluQVgFjXd0Y=
+			v/t+JPDGYtpj4woEMnkR637qDzY=
 			</data>
 			<key>requirement</key>
 			<string>identifier "Microsoft.CodeAnalysis.Workspaces.resources" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -2616,7 +2625,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			SqxFAzf1ix3tj0XudHZo5hLdXhw=
+			k4RzvCLqxkUcwWmksk6lHA5r3rs=
 			</data>
 			<key>requirement</key>
 			<string>identifier "Microsoft.CodeAnalysis.resources" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -2625,7 +2634,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			h2ZSkmwcn0+wcCWRLcXV/oIptvM=
+			byYQMcxsTFjwP6Ab0tls7hkPh+I=
 			</data>
 			<key>requirement</key>
 			<string>identifier "Humanizer.resources" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -2634,7 +2643,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			6DFp0CmpCRbKTMhNP27Yh8knvOI=
+			TReGajNntBDg0RUTyTRxSvZIrII=
 			</data>
 			<key>requirement</key>
 			<string>identifier "Microsoft.CodeAnalysis.CSharp.Workspaces.resources" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -2643,7 +2652,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			/djcOIAzRPDC5GKSotAxVcidVlo=
+			RQr5o9HCyjlkafcfSGpKiN08K4w=
 			</data>
 			<key>requirement</key>
 			<string>identifier "Microsoft.CodeAnalysis.CSharp.resources" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -2652,7 +2661,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			bScZVRVUyAiR3cRKcXfkanGbWjI=
+			NftLvwvYo03UvW0mA+jFnH8vO8Y=
 			</data>
 			<key>requirement</key>
 			<string>identifier "Microsoft.CodeAnalysis.Workspaces.MSBuild.resources" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -2661,7 +2670,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			S06or/oZ6PPmpeDFI3uCbhWC018=
+			PDtO8OFGKhZgLCeBHwhXZhvscxw=
 			</data>
 			<key>requirement</key>
 			<string>identifier "Microsoft.CodeAnalysis.Workspaces.resources" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -2670,7 +2679,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			WWrTTxn76Rb9thIaGTafMibL/WU=
+			Jcb1zaivjMszn4afQmdSS8IPZzs=
 			</data>
 			<key>requirement</key>
 			<string>identifier "Microsoft.CodeAnalysis.resources" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -2679,7 +2688,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			sTtlyxNknKSkDcrZv5q0D6cdW4c=
+			rcFKJUg4MNHmINmPJnQcnmRY+/s=
 			</data>
 			<key>requirement</key>
 			<string>identifier "Microsoft.CodeAnalysis.CSharp.Workspaces.resources" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -2688,7 +2697,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			9+c/JTjOxP4vEHKKUdTCA1IthhA=
+			9kiU4MTKf76EV681GWc2T7aka/4=
 			</data>
 			<key>requirement</key>
 			<string>identifier "Microsoft.CodeAnalysis.CSharp.resources" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -2697,7 +2706,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			oPrP9ZM9VP1rATcy5+QcoMolIgk=
+			pYq1RMJZ2B02Xuot49UnTqQrnfA=
 			</data>
 			<key>requirement</key>
 			<string>identifier "Microsoft.CodeAnalysis.Workspaces.MSBuild.resources" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -2706,7 +2715,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			zp0VrZosZwFzW6QNrDK4nZevraw=
+			+C/4uriAEvSh+nFcK5sCcD+OT6U=
 			</data>
 			<key>requirement</key>
 			<string>identifier "Microsoft.CodeAnalysis.Workspaces.resources" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -2715,16 +2724,25 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			yhnB4xNtrjohUiaiFdtOyDOYg78=
+			3HSoHdZ0WkyMuqjHDu7OnSiS3BE=
 			</data>
 			<key>requirement</key>
 			<string>identifier "Microsoft.CodeAnalysis.resources" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
+		</dict>
+		<key>MacOS/libSDL2.dylib</key>
+		<dict>
+			<key>cdhash</key>
+			<data>
+			sOrKL0tap1dXL/0SR7iWnf/NlA4=
+			</data>
+			<key>requirement</key>
+			<string>identifier libSDL2 and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
 		</dict>
 		<key>MacOS/libavcodec.58.dylib</key>
 		<dict>
 			<key>cdhash</key>
 			<data>
-			GmZ+jA/ZRhsDYz08vg9lLpUQISA=
+			bHVLefNCnaVEDIugGbKVWgGYtOI=
 			</data>
 			<key>requirement</key>
 			<string>identifier "libavcodec.58" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -2742,7 +2760,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			Ur5Qek2VguKmDqx+IWUIF8J9CjM=
+			FtV5Rp+iOlJ6Xu7sC3xk7OrnsTk=
 			</data>
 			<key>requirement</key>
 			<string>identifier "libavfilter.7" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -2769,7 +2787,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			BL5dvulnj0IeDQnR7LUnqXSHD4I=
+			T+ATFhj4GPcp6ne6lmFdcLf529Q=
 			</data>
 			<key>requirement</key>
 			<string>identifier libbass and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -2787,7 +2805,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			52mjm2vEtrCc5P9JyryNN9d6Z08=
+			0q2rmewMmjrA7AdVEDHsEjoeqp0=
 			</data>
 			<key>requirement</key>
 			<string>identifier libclrjit and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -2796,7 +2814,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			Ez0/vD1UFgunwNZ7mP/4ky1Kfyo=
+			MhzTirp90wCntOaiX6F7IxQ2GzM=
 			</data>
 			<key>requirement</key>
 			<string>identifier libcoreclr and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -2841,7 +2859,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			0qdgCklcZUHsnHyq7Dkt4jFlW3g=
+			uWgpbmw/8wNoWA1CuLm1QUuTGTI=
 			</data>
 			<key>requirement</key>
 			<string>identifier libmscordaccore and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -2863,15 +2881,6 @@
 			</data>
 			<key>requirement</key>
 			<string>identifier "libpostproc.55" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
-		</dict>
-		<key>MacOS/libsdl2.dylib</key>
-		<dict>
-			<key>cdhash</key>
-			<data>
-			mtX0jfFVTkR91qyRU4fO0JXdIqQ=
-			</data>
-			<key>requirement</key>
-			<string>identifier libsdl2 and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
 		</dict>
 		<key>MacOS/libstbi.dylib</key>
 		<dict>
@@ -2904,7 +2913,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			UMPXg/NXJvz2Qmd3uKxgHqp5sEc=
+			uHiTuQ98G4jsEOuNnDW7bElRUWc=
 			</data>
 			<key>requirement</key>
 			<string>identifier "Humanizer.resources" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -2913,7 +2922,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			D7CGyxucOdAGrjP6s6EBMV9bRi0=
+			y0Qepfu4C4lNJ2Qx0iGLk24+QCo=
 			</data>
 			<key>requirement</key>
 			<string>identifier "Humanizer.resources" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -2931,7 +2940,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			dexmeLaFgQPWqq937sdcSRcj26Q=
+			k5mN0/bT+OkFeDx6LO4zCWOwv/8=
 			</data>
 			<key>requirement</key>
 			<string>identifier "Humanizer.resources" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -2940,7 +2949,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			mRZnh5sDvUZnXzq+PzwOvkKnYD0=
+			1ngwZL5vYLcinvtfz8poxwCqw6U=
 			</data>
 			<key>requirement</key>
 			<string>identifier "Humanizer.resources" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -2949,7 +2958,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			Yy9MNvNIf7RXtftTHmFnpmtvCfU=
+			Z1qk2obQFY2BbPQilrnJ0CfY5DM=
 			</data>
 			<key>requirement</key>
 			<string>identifier "Humanizer.resources" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -2967,7 +2976,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			cwcfCfNaiBbF0LhOC/kzf3T+ZBU=
+			RrwYais3tRzwyR5VA5OeqFtlFR4=
 			</data>
 			<key>requirement</key>
 			<string>identifier "Humanizer.resources" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -2985,7 +2994,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			pdNGp7S41lkjeY0KkMj3pHAe95s=
+			AdV8s3KKo65vqG+xg23cUHpcHuo=
 			</data>
 			<key>requirement</key>
 			<string>identifier "osu!.deps" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -2994,7 +3003,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			oe+UxAei3MuglDfXB0zwyNtvYSg=
+			Uozir20kcjV2IdznDMdrpC9sw48=
 			</data>
 			<key>requirement</key>
 			<string>identifier "osu!" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -3003,7 +3012,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			I/Gku7iB6X3NTde/GeQHanLcNUE=
+			4RYreFu+bVQg0Z6gagwpcg1jaYo=
 			</data>
 			<key>requirement</key>
 			<string>identifier "osu!" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -3030,7 +3039,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			s6jrXq6/oYuXe2SfohMk3Dr/X+s=
+			m9qrsDuBl5wxclMmPXJmQYl9kc0=
 			</data>
 			<key>requirement</key>
 			<string>identifier "osu.Framework" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -3039,7 +3048,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			+pa89eEiP9y3X/NlrKtzhFAISkA=
+			EGJPQIV6gB8C9vKJwhtyGDTHG+g=
 			</data>
 			<key>requirement</key>
 			<string>identifier "osu.Game.Resources" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -3048,7 +3057,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			tNNKxop2VJcu45voxrLdO91CESQ=
+			4OS8PZH/0rJcMPV8eofzLonzCrg=
 			</data>
 			<key>requirement</key>
 			<string>identifier "osu.Game.Rulesets.Catch" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -3057,7 +3066,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			2XkqOz8TThNqjK209/FuQD3f+Nw=
+			JucW2u8nA+CqGMqX6Mo878iUeZY=
 			</data>
 			<key>requirement</key>
 			<string>identifier "osu.Game.Rulesets.Catch" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -3066,7 +3075,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			pa6Z2DK+jXWKBQP6bfVJ2q1FIjM=
+			T6RQSC7dyklNLmZoFY/1oXuxAgo=
 			</data>
 			<key>requirement</key>
 			<string>identifier "osu.Game.Rulesets.Catch" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -3075,7 +3084,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			EolpVyKVwSDRL9V+uMUVKTrYxsI=
+			C7LC5Dti0C7G1vGFtRq+y6vPJ/c=
 			</data>
 			<key>requirement</key>
 			<string>identifier "osu.Game.Rulesets.Mania" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -3084,7 +3093,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			+RWxsWSeJy7fr7ekYxwpZNaTmfI=
+			RDpfX+fLzlE9toMMBA/rSULPtQA=
 			</data>
 			<key>requirement</key>
 			<string>identifier "osu.Game.Rulesets.Mania" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -3093,7 +3102,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			3aF2RwRIV0t5qu3z3iqBvsCWueU=
+			9eo65McGTi7/W9Eyz9InMb/gt+w=
 			</data>
 			<key>requirement</key>
 			<string>identifier "osu.Game.Rulesets.Mania" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -3102,7 +3111,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			l1Moi76V7rVA9N8cQONRe2oWCyg=
+			tkksJTPmkjSgNsTH3kjLyQdK9GM=
 			</data>
 			<key>requirement</key>
 			<string>identifier "osu.Game.Rulesets.Osu" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -3111,7 +3120,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			IUcxDKQcE4DR4mV5/7X8foj9NDc=
+			7NQScU0Y/I/w+0VX0uPlvEUs50Y=
 			</data>
 			<key>requirement</key>
 			<string>identifier "osu.Game.Rulesets.Osu" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -3129,7 +3138,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			d6SdE75tjob1vcjMc7Ju6QWysDw=
+			uTqnJ8VbZ+Gie65YYIAmE8ebv/8=
 			</data>
 			<key>requirement</key>
 			<string>identifier "osu.Game.Rulesets.Taiko" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -3138,7 +3147,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			XwXAEO5aG9c3VmTmiBFz+LQU2zQ=
+			Dt1K296Gr30k8bdtoPfpi8CdYKw=
 			</data>
 			<key>requirement</key>
 			<string>identifier "osu.Game.Rulesets.Taiko" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -3156,7 +3165,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			+HZMKTyqFDr0xucOYl4NrUQlBP0=
+			9diQfQXwJMCJjtLjBgUNjyvggnc=
 			</data>
 			<key>requirement</key>
 			<string>identifier "osu.Game.Tournament" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -3165,7 +3174,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			CFq/BM7QmPqqgR9FhG3BI8drfb8=
+			ieWwrynWEi+G8tCYuWWSVgUv2Gk=
 			</data>
 			<key>requirement</key>
 			<string>identifier "osu.Game.Tournament" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -3183,7 +3192,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			SxU1FjUahOCpm1doobIHl8v6uqU=
+			DxvhSFVIuBluDDW+flky8R6nOkM=
 			</data>
 			<key>requirement</key>
 			<string>identifier "osu.Game" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -3192,7 +3201,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			vNmU9ohz0cyizbHMiECWVvukNdQ=
+			SB8PSoT/1Ca1C4Tuw34/DsASfYI=
 			</data>
 			<key>requirement</key>
 			<string>identifier "osu.Game" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -3201,7 +3210,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			bPwa9BdOAvUC6c0cScp4s+becjU=
+			RK+348PlUqMiRJ+Murq5qFBtMVU=
 			</data>
 			<key>requirement</key>
 			<string>identifier "osu.Game" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -3219,7 +3228,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			0nOo9jCivbs6BBzNLfvJ4bsJkL4=
+			XWLkS06BrbUptyygv9IFse/mKG0=
 			</data>
 			<key>requirement</key>
 			<string>identifier "Humanizer.resources" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -3228,7 +3237,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			oiltBSpHl+GXpjLvZ7+Dmlk9Ruw=
+			wyyqUa4OwuWHzgQaemrQynzb5EM=
 			</data>
 			<key>requirement</key>
 			<string>identifier "Microsoft.CodeAnalysis.CSharp.Workspaces.resources" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -3237,7 +3246,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			0GAIU2t5LYojRJqXkJ6QDuAmYCQ=
+			/f55pd63hLPlcFX54m8Om+2nCyI=
 			</data>
 			<key>requirement</key>
 			<string>identifier "Microsoft.CodeAnalysis.CSharp.resources" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -3246,7 +3255,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			YZdRtfrNsViwLTYSfZaFQEP/bfI=
+			upRPOoS+qFfxCCTW0Vs1ua3jZqY=
 			</data>
 			<key>requirement</key>
 			<string>identifier "Microsoft.CodeAnalysis.Workspaces.MSBuild.resources" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -3255,7 +3264,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			lYC446/AuN4b5hihQa4cQlBptrA=
+			Hiril4m0MCXJ9Xml/cc3VqvBNq8=
 			</data>
 			<key>requirement</key>
 			<string>identifier "Microsoft.CodeAnalysis.Workspaces.resources" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -3264,7 +3273,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			qXPuUKEx1edq/qiOUnpRzO83qcM=
+			sHHZ0LDvOl4K3lOYSBunBFcDIUs=
 			</data>
 			<key>requirement</key>
 			<string>identifier "Microsoft.CodeAnalysis.resources" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -3273,7 +3282,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			PcO/14/KCD1IjSJ2tNqX1xGoxrA=
+			nk0IMIYzxH8NTHitqVOFBTGLkPc=
 			</data>
 			<key>requirement</key>
 			<string>identifier "Microsoft.CodeAnalysis.CSharp.Workspaces.resources" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -3282,7 +3291,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			u7Z1McrO8lPsi4ypvr73RN8+dII=
+			HLFTC8FPZz23QIpGfOldLe6jZdM=
 			</data>
 			<key>requirement</key>
 			<string>identifier "Microsoft.CodeAnalysis.CSharp.resources" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -3291,7 +3300,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			XQuiu7BHYzQLBkM27YN2zNfIBbg=
+			k2EDduIiKNHhWhzadFv+PWzjreI=
 			</data>
 			<key>requirement</key>
 			<string>identifier "Microsoft.CodeAnalysis.Workspaces.MSBuild.resources" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -3300,7 +3309,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			/VYGQXzOxR4nIXmJTeiJGm0A03c=
+			uA/vRv2B2OTqutt9cO0uX/nUow8=
 			</data>
 			<key>requirement</key>
 			<string>identifier "Microsoft.CodeAnalysis.Workspaces.resources" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -3309,7 +3318,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			XSwce4BiDvJoKlUxIMusrn8ZyIw=
+			bA00K/laIpWzH8WMpRjUa6T+Qns=
 			</data>
 			<key>requirement</key>
 			<string>identifier "Microsoft.CodeAnalysis.resources" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -3318,7 +3327,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			GJDNZlSgdEpOpDbJhcrBong2V/s=
+			3X2Cg649lYVCzyM8gk+M6yKgkyo=
 			</data>
 			<key>requirement</key>
 			<string>identifier "Humanizer.resources" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -3327,7 +3336,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			+t1wEnd1/AIW/Xxs0vzoZZOzbAY=
+			qjLSpg7t8eo0OR64lxf7uaD9ENU=
 			</data>
 			<key>requirement</key>
 			<string>identifier "Humanizer.resources" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -3336,7 +3345,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			CvOzHdJShs6AHLUZy+8nAVhWOno=
+			yJZEjOEPUEM5ZVp4SP39iUI507Y=
 			</data>
 			<key>requirement</key>
 			<string>identifier "Humanizer.resources" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -3345,7 +3354,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			zltKmvOYleoUJGpPd4l+cvBcfPE=
+			z+0ZPT19/pUck53QxL/rW0drr2I=
 			</data>
 			<key>requirement</key>
 			<string>identifier "Microsoft.CodeAnalysis.CSharp.Workspaces.resources" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -3354,7 +3363,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			J69t+j4a+7+NV73wEsX3ZBbMIlM=
+			pmN4eKabCKJ5kjifo7qhOmSMOgY=
 			</data>
 			<key>requirement</key>
 			<string>identifier "Microsoft.CodeAnalysis.CSharp.resources" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -3363,7 +3372,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			/VXhFT67PUya+0ugwKtyrgqvD/A=
+			oHE3zzIE5zRNeBvREhruA8pHBsQ=
 			</data>
 			<key>requirement</key>
 			<string>identifier "Microsoft.CodeAnalysis.Workspaces.MSBuild.resources" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -3372,7 +3381,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			3ud8U93HgcGq/EkPo1TvtyicV+k=
+			USRj/xKuVtro9Uy19d0bS0XNcUA=
 			</data>
 			<key>requirement</key>
 			<string>identifier "Microsoft.CodeAnalysis.Workspaces.resources" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -3381,7 +3390,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			nfrzg4jx70GgvWGD5p+ZNaMljps=
+			XaXfJsCtg0RU/UDu+Z3JTbZOZ24=
 			</data>
 			<key>requirement</key>
 			<string>identifier "Microsoft.CodeAnalysis.resources" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -3390,7 +3399,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			x7ACFWh12bLcK6FO2k3i8MQ3Vr8=
+			O3PXS3dkLVbdR/eVVVt8+VFZ9lE=
 			</data>
 			<key>requirement</key>
 			<string>identifier "Humanizer.resources" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -3399,7 +3408,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			hriTCDe2ipvX8GU+0wP65qws/zw=
+			ff+pfIPJBp2xYBfWKJb92hUSj9g=
 			</data>
 			<key>requirement</key>
 			<string>identifier "Humanizer.resources" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -3408,7 +3417,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			pSxPmBs2YOIvNVIUxUri4n5iXHE=
+			5OIW++p7jJ5LfLNosbaewu3InBs=
 			</data>
 			<key>requirement</key>
 			<string>identifier "Humanizer.resources" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -3417,7 +3426,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			FsA9Zopn9mjmGh+Kzz7NNc4St7w=
+			SmyOynpzNWIezstbbOc5Q1EbgF4=
 			</data>
 			<key>requirement</key>
 			<string>identifier "Humanizer.resources" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -3426,7 +3435,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			cs6PLqJetoOf1OGp6mU2ohCc1y0=
+			RAMbq2XDq4BKGyWztKmizGEnMFw=
 			</data>
 			<key>requirement</key>
 			<string>identifier "Humanizer.resources" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -3435,7 +3444,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			7lmDAndUNiHcnW1OPGoJz8b2dbw=
+			S2nJey8fhPqm9k1pXSIO6KaVzZU=
 			</data>
 			<key>requirement</key>
 			<string>identifier "Humanizer.resources" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -3444,7 +3453,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			hMhaxPuV8GsRA0SNGr0f0BQkBrI=
+			4+OiBzNnLe4Z3fIMaC1rPhGjW4c=
 			</data>
 			<key>requirement</key>
 			<string>identifier "Microsoft.CodeAnalysis.CSharp.Workspaces.resources" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -3453,7 +3462,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			ESmgg1wC64YYkRzCBzYi7xJUEHk=
+			JSAIHcsGG61N7R7Dgc/Wdb7U0xU=
 			</data>
 			<key>requirement</key>
 			<string>identifier "Microsoft.CodeAnalysis.CSharp.resources" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -3462,7 +3471,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			XkDZt+vNsz1rA8LX0nHfvWbJK1c=
+			NiBfuChmvH7txVUlfJI1iwXB4SE=
 			</data>
 			<key>requirement</key>
 			<string>identifier "Microsoft.CodeAnalysis.Workspaces.MSBuild.resources" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -3471,7 +3480,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			xHV5hr4gVLTOTGTgmx23/sLPuEE=
+			Yvxc0Ja/lDgBLUxQ8DzDBj9mJPI=
 			</data>
 			<key>requirement</key>
 			<string>identifier "Microsoft.CodeAnalysis.Workspaces.resources" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -3480,7 +3489,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			5RPVpPVo4+DsH4INBrzBmAHkj9w=
+			KOb9y4DK1oAlzywz2vnjVC3At0A=
 			</data>
 			<key>requirement</key>
 			<string>identifier "Microsoft.CodeAnalysis.resources" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -3489,7 +3498,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			VskuLFRv2FbQeFzBhSO552Dti/0=
+			L61TycvqZDfTu2XNUMEAh2YPvzY=
 			</data>
 			<key>requirement</key>
 			<string>identifier "Humanizer.resources" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -3498,7 +3507,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			Sye5IItGcwYgTKXsLC1SkJtFx4U=
+			lgkLnSEp81/BL/iXEDshWucS6/4=
 			</data>
 			<key>requirement</key>
 			<string>identifier "Humanizer.resources" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -3507,7 +3516,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			cW5pNapsPtEbzMiilwZupSTVPP4=
+			x5Wrv6wMmZ8X+uP8Wv6NGxgntqg=
 			</data>
 			<key>requirement</key>
 			<string>identifier "Humanizer.resources" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -3516,7 +3525,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			oe+Ctrtcw5tKBRHPGGaj+r8oRF0=
+			M72GjiDjSoGEbrFYCMCnc1H176Y=
 			</data>
 			<key>requirement</key>
 			<string>identifier "Humanizer.resources" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -3525,7 +3534,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			AzfRl0odcKD78yDLS0jBfnLCpCM=
+			ew1dePjSazmDfw3s1jvz+g/C8ls=
 			</data>
 			<key>requirement</key>
 			<string>identifier "Humanizer.resources" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -3534,7 +3543,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			37FqDo+9xIKGYYNfsNEwmMzTEaY=
+			fxLWf6h/4Mg/qXl6sqTKotahkhM=
 			</data>
 			<key>requirement</key>
 			<string>identifier "Humanizer.resources" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -3543,7 +3552,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			eENOHnT/7Z2anrmpnAejmI+WS14=
+			YIKr8GN09EkkL+R65nSA50OkI1E=
 			</data>
 			<key>requirement</key>
 			<string>identifier "Microsoft.CodeAnalysis.CSharp.Workspaces.resources" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -3552,7 +3561,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			e7eId4PQXluU89TxcmqhLlla9GA=
+			QIgeXQxa8fycyVwrkrnw8s4uOGc=
 			</data>
 			<key>requirement</key>
 			<string>identifier "Microsoft.CodeAnalysis.CSharp.resources" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -3561,7 +3570,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			EiErL32vfOuUbvlaLi7jmOlffOg=
+			AGuREmSV1oMJOFV4oX7AtCCRW3c=
 			</data>
 			<key>requirement</key>
 			<string>identifier "Microsoft.CodeAnalysis.Workspaces.MSBuild.resources" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -3570,7 +3579,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			+cifrB+yoisWaul1up4/lUyF8Og=
+			S7zu8xmudtaKQbpILP9w2RsTHms=
 			</data>
 			<key>requirement</key>
 			<string>identifier "Microsoft.CodeAnalysis.Workspaces.resources" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -3579,7 +3588,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			+SCVC0WB+K6IJzPTgKt20ArU8hY=
+			JbqWvhSQ0NyyPGxbgMRuLdPFKlw=
 			</data>
 			<key>requirement</key>
 			<string>identifier "Microsoft.CodeAnalysis.resources" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -3588,7 +3597,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			bFrX73P/5D/7s4sXXvFcn/5E/bM=
+			9KJYNKSeDMtccNq+2boOGVxWHh8=
 			</data>
 			<key>requirement</key>
 			<string>identifier "Humanizer.resources" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -3597,7 +3606,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			9Zh3Beki9AS679W3hLThPWBkPXs=
+			elQRe2ABZ51SpmDmlhu7/sKwP3Q=
 			</data>
 			<key>requirement</key>
 			<string>identifier "Microsoft.CodeAnalysis.CSharp.Workspaces.resources" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -3606,7 +3615,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			H7nQVI0JtvsYIs5S4ZG7uLWrlws=
+			mVh6JKWVkh26svlShBycfgKHpo8=
 			</data>
 			<key>requirement</key>
 			<string>identifier "Microsoft.CodeAnalysis.CSharp.resources" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -3615,7 +3624,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			wQGJsjnL1Zg12PFasYFRFupmRd8=
+			dbdbU+1j5f+nj/TwGt6gOO7m8PU=
 			</data>
 			<key>requirement</key>
 			<string>identifier "Microsoft.CodeAnalysis.Workspaces.MSBuild.resources" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -3624,7 +3633,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			arChD6uqD1x5f2eO9zMKx7pOe2E=
+			k8S+twY00MMNg+UEmBLft5ZRiSI=
 			</data>
 			<key>requirement</key>
 			<string>identifier "Microsoft.CodeAnalysis.Workspaces.resources" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>
@@ -3633,7 +3642,7 @@
 		<dict>
 			<key>cdhash</key>
 			<data>
-			BX0vdI98f6rwPhbAlIQixnJb7YE=
+			Er6h5EVrLBHs2sMNYx5nRWgYVC8=
 			</data>
 			<key>requirement</key>
 			<string>identifier "Microsoft.CodeAnalysis.resources" and anchor apple generic and certificate 1[field.1.2.840.113635.100.6.2.6] /* exists */ and certificate leaf[field.1.2.840.113635.100.6.1.13] /* exists */ and certificate leaf[subject.OU] = BKHVB276W5</string>

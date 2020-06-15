@@ -139,6 +139,17 @@
             The colour to be used for the "exploding" catcher sprite on beginning of hyper-dashing.
             </summary>
         </member>
+        <member name="F:osu.Game.Rulesets.Catch.UI.Catcher.DEFAULT_HYPER_DASH_COLOUR">
+            <summary>
+            The default colour used to tint hyper-dash fruit, along with the moving catcher, its trail
+            and end glow/after-image during a hyper-dash.
+            </summary>
+        </member>
+        <member name="F:osu.Game.Rulesets.Catch.UI.Catcher.HYPER_DASH_TRANSITION_DURATION">
+            <summary>
+            The duration between transitioning to hyper-dash state.
+            </summary>
+        </member>
         <member name="P:osu.Game.Rulesets.Catch.UI.Catcher.HyperDashing">
             <summary>
             Whether we are hyper-dashing or not.
@@ -154,9 +165,9 @@
             The width of the catcher which can receive fruit. Equivalent to "catchMargin" in osu-stable.
             </summary>
         </member>
-        <member name="P:osu.Game.Rulesets.Catch.UI.Catcher.Trail">
+        <member name="P:osu.Game.Rulesets.Catch.UI.Catcher.CurrentDrawableCatcher">
             <summary>
-            Activate or deactivate the trail. Will be automatically deactivated when conditions to keep the trail displayed are no longer met.
+            The drawable catcher for <see cref="P:osu.Game.Rulesets.Catch.UI.Catcher.CurrentState"/>.
             </summary>
         </member>
         <member name="F:osu.Game.Rulesets.Catch.UI.Catcher.catchWidth">
@@ -209,6 +220,22 @@
         <member name="M:osu.Game.Rulesets.Catch.UI.Catcher.Explode">
             <summary>
             Explode any fruit off the plate.
+            </summary>
+        </member>
+        <member name="T:osu.Game.Rulesets.Catch.UI.CatcherTrailDisplay">
+            <summary>
+            Represents a component responsible for displaying
+            the appropriate catcher trails when requested to.
+            </summary>
+        </member>
+        <member name="P:osu.Game.Rulesets.Catch.UI.CatcherTrailDisplay.DisplayTrail">
+            <summary>
+            Whether to start displaying trails following the catcher.
+            </summary>
+        </member>
+        <member name="M:osu.Game.Rulesets.Catch.UI.CatcherTrailDisplay.DisplayEndGlow">
+            <summary>
+            Displays a single end-glow catcher sprite.
             </summary>
         </member>
         <member name="T:osu.Game.Rulesets.Catch.UI.CatchPlayfieldAdjustmentContainer.ScalingContainer">

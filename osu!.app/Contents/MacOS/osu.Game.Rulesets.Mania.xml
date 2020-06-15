@@ -46,6 +46,11 @@
             A pattern generator for osu!mania-specific beatmaps.
             </summary>
         </member>
+        <member name="P:osu.Game.Rulesets.Mania.Beatmaps.ManiaBeatmapConverter.SpecificBeatmapPatternGenerator.defaultNodeSamples">
+            <remarks>
+            osu!mania-specific beatmaps in stable only play samples at the start of the hold note.
+            </remarks>
+        </member>
         <member name="T:osu.Game.Rulesets.Mania.Beatmaps.Patterns.Legacy.DistanceObjectPatternGenerator">
             <summary>
             A pattern generator for IHasDistance hit objects.
@@ -116,6 +121,12 @@
             </summary>
             <param name="time">The time to retrieve the sample info list from.</param>
             <returns></returns>
+        </member>
+        <member name="M:osu.Game.Rulesets.Mania.Beatmaps.Patterns.Legacy.DistanceObjectPatternGenerator.nodeSamplesAt(System.Double)">
+            <summary>
+            Retrieves the list of node samples that occur at time greater than or equal to <paramref name="time"/>.
+            </summary>
+            <param name="time">The time to retrieve node samples at.</param>
         </member>
         <member name="M:osu.Game.Rulesets.Mania.Beatmaps.Patterns.Legacy.DistanceObjectPatternGenerator.addToPattern(osu.Game.Rulesets.Mania.Beatmaps.Patterns.Pattern,System.Int32,System.Double,System.Double)">
             <summary>
@@ -438,39 +449,15 @@
             <param name="column">The 0-based column index.</param>
             <returns>The type of the column.</returns>
         </member>
-        <member name="P:osu.Game.Rulesets.Mania.Edit.Blueprints.ManiaPlacementBlueprint`1.SnappedMousePosition">
+        <member name="T:osu.Game.Rulesets.Mania.Edit.ManiaBeatSnapGrid">
             <summary>
-            The current mouse position, snapped to the closest column.
+            A grid which displays coloured beat divisor lines in proximity to the selection or placement cursor.
             </summary>
         </member>
-        <member name="P:osu.Game.Rulesets.Mania.Edit.Blueprints.ManiaPlacementBlueprint`1.SnappedWidth">
+        <member name="P:osu.Game.Rulesets.Mania.Edit.ManiaBeatSnapGrid.SelectionTimeRange">
             <summary>
-            The width of the closest column to the current mouse position.
+            The range of time values of the current selection.
             </summary>
-        </member>
-        <member name="M:osu.Game.Rulesets.Mania.Edit.Blueprints.ManiaPlacementBlueprint`1.mouseToHitObjectPosition(osuTK.Vector2)">
-            <summary>
-            Converts a mouse position to a hitobject position.
-            </summary>
-            <remarks>
-            Blueprints are centred on the mouse position, such that the hitobject position is anchored at the top or bottom of the blueprint depending on the scroll direction.
-            </remarks>
-            <param name="mousePosition">The mouse position.</param>
-            <returns>The resulting hitobject position, acnhored at the top or bottom of the blueprint depending on the scroll direction.</returns>
-        </member>
-        <member name="M:osu.Game.Rulesets.Mania.Edit.Blueprints.ManiaPlacementBlueprint`1.hitObjectToMousePosition(osuTK.Vector2)">
-            <summary>
-            Converts a hitobject position to a mouse position.
-            </summary>
-            <param name="hitObjectPosition">The hitobject position.</param>
-            <returns>The resulting mouse position, anchored at the centre of the hitobject.</returns>
-        </member>
-        <member name="M:osu.Game.Rulesets.Mania.Edit.ManiaHitObjectComposer.ColumnAt(osuTK.Vector2)">
-            <summary>
-            Retrieves the column that intersects a screen-space position.
-            </summary>
-            <param name="screenSpacePosition">The screen-space position.</param>
-            <returns>The column which intersects with <paramref name="screenSpacePosition"/>.</returns>
         </member>
         <member name="F:osu.Game.Rulesets.Mania.ManiaRuleset.MAX_STAGE_KEYS">
             <summary>
@@ -770,13 +757,6 @@
             <summary>
             The maximum time range. This occurs at a <see cref="P:osu.Game.Rulesets.Mania.UI.DrawableManiaRuleset.relativeTimeRange"/> of 1.
             </summary>
-        </member>
-        <member name="M:osu.Game.Rulesets.Mania.UI.DrawableManiaRuleset.GetColumnByPosition(osuTK.Vector2)">
-            <summary>
-            Retrieves the column that intersects a screen-space position.
-            </summary>
-            <param name="screenSpacePosition">The screen-space position.</param>
-            <returns>The column which intersects with <paramref name="screenSpacePosition"/>.</returns>
         </member>
         <member name="M:osu.Game.Rulesets.Mania.UI.ManiaPlayfield.GetColumnByPosition(osuTK.Vector2)">
             <summary>
