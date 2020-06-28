@@ -10,6 +10,20 @@
             Should be off-screen.
             </summary>
         </member>
+        <member name="M:osu.Game.Tournament.IPC.FileBasedIPC.SetIPCLocation(System.String)">
+            <summary>
+            Manually sets the path to the directory used for inter-process communication with a cutting-edge install.
+            </summary>
+            <param name="path">Path to the IPC directory</param>
+            <returns>Whether the supplied path was a valid IPC directory.</returns>
+        </member>
+        <member name="M:osu.Game.Tournament.IPC.FileBasedIPC.AutoDetectIPCLocation">
+            <summary>
+            Tries to automatically detect the path to the directory used for inter-process communication
+            with a cutting-edge install.
+            </summary>
+            <returns>Whether an IPC directory was successfully auto-detected.</returns>
+        </member>
         <member name="T:osu.Game.Tournament.Models.BeatmapChoice">
             <summary>
             A beatmap choice by a team from a tournament's map pool.
@@ -18,6 +32,21 @@
         <member name="T:osu.Game.Tournament.Models.LadderInfo">
             <summary>
             Holds the complete data required to operate the tournament system.
+            </summary>
+        </member>
+        <member name="T:osu.Game.Tournament.Models.StableInfo">
+            <summary>
+            Holds the path to locate the osu! stable cutting-edge installation.
+            </summary>
+        </member>
+        <member name="P:osu.Game.Tournament.Models.StableInfo.StablePath">
+            <summary>
+            Path to the IPC directory used by the stable (cutting-edge) install.
+            </summary>
+        </member>
+        <member name="E:osu.Game.Tournament.Models.StableInfo.OnStableInfoSaved">
+            <summary>
+            Fired whenever stable info is successfully saved to file.
             </summary>
         </member>
         <member name="T:osu.Game.Tournament.Models.TournamentMatch">

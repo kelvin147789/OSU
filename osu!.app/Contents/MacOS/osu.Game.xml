@@ -1648,7 +1648,7 @@
         </member>
         <member name="F:osu.Game.Graphics.Containers.BeatSyncedContainer.EarlyActivationMilliseconds">
             <summary>
-            The amount of time before a beat we should fire <see cref="M:osu.Game.Graphics.Containers.BeatSyncedContainer.OnNewBeat(System.Int32,osu.Game.Beatmaps.ControlPoints.TimingControlPoint,osu.Game.Beatmaps.ControlPoints.EffectControlPoint,osu.Framework.Audio.Track.TrackAmplitudes)"/>.
+            The amount of time before a beat we should fire <see cref="M:osu.Game.Graphics.Containers.BeatSyncedContainer.OnNewBeat(System.Int32,osu.Game.Beatmaps.ControlPoints.TimingControlPoint,osu.Game.Beatmaps.ControlPoints.EffectControlPoint,osu.Framework.Audio.Track.ChannelAmplitudes)"/>.
             This allows for adding easing to animations that may be synchronised to the beat.
             </summary>
         </member>
@@ -3248,7 +3248,7 @@
             In case of failure the first difficulty of the set will be presented, ignoring the predicate.
             </param>
         </member>
-        <member name="M:osu.Game.OsuGame.PresentScore(osu.Game.Scoring.ScoreInfo)">
+        <member name="M:osu.Game.OsuGame.PresentScore(osu.Game.Scoring.ScoreInfo,osu.Game.ScorePresentType)">
             <summary>
             Present a score's replay immediately.
             The user should have already requested this interactively.
@@ -4498,7 +4498,7 @@
             The point in the beatmap at which the final ramping rate should be reached.
             </summary>
         </member>
-        <member name="M:osu.Game.Rulesets.Mods.ModTimeRamp.applyAdjustment(System.Double)">
+        <member name="M:osu.Game.Rulesets.Mods.ModTimeRamp.applyRateAdjustment(System.Double)">
             <summary>
             Adjust the rate along the specified ramp
             </summary>
@@ -5509,11 +5509,15 @@
             The minimum health target at an HP drain rate of 10.
             </summary>
         </member>
-        <member name="M:osu.Game.Rulesets.Scoring.DrainingHealthProcessor.#ctor(System.Double)">
+        <member name="M:osu.Game.Rulesets.Scoring.DrainingHealthProcessor.#ctor(System.Double,System.Double)">
             <summary>
             Creates a new <see cref="T:osu.Game.Rulesets.Scoring.DrainingHealthProcessor"/>.
             </summary>
             <param name="drainStartTime">The time after which draining should begin.</param>
+            <param name="drainLenience">A lenience to apply to the default drain rate.<br />
+            A value of 0 uses the default drain rate.<br />
+            A value of 0.5 halves the drain rate.<br />
+            A value of 1 completely removes drain.</param>
         </member>
         <member name="E:osu.Game.Rulesets.Scoring.HealthProcessor.Failed">
             <summary>
@@ -6027,6 +6031,26 @@
         <member name="M:osu.Game.Rulesets.UI.DrawableRuleset.CancelResume">
             <summary>
             Invoked when the user requests to pause while the resume overlay is active.
+            </summary>
+        </member>
+        <member name="P:osu.Game.Rulesets.UI.DrawableRulesetDependencies.TextureStore">
+            <summary>
+            The texture store to be used for the ruleset.
+            </summary>
+        </member>
+        <member name="P:osu.Game.Rulesets.UI.DrawableRulesetDependencies.SampleStore">
+            <summary>
+            The sample store to be used for the ruleset.
+            </summary>
+            <remarks>
+            This is the local sample store pointing to the ruleset sample resources,
+            the cached sample store (<see cref="T:osu.Game.Rulesets.UI.FallbackSampleStore"/>) retrieves from
+            this store and falls back to the parent store if this store doesn't have the requested sample.
+            </remarks>
+        </member>
+        <member name="P:osu.Game.Rulesets.UI.DrawableRulesetDependencies.RulesetConfigManager">
+            <summary>
+            The ruleset config manager.
             </summary>
         </member>
         <member name="T:osu.Game.Rulesets.UI.FallbackSampleStore">
@@ -7584,6 +7608,11 @@
             The action to be performed to complete resuming.
             </summary>
         </member>
+        <member name="T:osu.Game.Screens.Play.ScreenSuspensionHandler">
+            <summary>
+            Ensures screen is not suspended / dimmed while gameplay is active.
+            </summary>
+        </member>
         <member name="M:osu.Game.Screens.Play.SkipOverlay.#ctor(System.Double)">
             <summary>
             Displays a skip overlay, giving the user the ability to skip forward.
@@ -8283,6 +8312,16 @@
             Legacy version of this skin.
             </summary>
         </member>
+        <member name="T:osu.Game.Skinning.LegacySkinTransformer">
+            <summary>
+            Transformer used to handle support of legacy features for individual rulesets.
+            </summary>
+        </member>
+        <member name="P:osu.Game.Skinning.LegacySkinTransformer.Source">
+            <summary>
+            Source of the <see cref="T:osu.Game.Skinning.ISkin"/> which is being transformed.
+            </summary>
+        </member>
         <member name="T:osu.Game.Skinning.SkinConfiguration">
             <summary>
             An empty skin configuration.
@@ -8491,6 +8530,11 @@
             are preferrably tested within the presence of a clock and seek controls.
             </summary>
         </member>
+        <member name="M:osu.Game.Tests.Visual.EditorTestScene.CreateEditorRuleset">
+            <summary>
+            Creates the ruleset for providing a corresponding beatmap to load the editor on.
+            </summary>
+        </member>
         <member name="F:osu.Game.Tests.Visual.ModTestScene.ModTestData.Autoplay">
             <summary>
             Whether to use a replay to simulate an auto-play. True by default.
@@ -8538,6 +8582,14 @@
             If true, this will bypass the local <see cref="T:osu.Game.Online.API.DummyAPIAccess"/> and use the <see cref="T:osu.Game.OsuGameBase"/> provided one.
             </summary>
         </member>
+        <member name="M:osu.Game.Tests.Visual.OsuTestScene.CreateRuleset">
+            <summary>
+            Creates the ruleset to be used for this test scene.
+            </summary>
+            <remarks>
+            When testing against ruleset-specific components, this method must be overriden to their corresponding ruleset.
+            </remarks>
+        </member>
         <member name="M:osu.Game.Tests.Visual.OsuTestScene.ClockBackedTestWorkingBeatmap.#ctor(osu.Game.Rulesets.RulesetInfo,osu.Framework.Timing.IFrameBasedClock,osu.Framework.Audio.AudioManager)">
             <summary>
             Create an instance which creates a <see cref="T:osu.Game.Tests.Beatmaps.TestBeatmap"/> for the provided ruleset when requested.
@@ -8566,6 +8618,11 @@
             Whether custom test steps are provided. Custom tests should invoke <see cref="M:osu.Game.Tests.Visual.PlayerTestScene.CreateTest(System.Action)"/> to create the test steps.
             </summary>
         </member>
+        <member name="M:osu.Game.Tests.Visual.PlayerTestScene.CreatePlayerRuleset">
+            <summary>
+            Creates the ruleset for setting up the <see cref="F:osu.Game.Tests.Visual.PlayerTestScene.Player"/> component.
+            </summary>
+        </member>
         <member name="T:osu.Game.Tests.Visual.RateAdjustedBeatmapTestScene">
             <summary>
             Test case which adjusts the beatmap's rate to match any speed adjustments in visual tests.
@@ -8580,6 +8637,11 @@
             <summary>
             A container which provides a <see cref="T:osu.Game.Rulesets.UI.Scrolling.IScrollingInfo"/> to children.
             This should only be used when testing
+            </summary>
+        </member>
+        <member name="M:osu.Game.Tests.Visual.SkinnableTestScene.CreateRulesetForSkinProvider">
+            <summary>
+            Creates the ruleset for adding the corresponding skin transforming component.
             </summary>
         </member>
         <member name="T:osu.Game.Tests.Visual.TestPlayer">
@@ -8601,6 +8663,11 @@
         <member name="T:osu.Game.Updater.UpdateManager">
             <summary>
             An update manager which only shows notifications after an update completes.
+            </summary>
+        </member>
+        <member name="P:osu.Game.Updater.UpdateManager.CanCheckForUpdate">
+            <summary>
+            Whether this UpdateManager should be or is capable of checking for updates.
             </summary>
         </member>
         <member name="F:osu.Game.Users.Country.FullName">
