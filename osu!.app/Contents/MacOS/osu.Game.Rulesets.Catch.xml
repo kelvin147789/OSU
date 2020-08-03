@@ -82,6 +82,16 @@
             </summary>
             <returns>The random value.</returns>
         </member>
+        <member name="F:osu.Game.Rulesets.Catch.Objects.Banana.BananaIndex">
+            <summary>
+            Index of banana in current shower.
+            </summary>
+        </member>
+        <member name="P:osu.Game.Rulesets.Catch.Objects.CatchHitObject.X">
+            <summary>
+            The horizontal position of the fruit between 0 and <see cref="F:osu.Game.Rulesets.Catch.UI.CatchPlayfield.WIDTH"/>.
+            </summary>
+        </member>
         <member name="P:osu.Game.Rulesets.Catch.Objects.CatchHitObject.XOffset">
             <summary>
             A random offset applied to <see cref="P:osu.Game.Rulesets.Catch.Objects.CatchHitObject.X"/>, set by the <see cref="T:osu.Game.Rulesets.Catch.Beatmaps.CatchBeatmapProcessor"/>.
@@ -175,6 +185,11 @@
             Width of the area that can be used to attempt catches during gameplay.
             </summary>
         </member>
+        <member name="M:osu.Game.Rulesets.Catch.UI.Catcher.CreateProxiedContent">
+            <summary>
+            Creates proxied content to be displayed beneath hitobjects.
+            </summary>
+        </member>
         <member name="M:osu.Game.Rulesets.Catch.UI.Catcher.calculateScale(osu.Game.Beatmaps.BeatmapDifficulty)">
             <summary>
             Calculates the scale of the catcher based off the provided beatmap difficulty.
@@ -236,6 +251,17 @@
         <member name="M:osu.Game.Rulesets.Catch.UI.CatcherTrailDisplay.DisplayEndGlow">
             <summary>
             Displays a single end-glow catcher sprite.
+            </summary>
+        </member>
+        <member name="F:osu.Game.Rulesets.Catch.UI.CatchPlayfield.WIDTH">
+            <summary>
+            The width of the playfield.
+            The horizontal movement of the catcher is confined in the area of this width.
+            </summary>
+        </member>
+        <member name="F:osu.Game.Rulesets.Catch.UI.CatchPlayfield.CENTER_X">
+            <summary>
+            The center position of the playfield.
             </summary>
         </member>
         <member name="T:osu.Game.Rulesets.Catch.UI.CatchPlayfieldAdjustmentContainer.ScalingContainer">

@@ -210,6 +210,95 @@
             </param>
             <returns>Value to which the difficulty value maps in the specified range.</returns>
         </member>
+        <member name="M:osu.Game.Beatmaps.BeatmapDifficultyManager.GetBindableDifficulty(osu.Game.Beatmaps.BeatmapInfo,System.Threading.CancellationToken)">
+            <summary>
+            Retrieves a bindable containing the star difficulty of a <see cref="T:osu.Game.Beatmaps.BeatmapInfo"/> that follows the currently-selected ruleset and mods.
+            </summary>
+            <param name="beatmapInfo">The <see cref="T:osu.Game.Beatmaps.BeatmapInfo"/> to get the difficulty of.</param>
+            <param name="cancellationToken">An optional <see cref="T:System.Threading.CancellationToken"/> which stops updating the star difficulty for the given <see cref="T:osu.Game.Beatmaps.BeatmapInfo"/>.</param>
+            <returns>A bindable that is updated to contain the star difficulty when it becomes available.</returns>
+        </member>
+        <member name="M:osu.Game.Beatmaps.BeatmapDifficultyManager.GetBindableDifficulty(osu.Game.Beatmaps.BeatmapInfo,osu.Game.Rulesets.RulesetInfo,System.Collections.Generic.IEnumerable{osu.Game.Rulesets.Mods.Mod},System.Threading.CancellationToken)">
+            <summary>
+            Retrieves a bindable containing the star difficulty of a <see cref="T:osu.Game.Beatmaps.BeatmapInfo"/> with a given <see cref="T:osu.Game.Rulesets.RulesetInfo"/> and <see cref="T:osu.Game.Rulesets.Mods.Mod"/> combination.
+            </summary>
+            <remarks>
+            The bindable will not update to follow the currently-selected ruleset and mods.
+            </remarks>
+            <param name="beatmapInfo">The <see cref="T:osu.Game.Beatmaps.BeatmapInfo"/> to get the difficulty of.</param>
+            <param name="rulesetInfo">The <see cref="T:osu.Game.Rulesets.RulesetInfo"/> to get the difficulty with. If <c>null</c>, the <paramref name="beatmapInfo"/>'s ruleset is used.</param>
+            <param name="mods">The <see cref="T:osu.Game.Rulesets.Mods.Mod"/>s to get the difficulty with. If <c>null</c>, no mods will be assumed.</param>
+            <param name="cancellationToken">An optional <see cref="T:System.Threading.CancellationToken"/> which stops updating the star difficulty for the given <see cref="T:osu.Game.Beatmaps.BeatmapInfo"/>.</param>
+            <returns>A bindable that is updated to contain the star difficulty when it becomes available.</returns>
+        </member>
+        <member name="M:osu.Game.Beatmaps.BeatmapDifficultyManager.GetDifficultyAsync(osu.Game.Beatmaps.BeatmapInfo,osu.Game.Rulesets.RulesetInfo,System.Collections.Generic.IEnumerable{osu.Game.Rulesets.Mods.Mod},System.Threading.CancellationToken)">
+            <summary>
+            Retrieves the difficulty of a <see cref="T:osu.Game.Beatmaps.BeatmapInfo"/>.
+            </summary>
+            <param name="beatmapInfo">The <see cref="T:osu.Game.Beatmaps.BeatmapInfo"/> to get the difficulty of.</param>
+            <param name="rulesetInfo">The <see cref="T:osu.Game.Rulesets.RulesetInfo"/> to get the difficulty with.</param>
+            <param name="mods">The <see cref="T:osu.Game.Rulesets.Mods.Mod"/>s to get the difficulty with.</param>
+            <param name="cancellationToken">An optional <see cref="T:System.Threading.CancellationToken"/> which stops computing the star difficulty.</param>
+            <returns>The <see cref="T:osu.Game.Beatmaps.StarDifficulty"/>.</returns>
+        </member>
+        <member name="M:osu.Game.Beatmaps.BeatmapDifficultyManager.GetDifficulty(osu.Game.Beatmaps.BeatmapInfo,osu.Game.Rulesets.RulesetInfo,System.Collections.Generic.IEnumerable{osu.Game.Rulesets.Mods.Mod})">
+            <summary>
+            Retrieves the difficulty of a <see cref="T:osu.Game.Beatmaps.BeatmapInfo"/>.
+            </summary>
+            <param name="beatmapInfo">The <see cref="T:osu.Game.Beatmaps.BeatmapInfo"/> to get the difficulty of.</param>
+            <param name="rulesetInfo">The <see cref="T:osu.Game.Rulesets.RulesetInfo"/> to get the difficulty with.</param>
+            <param name="mods">The <see cref="T:osu.Game.Rulesets.Mods.Mod"/>s to get the difficulty with.</param>
+            <returns>The <see cref="T:osu.Game.Beatmaps.StarDifficulty"/>.</returns>
+        </member>
+        <member name="M:osu.Game.Beatmaps.BeatmapDifficultyManager.updateTrackedBindables">
+            <summary>
+            Updates all tracked <see cref="T:osu.Game.Beatmaps.BeatmapDifficultyManager.BindableStarDifficulty"/> using the current ruleset and mods.
+            </summary>
+        </member>
+        <member name="M:osu.Game.Beatmaps.BeatmapDifficultyManager.cancelTrackedBindableUpdate">
+            <summary>
+            Cancels the existing update of all tracked <see cref="T:osu.Game.Beatmaps.BeatmapDifficultyManager.BindableStarDifficulty"/> via <see cref="M:osu.Game.Beatmaps.BeatmapDifficultyManager.updateTrackedBindables"/>.
+            </summary>
+        </member>
+        <member name="M:osu.Game.Beatmaps.BeatmapDifficultyManager.createBindable(osu.Game.Beatmaps.BeatmapInfo,osu.Game.Rulesets.RulesetInfo,System.Collections.Generic.IEnumerable{osu.Game.Rulesets.Mods.Mod},System.Threading.CancellationToken)">
+            <summary>
+            Creates a new <see cref="T:osu.Game.Beatmaps.BeatmapDifficultyManager.BindableStarDifficulty"/> and triggers an initial value update.
+            </summary>
+            <param name="beatmapInfo">The <see cref="T:osu.Game.Beatmaps.BeatmapInfo"/> that star difficulty should correspond to.</param>
+            <param name="initialRulesetInfo">The initial <see cref="T:osu.Game.Rulesets.RulesetInfo"/> to get the difficulty with.</param>
+            <param name="initialMods">The initial <see cref="T:osu.Game.Rulesets.Mods.Mod"/>s to get the difficulty with.</param>
+            <param name="cancellationToken">An optional <see cref="T:System.Threading.CancellationToken"/> which stops updating the star difficulty for the given <see cref="T:osu.Game.Beatmaps.BeatmapInfo"/>.</param>
+            <returns>The <see cref="T:osu.Game.Beatmaps.BeatmapDifficultyManager.BindableStarDifficulty"/>.</returns>
+        </member>
+        <member name="M:osu.Game.Beatmaps.BeatmapDifficultyManager.updateBindable(osu.Game.Beatmaps.BeatmapDifficultyManager.BindableStarDifficulty,osu.Game.Rulesets.RulesetInfo,System.Collections.Generic.IEnumerable{osu.Game.Rulesets.Mods.Mod},System.Threading.CancellationToken)">
+            <summary>
+            Updates the value of a <see cref="T:osu.Game.Beatmaps.BeatmapDifficultyManager.BindableStarDifficulty"/> with a given ruleset + mods.
+            </summary>
+            <param name="bindable">The <see cref="T:osu.Game.Beatmaps.BeatmapDifficultyManager.BindableStarDifficulty"/> to update.</param>
+            <param name="rulesetInfo">The <see cref="T:osu.Game.Rulesets.RulesetInfo"/> to update with.</param>
+            <param name="mods">The <see cref="T:osu.Game.Rulesets.Mods.Mod"/>s to update with.</param>
+            <param name="cancellationToken">A token that may be used to cancel this update.</param>
+        </member>
+        <member name="M:osu.Game.Beatmaps.BeatmapDifficultyManager.computeDifficulty(osu.Game.Beatmaps.BeatmapDifficultyManager.DifficultyCacheLookup@,osu.Game.Beatmaps.BeatmapInfo,osu.Game.Rulesets.RulesetInfo)">
+            <summary>
+            Computes the difficulty defined by a <see cref="T:osu.Game.Beatmaps.BeatmapDifficultyManager.DifficultyCacheLookup"/> key, and stores it to the timed cache.
+            </summary>
+            <param name="key">The <see cref="T:osu.Game.Beatmaps.BeatmapDifficultyManager.DifficultyCacheLookup"/> that defines the computation parameters.</param>
+            <param name="beatmapInfo">The <see cref="T:osu.Game.Beatmaps.BeatmapInfo"/> to compute the difficulty of.</param>
+            <param name="rulesetInfo">The <see cref="T:osu.Game.Rulesets.RulesetInfo"/> to compute the difficulty with.</param>
+            <returns>The <see cref="T:osu.Game.Beatmaps.StarDifficulty"/>.</returns>
+        </member>
+        <member name="M:osu.Game.Beatmaps.BeatmapDifficultyManager.tryGetExisting(osu.Game.Beatmaps.BeatmapInfo,osu.Game.Rulesets.RulesetInfo,System.Collections.Generic.IEnumerable{osu.Game.Rulesets.Mods.Mod},osu.Game.Beatmaps.StarDifficulty@,osu.Game.Beatmaps.BeatmapDifficultyManager.DifficultyCacheLookup@)">
+            <summary>
+            Attempts to retrieve an existing difficulty for the combination.
+            </summary>
+            <param name="beatmapInfo">The <see cref="T:osu.Game.Beatmaps.BeatmapInfo"/>.</param>
+            <param name="rulesetInfo">The <see cref="T:osu.Game.Rulesets.RulesetInfo"/>.</param>
+            <param name="mods">The <see cref="T:osu.Game.Rulesets.Mods.Mod"/>s.</param>
+            <param name="existingDifficulty">The existing difficulty value, if present.</param>
+            <param name="key">The <see cref="T:osu.Game.Beatmaps.BeatmapDifficultyManager.DifficultyCacheLookup"/> key that was used to perform this lookup. This can be further used to query <see cref="M:osu.Game.Beatmaps.BeatmapDifficultyManager.computeDifficulty(osu.Game.Beatmaps.BeatmapDifficultyManager.DifficultyCacheLookup@,osu.Game.Beatmaps.BeatmapInfo,osu.Game.Rulesets.RulesetInfo)"/>.</param>
+            <returns>Whether an existing difficulty was found.</returns>
+        </member>
         <member name="P:osu.Game.Beatmaps.BeatmapInfo.Length">
             <summary>
             The playable length in milliseconds of this beatmap.
@@ -289,17 +378,18 @@
             <param name="query">The query.</param>
             <returns>The first result for the provided query, or null if no results were found.</returns>
         </member>
-        <member name="M:osu.Game.Beatmaps.BeatmapManager.GetAllUsableBeatmapSets(osu.Game.Beatmaps.IncludedDetails)">
+        <member name="M:osu.Game.Beatmaps.BeatmapManager.GetAllUsableBeatmapSets(osu.Game.Beatmaps.IncludedDetails,System.Boolean)">
             <summary>
             Returns a list of all usable <see cref="T:osu.Game.Beatmaps.BeatmapSetInfo"/>s.
             </summary>
             <returns>A list of available <see cref="T:osu.Game.Beatmaps.BeatmapSetInfo"/>.</returns>
         </member>
-        <member name="M:osu.Game.Beatmaps.BeatmapManager.GetAllUsableBeatmapSetsEnumerable(osu.Game.Beatmaps.IncludedDetails)">
+        <member name="M:osu.Game.Beatmaps.BeatmapManager.GetAllUsableBeatmapSetsEnumerable(osu.Game.Beatmaps.IncludedDetails,System.Boolean)">
             <summary>
             Returns a list of all usable <see cref="T:osu.Game.Beatmaps.BeatmapSetInfo"/>s. Note that files are not populated.
             </summary>
             <param name="includes">The level of detail to include in the returned objects.</param>
+            <param name="includeProtected">Whether to include protected (system) beatmaps. These should not be included for gameplay playable use cases.</param>
             <returns>A list of available <see cref="T:osu.Game.Beatmaps.BeatmapSetInfo"/>.</returns>
         </member>
         <member name="M:osu.Game.Beatmaps.BeatmapManager.QueryBeatmapSets(System.Linq.Expressions.Expression{System.Func{osu.Game.Beatmaps.BeatmapSetInfo,System.Boolean}})">
@@ -637,7 +727,7 @@
             </summary>
             <param name="list">The list to search.</param>
             <param name="time">The time to find the control point at.</param>
-            <param name="prePoint">The control point to use when <paramref name="time"/> is before any control points. If null, a new control point will be constructed.</param>
+            <param name="fallback">The control point to use when <paramref name="time"/> is before any control points.</param>
             <returns>The active control point at <paramref name="time"/>, or a fallback <see cref="T:osu.Game.Beatmaps.ControlPoints.ControlPoint"/> if none found.</returns>
         </member>
         <member name="M:osu.Game.Beatmaps.ControlPoints.ControlPointInfo.binarySearch``1(System.Collections.Generic.IReadOnlyList{``0},System.Double)">
@@ -725,6 +815,11 @@
             The time signature at this control point.
             </summary>
         </member>
+        <member name="F:osu.Game.Beatmaps.ControlPoints.TimingControlPoint.default_beat_length">
+            <summary>
+            Default length of a beat in milliseconds. Used whenever there is no beatmap or track playing.
+            </summary>
+        </member>
         <member name="P:osu.Game.Beatmaps.ControlPoints.TimingControlPoint.TimeSignature">
             <summary>
             The time signature at this control point.
@@ -810,6 +905,12 @@
             Invoked when a new <see cref="T:osu.Game.Beatmaps.Formats.LegacyDecoder`1.Section"/> has been entered.
             </summary>
             <param name="section">The entered <see cref="T:osu.Game.Beatmaps.Formats.LegacyDecoder`1.Section"/>.</param>
+        </member>
+        <member name="F:osu.Game.Beatmaps.Formats.LegacyDecoder`1.LegacyDifficultyControlPoint.BpmMultiplier">
+            <summary>
+            Legacy BPM multiplier that introduces floating-point errors for rulesets that depend on it.
+            DO NOT USE THIS UNLESS 100% SURE.
+            </summary>
         </member>
         <member name="T:osu.Game.Beatmaps.Formats.LegacyDifficultyCalculatorBeatmapDecoder">
             <summary>
@@ -1672,11 +1773,6 @@
             An optional minimum beat length. Any beat length below this will be multiplied by two until valid.
             </summary>
         </member>
-        <member name="F:osu.Game.Graphics.Containers.BeatSyncedContainer.default_beat_length">
-            <summary>
-            Default length of a beat in milliseconds. Used whenever there is no beatmap or track playing.
-            </summary>
-        </member>
         <member name="T:osu.Game.Graphics.Containers.ConstrainedIconContainer">
             <summary>
             Display an icon that is forced to scale to the size of this container.
@@ -2192,6 +2288,12 @@
             A Checkbox styled to be placed in line with an <see cref="T:osu.Game.Graphics.UserInterface.OsuTabControl`1"/>
             </summary>
         </member>
+        <member name="P:osu.Game.Graphics.UserInterface.OsuTextBox.AllowUniqueCharacterSamples">
+            <summary>
+            Whether to allow playing a different samples based on the type of character.
+            If set to false, the same sample will be used for all characters.
+            </summary>
+        </member>
         <member name="T:osu.Game.Graphics.UserInterface.PercentageCounter">
             <summary>
             Used as an accuracy counter. Represented visually as a percentage.
@@ -2659,12 +2761,55 @@
             This includes any peeked but unconsumed lines.
             </summary>
         </member>
+        <member name="F:osu.Game.IO.OsuStorage.Error">
+            <summary>
+            Indicates the error (if any) that occurred when initialising the custom storage during initial startup.
+            </summary>
+        </member>
+        <member name="P:osu.Game.IO.OsuStorage.CustomStoragePath">
+            <summary>
+            The custom storage path as selected by the user.
+            </summary>
+        </member>
+        <member name="P:osu.Game.IO.OsuStorage.DefaultStoragePath">
+            <summary>
+            The default storage path to be used if a custom storage path hasn't been selected or is not accessible.
+            </summary>
+        </member>
+        <member name="M:osu.Game.IO.OsuStorage.ResetCustomStoragePath">
+            <summary>
+            Resets the custom storage path, changing the target storage to the default location.
+            </summary>
+        </member>
+        <member name="M:osu.Game.IO.OsuStorage.TryChangeToCustomStorage(osu.Game.IO.OsuStorageError@)">
+            <summary>
+            Attempts to change to the user's custom storage path.
+            </summary>
+            <param name="error">The error that occurred.</param>
+            <returns>Whether the custom storage path was used successfully. If not, <paramref name="error"/> will be populated with the reason.</returns>
+        </member>
         <member name="M:osu.Game.IO.OsuStorage.attemptOperation(System.Action,System.Int32)">
             <summary>
             Attempt an IO operation multiple times and only throw if none of the attempts succeed.
             </summary>
             <param name="action">The action to perform.</param>
             <param name="attempts">The number of attempts (250ms wait between each).</param>
+        </member>
+        <member name="F:osu.Game.IO.OsuStorageError.None">
+            <summary>
+            No error.
+            </summary>
+        </member>
+        <member name="F:osu.Game.IO.OsuStorageError.AccessibleButEmpty">
+            <summary>
+            Occurs when the target storage directory is accessible but does not already contain game files.
+            Only happens when the user changes the storage directory and then moves the files manually or mounts a different device to the same path.
+            </summary>
+        </member>
+        <member name="F:osu.Game.IO.OsuStorageError.NotAccessible">
+            <summary>
+            Occurs when the target storage directory cannot be accessed at all.
+            </summary>
         </member>
         <member name="T:osu.Game.IO.Serialization.Converters.TypedListConverter`1">
             <summary>
@@ -2766,6 +2911,11 @@
         <member name="T:osu.Game.Online.API.APIRequest">
             <summary>
             AN API request with no specified response type.
+            </summary>
+        </member>
+        <member name="P:osu.Game.Online.API.APIRequest.User">
+            <summary>
+            The currently logged in user. Note that this will only be populated during <see cref="M:osu.Game.Online.API.APIRequest.Perform(osu.Game.Online.API.IAPIProvider)"/>.
             </summary>
         </member>
         <member name="E:osu.Game.Online.API.APIRequest.Success">
@@ -3133,7 +3283,72 @@
             <param name="scoresCallback">A callback which should be called when fetching is completed. Scheduling is not required.</param>
             <returns>An <see cref="T:osu.Game.Online.API.APIRequest"/> responsible for the fetch operation. This will be queued and performed automatically.</returns>
         </member>
-        <member name="P:osu.Game.Online.Multiplayer.Room.Position">
+        <member name="T:osu.Game.Online.Multiplayer.IndexedMultiplayerScores">
+            <summary>
+            A <see cref="T:osu.Game.Online.Multiplayer.MultiplayerScores"/> object returned via a <see cref="T:osu.Game.Online.Multiplayer.IndexPlaylistScoresRequest"/>.
+            </summary>
+        </member>
+        <member name="P:osu.Game.Online.Multiplayer.IndexedMultiplayerScores.TotalScores">
+            <summary>
+            The total scores in the playlist item.
+            </summary>
+        </member>
+        <member name="P:osu.Game.Online.Multiplayer.IndexedMultiplayerScores.UserScore">
+            <summary>
+            The user's score, if any.
+            </summary>
+        </member>
+        <member name="T:osu.Game.Online.Multiplayer.IndexPlaylistScoresRequest">
+            <summary>
+            Returns a list of scores for the specified playlist item.
+            </summary>
+        </member>
+        <member name="T:osu.Game.Online.Multiplayer.IndexScoresParams">
+            <summary>
+            A collection of parameters which should be passed to the index endpoint to fetch the next page.
+            </summary>
+        </member>
+        <member name="P:osu.Game.Online.Multiplayer.MultiplayerScore.Position">
+            <summary>
+            The position of this score, starting at 1.
+            </summary>
+        </member>
+        <member name="P:osu.Game.Online.Multiplayer.MultiplayerScore.ScoresAround">
+            <summary>
+            Any scores in the room around this score.
+            </summary>
+        </member>
+        <member name="T:osu.Game.Online.Multiplayer.MultiplayerScores">
+            <summary>
+            An object which contains scores and related data for fetching next pages.
+            </summary>
+        </member>
+        <member name="P:osu.Game.Online.Multiplayer.MultiplayerScores.Scores">
+            <summary>
+            The scores.
+            </summary>
+        </member>
+        <member name="P:osu.Game.Online.Multiplayer.MultiplayerScores.Params">
+            <summary>
+            The parameters to be used to fetch the next page.
+            </summary>
+        </member>
+        <member name="T:osu.Game.Online.Multiplayer.MultiplayerScoresAround">
+            <summary>
+            An object which stores scores higher and lower than the user's score.
+            </summary>
+        </member>
+        <member name="P:osu.Game.Online.Multiplayer.MultiplayerScoresAround.Higher">
+            <summary>
+            Scores sorted "higher" than the user's score, depending on the sorting order.
+            </summary>
+        </member>
+        <member name="P:osu.Game.Online.Multiplayer.MultiplayerScoresAround.Lower">
+            <summary>
+            Scores sorted "lower" than the user's score, depending on the sorting order.
+            </summary>
+        </member>
+        <member name="F:osu.Game.Online.Multiplayer.Room.Position">
             <summary>
             The position of this <see cref="T:osu.Game.Online.Multiplayer.Room"/> in the list. This is not read from or written to the API.
             </summary>
@@ -3295,6 +3510,11 @@
         <member name="F:osu.Game.OsuGameBase.AvailableMods">
             <summary>
             Mods available for the current <see cref="F:osu.Game.OsuGameBase.Ruleset"/>.
+            </summary>
+        </member>
+        <member name="P:osu.Game.OsuGameBase.VersionHash">
+            <summary>
+            MD5 representation of the game executable.
             </summary>
         </member>
         <member name="F:osu.Game.Overlays.BeatmapListing.BeatmapListingFilterControl.SearchFinished">
@@ -3467,6 +3687,12 @@
             Returns whether the current beatmap track is playing.
             </summary>
         </member>
+        <member name="M:osu.Game.Overlays.MusicController.EnsurePlayingSomething">
+            <summary>
+            Ensures music is playing, no matter what, unless the user has explicitly paused.
+            This means that if the current beatmap has a virtual track (see <see cref="T:osu.Framework.Audio.Track.TrackVirtual"/>) a new beatmap will be selected.
+            </summary>
+        </member>
         <member name="M:osu.Game.Overlays.MusicController.Play(System.Boolean)">
             <summary>
             Start playing the current track (if not already playing).
@@ -3574,6 +3800,11 @@
             Displays the provided <see cref="T:osu.Game.Overlays.OSD.Toast"/> temporarily.
             </summary>
             <param name="toast"></param>
+        </member>
+        <member name="P:osu.Game.Overlays.OverlayHeader.ContentSidePadding">
+            <summary>
+            Horizontal padding of the header content.
+            </summary>
         </member>
         <member name="M:osu.Game.Overlays.OverlayHeader.CreateTitleContent">
             <summary>
@@ -4350,6 +4581,11 @@
             An interface for a mod which can temporarily override the <see cref="T:osu.Game.Screens.Play.Player"/> settings.
             </summary>
         </member>
+        <member name="T:osu.Game.Rulesets.Mods.IApplicableToSample">
+            <summary>
+            An interface for mods that make adjustments to a sample.
+            </summary>
+        </member>
         <member name="T:osu.Game.Rulesets.Mods.IApplicableToScoreProcessor">
             <summary>
             An interface for mods that make general adjustments to score processor.
@@ -4630,6 +4866,18 @@
             <param name="skin">The new skin.</param>
             <param name="allowFallback">Whether fallback to default skin should be allowed if the custom skin is missing this resource.</param>
         </member>
+        <member name="M:osu.Game.Rulesets.Objects.Drawables.DrawableHitObject.CalculateSamplePlaybackBalance(System.Double)">
+            <summary>
+            Calculate the position to be used for sample playback at a specified X position (0..1).
+            </summary>
+            <param name="position">The lookup X position. Generally should be <see cref="P:osu.Game.Rulesets.Objects.Drawables.DrawableHitObject.SamplePlaybackPosition"/>.</param>
+            <returns></returns>
+        </member>
+        <member name="P:osu.Game.Rulesets.Objects.Drawables.DrawableHitObject.ShouldPlaySamples">
+            <summary>
+            Whether samples should currently be playing. Will be false during seek operations.
+            </summary>
+        </member>
         <member name="M:osu.Game.Rulesets.Objects.Drawables.DrawableHitObject.PlaySamples">
             <summary>
             Plays all the hit sounds for this <see cref="T:osu.Game.Rulesets.Objects.Drawables.DrawableHitObject"/>.
@@ -4883,6 +5131,15 @@
             <param name="newCombo">Whether the hit object creates a new combo.</param>
             <param name="comboOffset">When starting a new combo, the offset of the new combo relative to the current one.</param>
             <param name="duration">The hold duration.</param>
+        </member>
+        <member name="P:osu.Game.Rulesets.Objects.Legacy.ConvertHitObjectParser.LegacyHitSampleInfo.IsLayered">
+            <summary>
+            Whether this hit sample is layered.
+            </summary>
+            <remarks>
+            Layered hit samples are automatically added in all modes (except osu!mania), but can be disabled
+            using the <see cref="F:osu.Game.Skinning.GlobalSkinConfiguration.LayeredHitSounds"/> skin config option.
+            </remarks>
         </member>
         <member name="F:osu.Game.Rulesets.Objects.Legacy.ConvertSlider.base_scoring_distance">
             <summary>
@@ -5436,6 +5693,14 @@
             </summary>
             <returns>An empty frame for the current ruleset, or null if unsupported.</returns>
         </member>
+        <member name="M:osu.Game.Rulesets.Ruleset.CreateStatisticsForScore(osu.Game.Scoring.ScoreInfo,osu.Game.Beatmaps.IBeatmap)">
+            <summary>
+            Creates the statistics for a <see cref="T:osu.Game.Scoring.ScoreInfo"/> to be displayed in the results screen.
+            </summary>
+            <param name="score">The <see cref="T:osu.Game.Scoring.ScoreInfo"/> to create the statistics for. The score is guaranteed to have <see cref="P:osu.Game.Scoring.ScoreInfo.HitEvents"/> populated.</param>
+            <param name="playableBeatmap">The <see cref="T:osu.Game.Beatmaps.IBeatmap"/>, converted for this <see cref="T:osu.Game.Rulesets.Ruleset"/> with all relevant <see cref="T:osu.Game.Rulesets.Mods.Mod"/>s applied.</param>
+            <returns>The <see cref="T:osu.Game.Screens.Ranking.Statistics.StatisticRow"/>s to display. Each <see cref="T:osu.Game.Screens.Ranking.Statistics.StatisticRow"/> may contain 0 or more <see cref="T:osu.Game.Screens.Ranking.Statistics.StatisticItem"/>.</returns>
+        </member>
         <member name="T:osu.Game.Rulesets.RulesetConfigCache">
             <summary>
             A cache that provides a single <see cref="T:osu.Game.Rulesets.Configuration.IRulesetConfigManager"/> per-ruleset.
@@ -5551,6 +5816,53 @@
             <summary>
             The default conditions for failing.
             </summary>
+        </member>
+        <member name="T:osu.Game.Rulesets.Scoring.HitEvent">
+            <summary>
+            A <see cref="T:osu.Game.Rulesets.Scoring.HitEvent"/> generated by the <see cref="T:osu.Game.Rulesets.Scoring.ScoreProcessor"/> containing extra statistics around a <see cref="T:osu.Game.Rulesets.Scoring.HitResult"/>.
+            </summary>
+        </member>
+        <member name="F:osu.Game.Rulesets.Scoring.HitEvent.TimeOffset">
+            <summary>
+            The time offset from the end of <see cref="F:osu.Game.Rulesets.Scoring.HitEvent.HitObject"/> at which the event occurred.
+            </summary>
+        </member>
+        <member name="F:osu.Game.Rulesets.Scoring.HitEvent.Result">
+            <summary>
+            The hit result.
+            </summary>
+        </member>
+        <member name="F:osu.Game.Rulesets.Scoring.HitEvent.HitObject">
+            <summary>
+            The <see cref="F:osu.Game.Rulesets.Scoring.HitEvent.HitObject"/> on which the result occurred.
+            </summary>
+        </member>
+        <member name="F:osu.Game.Rulesets.Scoring.HitEvent.LastHitObject">
+            <summary>
+            The <see cref="F:osu.Game.Rulesets.Scoring.HitEvent.HitObject"/> occurring prior to <see cref="F:osu.Game.Rulesets.Scoring.HitEvent.HitObject"/>.
+            </summary>
+        </member>
+        <member name="F:osu.Game.Rulesets.Scoring.HitEvent.Position">
+            <summary>
+            A position, if available, at the time of the event.
+            </summary>
+        </member>
+        <member name="M:osu.Game.Rulesets.Scoring.HitEvent.#ctor(System.Double,osu.Game.Rulesets.Scoring.HitResult,osu.Game.Rulesets.Objects.HitObject,osu.Game.Rulesets.Objects.HitObject,System.Nullable{osuTK.Vector2})">
+            <summary>
+            Creates a new <see cref="T:osu.Game.Rulesets.Scoring.HitEvent"/>.
+            </summary>
+            <param name="timeOffset">The time offset from the end of <paramref name="hitObject"/> at which the event occurs.</param>
+            <param name="result">The <see cref="T:osu.Game.Rulesets.Scoring.HitResult"/>.</param>
+            <param name="hitObject">The <see cref="F:osu.Game.Rulesets.Scoring.HitEvent.HitObject"/> that triggered the event.</param>
+            <param name="lastHitObject">The previous <see cref="F:osu.Game.Rulesets.Scoring.HitEvent.HitObject"/>.</param>
+            <param name="position">A position corresponding to the event.</param>
+        </member>
+        <member name="M:osu.Game.Rulesets.Scoring.HitEvent.With(System.Nullable{osuTK.Vector2})">
+            <summary>
+            Creates a new <see cref="T:osu.Game.Rulesets.Scoring.HitEvent"/> with an optional positional offset.
+            </summary>
+            <param name="positionOffset">The positional offset.</param>
+            <returns>The new <see cref="T:osu.Game.Rulesets.Scoring.HitEvent"/>.</returns>
         </member>
         <member name="F:osu.Game.Rulesets.Scoring.HitResult.None">
             <summary>
@@ -5768,6 +6080,23 @@
             <summary>
             The <see cref="T:osu.Game.Rulesets.Scoring.ScoringMode"/> used to calculate scores.
             </summary>
+        </member>
+        <member name="P:osu.Game.Rulesets.Scoring.ScoreProcessor.DefaultAccuracyPortion">
+            <summary>
+            The default portion of <see cref="F:osu.Game.Rulesets.Scoring.ScoreProcessor.max_score"/> awarded for hitting <see cref="T:osu.Game.Rulesets.Objects.HitObject"/>s accurately. Defaults to 30%.
+            </summary>
+        </member>
+        <member name="P:osu.Game.Rulesets.Scoring.ScoreProcessor.DefaultComboPortion">
+            <summary>
+            The default portion of <see cref="F:osu.Game.Rulesets.Scoring.ScoreProcessor.max_score"/> awarded for achieving a high combo. Default to 70%.
+            </summary>
+        </member>
+        <member name="M:osu.Game.Rulesets.Scoring.ScoreProcessor.CreateHitEvent(osu.Game.Rulesets.Judgements.JudgementResult)">
+            <summary>
+            Creates the <see cref="T:osu.Game.Rulesets.Scoring.HitEvent"/> that describes a <see cref="T:osu.Game.Rulesets.Judgements.JudgementResult"/>.
+            </summary>
+            <param name="result">The <see cref="T:osu.Game.Rulesets.Judgements.JudgementResult"/> to describe.</param>
+            <returns>The <see cref="T:osu.Game.Rulesets.Scoring.HitEvent"/>.</returns>
         </member>
         <member name="M:osu.Game.Rulesets.Scoring.ScoreProcessor.Reset(System.Boolean)">
             <summary>
@@ -6267,7 +6596,12 @@
             <param name="time">The time which the <see cref="T:osu.Game.Rulesets.Timing.MultiplierControlPoint"/> should affect.</param>
             <returns>The <see cref="T:osu.Game.Rulesets.Timing.MultiplierControlPoint"/>.</returns>
         </member>
-        <member name="M:osu.Game.Rulesets.UI.Scrolling.Algorithms.SequentialScrollAlgorithm.relativePositionAt(System.Double,System.Double)">
+        <member name="F:osu.Game.Rulesets.UI.Scrolling.Algorithms.SequentialScrollAlgorithm.positionMappings">
+            <summary>
+            Stores a mapping of time -> position for each control point.
+            </summary>
+        </member>
+        <member name="M:osu.Game.Rulesets.UI.Scrolling.Algorithms.SequentialScrollAlgorithm.relativePositionAt(System.Double@,System.Double@)">
             <summary>
             Finds the position which corresponds to a point in time.
             This is a non-linear operation that depends on all the control points up to and including the one active at the time value.
@@ -6275,6 +6609,39 @@
             <param name="time">The time to find the position at.</param>
             <param name="timeRange">The amount of time visualised by the scrolling area.</param>
             <returns>A positive value indicating the position at <paramref name="time"/>.</returns>
+        </member>
+        <member name="M:osu.Game.Rulesets.UI.Scrolling.Algorithms.SequentialScrollAlgorithm.findControlPointMapping(System.Double@,osu.Game.Rulesets.UI.Scrolling.Algorithms.SequentialScrollAlgorithm.PositionMapping@,System.Collections.Generic.IComparer{osu.Game.Rulesets.UI.Scrolling.Algorithms.SequentialScrollAlgorithm.PositionMapping})">
+            <summary>
+            Finds a <see cref="T:osu.Game.Rulesets.Timing.MultiplierControlPoint"/>'s <see cref="T:osu.Game.Rulesets.UI.Scrolling.Algorithms.SequentialScrollAlgorithm.PositionMapping"/> that is relevant to a given <see cref="T:osu.Game.Rulesets.UI.Scrolling.Algorithms.SequentialScrollAlgorithm.PositionMapping"/>.
+            </summary>
+            <remarks>
+            This is used to find the last <see cref="T:osu.Game.Rulesets.Timing.MultiplierControlPoint"/> occuring prior to a time value, or prior to a position value (if <see cref="F:osu.Game.Rulesets.UI.Scrolling.Algorithms.SequentialScrollAlgorithm.by_position_comparer"/> is used).
+            </remarks>
+            <param name="timeRange">The time range.</param>
+            <param name="search">The <see cref="T:osu.Game.Rulesets.UI.Scrolling.Algorithms.SequentialScrollAlgorithm.PositionMapping"/> to find the closest <see cref="T:osu.Game.Rulesets.UI.Scrolling.Algorithms.SequentialScrollAlgorithm.PositionMapping"/> to.</param>
+            <param name="comparer">The comparison. If null, the default comparer is used (by time).</param>
+            <returns>The <see cref="T:osu.Game.Rulesets.Timing.MultiplierControlPoint"/>'s <see cref="T:osu.Game.Rulesets.UI.Scrolling.Algorithms.SequentialScrollAlgorithm.PositionMapping"/> that is relevant for <paramref name="search"/>.</returns>
+        </member>
+        <member name="M:osu.Game.Rulesets.UI.Scrolling.Algorithms.SequentialScrollAlgorithm.generatePositionMappings(System.Double@)">
+            <summary>
+            Generates the mapping of <see cref="T:osu.Game.Rulesets.Timing.MultiplierControlPoint"/> (and their respective start times) to their relative position from 0.
+            </summary>
+            <param name="timeRange">The time range.</param>
+        </member>
+        <member name="F:osu.Game.Rulesets.UI.Scrolling.Algorithms.SequentialScrollAlgorithm.PositionMapping.Time">
+            <summary>
+            The time corresponding to this position.
+            </summary>
+        </member>
+        <member name="F:osu.Game.Rulesets.UI.Scrolling.Algorithms.SequentialScrollAlgorithm.PositionMapping.ControlPoint">
+            <summary>
+            The <see cref="T:osu.Game.Rulesets.Timing.MultiplierControlPoint"/> at <see cref="F:osu.Game.Rulesets.UI.Scrolling.Algorithms.SequentialScrollAlgorithm.PositionMapping.Time"/>.
+            </summary>
+        </member>
+        <member name="F:osu.Game.Rulesets.UI.Scrolling.Algorithms.SequentialScrollAlgorithm.PositionMapping.Position">
+            <summary>
+            The relative position from 0 of <see cref="F:osu.Game.Rulesets.UI.Scrolling.Algorithms.SequentialScrollAlgorithm.PositionMapping.ControlPoint"/>.
+            </summary>
         </member>
         <member name="T:osu.Game.Rulesets.UI.Scrolling.DrawableScrollingRuleset`1">
             <summary>
@@ -6409,6 +6776,11 @@
             </summary>
             <param name="md5Hash">The MD5 hash.</param>
             <returns>The <see cref="T:osu.Game.Beatmaps.WorkingBeatmap"/>.</returns>
+        </member>
+        <member name="P:osu.Game.Scoring.ScoreInfo.Position">
+            <summary>
+            The position of this score, starting at 1.
+            </summary>
         </member>
         <member name="F:osu.Game.Screens.Backgrounds.BackgroundScreenBeatmap.USER_BLUR_FACTOR">
             <summary>
@@ -7088,6 +7460,15 @@
             Whether mod rate adjustments are allowed to be applied.
             </summary>
         </member>
+        <member name="M:osu.Game.Screens.IOsuScreen.OnBackButton">
+            <summary>
+            Invoked when the back button has been pressed to close any overlays before exiting this <see cref="T:osu.Game.Screens.IOsuScreen"/>.
+            </summary>
+            <remarks>
+            Return <c>true</c> to block this <see cref="T:osu.Game.Screens.IOsuScreen"/> from being exited after closing an overlay.
+            Return <c>false</c> if this <see cref="T:osu.Game.Screens.IOsuScreen"/> should continue exiting.
+            </remarks>
+        </member>
         <member name="T:osu.Game.Screens.Loader.ShaderPrecompiler">
             <summary>
             Compiles a set of shaders before continuing. Attempts to draw some frames between compilation by limiting to one compile per draw frame.
@@ -7187,6 +7568,11 @@
             The minimum amplitude to show a bar.
             </summary>
         </member>
+        <member name="P:osu.Game.Screens.Menu.LogoVisualisation.Magnitude">
+            <summary>
+            The relative movement of bars based on input amplification. Defaults to 1.
+            </summary>
+        </member>
         <member name="T:osu.Game.Screens.Menu.OsuLogo">
             <summary>
             osu! logo and its attachments (pulsing, visualiser etc.)
@@ -7209,6 +7595,11 @@
             </summary>
             <param name="action">The animation to be performed</param>
             <param name="waitForPrevious">If true, the new animation is delayed until all previous transforms finish. If false, existing transformed are cleared.</param>
+        </member>
+        <member name="T:osu.Game.Screens.Multi.Components.OverlinedHeader">
+            <summary>
+            A header used in the multiplayer interface which shows text / details beneath a line.
+            </summary>
         </member>
         <member name="E:osu.Game.Screens.Multi.IRoomManager.RoomsUpdated">
             <summary>
@@ -7237,7 +7628,7 @@
             <summary>
             Joins a <see cref="T:osu.Game.Online.Multiplayer.Room"/>.
             </summary>
-            <param name="room">The <see cref="T:osu.Game.Online.Multiplayer.Room"/> to join. <see cref="P:osu.Game.Online.Multiplayer.Room.RoomID"/> must be populated.</param>
+            <param name="room">The <see cref="T:osu.Game.Online.Multiplayer.Room"/> to join. <see cref="F:osu.Game.Online.Multiplayer.Room.RoomID"/> must be populated.</param>
             <param name="onSuccess"></param>
             <param name="onError"></param>
         </member>
@@ -7246,10 +7637,57 @@
             Parts the currently-joined <see cref="T:osu.Game.Online.Multiplayer.Room"/>.
             </summary>
         </member>
+        <member name="M:osu.Game.Screens.Multi.Lounge.Components.RoomsContainer.beginRepeatSelection(System.Action,System.Object)">
+            <summary>
+            Begin repeating the specified selection action.
+            </summary>
+            <param name="action">The action to perform.</param>
+            <param name="source">The source of the action. Used in conjunction with <see cref="M:osu.Game.Screens.Multi.Lounge.Components.RoomsContainer.endRepeatSelection(System.Object)"/> to only cancel the correct action (most recently pressed key).</param>
+        </member>
         <member name="M:osu.Game.Screens.Multi.Lounge.LoungeSubScreen.Open(osu.Game.Online.Multiplayer.Room)">
             <summary>
             Push a room as a new subscreen.
             </summary>
+        </member>
+        <member name="M:osu.Game.Screens.Multi.Ranking.TimeshiftResultsScreen.createIndexRequest(System.Action{System.Collections.Generic.IEnumerable{osu.Game.Scoring.ScoreInfo}},osu.Game.Online.Multiplayer.MultiplayerScores)">
+            <summary>
+            Creates a <see cref="T:osu.Game.Online.Multiplayer.IndexPlaylistScoresRequest"/> with an optional score pivot.
+            </summary>
+            <remarks>Does not queue the request.</remarks>
+            <param name="scoresCallback">The callback to perform with the resulting scores.</param>
+            <param name="pivot">An optional score pivot to retrieve scores around. Can be null to retrieve scores from the highest score.</param>
+            <returns>The indexing <see cref="T:osu.Game.Online.API.APIRequest"/>.</returns>
+        </member>
+        <member name="M:osu.Game.Screens.Multi.Ranking.TimeshiftResultsScreen.performSuccessCallback(System.Action{System.Collections.Generic.IEnumerable{osu.Game.Scoring.ScoreInfo}},System.Collections.Generic.List{osu.Game.Online.Multiplayer.MultiplayerScore},osu.Game.Online.Multiplayer.MultiplayerScores)">
+            <summary>
+            Transforms returned <see cref="T:osu.Game.Online.Multiplayer.MultiplayerScores"/> into <see cref="T:osu.Game.Scoring.ScoreInfo"/>s, ensure the <see cref="T:osu.Game.Screens.Ranking.ScorePanelList"/> is put into a sane state, and invokes a given success callback.
+            </summary>
+            <param name="callback">The callback to invoke with the final <see cref="T:osu.Game.Scoring.ScoreInfo"/>s.</param>
+            <param name="scores">The <see cref="T:osu.Game.Online.Multiplayer.MultiplayerScore"/>s that were retrieved from <see cref="T:osu.Game.Online.API.APIRequest"/>s.</param>
+            <param name="pivot">An optional pivot around which the scores were retrieved.</param>
+        </member>
+        <member name="M:osu.Game.Screens.Multi.Ranking.TimeshiftResultsScreen.setPositions(osu.Game.Online.Multiplayer.MultiplayerScores,osu.Game.Online.Multiplayer.MultiplayerScores,System.Int32)">
+            <summary>
+            Applies positions to all <see cref="T:osu.Game.Online.Multiplayer.MultiplayerScore"/>s referenced to a given pivot.
+            </summary>
+            <param name="scores">The <see cref="T:osu.Game.Online.Multiplayer.MultiplayerScores"/> to set positions on.</param>
+            <param name="pivot">The pivot.</param>
+            <param name="increment">The amount to increment the pivot position by for each <see cref="T:osu.Game.Online.Multiplayer.MultiplayerScore"/> in <paramref name="scores"/>.</param>
+        </member>
+        <member name="M:osu.Game.Screens.Multi.Ranking.TimeshiftResultsScreen.setPositions(osu.Game.Online.Multiplayer.MultiplayerScores,System.Int32,System.Int32)">
+            <summary>
+            Applies positions to all <see cref="T:osu.Game.Online.Multiplayer.MultiplayerScore"/>s referenced to a given pivot.
+            </summary>
+            <param name="scores">The <see cref="T:osu.Game.Online.Multiplayer.MultiplayerScores"/> to set positions on.</param>
+            <param name="pivotPosition">The pivot position.</param>
+            <param name="increment">The amount to increment the pivot position by for each <see cref="T:osu.Game.Online.Multiplayer.MultiplayerScore"/> in <paramref name="scores"/>.</param>
+        </member>
+        <member name="M:osu.Game.Screens.Multi.Ranking.TimeshiftResultsScreen.PanelListLoadingSpinner.#ctor(osu.Game.Screens.Ranking.ScorePanelList,System.Boolean)">
+            <summary>
+            Creates a new <see cref="T:osu.Game.Screens.Multi.Ranking.TimeshiftResultsScreen.PanelListLoadingSpinner"/>.
+            </summary>
+            <param name="list">The list to track.</param>
+            <param name="withBox">Whether the spinner should have a surrounding black box for visibility.</param>
         </member>
         <member name="M:osu.Game.Screens.Multi.RoomManager.onListingReceived(System.Collections.Generic.List{osu.Game.Online.Multiplayer.Room})">
             <summary>
@@ -7481,10 +7919,15 @@
         </member>
         <member name="T:osu.Game.Screens.Play.HUD.FailingLayer">
             <summary>
-            An overlay layer on top of the playfield which fades to red when the current player health falls below a certain threshold defined by <see cref="F:osu.Game.Screens.Play.HUD.FailingLayer.LowHealthThreshold"/>.
+            An overlay layer on top of the playfield which fades to red when the current player health falls below a certain threshold defined by <see cref="F:osu.Game.Screens.Play.HUD.FailingLayer.low_health_threshold"/>.
             </summary>
         </member>
-        <member name="F:osu.Game.Screens.Play.HUD.FailingLayer.LowHealthThreshold">
+        <member name="F:osu.Game.Screens.Play.HUD.FailingLayer.ShowHealth">
+            <summary>
+            Whether the current player health should be shown on screen.
+            </summary>
+        </member>
+        <member name="F:osu.Game.Screens.Play.HUD.FailingLayer.low_health_threshold">
             <summary>
             The threshold under which the current player life should be considered low and the layer should start fading in.
             </summary>
@@ -7848,6 +8291,14 @@
             <param name="scoresCallback">A callback which should be called when fetching is completed. Scheduling is not required.</param>
             <returns>An <see cref="T:osu.Game.Online.API.APIRequest"/> responsible for the fetch operation. This will be queued and performed automatically.</returns>
         </member>
+        <member name="M:osu.Game.Screens.Ranking.ResultsScreen.FetchNextPage(System.Int32,System.Action{System.Collections.Generic.IEnumerable{osu.Game.Scoring.ScoreInfo}})">
+            <summary>
+            Performs a fetch of the next page of scores. This is invoked every frame until a non-null <see cref="T:osu.Game.Online.API.APIRequest"/> is returned.
+            </summary>
+            <param name="direction">The fetch direction. -1 to fetch scores greater than the current start of the list, and 1 to fetch scores lower than the current end of the list.</param>
+            <param name="scoresCallback">A callback which should be called when fetching is completed. Scheduling is not required.</param>
+            <returns>An <see cref="T:osu.Game.Online.API.APIRequest"/> responsible for the fetch operation. This will be queued and performed automatically.</returns>
+        </member>
         <member name="F:osu.Game.Screens.Ranking.ScorePanel.CONTRACTED_WIDTH">
             <summary>
             Width of the panel when contracted.
@@ -7898,6 +8349,22 @@
             Duration for the panel contents to fade in.
             </summary>
         </member>
+        <member name="F:osu.Game.Screens.Ranking.ScorePanel.PostExpandAction">
+            <summary>
+            An action to be invoked if this <see cref="T:osu.Game.Screens.Ranking.ScorePanel"/> is clicked while in an expanded state.
+            </summary>
+        </member>
+        <member name="M:osu.Game.Screens.Ranking.ScorePanel.CreateTrackingContainer">
+            <summary>
+            Creates a <see cref="T:osu.Game.Screens.Ranking.ScorePanelTrackingContainer"/> which this <see cref="T:osu.Game.Screens.Ranking.ScorePanel"/> can reside inside.
+            The <see cref="T:osu.Game.Screens.Ranking.ScorePanelTrackingContainer"/> will track the size of this <see cref="T:osu.Game.Screens.Ranking.ScorePanel"/>.
+            </summary>
+            <remarks>
+            This <see cref="T:osu.Game.Screens.Ranking.ScorePanel"/> is immediately added as a child of the <see cref="T:osu.Game.Screens.Ranking.ScorePanelTrackingContainer"/>.
+            </remarks>
+            <returns>The <see cref="T:osu.Game.Screens.Ranking.ScorePanelTrackingContainer"/>.</returns>
+            <exception cref="T:System.InvalidOperationException">If a <see cref="T:osu.Game.Screens.Ranking.ScorePanelTrackingContainer"/> already exists.</exception>
+        </member>
         <member name="F:osu.Game.Screens.Ranking.ScorePanelList.panel_spacing">
             <summary>
             Normal spacing between all panels.
@@ -7906,6 +8373,41 @@
         <member name="F:osu.Game.Screens.Ranking.ScorePanelList.expanded_panel_spacing">
             <summary>
             Spacing around both sides of the expanded panel. This is added on top of <see cref="F:osu.Game.Screens.Ranking.ScorePanelList.panel_spacing"/>.
+            </summary>
+        </member>
+        <member name="F:osu.Game.Screens.Ranking.ScorePanelList.scroll_endpoint_distance">
+            <summary>
+            Minimum distance from either end point of the list that the list can be considered scrolled to the end point.
+            </summary>
+        </member>
+        <member name="P:osu.Game.Screens.Ranking.ScorePanelList.IsScrolledToStart">
+            <summary>
+            Whether this <see cref="T:osu.Game.Screens.Ranking.ScorePanelList"/> can be scrolled and is currently scrolled to the start.
+            </summary>
+        </member>
+        <member name="P:osu.Game.Screens.Ranking.ScorePanelList.IsScrolledToEnd">
+            <summary>
+            Whether this <see cref="T:osu.Game.Screens.Ranking.ScorePanelList"/> can be scrolled and is currently scrolled to the end.
+            </summary>
+        </member>
+        <member name="P:osu.Game.Screens.Ranking.ScorePanelList.Current">
+            <summary>
+            The current scroll position.
+            </summary>
+        </member>
+        <member name="P:osu.Game.Screens.Ranking.ScorePanelList.ScrollableExtent">
+            <summary>
+            The scrollable extent.
+            </summary>
+        </member>
+        <member name="F:osu.Game.Screens.Ranking.ScorePanelList.PostExpandAction">
+            <summary>
+            An action to be invoked if a <see cref="T:osu.Game.Screens.Ranking.ScorePanel"/> is clicked while in an expanded state.
+            </summary>
+        </member>
+        <member name="M:osu.Game.Screens.Ranking.ScorePanelList.#ctor">
+            <summary>
+            Creates a new <see cref="T:osu.Game.Screens.Ranking.ScorePanelList"/>.
             </summary>
         </member>
         <member name="M:osu.Game.Screens.Ranking.ScorePanelList.AddScore(osu.Game.Scoring.ScoreInfo)">
@@ -7920,6 +8422,39 @@
             </summary>
             <param name="score">The <see cref="T:osu.Game.Scoring.ScoreInfo"/> to present.</param>
         </member>
+        <member name="P:osu.Game.Screens.Ranking.ScorePanelList.HandleInput">
+            <summary>
+            Whether this <see cref="T:osu.Game.Screens.Ranking.ScorePanelList"/> or any of the <see cref="T:osu.Game.Screens.Ranking.ScorePanel"/>s contained should handle scroll or click input.
+            Setting to <c>false</c> will also hide the scrollbar.
+            </summary>
+        </member>
+        <member name="M:osu.Game.Screens.Ranking.ScorePanelList.GetScorePanels">
+            <summary>
+            Enumerates all <see cref="T:osu.Game.Screens.Ranking.ScorePanel"/>s contained in this <see cref="T:osu.Game.Screens.Ranking.ScorePanelList"/>.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:osu.Game.Screens.Ranking.ScorePanelList.GetPanelForScore(osu.Game.Scoring.ScoreInfo)">
+            <summary>
+            Finds the <see cref="T:osu.Game.Screens.Ranking.ScorePanel"/> corresponding to a <see cref="T:osu.Game.Scoring.ScoreInfo"/>.
+            </summary>
+            <param name="score">The <see cref="T:osu.Game.Scoring.ScoreInfo"/> to find the corresponding <see cref="T:osu.Game.Screens.Ranking.ScorePanel"/> for.</param>
+            <returns>The <see cref="T:osu.Game.Screens.Ranking.ScorePanel"/>.</returns>
+        </member>
+        <member name="M:osu.Game.Screens.Ranking.ScorePanelList.Detach(osu.Game.Screens.Ranking.ScorePanel)">
+            <summary>
+            Detaches a <see cref="T:osu.Game.Screens.Ranking.ScorePanel"/> from its <see cref="T:osu.Game.Screens.Ranking.ScorePanelTrackingContainer"/>, allowing the panel to be moved elsewhere in the hierarchy.
+            </summary>
+            <param name="panel">The <see cref="T:osu.Game.Screens.Ranking.ScorePanel"/> to detach.</param>
+            <exception cref="T:System.InvalidOperationException">If <paramref name="panel"/> is not a part of this <see cref="T:osu.Game.Screens.Ranking.ScorePanelList"/>.</exception>
+        </member>
+        <member name="M:osu.Game.Screens.Ranking.ScorePanelList.Attach(osu.Game.Screens.Ranking.ScorePanel)">
+            <summary>
+            Attaches a <see cref="T:osu.Game.Screens.Ranking.ScorePanel"/> to its <see cref="T:osu.Game.Screens.Ranking.ScorePanelTrackingContainer"/> in this <see cref="T:osu.Game.Screens.Ranking.ScorePanelList"/>.
+            </summary>
+            <param name="panel">The <see cref="T:osu.Game.Screens.Ranking.ScorePanel"/> to attach.</param>
+            <exception cref="T:System.InvalidOperationException">If <paramref name="panel"/> is not a part of this <see cref="T:osu.Game.Screens.Ranking.ScorePanelList"/>.</exception>
+        </member>
         <member name="F:osu.Game.Screens.Ranking.ScorePanelList.Scroll.InstantScrollTarget">
             <summary>
             The target that will be scrolled to instantaneously next frame.
@@ -7928,6 +8463,109 @@
         <member name="F:osu.Game.Screens.Ranking.ScorePanelList.Scroll.HandleScroll">
             <summary>
             Whether this container should handle scroll trigger events.
+            </summary>
+        </member>
+        <member name="T:osu.Game.Screens.Ranking.ScorePanelTrackingContainer">
+            <summary>
+            A <see cref="T:osu.Framework.Graphics.Containers.CompositeDrawable"/> which tracks the size of a <see cref="T:osu.Game.Screens.Ranking.ScorePanel"/>, to which the <see cref="T:osu.Game.Screens.Ranking.ScorePanel"/> can be added or removed.
+            </summary>
+        </member>
+        <member name="F:osu.Game.Screens.Ranking.ScorePanelTrackingContainer.Panel">
+            <summary>
+            The <see cref="T:osu.Game.Screens.Ranking.ScorePanel"/> that created this <see cref="T:osu.Game.Screens.Ranking.ScorePanelTrackingContainer"/>.
+            </summary>
+        </member>
+        <member name="M:osu.Game.Screens.Ranking.ScorePanelTrackingContainer.Detach">
+            <summary>
+            Detaches the <see cref="T:osu.Game.Screens.Ranking.ScorePanel"/> from this <see cref="T:osu.Game.Screens.Ranking.ScorePanelTrackingContainer"/>, removing it as a child.
+            This <see cref="T:osu.Game.Screens.Ranking.ScorePanelTrackingContainer"/> will continue tracking any size changes.
+            </summary>
+            <exception cref="T:System.InvalidOperationException">If the <see cref="T:osu.Game.Screens.Ranking.ScorePanel"/> is already detached.</exception>
+        </member>
+        <member name="M:osu.Game.Screens.Ranking.ScorePanelTrackingContainer.Attach">
+            <summary>
+            Attaches the <see cref="T:osu.Game.Screens.Ranking.ScorePanel"/> to this <see cref="T:osu.Game.Screens.Ranking.ScorePanelTrackingContainer"/>, adding it as a child.
+            </summary>
+            <exception cref="T:System.InvalidOperationException">If the <see cref="T:osu.Game.Screens.Ranking.ScorePanel"/> is already attached.</exception>
+        </member>
+        <member name="T:osu.Game.Screens.Ranking.Statistics.HitEventTimingDistributionGraph">
+            <summary>
+            A graph which displays the distribution of hit timing in a series of <see cref="T:osu.Game.Rulesets.Scoring.HitEvent"/>s.
+            </summary>
+        </member>
+        <member name="F:osu.Game.Screens.Ranking.Statistics.HitEventTimingDistributionGraph.timing_distribution_bins">
+            <summary>
+            The number of bins on each side of the timing distribution.
+            </summary>
+        </member>
+        <member name="F:osu.Game.Screens.Ranking.Statistics.HitEventTimingDistributionGraph.total_timing_distribution_bins">
+            <summary>
+            The total number of bins in the timing distribution, including bins on both sides and the centre bin at 0.
+            </summary>
+        </member>
+        <member name="F:osu.Game.Screens.Ranking.Statistics.HitEventTimingDistributionGraph.timing_distribution_centre_bin_index">
+            <summary>
+            The centre bin, with a timing distribution very close to/at 0.
+            </summary>
+        </member>
+        <member name="F:osu.Game.Screens.Ranking.Statistics.HitEventTimingDistributionGraph.axis_points">
+            <summary>
+            The number of data points shown on each side of the axis below the graph.
+            </summary>
+        </member>
+        <member name="M:osu.Game.Screens.Ranking.Statistics.HitEventTimingDistributionGraph.#ctor(System.Collections.Generic.IReadOnlyList{osu.Game.Rulesets.Scoring.HitEvent})">
+            <summary>
+            Creates a new <see cref="T:osu.Game.Screens.Ranking.Statistics.HitEventTimingDistributionGraph"/>.
+            </summary>
+            <param name="hitEvents">The <see cref="T:osu.Game.Rulesets.Scoring.HitEvent"/>s to display the timing distribution of.</param>
+        </member>
+        <member name="T:osu.Game.Screens.Ranking.Statistics.StatisticContainer">
+            <summary>
+            Wraps a <see cref="T:osu.Game.Screens.Ranking.Statistics.StatisticItem"/> to add a header and suitable layout for use in <see cref="T:osu.Game.Screens.Ranking.ResultsScreen"/>.
+            </summary>
+        </member>
+        <member name="M:osu.Game.Screens.Ranking.Statistics.StatisticContainer.#ctor(osu.Game.Screens.Ranking.Statistics.StatisticItem)">
+            <summary>
+            Creates a new <see cref="T:osu.Game.Screens.Ranking.Statistics.StatisticContainer"/>.
+            </summary>
+            <param name="item">The <see cref="T:osu.Game.Screens.Ranking.Statistics.StatisticItem"/> to display.</param>
+        </member>
+        <member name="T:osu.Game.Screens.Ranking.Statistics.StatisticItem">
+            <summary>
+            An item to be displayed in a row of statistics inside the results screen.
+            </summary>
+        </member>
+        <member name="F:osu.Game.Screens.Ranking.Statistics.StatisticItem.Name">
+            <summary>
+            The name of this item.
+            </summary>
+        </member>
+        <member name="F:osu.Game.Screens.Ranking.Statistics.StatisticItem.Content">
+            <summary>
+            The <see cref="T:osu.Framework.Graphics.Drawable"/> content to be displayed.
+            </summary>
+        </member>
+        <member name="F:osu.Game.Screens.Ranking.Statistics.StatisticItem.Dimension">
+            <summary>
+            The <see cref="F:osu.Game.Screens.Ranking.Statistics.StatisticItem.Dimension"/> of this row. This can be thought of as the column dimension of an encompassing <see cref="T:osu.Framework.Graphics.Containers.GridContainer"/>.
+            </summary>
+        </member>
+        <member name="M:osu.Game.Screens.Ranking.Statistics.StatisticItem.#ctor(System.String,osu.Framework.Graphics.Drawable,osu.Framework.Graphics.Containers.Dimension)">
+            <summary>
+            Creates a new <see cref="T:osu.Game.Screens.Ranking.Statistics.StatisticItem"/>, to be displayed inside a <see cref="T:osu.Game.Screens.Ranking.Statistics.StatisticRow"/> in the results screen.
+            </summary>
+            <param name="name">The name of the item.</param>
+            <param name="content">The <see cref="T:osu.Framework.Graphics.Drawable"/> content to be displayed.</param>
+            <param name="dimension">The <see cref="F:osu.Game.Screens.Ranking.Statistics.StatisticItem.Dimension"/> of this item. This can be thought of as the column dimension of an encompassing <see cref="T:osu.Framework.Graphics.Containers.GridContainer"/>.</param>
+        </member>
+        <member name="T:osu.Game.Screens.Ranking.Statistics.StatisticRow">
+            <summary>
+            A row of statistics to be displayed in the results screen.
+            </summary>
+        </member>
+        <member name="F:osu.Game.Screens.Ranking.Statistics.StatisticRow.Columns">
+            <summary>
+            The columns of this <see cref="T:osu.Game.Screens.Ranking.Statistics.StatisticRow"/>.
             </summary>
         </member>
         <member name="P:osu.Game.Screens.Select.BeatmapCarousel.BleedTop">
@@ -8014,6 +8652,13 @@
             <summary>
             Scroll to the current <see cref="P:osu.Game.Screens.Select.BeatmapCarousel.SelectedBeatmap"/>.
             </summary>
+        </member>
+        <member name="M:osu.Game.Screens.Select.BeatmapCarousel.beginRepeatSelection(System.Action,System.Object)">
+            <summary>
+            Begin repeating the specified selection action.
+            </summary>
+            <param name="action">The action to perform.</param>
+            <param name="source">The source of the action. Used in conjunction with <see cref="M:osu.Game.Screens.Select.BeatmapCarousel.endRepeatSelection(System.Object)"/> to only cancel the correct action (most recently pressed key).</param>
         </member>
         <member name="M:osu.Game.Screens.Select.BeatmapCarousel.updateItems">
             <summary>
@@ -8240,7 +8885,7 @@
             </summary>
             <remarks>
             This should not be used to start an animation immediately at the current time.
-            To do so, use <see cref="M:osu.Game.Skinning.LegacySkinExtensions.GetAnimation(osu.Game.Skinning.ISkin,System.String,System.Boolean,System.Boolean,System.Boolean,System.String,System.Boolean,System.Nullable{System.Double})"/> with <code>startAtCurrentTime = true</code> instead.
+            To do so, use <see cref="M:osu.Game.Skinning.LegacySkinExtensions.GetAnimation(osu.Game.Skinning.ISkin,System.String,osu.Framework.Graphics.OpenGL.Textures.WrapMode,osu.Framework.Graphics.OpenGL.Textures.WrapMode,System.Boolean,System.Boolean,System.Boolean,System.String,System.Boolean,System.Nullable{System.Double})"/> with <code>startAtCurrentTime = true</code> instead.
             </remarks>
         </member>
         <member name="P:osu.Game.Skinning.IAnimationTimeReference.Clock">
@@ -8270,6 +8915,15 @@
             Retrieve a <see cref="T:osu.Framework.Graphics.Textures.Texture"/>.
             </summary>
             <param name="componentName">The requested texture.</param>
+            <returns>A matching texture, or null if unavailable.</returns>
+        </member>
+        <member name="M:osu.Game.Skinning.ISkin.GetTexture(System.String,osu.Framework.Graphics.OpenGL.Textures.WrapMode,osu.Framework.Graphics.OpenGL.Textures.WrapMode)">
+            <summary>
+            Retrieve a <see cref="T:osu.Framework.Graphics.Textures.Texture"/>.
+            </summary>
+            <param name="componentName">The requested texture.</param>
+            <param name="wrapModeS">The texture wrap mode in horizontal direction.</param>
+            <param name="wrapModeT">The texture wrap mode in vertical direction.</param>
             <returns>A matching texture, or null if unavailable.</returns>
         </member>
         <member name="M:osu.Game.Skinning.ISkin.GetSample(osu.Game.Audio.ISampleInfo)">
@@ -8305,6 +8959,12 @@
             <summary>
             Whether texture for the keys exists.
             Used to determine if the mania ruleset is skinned.
+            </summary>
+        </member>
+        <member name="P:osu.Game.Skinning.LegacySkin.UseCustomSampleBanks">
+            <summary>
+            Whether this skin can use samples with a custom bank (custom sample set in stable terminology).
+            Added in order to match sample lookup logic from stable (in stable, only the beatmap skin could use samples with a custom sample bank).
             </summary>
         </member>
         <member name="P:osu.Game.Skinning.LegacySkinConfiguration.LegacyVersion">
@@ -8377,6 +9037,11 @@
             <param name="allowFallback">A conditional to decide whether to allow fallback to the default implementation if a skinned element is not present.</param>
             <param name="confineMode">How (if at all) the <see cref="P:osu.Game.Skinning.SkinnableDrawable.Drawable"/> should be resize to fit within our own bounds.</param>
         </member>
+        <member name="M:osu.Game.Skinning.SkinnableDrawable.ResetAnimation">
+            <summary>
+            Seeks to the 0-th frame if the content of this <see cref="T:osu.Game.Skinning.SkinnableDrawable"/> is an <see cref="T:osu.Framework.Graphics.Animations.IFramedAnimation"/>.
+            </summary>
+        </member>
         <member name="P:osu.Game.Skinning.SkinnableDrawable.ApplySizeRestrictionsToDefault">
             <summary>
             Whether to apply size restrictions (specified via <see cref="F:osu.Game.Skinning.SkinnableDrawable.confineMode"/>) to the default implementation.
@@ -8386,6 +9051,30 @@
             <summary>
             Don't apply any scaling. This allows the user element to be of any size, exceeding specified bounds.
             </summary>
+        </member>
+        <member name="M:osu.Game.Skinning.SkinnableSound.VolumeTo(System.Double,System.Double,osu.Framework.Graphics.Easing)">
+            <summary>
+            Smoothly adjusts <see cref="P:osu.Game.Skinning.SkinnableSound.Volume"/> over time.
+            </summary>
+            <returns>A <see cref="T:osu.Framework.Graphics.Transforms.TransformSequence`1"/> to which further transforms can be added.</returns>
+        </member>
+        <member name="M:osu.Game.Skinning.SkinnableSound.BalanceTo(System.Double,System.Double,osu.Framework.Graphics.Easing)">
+            <summary>
+            Smoothly adjusts <see cref="P:osu.Game.Skinning.SkinnableSound.Balance"/> over time.
+            </summary>
+            <returns>A <see cref="T:osu.Framework.Graphics.Transforms.TransformSequence`1"/> to which further transforms can be added.</returns>
+        </member>
+        <member name="M:osu.Game.Skinning.SkinnableSound.FrequencyTo(System.Double,System.Double,osu.Framework.Graphics.Easing)">
+            <summary>
+            Smoothly adjusts <see cref="P:osu.Game.Skinning.SkinnableSound.Frequency"/> over time.
+            </summary>
+            <returns>A <see cref="T:osu.Framework.Graphics.Transforms.TransformSequence`1"/> to which further transforms can be added.</returns>
+        </member>
+        <member name="M:osu.Game.Skinning.SkinnableSound.TempoTo(System.Double,System.Double,osu.Framework.Graphics.Easing)">
+            <summary>
+            Smoothly adjusts <see cref="P:osu.Game.Skinning.SkinnableSound.Tempo"/> over time.
+            </summary>
+            <returns>A <see cref="T:osu.Framework.Graphics.Transforms.TransformSequence`1"/> to which further transforms can be added.</returns>
         </member>
         <member name="T:osu.Game.Skinning.SkinnableSprite">
             <summary>
@@ -8714,6 +9403,11 @@
         <member name="F:osu.Game.Users.User.SYSTEM_USER">
             <summary>
             A user instance for displaying locally created system messages.
+            </summary>
+        </member>
+        <member name="P:osu.Game.Users.UserCoverBackground.UnloadDelay">
+            <summary>
+            Delay before the background is unloaded while off-screen.
             </summary>
         </member>
         <member name="M:osu.Game.Utils.FormatUtils.FormatAccuracy(System.Double)">

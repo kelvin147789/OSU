@@ -89,6 +89,16 @@
             <param name="targetOffset">An offset from the <see cref="T:osu.Game.Rulesets.Objects.HitObject"/> selected via <paramref name="sourceSelector"/> at which the grid should stop.</param>
             <returns>The <see cref="T:osu.Game.Rulesets.Osu.Edit.OsuDistanceSnapGrid"/> from a selected <see cref="T:osu.Game.Rulesets.Objects.HitObject"/> to a target <see cref="T:osu.Game.Rulesets.Objects.HitObject"/>.</returns>
         </member>
+        <member name="P:osu.Game.Rulesets.Osu.Judgements.OsuHitCircleJudgementResult.HitCircle">
+            <summary>
+            The <see cref="P:osu.Game.Rulesets.Osu.Judgements.OsuHitCircleJudgementResult.HitCircle"/>.
+            </summary>
+        </member>
+        <member name="F:osu.Game.Rulesets.Osu.Judgements.OsuHitCircleJudgementResult.CursorPositionAtHit">
+            <summary>
+            The position of the player's cursor when <see cref="P:osu.Game.Rulesets.Osu.Judgements.OsuHitCircleJudgementResult.HitCircle"/> was hit.
+            </summary>
+        </member>
         <member name="T:osu.Game.Rulesets.Osu.Mods.OsuModBlinds.DrawableOsuBlinds">
             <summary>
             Element for the Blinds mod drawing 2 black boxes covering the whole screen which resize inside a restricted area with some leniency.
@@ -223,6 +233,17 @@
             The judgement text is provided by the <see cref="T:osu.Game.Rulesets.Osu.Objects.Drawables.DrawableSlider"/>.
             </summary>
         </member>
+        <member name="P:osu.Game.Rulesets.Osu.Objects.Drawables.DrawableSpinner.Progress">
+            <summary>
+            The completion progress of this spinner from 0..1 (clamped).
+            </summary>
+        </member>
+        <member name="M:osu.Game.Rulesets.Osu.Objects.Drawables.DrawableSpinnerTick.TriggerResult(System.Boolean)">
+            <summary>
+            Apply a judgement result.
+            </summary>
+            <param name="hit">Whether this tick was reached.</param>
+        </member>
         <member name="P:osu.Game.Rulesets.Osu.Objects.Drawables.IRequireTracking.Tracking">
             <summary>
             Whether the <see cref="T:osu.Game.Rulesets.Osu.Objects.Drawables.DrawableSlider"/> is currently being tracked by the user.
@@ -311,12 +332,35 @@
             The offset of the path from <see cref="F:osu.Game.Rulesets.Osu.Objects.Drawables.Pieces.SnakingSliderBody.snakedPosition"/> when fully snaked.
             </summary>
         </member>
-        <member name="P:osu.Game.Rulesets.Osu.Objects.Drawables.Pieces.SpinnerDisc.isSpinnableTime">
+        <member name="T:osu.Game.Rulesets.Osu.Objects.Drawables.Pieces.SpinnerBonusDisplay">
+            <summary>
+            Shows incremental bonus score achieved for a spinner.
+            </summary>
+        </member>
+        <member name="P:osu.Game.Rulesets.Osu.Objects.Drawables.Pieces.SpinnerRotationTracker.CumulativeRotation">
+            <summary>
+            The total rotation performed on the spinner disc, disregarding the spin direction.
+            </summary>
+            <remarks>
+            This value is always non-negative and is monotonically increasing with time
+            (i.e. will only increase if time is passing forward, but can decrease during rewind).
+            </remarks>
+            <example>
+            If the spinner is spun 360 degrees clockwise and then 360 degrees counter-clockwise,
+            this property will return the value of 720 (as opposed to 0 for <see cref="P:osu.Framework.Graphics.Drawable.Rotation"/>).
+            </example>
+        </member>
+        <member name="F:osu.Game.Rulesets.Osu.Objects.Drawables.Pieces.SpinnerRotationTracker.IsSpinning">
+            <summary>
+            Whether the spinning is spinning at a reasonable speed to be considered visually spinning.
+            </summary>
+        </member>
+        <member name="P:osu.Game.Rulesets.Osu.Objects.Drawables.Pieces.SpinnerRotationTracker.isSpinnableTime">
             <summary>
             Whether currently in the correct time range to allow spinning.
             </summary>
         </member>
-        <member name="M:osu.Game.Rulesets.Osu.Objects.Drawables.Pieces.SpinnerDisc.Rotate(System.Single)">
+        <member name="M:osu.Game.Rulesets.Osu.Objects.Drawables.Pieces.SpinnerRotationTracker.AddRotation(System.Single)">
             <summary>
             Rotate the disc by the provided angle (in addition to any existing rotation).
             </summary>
@@ -385,6 +429,11 @@
             Number of spins required to finish the spinner without miss.
             </summary>
         </member>
+        <member name="P:osu.Game.Rulesets.Osu.Objects.Spinner.MaximumBonusSpins">
+            <summary>
+            Number of spins available to give bonus, beyond <see cref="P:osu.Game.Rulesets.Osu.Objects.Spinner.SpinsRequired"/>.
+            </summary>
+        </member>
         <member name="P:osu.Game.Rulesets.Osu.OsuInputManager.AllowUserCursorMovement">
             <summary>
             Whether the user's cursor movement events should be accepted.
@@ -424,6 +473,17 @@
             The time in ms between each ReplayFrame.
             </summary>
         </member>
+        <member name="T:osu.Game.Rulesets.Osu.Skinning.LegacyNewStyleSpinner">
+            <summary>
+            Legacy skinned spinner with two main spinning layers, one fixed overlay and one final spinning overlay.
+            No background layer.
+            </summary>
+        </member>
+        <member name="T:osu.Game.Rulesets.Osu.Skinning.LegacyOldStyleSpinner">
+            <summary>
+            Legacy skinned spinner with one main spinning layer and a background layer.
+            </summary>
+        </member>
         <member name="M:osu.Game.Rulesets.Osu.Skinning.LegacySliderBody.LegacyDrawableSliderPath.lighten(osuTK.Graphics.Color4,System.Single)">
             <summary>
             Lightens a colour in a way more friendly to dark or strong colours.
@@ -441,6 +501,29 @@
             Their hittable area is 128px, but the actual circle portion is 118px.
             We must account for some gameplay elements such as slider bodies, where this padding is not present.
             </summary>
+        </member>
+        <member name="F:osu.Game.Rulesets.Osu.Statistics.AccuracyHeatmap.inner_portion">
+            <summary>
+            Size of the inner circle containing the "hit" points, relative to the size of this <see cref="T:osu.Game.Rulesets.Osu.Statistics.AccuracyHeatmap"/>.
+            All other points outside of the inner circle are "miss" points.
+            </summary>
+        </member>
+        <member name="F:osu.Game.Rulesets.Osu.Statistics.AccuracyHeatmap.points_per_dimension">
+            <summary>
+            Number of rows/columns of points.
+            ~4px per point @ 128x128 size (the contents of the <see cref="T:osu.Game.Rulesets.Osu.Statistics.AccuracyHeatmap"/> are always square). 1089 total points.
+            </summary>
+        </member>
+        <member name="P:osu.Game.Rulesets.Osu.Statistics.AccuracyHeatmap.PeakValue">
+            <summary>
+            The highest count of any point currently being displayed.
+            </summary>
+        </member>
+        <member name="M:osu.Game.Rulesets.Osu.Statistics.AccuracyHeatmap.HitPoint.Increment">
+            <summary>
+            Increment the value of this point by one.
+            </summary>
+            <returns>The value after incrementing.</returns>
         </member>
         <member name="P:osu.Game.Rulesets.Osu.UI.Cursor.CursorTrail.FadeDuration">
             <summary>

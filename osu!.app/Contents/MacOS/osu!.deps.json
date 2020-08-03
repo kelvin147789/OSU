@@ -7,7 +7,7 @@
   "targets": {
     ".NETCoreApp,Version=v3.1": {},
     ".NETCoreApp,Version=v3.1/osx-x64": {
-      "osu!/2020.623.1": {
+      "osu!/2020.801.0": {
         "dependencies": {
           "DiscordRichPresence": "1.0.150",
           "Microsoft.CodeAnalysis.BannedApiAnalyzers": "3.0.0",
@@ -19,12 +19,12 @@
           "System.IO.Packaging": "4.7.0",
           "System.Runtime.Handles": "4.3.0",
           "System.Runtime.InteropServices": "4.3.0",
-          "osu.Game.Rulesets.Catch": "2020.623.1",
-          "osu.Game.Rulesets.Mania": "2020.623.1",
-          "osu.Game.Rulesets.Osu": "2020.623.1",
-          "osu.Game.Rulesets.Taiko": "2020.623.1",
-          "osu.Game.Tournament": "2020.623.1",
-          "ppy.osu.Game": "2020.623.1",
+          "osu.Game.Rulesets.Catch": "2020.801.0",
+          "osu.Game.Rulesets.Mania": "2020.801.0",
+          "osu.Game.Rulesets.Osu": "2020.801.0",
+          "osu.Game.Rulesets.Taiko": "2020.801.0",
+          "osu.Game.Tournament": "2020.801.0",
+          "ppy.osu.Game": "2020.801.0",
           "ppy.squirrel.windows": "1.9.0.4",
           "runtimepack.Microsoft.NETCore.App.Runtime.osx-x64": "3.1.2"
         },
@@ -64,10 +64,6 @@
           },
           "System.Collections.Concurrent.dll": {
             "assemblyVersion": "4.0.15.0",
-            "fileVersion": "4.700.20.6702"
-          },
-          "System.Collections.Immutable.dll": {
-            "assemblyVersion": "1.2.5.0",
             "fileVersion": "4.700.20.6702"
           },
           "System.Collections.NonGeneric.dll": {
@@ -388,10 +384,6 @@
           },
           "System.Reflection.Extensions.dll": {
             "assemblyVersion": "4.1.2.0",
-            "fileVersion": "4.700.20.6702"
-          },
-          "System.Reflection.Metadata.dll": {
-            "assemblyVersion": "1.4.5.0",
             "fileVersion": "4.700.20.6702"
           },
           "System.Reflection.Primitives.dll": {
@@ -796,11 +788,11 @@
           }
         }
       },
-      "FFmpeg.AutoGen/4.3.0": {
+      "FFmpeg.AutoGen/4.3.0.1": {
         "runtime": {
           "lib/netstandard2.1/FFmpeg.AutoGen.dll": {
-            "assemblyVersion": "4.3.0.0",
-            "fileVersion": "4.3.0.0"
+            "assemblyVersion": "4.3.0.1",
+            "fileVersion": "4.3.0.1"
           }
         }
       },
@@ -1381,10 +1373,10 @@
       "Microsoft.CodeAnalysis.Common/3.6.0": {
         "dependencies": {
           "Microsoft.CodeAnalysis.Analyzers": "3.0.0",
-          "System.Collections.Immutable": "1.5.0",
-          "System.Memory": "4.5.3",
-          "System.Reflection.Metadata": "1.6.0",
-          "System.Runtime.CompilerServices.Unsafe": "4.7.0",
+          "System.Collections.Immutable": "1.7.1",
+          "System.Memory": "4.5.4",
+          "System.Reflection.Metadata": "1.8.1",
+          "System.Runtime.CompilerServices.Unsafe": "4.7.1",
           "System.Text.Encoding.CodePages": "4.7.1",
           "System.Threading.Tasks.Extensions": "4.5.3"
         },
@@ -1673,11 +1665,27 @@
           }
         }
       },
-      "Microsoft.Diagnostics.Runtime/1.1.127808": {
+      "Microsoft.Diagnostics.NETCore.Client/0.2.61701": {
         "runtime": {
-          "lib/netstandard2.0/Microsoft.Diagnostics.Runtime.dll": {
-            "assemblyVersion": "1.1.2.27808",
-            "fileVersion": "1.1.2.27808"
+          "lib/netcoreapp2.1/Microsoft.Diagnostics.NETCore.Client.dll": {
+            "assemblyVersion": "0.2.1.11701",
+            "fileVersion": "0.2.1.11701"
+          }
+        }
+      },
+      "Microsoft.Diagnostics.Runtime/2.0.137201": {
+        "dependencies": {
+          "Microsoft.Diagnostics.NETCore.Client": "0.2.61701",
+          "System.Buffers": "4.5.1",
+          "System.Collections.Immutable": "1.7.1",
+          "System.Memory": "4.5.4",
+          "System.Reflection.Metadata": "1.8.1",
+          "System.Runtime.CompilerServices.Unsafe": "4.7.1"
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/Microsoft.Diagnostics.Runtime.dll": {
+            "assemblyVersion": "2.0.2.37201",
+            "fileVersion": "2.0.2.37201"
           }
         }
       },
@@ -1707,7 +1715,7 @@
           "Microsoft.Extensions.DependencyInjection": "2.2.0",
           "Microsoft.Extensions.Logging": "2.2.0",
           "Remotion.Linq": "2.2.0",
-          "System.Collections.Immutable": "1.5.0",
+          "System.Collections.Immutable": "1.7.1",
           "System.ComponentModel.Annotations": "4.7.0",
           "System.Diagnostics.DiagnosticSource": "4.5.0",
           "System.Interactive.Async": "3.2.0"
@@ -1906,8 +1914,8 @@
       },
       "Microsoft.Extensions.Primitives/2.2.0": {
         "dependencies": {
-          "System.Memory": "4.5.3",
-          "System.Runtime.CompilerServices.Unsafe": "4.7.0"
+          "System.Memory": "4.5.4",
+          "System.Runtime.CompilerServices.Unsafe": "4.7.1"
         },
         "runtime": {
           "lib/netstandard2.0/Microsoft.Extensions.Primitives.dll": {
@@ -1971,9 +1979,9 @@
           }
         }
       },
-      "ppy.osu.Framework/2020.623.0": {
+      "ppy.osu.Framework/2020.730.1": {
         "dependencies": {
-          "FFmpeg.AutoGen": "4.3.0",
+          "FFmpeg.AutoGen": "4.3.0.1",
           "JetBrains.Annotations": "2020.1.0",
           "ManagedBass": "2.0.4",
           "ManagedBass.Fx": "2.0.1",
@@ -1982,22 +1990,22 @@
           "Microsoft.CodeAnalysis.CSharp": "3.6.0",
           "Microsoft.CodeAnalysis.CSharp.Workspaces": "3.6.0",
           "Microsoft.CodeAnalysis.Workspaces.MSBuild": "3.6.0",
-          "Microsoft.Diagnostics.Runtime": "1.1.127808",
+          "Microsoft.Diagnostics.Runtime": "2.0.137201",
           "Microsoft.Extensions.ObjectPool": "3.0.3",
           "NUnit": "3.12.0",
           "Newtonsoft.Json": "12.0.3",
           "SharpFNT": "2.0.0",
           "SixLabors.ImageSharp": "1.0.0-beta0007",
-          "StbiSharp": "1.0.11",
+          "StbiSharp": "1.0.12",
           "managed-midi": "1.9.14",
           "ppy.SDL2-CS": "1.0.15",
           "ppy.osu.Framework.NativeLibs": "2020.213.0",
-          "ppy.osuTK.NS20": "1.0.159"
+          "ppy.osuTK.NS20": "1.0.161"
         },
         "runtime": {
           "lib/netcoreapp3.0/osu.Framework.dll": {
-            "assemblyVersion": "2020.623.0.0",
-            "fileVersion": "2020.623.0.0"
+            "assemblyVersion": "2020.730.1.0",
+            "fileVersion": "2020.730.1.0"
           }
         }
       },
@@ -2035,15 +2043,15 @@
           }
         }
       },
-      "ppy.osu.Game.Resources/2020.622.1": {
+      "ppy.osu.Game.Resources/2020.731.0": {
         "runtime": {
           "lib/netstandard2.0/osu.Game.Resources.dll": {
-            "assemblyVersion": "2020.622.1.0",
-            "fileVersion": "2020.622.1.0"
+            "assemblyVersion": "2020.731.0.0",
+            "fileVersion": "2020.731.0.0"
           }
         }
       },
-      "ppy.osuTK.NS20/1.0.159": {
+      "ppy.osuTK.NS20/1.0.161": {
         "runtime": {
           "lib/netstandard2.0/osuTK.dll": {
             "assemblyVersion": "0.0.0.0",
@@ -2068,7 +2076,7 @@
         "dependencies": {
           "DeltaCompressionDotNet": "2.0.0",
           "Mono.Cecil": "0.9.6.1",
-          "SharpCompress": "0.25.1",
+          "SharpCompress": "0.26.0",
           "Splat": "1.6.2"
         },
         "runtime": {
@@ -2109,7 +2117,6 @@
         }
       },
       "runtime.any.System.Diagnostics.Tools/4.3.0": {},
-      "runtime.any.System.Diagnostics.Tracing/4.3.0": {},
       "runtime.any.System.Globalization/4.3.0": {},
       "runtime.any.System.IO/4.3.0": {},
       "runtime.any.System.Reflection/4.3.0": {},
@@ -2163,7 +2170,7 @@
       },
       "runtime.unix.System.IO.FileSystem/4.3.0": {
         "dependencies": {
-          "System.Buffers": "4.3.0",
+          "System.Buffers": "4.5.1",
           "System.Collections": "4.3.0",
           "System.Diagnostics.Debug": "4.3.0",
           "System.IO": "4.3.0",
@@ -2192,43 +2199,43 @@
           "runtime.native.System.Security.Cryptography.OpenSsl": "4.3.0"
         }
       },
-      "Sentry/2.1.3": {
+      "Sentry/2.1.5": {
         "dependencies": {
           "Newtonsoft.Json": "12.0.3",
-          "Sentry.PlatformAbstractions": "1.1.0",
-          "Sentry.Protocol": "2.1.3"
+          "Sentry.PlatformAbstractions": "1.1.1",
+          "Sentry.Protocol": "2.1.5"
         },
         "runtime": {
           "lib/netstandard2.0/Sentry.dll": {
-            "assemblyVersion": "2.1.3.0",
-            "fileVersion": "2.1.3.0"
+            "assemblyVersion": "2.1.5.0",
+            "fileVersion": "2.1.5.0"
           }
         }
       },
-      "Sentry.PlatformAbstractions/1.1.0": {
+      "Sentry.PlatformAbstractions/1.1.1": {
         "runtime": {
           "lib/netstandard2.0/Sentry.PlatformAbstractions.dll": {
-            "assemblyVersion": "1.1.0.0",
-            "fileVersion": "1.1.0.0"
+            "assemblyVersion": "1.1.1.0",
+            "fileVersion": "1.1.1.0"
           }
         }
       },
-      "Sentry.Protocol/2.1.3": {
+      "Sentry.Protocol/2.1.5": {
         "runtime": {
           "lib/netstandard2.0/Sentry.Protocol.dll": {
-            "assemblyVersion": "2.1.3.0",
-            "fileVersion": "2.1.3.0"
+            "assemblyVersion": "2.1.5.0",
+            "fileVersion": "2.1.5.0"
           }
         }
       },
-      "SharpCompress/0.25.1": {
+      "SharpCompress/0.26.0": {
         "dependencies": {
           "System.Text.Encoding.CodePages": "4.7.1"
         },
         "runtime": {
           "lib/netstandard2.1/SharpCompress.dll": {
-            "assemblyVersion": "0.25.1.0",
-            "fileVersion": "0.25.1.0"
+            "assemblyVersion": "0.26.0.0",
+            "fileVersion": "0.26.0.0"
           }
         }
       },
@@ -2245,7 +2252,7 @@
       },
       "SixLabors.Core/1.0.0-beta0008": {
         "dependencies": {
-          "System.Runtime.CompilerServices.Unsafe": "4.7.0"
+          "System.Runtime.CompilerServices.Unsafe": "4.7.1"
         },
         "runtime": {
           "lib/netcoreapp2.1/SixLabors.Core.dll": {
@@ -2258,7 +2265,7 @@
         "dependencies": {
           "Microsoft.Net.Compilers.Toolset": "3.1.0",
           "SixLabors.Core": "1.0.0-beta0008",
-          "System.Runtime.CompilerServices.Unsafe": "4.7.0"
+          "System.Runtime.CompilerServices.Unsafe": "4.7.1"
         },
         "runtime": {
           "lib/netcoreapp2.1/SixLabors.ImageSharp.dll": {
@@ -2326,11 +2333,11 @@
           }
         }
       },
-      "StbiSharp/1.0.11": {
+      "StbiSharp/1.0.12": {
         "runtime": {
           "lib/netcoreapp3.0/StbiSharp.dll": {
-            "assemblyVersion": "1.0.11.0",
-            "fileVersion": "1.0.11.0"
+            "assemblyVersion": "1.0.12.0",
+            "fileVersion": "1.0.12.0"
           }
         },
         "native": {
@@ -2344,15 +2351,7 @@
           "System.Runtime": "4.3.0"
         }
       },
-      "System.Buffers/4.3.0": {
-        "dependencies": {
-          "System.Diagnostics.Debug": "4.3.0",
-          "System.Diagnostics.Tracing": "4.3.0",
-          "System.Resources.ResourceManager": "4.3.0",
-          "System.Runtime": "4.3.0",
-          "System.Threading": "4.3.0"
-        }
-      },
+      "System.Buffers/4.5.1": {},
       "System.Collections/4.3.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "3.1.1",
@@ -2361,7 +2360,14 @@
           "runtime.any.System.Collections": "4.3.0"
         }
       },
-      "System.Collections.Immutable/1.5.0": {},
+      "System.Collections.Immutable/1.7.1": {
+        "runtime": {
+          "lib/netstandard2.0/System.Collections.Immutable.dll": {
+            "assemblyVersion": "1.2.5.0",
+            "fileVersion": "4.700.20.21406"
+          }
+        }
+      },
       "System.ComponentModel.Annotations/4.7.0": {},
       "System.Composition/1.0.31": {
         "dependencies": {
@@ -2488,14 +2494,6 @@
           "runtime.any.System.Diagnostics.Tools": "4.3.0"
         }
       },
-      "System.Diagnostics.Tracing/4.3.0": {
-        "dependencies": {
-          "Microsoft.NETCore.Platforms": "3.1.1",
-          "Microsoft.NETCore.Targets": "1.1.0",
-          "System.Runtime": "4.3.0",
-          "runtime.any.System.Diagnostics.Tracing": "4.3.0"
-        }
-      },
       "System.Dynamic.Runtime/4.0.11": {
         "dependencies": {
           "System.Collections": "4.3.0",
@@ -2609,7 +2607,7 @@
           "System.Runtime": "4.3.0"
         }
       },
-      "System.Memory/4.5.3": {},
+      "System.Memory/4.5.4": {},
       "System.ObjectModel/4.3.0": {
         "dependencies": {
           "System.Collections": "4.3.0",
@@ -2662,7 +2660,14 @@
           "runtime.any.System.Reflection.Extensions": "4.3.0"
         }
       },
-      "System.Reflection.Metadata/1.6.0": {},
+      "System.Reflection.Metadata/1.8.1": {
+        "runtime": {
+          "lib/netstandard2.0/System.Reflection.Metadata.dll": {
+            "assemblyVersion": "1.4.5.0",
+            "fileVersion": "4.700.20.21406"
+          }
+        }
+      },
       "System.Reflection.Primitives/4.3.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "3.1.1",
@@ -2694,7 +2699,7 @@
           "runtime.any.System.Runtime": "4.3.0"
         }
       },
-      "System.Runtime.CompilerServices.Unsafe/4.7.0": {},
+      "System.Runtime.CompilerServices.Unsafe/4.7.1": {},
       "System.Runtime.Extensions/4.3.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "3.1.1",
@@ -2788,48 +2793,48 @@
           "System.Runtime": "4.3.0"
         }
       },
-      "osu.Game.Rulesets.Catch/2020.623.1": {
+      "osu.Game.Rulesets.Catch/2020.801.0": {
         "dependencies": {
-          "ppy.osu.Game": "2020.623.1"
+          "ppy.osu.Game": "2020.801.0"
         },
         "runtime": {
           "osu.Game.Rulesets.Catch.dll": {}
         }
       },
-      "osu.Game.Rulesets.Mania/2020.623.1": {
+      "osu.Game.Rulesets.Mania/2020.801.0": {
         "dependencies": {
-          "ppy.osu.Game": "2020.623.1"
+          "ppy.osu.Game": "2020.801.0"
         },
         "runtime": {
           "osu.Game.Rulesets.Mania.dll": {}
         }
       },
-      "osu.Game.Rulesets.Osu/2020.623.1": {
+      "osu.Game.Rulesets.Osu/2020.801.0": {
         "dependencies": {
-          "ppy.osu.Game": "2020.623.1"
+          "ppy.osu.Game": "2020.801.0"
         },
         "runtime": {
           "osu.Game.Rulesets.Osu.dll": {}
         }
       },
-      "osu.Game.Rulesets.Taiko/2020.623.1": {
+      "osu.Game.Rulesets.Taiko/2020.801.0": {
         "dependencies": {
-          "ppy.osu.Game": "2020.623.1"
+          "ppy.osu.Game": "2020.801.0"
         },
         "runtime": {
           "osu.Game.Rulesets.Taiko.dll": {}
         }
       },
-      "osu.Game.Tournament/2020.623.1": {
+      "osu.Game.Tournament/2020.801.0": {
         "dependencies": {
           "Microsoft.Win32.Registry": "4.7.0",
-          "ppy.osu.Game": "2020.623.1"
+          "ppy.osu.Game": "2020.801.0"
         },
         "runtime": {
           "osu.Game.Tournament.dll": {}
         }
       },
-      "ppy.osu.Game/2020.623.1": {
+      "ppy.osu.Game/2020.801.0": {
         "dependencies": {
           "Dapper": "2.0.35",
           "DiffPlex": "1.6.3",
@@ -2838,11 +2843,11 @@
           "Microsoft.EntityFrameworkCore.Sqlite.Core": "2.2.6",
           "NUnit": "3.12.0",
           "Newtonsoft.Json": "12.0.3",
-          "Sentry": "2.1.3",
-          "SharpCompress": "0.25.1",
+          "Sentry": "2.1.5",
+          "SharpCompress": "0.26.0",
           "System.ComponentModel.Annotations": "4.7.0",
-          "ppy.osu.Framework": "2020.623.0",
-          "ppy.osu.Game.Resources": "2020.622.1"
+          "ppy.osu.Framework": "2020.730.1",
+          "ppy.osu.Game.Resources": "2020.731.0"
         },
         "runtime": {
           "osu.Game.dll": {}
@@ -2851,7 +2856,7 @@
     }
   },
   "libraries": {
-    "osu!/2020.623.1": {
+    "osu!/2020.801.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
@@ -2889,12 +2894,12 @@
       "path": "discordrichpresence/1.0.150",
       "hashPath": "discordrichpresence.1.0.150.nupkg.sha512"
     },
-    "FFmpeg.AutoGen/4.3.0": {
+    "FFmpeg.AutoGen/4.3.0.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-khdMM7g3OOCBk3QWE+a1t2j9KQ6TtMgYqmcklP+8ubj2fS3Ys4SH/0/XHqXMHVw2ozLVCD/Iy7EnNRES0hg+9w==",
-      "path": "ffmpeg.autogen/4.3.0",
-      "hashPath": "ffmpeg.autogen.4.3.0.nupkg.sha512"
+      "sha512": "sha512-koM5zqdZZHGAVK0faNZgi9HjCrHrMRGaTqmTEbvMSx3YeNIZBd62JQMZjAE0HlQ3NsLnRvXigVJtwRidOnosUw==",
+      "path": "ffmpeg.autogen/4.3.0.1",
+      "hashPath": "ffmpeg.autogen.4.3.0.1.nupkg.sha512"
     },
     "Humanizer/2.8.26": {
       "type": "package",
@@ -3358,12 +3363,19 @@
       "path": "microsoft.data.sqlite.core/2.2.6",
       "hashPath": "microsoft.data.sqlite.core.2.2.6.nupkg.sha512"
     },
-    "Microsoft.Diagnostics.Runtime/1.1.127808": {
+    "Microsoft.Diagnostics.NETCore.Client/0.2.61701": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-jSJANPtaA9rhayzvIXT+VNToqvgpGUj8840nt9Npr4n7WAWMwUdlODTwDgTpKfe3c4y0H/iBossvqknU16OQgQ==",
-      "path": "microsoft.diagnostics.runtime/1.1.127808",
-      "hashPath": "microsoft.diagnostics.runtime.1.1.127808.nupkg.sha512"
+      "sha512": "sha512-/whUqXLkTiUvG+vfSFd77DHHsLZW2HztZt+ACOpuvGyLKoGGN86M8cR1aYfRW6fxXF3SVGMKMswcL485SQEDuQ==",
+      "path": "microsoft.diagnostics.netcore.client/0.2.61701",
+      "hashPath": "microsoft.diagnostics.netcore.client.0.2.61701.nupkg.sha512"
+    },
+    "Microsoft.Diagnostics.Runtime/2.0.137201": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-LPzrXWW9bHNT3YWZp33u65Jc1DxTSWLEO1/fJsw0r2g+/P6TVOuVxR+ATtVti4yI2elKK7YzaSiyrPTCxVkS2A==",
+      "path": "microsoft.diagnostics.runtime/2.0.137201",
+      "hashPath": "microsoft.diagnostics.runtime.2.0.137201.nupkg.sha512"
     },
     "Microsoft.DotNet.PlatformAbstractions/2.1.0": {
       "type": "package",
@@ -3582,12 +3594,12 @@
       "path": "nunit/3.12.0",
       "hashPath": "nunit.3.12.0.nupkg.sha512"
     },
-    "ppy.osu.Framework/2020.623.0": {
+    "ppy.osu.Framework/2020.730.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-o/63J6R4IG5A61O67W5Igvr7dxsMn5XonBT2MlkxBAV+DxsGIQ5dlDkqPE2CmdkbvEOfSHfsHbOJdJ1r6gPp5A==",
-      "path": "ppy.osu.framework/2020.623.0",
-      "hashPath": "ppy.osu.framework.2020.623.0.nupkg.sha512"
+      "sha512": "sha512-+tnZanHzYGnJopvfzLECsXR5UJXkmjOesYVmI/8IJqlN7tN6rTTajuygF+7aaIrvA981VfjnJZ4nynLrqhWfwQ==",
+      "path": "ppy.osu.framework/2020.730.1",
+      "hashPath": "ppy.osu.framework.2020.730.1.nupkg.sha512"
     },
     "ppy.osu.Framework.NativeLibs/2020.213.0": {
       "type": "package",
@@ -3596,19 +3608,19 @@
       "path": "ppy.osu.framework.nativelibs/2020.213.0",
       "hashPath": "ppy.osu.framework.nativelibs.2020.213.0.nupkg.sha512"
     },
-    "ppy.osu.Game.Resources/2020.622.1": {
+    "ppy.osu.Game.Resources/2020.731.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-Mk4zMrb8VEU1byEKDdGr4TP+YkKdCP/IA3xuAwSWJrA5doRAsURUYrrF4Ev7uEslUy4bZFQhZL/nvVtA5qKTRA==",
-      "path": "ppy.osu.game.resources/2020.622.1",
-      "hashPath": "ppy.osu.game.resources.2020.622.1.nupkg.sha512"
+      "sha512": "sha512-XM6aCPxMSEPDzv7mABA/gE8yiyc0HBAfUaksEDhPupQL8uom8XmGXv5y5h0VhkGp6L4+EbyhcpWspJqh6XT1qQ==",
+      "path": "ppy.osu.game.resources/2020.731.0",
+      "hashPath": "ppy.osu.game.resources.2020.731.0.nupkg.sha512"
     },
-    "ppy.osuTK.NS20/1.0.159": {
+    "ppy.osuTK.NS20/1.0.161": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-A0mY22BBx3wO3Lae2+L1OaD9IHJmt6qd7kIFUKBK6hMCeRvHEli64XRRRtFfaSh8sRU6lbZg9f4jgggv+CxegA==",
-      "path": "ppy.osutk.ns20/1.0.159",
-      "hashPath": "ppy.osutk.ns20.1.0.159.nupkg.sha512"
+      "sha512": "sha512-Z9rBdYIFPieRFR+c9LhpkkHf+IQpRGrFROrHH40vgF7IobUzqt0Vg9yiJsUXhDxN7mmBHa23cSjr6p+KlOuBAA==",
+      "path": "ppy.osutk.ns20/1.0.161",
+      "hashPath": "ppy.osutk.ns20.1.0.161.nupkg.sha512"
     },
     "ppy.SDL2-CS/1.0.15": {
       "type": "package",
@@ -3644,13 +3656,6 @@
       "sha512": "sha512-S/GPBmfPBB48ZghLxdDR7kDAJVAqgAuThyDJho3OLP5OS4tWD2ydyL8LKm8lhiBxce10OKe9X2zZ6DUjAqEbPg==",
       "path": "runtime.any.system.diagnostics.tools/4.3.0",
       "hashPath": "runtime.any.system.diagnostics.tools.4.3.0.nupkg.sha512"
-    },
-    "runtime.any.System.Diagnostics.Tracing/4.3.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-1lpifymjGDzoYIaam6/Hyqf8GhBI3xXYLK2TgEvTtuZMorG3Kb9QnMTIKhLjJYXIiu1JvxjngHvtVFQQlpQ3HQ==",
-      "path": "runtime.any.system.diagnostics.tracing/4.3.0",
-      "hashPath": "runtime.any.system.diagnostics.tracing.4.3.0.nupkg.sha512"
     },
     "runtime.any.System.Globalization/4.3.0": {
       "type": "package",
@@ -3848,33 +3853,33 @@
       "path": "runtime.unix.system.runtime.extensions/4.3.0",
       "hashPath": "runtime.unix.system.runtime.extensions.4.3.0.nupkg.sha512"
     },
-    "Sentry/2.1.3": {
+    "Sentry/2.1.5": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-66/7DvPZhYjrdYb/8+yQA9WW6tk4496TmnRoVeNi3m0eDD9y/BvvROlF6iacL2c2OhLbbv1ZyUTeLlXHPRAObw==",
-      "path": "sentry/2.1.3",
-      "hashPath": "sentry.2.1.3.nupkg.sha512"
+      "sha512": "sha512-m/5mWIRWbp9w/wEZpOVSVDCXu7GDg8ZsoaLSh3tMHpe5x+mdnTNIa7X9iWw5S/bnnPeYLwD4Mr6jA9xwb1rRGg==",
+      "path": "sentry/2.1.5",
+      "hashPath": "sentry.2.1.5.nupkg.sha512"
     },
-    "Sentry.PlatformAbstractions/1.1.0": {
+    "Sentry.PlatformAbstractions/1.1.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-4fhSK6bImR2IDXGCUAupMeN5ILcOSVv9CygagU0vgwsByhcOEnAcB1K69gMXkvBgGkM8FczY+y5fdtCDKfLFMA==",
-      "path": "sentry.platformabstractions/1.1.0",
-      "hashPath": "sentry.platformabstractions.1.1.0.nupkg.sha512"
+      "sha512": "sha512-ug99ZPdcQQY2Q2smO5tWfxUdMQF8f90UdCKMSfhucJVOAQtKWM0rXcqLvVZRlXDzeB/xNQWLSuw56I5MuaOS9g==",
+      "path": "sentry.platformabstractions/1.1.1",
+      "hashPath": "sentry.platformabstractions.1.1.1.nupkg.sha512"
     },
-    "Sentry.Protocol/2.1.3": {
+    "Sentry.Protocol/2.1.5": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-R14m7FwmzGFW9y2qTLd8BAt+g/yBWrOd0n+o/YcSpcIWnMAGMSQJmK8Zd8dhw7n2nMPY0p05/4AVkwGiJ2nW9g==",
-      "path": "sentry.protocol/2.1.3",
-      "hashPath": "sentry.protocol.2.1.3.nupkg.sha512"
+      "sha512": "sha512-HhkDqF6Yu75uXBr5xAqfEZ0HIMm/LSyJNm7i0ik3w88nERVZ1e0ufjA3QaKZd+wuMYJpKqaNuuTSsG9tNtEP8g==",
+      "path": "sentry.protocol/2.1.5",
+      "hashPath": "sentry.protocol.2.1.5.nupkg.sha512"
     },
-    "SharpCompress/0.25.1": {
+    "SharpCompress/0.26.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-E7QcQVxWbHKKQZh8JoTlwjFAcJO4I9ymTxC4kPpTBtRbB9gak/B7yd/tdKCOE/c2u+N+gLicxOwP+u5CsPLVQw==",
-      "path": "sharpcompress/0.25.1",
-      "hashPath": "sharpcompress.0.25.1.nupkg.sha512"
+      "sha512": "sha512-AldQGgUTiv7uiaiJVrOqzcqU060vVfwPHEGb+mgf1IX66psbfsg4l3up9Q0bYq479QlwrzkLudUMC2cAau+6CA==",
+      "path": "sharpcompress/0.26.0",
+      "hashPath": "sharpcompress.0.26.0.nupkg.sha512"
     },
     "SharpFNT/2.0.0": {
       "type": "package",
@@ -3946,12 +3951,12 @@
       "path": "sqlitepclraw.provider.e_sqlite3.netstandard11/1.1.12",
       "hashPath": "sqlitepclraw.provider.e_sqlite3.netstandard11.1.1.12.nupkg.sha512"
     },
-    "StbiSharp/1.0.11": {
+    "StbiSharp/1.0.12": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-vGL17B9n6pNqvxoPXr67iUsYJJJfTeBy5pwJnCpSIP6djbxL5RMWqqL/2gIRQg0wMdvoS8CaEiI2luwZZbQldA==",
-      "path": "stbisharp/1.0.11",
-      "hashPath": "stbisharp.1.0.11.nupkg.sha512"
+      "sha512": "sha512-7OOhbypvzt9Jn6f1fUXRIus5vaAZ4U1McWMeMMCPtFh0uVLG/BoB4MchK9o+xQmk9z7m8BFe80DECYbZJsR/8w==",
+      "path": "stbisharp/1.0.12",
+      "hashPath": "stbisharp.1.0.12.nupkg.sha512"
     },
     "System.AppContext/4.1.0": {
       "type": "package",
@@ -3960,12 +3965,12 @@
       "path": "system.appcontext/4.1.0",
       "hashPath": "system.appcontext.4.1.0.nupkg.sha512"
     },
-    "System.Buffers/4.3.0": {
+    "System.Buffers/4.5.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-ratu44uTIHgeBeI0dE8DWvmXVBSo4u7ozRZZHOMmK/JPpYyo0dAfgSiHlpiObMQ5lEtEyIXA40sKRYg5J6A8uQ==",
-      "path": "system.buffers/4.3.0",
-      "hashPath": "system.buffers.4.3.0.nupkg.sha512"
+      "sha512": "sha512-Rw7ijyl1qqRS0YQD/WycNst8hUUMgrMH4FCn1nNm27M4VxchZ1js3fVjQaANHO5f3sN4isvP4a+Met9Y4YomAg==",
+      "path": "system.buffers/4.5.1",
+      "hashPath": "system.buffers.4.5.1.nupkg.sha512"
     },
     "System.Collections/4.3.0": {
       "type": "package",
@@ -3974,12 +3979,12 @@
       "path": "system.collections/4.3.0",
       "hashPath": "system.collections.4.3.0.nupkg.sha512"
     },
-    "System.Collections.Immutable/1.5.0": {
+    "System.Collections.Immutable/1.7.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-EXKiDFsChZW0RjrZ4FYHu9aW6+P4MCgEDCklsVseRfhoO0F+dXeMSsMRAlVXIo06kGJ/zv+2w1a2uc2+kxxSaQ==",
-      "path": "system.collections.immutable/1.5.0",
-      "hashPath": "system.collections.immutable.1.5.0.nupkg.sha512"
+      "sha512": "sha512-B43Zsz5EfMwyEbnObwRxW5u85fzJma3lrDeGcSAV1qkhSRTNY5uXAByTn9h9ddNdhM+4/YoLc/CI43umjwIl9Q==",
+      "path": "system.collections.immutable/1.7.1",
+      "hashPath": "system.collections.immutable.1.7.1.nupkg.sha512"
     },
     "System.ComponentModel.Annotations/4.7.0": {
       "type": "package",
@@ -4051,13 +4056,6 @@
       "path": "system.diagnostics.tools/4.3.0",
       "hashPath": "system.diagnostics.tools.4.3.0.nupkg.sha512"
     },
-    "System.Diagnostics.Tracing/4.3.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-rswfv0f/Cqkh78rA5S8eN8Neocz234+emGCtTF3lxPY96F+mmmUen6tbn0glN6PMvlKQb9bPAY5e9u7fgPTkKw==",
-      "path": "system.diagnostics.tracing/4.3.0",
-      "hashPath": "system.diagnostics.tracing.4.3.0.nupkg.sha512"
-    },
     "System.Dynamic.Runtime/4.0.11": {
       "type": "package",
       "serviceable": true,
@@ -4128,12 +4126,12 @@
       "path": "system.linq.queryable/4.0.1",
       "hashPath": "system.linq.queryable.4.0.1.nupkg.sha512"
     },
-    "System.Memory/4.5.3": {
+    "System.Memory/4.5.4": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-3oDzvc/zzetpTKWMShs1AADwZjQ/36HnsufHRPcOjyRAAMLDlu2iD33MBI2opxnezcVUtXyqDXXjoFMOU9c7SA==",
-      "path": "system.memory/4.5.3",
-      "hashPath": "system.memory.4.5.3.nupkg.sha512"
+      "sha512": "sha512-1MbJTHS1lZ4bS4FmsJjnuGJOu88ZzTT2rLvrhW7Ygic+pC0NWA+3hgAen0HRdsocuQXCkUTdFn9yHJJhsijDXw==",
+      "path": "system.memory/4.5.4",
+      "hashPath": "system.memory.4.5.4.nupkg.sha512"
     },
     "System.ObjectModel/4.3.0": {
       "type": "package",
@@ -4184,12 +4182,12 @@
       "path": "system.reflection.extensions/4.3.0",
       "hashPath": "system.reflection.extensions.4.3.0.nupkg.sha512"
     },
-    "System.Reflection.Metadata/1.6.0": {
+    "System.Reflection.Metadata/1.8.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-COC1aiAJjCoA5GBF+QKL2uLqEBew4JsCkQmoHKbN3TlOZKa2fKLz5CpiRQKDz0RsAOEGsVKqOD5bomsXq/4STQ==",
-      "path": "system.reflection.metadata/1.6.0",
-      "hashPath": "system.reflection.metadata.1.6.0.nupkg.sha512"
+      "sha512": "sha512-1wrPLtYQFUGTsl9OqPzdzmMRdQvo3PRK38y+4rCHG0f6iyvSYwNXVr0orMvsu2orOIiVbk6MMckINI1g54ZvfA==",
+      "path": "system.reflection.metadata/1.8.1",
+      "hashPath": "system.reflection.metadata.1.8.1.nupkg.sha512"
     },
     "System.Reflection.Primitives/4.3.0": {
       "type": "package",
@@ -4219,12 +4217,12 @@
       "path": "system.runtime/4.3.0",
       "hashPath": "system.runtime.4.3.0.nupkg.sha512"
     },
-    "System.Runtime.CompilerServices.Unsafe/4.7.0": {
+    "System.Runtime.CompilerServices.Unsafe/4.7.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-IpU1lcHz8/09yDr9N+Juc7SCgNUz+RohkCQI+KsWKR67XxpFr8Z6c8t1iENCXZuRuNCc4HBwme/MDHNVCwyAKg==",
-      "path": "system.runtime.compilerservices.unsafe/4.7.0",
-      "hashPath": "system.runtime.compilerservices.unsafe.4.7.0.nupkg.sha512"
+      "sha512": "sha512-zOHkQmzPCn5zm/BH+cxC1XbUS3P4Yoi3xzW7eRgVpDR2tPGSzyMZ17Ig1iRkfJuY0nhxkQQde8pgePNiA7z7TQ==",
+      "path": "system.runtime.compilerservices.unsafe/4.7.1",
+      "hashPath": "system.runtime.compilerservices.unsafe.4.7.1.nupkg.sha512"
     },
     "System.Runtime.Extensions/4.3.0": {
       "type": "package",
@@ -4317,32 +4315,32 @@
       "path": "system.threading.thread/4.0.0",
       "hashPath": "system.threading.thread.4.0.0.nupkg.sha512"
     },
-    "osu.Game.Rulesets.Catch/2020.623.1": {
+    "osu.Game.Rulesets.Catch/2020.801.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "osu.Game.Rulesets.Mania/2020.623.1": {
+    "osu.Game.Rulesets.Mania/2020.801.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "osu.Game.Rulesets.Osu/2020.623.1": {
+    "osu.Game.Rulesets.Osu/2020.801.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "osu.Game.Rulesets.Taiko/2020.623.1": {
+    "osu.Game.Rulesets.Taiko/2020.801.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "osu.Game.Tournament/2020.623.1": {
+    "osu.Game.Tournament/2020.801.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
     },
-    "ppy.osu.Game/2020.623.1": {
+    "ppy.osu.Game/2020.801.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

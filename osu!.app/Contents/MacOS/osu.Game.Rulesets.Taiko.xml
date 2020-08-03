@@ -4,6 +4,12 @@
         <name>osu.Game.Rulesets.Taiko</name>
     </assembly>
     <members>
+        <member name="T:osu.Game.Rulesets.Taiko.Audio.DrumSampleContainer">
+            <summary>
+            Stores samples for the input drum.
+            The lifetime of the samples is adjusted so that they are only alive during the appropriate sample control point.
+            </summary>
+        </member>
         <member name="F:osu.Game.Rulesets.Taiko.Beatmaps.TaikoBeatmapConverter.LEGACY_VELOCITY_MULTIPLIER">
             <summary>
             osu! is generally slower than taiko, so a factor is added to increase

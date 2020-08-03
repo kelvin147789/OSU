@@ -552,6 +552,11 @@
             The <see cref="P:osu.Game.Rulesets.Mania.Mods.IPlayfieldTypeMod.PlayfieldType"/> which this <see cref="T:osu.Game.Rulesets.Mania.Mods.IPlayfieldTypeMod"/> requires.
             </summary>
         </member>
+        <member name="P:osu.Game.Rulesets.Mania.Mods.ManiaModHidden.ExpandDirection">
+            <summary>
+            The direction in which the cover should expand.
+            </summary>
+        </member>
         <member name="T:osu.Game.Rulesets.Mania.Objects.Drawables.DrawableBarLine">
             <summary>
             Visualises a <see cref="T:osu.Game.Rulesets.Mania.Objects.BarLine"/>. Although this derives DrawableManiaHitObject,
@@ -765,6 +770,17 @@
             The maximum time range. This occurs at a <see cref="P:osu.Game.Rulesets.Mania.UI.DrawableManiaRuleset.relativeTimeRange"/> of 1.
             </summary>
         </member>
+        <member name="T:osu.Game.Rulesets.Mania.UI.IHitExplosion">
+            <summary>
+            Common interface for all hit explosion bodies.
+            </summary>
+        </member>
+        <member name="M:osu.Game.Rulesets.Mania.UI.IHitExplosion.Animate(osu.Game.Rulesets.Judgements.JudgementResult)">
+            <summary>
+            Begins animating this <see cref="T:osu.Game.Rulesets.Mania.UI.IHitExplosion"/>.
+            </summary>
+            <param name="result">The type of <see cref="T:osu.Game.Rulesets.Judgements.JudgementResult"/> that caused this explosion.</param>
+        </member>
         <member name="M:osu.Game.Rulesets.Mania.UI.ManiaPlayfield.GetColumnByPosition(osuTK.Vector2)">
             <summary>
             Retrieves a column from a screen-space position.
@@ -783,6 +799,46 @@
         <member name="P:osu.Game.Rulesets.Mania.UI.ManiaPlayfield.TotalColumns">
             <summary>
             Retrieves the total amount of columns across all stages in this playfield.
+            </summary>
+        </member>
+        <member name="T:osu.Game.Rulesets.Mania.UI.PlayfieldCoveringWrapper">
+            <summary>
+            A <see cref="T:osu.Framework.Graphics.Containers.Container"/> that has its contents partially hidden by an adjustable "cover". This is intended to be used in a playfield.
+            </summary>
+        </member>
+        <member name="F:osu.Game.Rulesets.Mania.UI.PlayfieldCoveringWrapper.cover">
+            <summary>
+            The complete cover, including gradient and fill.
+            </summary>
+        </member>
+        <member name="F:osu.Game.Rulesets.Mania.UI.PlayfieldCoveringWrapper.gradient">
+            <summary>
+            The gradient portion of the cover.
+            </summary>
+        </member>
+        <member name="F:osu.Game.Rulesets.Mania.UI.PlayfieldCoveringWrapper.filled">
+            <summary>
+            The fully-opaque portion of the cover.
+            </summary>
+        </member>
+        <member name="P:osu.Game.Rulesets.Mania.UI.PlayfieldCoveringWrapper.Coverage">
+            <summary>
+            The relative area that should be completely covered. This does not include the fade.
+            </summary>
+        </member>
+        <member name="P:osu.Game.Rulesets.Mania.UI.PlayfieldCoveringWrapper.Direction">
+            <summary>
+            The direction in which the cover expands.
+            </summary>
+        </member>
+        <member name="F:osu.Game.Rulesets.Mania.UI.CoverExpandDirection.AlongScroll">
+            <summary>
+            The cover expands along the scrolling direction.
+            </summary>
+        </member>
+        <member name="F:osu.Game.Rulesets.Mania.UI.CoverExpandDirection.AgainstScroll">
+            <summary>
+            The cover expands against the scrolling direction.
             </summary>
         </member>
         <member name="T:osu.Game.Rulesets.Mania.UI.Stage">
