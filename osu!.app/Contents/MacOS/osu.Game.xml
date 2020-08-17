@@ -3601,6 +3601,11 @@
             Action is BYO (derived class will need to call <see cref="M:osu.Game.Graphics.Containers.HoldToConfirmContainer.BeginConfirm"/> and <see cref="M:osu.Game.Graphics.Containers.HoldToConfirmContainer.AbortConfirm"/> from a user event).
             </summary>
         </member>
+        <member name="M:osu.Game.Overlays.KeyBinding.KeyBindingRow.updateBindTarget">
+            <summary>
+            Updates the bind target to the currently hovered key button or the first if clicked anywhere else.
+            </summary>
+        </member>
         <member name="F:osu.Game.Overlays.LoginOverlay.GetToolbarHeight">
             <summary>
             Provide a source for the toolbar height.
@@ -5138,7 +5143,7 @@
             </summary>
             <remarks>
             Layered hit samples are automatically added in all modes (except osu!mania), but can be disabled
-            using the <see cref="F:osu.Game.Skinning.GlobalSkinConfiguration.LayeredHitSounds"/> skin config option.
+            using the <see cref="F:osu.Game.Skinning.LegacySkinConfiguration.LegacySetting.LayeredHitSounds"/> skin config option.
             </remarks>
         </member>
         <member name="F:osu.Game.Rulesets.Objects.Legacy.ConvertSlider.base_scoring_distance">
@@ -9052,29 +9057,15 @@
             Don't apply any scaling. This allows the user element to be of any size, exceeding specified bounds.
             </summary>
         </member>
-        <member name="M:osu.Game.Skinning.SkinnableSound.VolumeTo(System.Double,System.Double,osu.Framework.Graphics.Easing)">
+        <member name="P:osu.Game.Skinning.SkinnableSound.PlayWhenZeroVolume">
             <summary>
-            Smoothly adjusts <see cref="P:osu.Game.Skinning.SkinnableSound.Volume"/> over time.
+            Whether to play the underlying sample when aggregate volume is zero.
+            Note that this is checked at the point of calling <see cref="M:osu.Game.Skinning.SkinnableSound.Play"/>; changing the volume post-play will not begin playback.
+            Defaults to false unless <see cref="P:osu.Game.Skinning.SkinnableSound.Looping"/>.
             </summary>
-            <returns>A <see cref="T:osu.Framework.Graphics.Transforms.TransformSequence`1"/> to which further transforms can be added.</returns>
-        </member>
-        <member name="M:osu.Game.Skinning.SkinnableSound.BalanceTo(System.Double,System.Double,osu.Framework.Graphics.Easing)">
-            <summary>
-            Smoothly adjusts <see cref="P:osu.Game.Skinning.SkinnableSound.Balance"/> over time.
-            </summary>
-            <returns>A <see cref="T:osu.Framework.Graphics.Transforms.TransformSequence`1"/> to which further transforms can be added.</returns>
-        </member>
-        <member name="M:osu.Game.Skinning.SkinnableSound.FrequencyTo(System.Double,System.Double,osu.Framework.Graphics.Easing)">
-            <summary>
-            Smoothly adjusts <see cref="P:osu.Game.Skinning.SkinnableSound.Frequency"/> over time.
-            </summary>
-            <returns>A <see cref="T:osu.Framework.Graphics.Transforms.TransformSequence`1"/> to which further transforms can be added.</returns>
-        </member>
-        <member name="M:osu.Game.Skinning.SkinnableSound.TempoTo(System.Double,System.Double,osu.Framework.Graphics.Easing)">
-            <summary>
-            Smoothly adjusts <see cref="P:osu.Game.Skinning.SkinnableSound.Tempo"/> over time.
-            </summary>
-            <returns>A <see cref="T:osu.Framework.Graphics.Transforms.TransformSequence`1"/> to which further transforms can be added.</returns>
+            <remarks>
+            Can serve as an optimisation if it is known ahead-of-time that this behaviour is allowed in a given use case.
+            </remarks>
         </member>
         <member name="T:osu.Game.Skinning.SkinnableSprite">
             <summary>
@@ -9239,9 +9230,15 @@
             The conditions that cause this test case to pass.
             </summary>
         </member>
-        <member name="F:osu.Game.Tests.Visual.ModTestScene.ModTestData.Mod">
+        <member name="F:osu.Game.Tests.Visual.ModTestScene.ModTestData.Mods">
             <summary>
-            The <see cref="F:osu.Game.Tests.Visual.ModTestScene.ModTestData.Mod"/> this test case tests.
+            The <see cref="P:osu.Game.Tests.Visual.ModTestScene.ModTestData.Mod"/>s this test case tests.
+            </summary>
+        </member>
+        <member name="P:osu.Game.Tests.Visual.ModTestScene.ModTestData.Mod">
+            <summary>
+            Convenience property for setting <see cref="F:osu.Game.Tests.Visual.ModTestScene.ModTestData.Mods"/> if only
+            a single mod is to be tested.
             </summary>
         </member>
         <member name="T:osu.Game.Tests.Visual.OsuGridTestScene">
