@@ -11,5 +11,10 @@
             <param name="arg"></param>
             <returns></returns>
         </member>
+        <member name="F:osu.Desktop.Updater.SquirrelUpdateManager.updatePending">
+            <summary>
+            Whether an update has been downloaded but not yet applied.
+            </summary>
+        </member>
     </members>
 </doc>

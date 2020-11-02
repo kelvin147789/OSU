@@ -92,6 +92,11 @@
             The horizontal position of the fruit between 0 and <see cref="F:osu.Game.Rulesets.Catch.UI.CatchPlayfield.WIDTH"/>.
             </summary>
         </member>
+        <member name="P:osu.Game.Rulesets.Catch.Objects.CatchHitObject.CanBePlated">
+            <summary>
+            Whether this object can be placed on the catcher's plate.
+            </summary>
+        </member>
         <member name="P:osu.Game.Rulesets.Catch.Objects.CatchHitObject.XOffset">
             <summary>
             A random offset applied to <see cref="P:osu.Game.Rulesets.Catch.Objects.CatchHitObject.X"/>, set by the <see cref="T:osu.Game.Rulesets.Catch.Beatmaps.CatchBeatmapProcessor"/>.
@@ -119,6 +124,11 @@
             The target fruit if we are to initiate a hyperdash.
             </summary>
         </member>
+        <member name="T:osu.Game.Rulesets.Catch.Objects.PalpableCatchHitObject">
+            <summary>
+            Represents a single object that can be caught by the catcher.
+            </summary>
+        </member>
         <member name="F:osu.Game.Rulesets.Catch.Objects.Drawables.FruitPiece.RADIUS_ADJUST">
             <summary>
             Because we're adding a border around the fruit, we need to scale down some.
@@ -134,6 +144,11 @@
             The length of one span of this <see cref="T:osu.Game.Rulesets.Catch.Objects.JuiceStream"/>.
             </summary>
         </member>
+        <member name="P:osu.Game.Rulesets.Catch.Skinning.CatchLegacySkinTransformer.providesComboCounter">
+            <summary>
+            For simplicity, let's use legacy combo font texture existence as a way to identify legacy skins from default.
+            </summary>
+        </member>
         <member name="F:osu.Game.Rulesets.Catch.Skinning.CatchSkinColour.HyperDash">
             <summary>
             The colour to be used for the catcher while in hyper-dashing state.
@@ -147,6 +162,16 @@
         <member name="F:osu.Game.Rulesets.Catch.Skinning.CatchSkinColour.HyperDashAfterImage">
             <summary>
             The colour to be used for the "exploding" catcher sprite on beginning of hyper-dashing.
+            </summary>
+        </member>
+        <member name="T:osu.Game.Rulesets.Catch.Skinning.LegacyCatchComboCounter">
+            <summary>
+            A combo counter implementation that visually behaves almost similar to stable's osu!catch combo counter.
+            </summary>
+        </member>
+        <member name="T:osu.Game.Rulesets.Catch.UI.CatchComboDisplay">
+            <summary>
+            Represents a component that displays a skinned <see cref="T:osu.Game.Rulesets.Catch.UI.ICatchComboCounter"/> and handles combo judgement results for updating it accordingly.
             </summary>
         </member>
         <member name="F:osu.Game.Rulesets.Catch.UI.Catcher.DEFAULT_HYPER_DASH_COLOUR">
@@ -170,7 +195,7 @@
             The relative space to cover in 1 millisecond. based on 1 game pixel per millisecond as in osu-stable.
             </summary>
         </member>
-        <member name="F:osu.Game.Rulesets.Catch.UI.Catcher.allowed_catch_range">
+        <member name="F:osu.Game.Rulesets.Catch.UI.Catcher.ALLOWED_CATCH_RANGE">
             <summary>
             The width of the catcher which can receive fruit. Equivalent to "catchMargin" in osu-stable.
             </summary>
@@ -268,6 +293,21 @@
             <summary>
             A <see cref="T:osu.Framework.Graphics.Containers.Container"/> which scales its content relative to a target width.
             </summary>
+        </member>
+        <member name="T:osu.Game.Rulesets.Catch.UI.ICatchComboCounter">
+            <summary>
+            An interface providing a set of methods to update the combo counter.
+            </summary>
+        </member>
+        <member name="M:osu.Game.Rulesets.Catch.UI.ICatchComboCounter.UpdateCombo(System.Int32,System.Nullable{osuTK.Graphics.Color4})">
+            <summary>
+            Updates the counter to animate a transition from the old combo value it had to the current provided one.
+            </summary>
+            <remarks>
+            This is called regardless of whether the clock is rewinding.
+            </remarks>
+            <param name="combo">The new combo value.</param>
+            <param name="hitObjectColour">The colour of the object if hit, null on miss.</param>
         </member>
     </members>
 </doc>
